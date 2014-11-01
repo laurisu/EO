@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'smtp',
+	'driver' => 'log',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +28,6 @@ return array(
 	|
 	*/
 
-//	'host' => 'smtp.gmail.com',
 	'host' => 'smtp.mailgun.org',
 
 	/*
@@ -43,7 +42,6 @@ return array(
 	*/
 
 	'port' => 465,
-//	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -70,7 +68,6 @@ return array(
 	|
 	*/
 
-//	'encryption' => 'ssl',
 	'encryption' => 'tls',
 
 	/*
@@ -84,7 +81,6 @@ return array(
 	|
 	*/
 
-//	'username' => 'lauris.ulpe@gmail.com',
 	'username' => null,
 
 	/*
@@ -98,7 +94,6 @@ return array(
 	|
 	*/
 
-//	'password' => 'lasami84',
 	'password' => null,
 
 	/*
@@ -125,6 +120,6 @@ return array(
 	|
 	*/
 
-	'pretend' => true,
+	'pretend' => false,
 
 );

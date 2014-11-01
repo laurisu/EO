@@ -106,14 +106,10 @@ class SalesRepAccountController extends BaseController {
             $username = Input::get('username');
             $password = Input::get('password');
 
-            // Activation code
-            $code = str_random(60);
-
             $user = User::create(array(
                         'email' => $email,
                         'username' => $username,
                         'password' => Hash::make($password),
-                        'code' => $code,
                         'active' => 0
             ));
 
@@ -122,6 +118,79 @@ class SalesRepAccountController extends BaseController {
                                 ->with('global', 'The account has been created.');
             }
         }
+    }
+
+    public function getForgotPassword() {
+        return View::make('account.forgot');
+    }
+
+    public function postForgotPassword() {
+        $validator = Validator::make(Input::all(), array(
+                    'email' => 'required|email'
+        ));
+
+        if ($validator->fails()) {
+            return Redirect::route('forgot-password')
+                            ->withErrors($validator)
+                            ->with('global', '');
+        } else {
+            // Change password
+            $user = User::where('email', '=', Input::get('email'));
+
+            if ($user->count()) {
+                $user = $user->first();
+
+                // Generate new random code and random password
+                $code = str_random(60);
+                $password = str_random(10);
+
+                // Store new code and password in database
+                $user->code = $code;
+                $user->password_temp = Hash::make($password);
+
+                // If save is succesfull we email them a view
+                if ($user->save()) {
+
+                    Mail::send('emails.auth.recover', array(
+                        'link' => URL::route('password-recover', $code),
+                        'username' => $user->username,
+                        'password' => $password
+                            ), function($message) use ($user) {
+                        $message->to($user->email, $user->username)->subject('Your new password');
+                    });
+
+                    return Redirect::route('home')
+                                    ->with('global', 'We have sent you a new password by email');
+                }
+            }
+        }
+
+        return Redirect::route('forgot-password')
+                        ->with('global', 'Could not request new password');
+    }
+
+    public function getRecover($code) {
+        $user = User::where('code', '=', $code)
+                ->where('password_temp', '!=', '');
+
+        if ($user->count()) {
+            $user = $user->first();
+
+            $user->password = $user->password_temp;
+            $user->password_temp = '';
+            $user->code = '';
+
+            if ($user->save()) {
+
+                return Redirect::route('home')
+                                ->with('global', 'Your account has been recovered and you can sign in with yopur new password.');
+
+                // Additional functionality here
+            }
+        }
+
+        return Redirect::route('home')
+                        ->with('global', 'Could not activate your user account!');
     }
 
 //    public function getActivateUserAccount() {

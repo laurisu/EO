@@ -9,6 +9,7 @@
 <!-- CSS are placed here -->
 {{ HTML::style('css/bootstrap.css') }}
 {{ HTML::style('css/bootstrap-theme.css') }}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.js"></script>
 {{ HTML::style('css/site.css') }}
 
 <style>
