@@ -48,6 +48,15 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('admin', function(){
+    
+    if (!Auth::user() || Auth::user()->role != 2) {
+        return Redirect::route('home')
+                ->with('global', 'You have no acces to this section! Please contact your boss!');
+    }
+
+});
+
 
 Route::filter('auth.basic', function()
 {

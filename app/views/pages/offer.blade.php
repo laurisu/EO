@@ -2,7 +2,7 @@
 
 @section('title')
 @parent
-:: Offer
+:: Offers
 @stop
 
 @section('content')

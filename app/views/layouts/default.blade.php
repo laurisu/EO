@@ -8,7 +8,7 @@
                 
 
         <!--Container--> 
-        <div class="container">
+        <div class="container my-main-container">
             
             @if(Session::has('global'))
                 <p>{{ Session::get('global') }}</p>
@@ -21,10 +21,6 @@
             <!-- Content -->
             @yield('content')
 
-            <footer class="row">
-                @include('includes.footer')
-            </footer>
-
         </div>
 
 
@@ -34,4 +30,8 @@
         {{ HTML::script('js/site.js') }}
 
     </body>
+    
+    <footer>
+        @include('includes.footer')
+    </footer>   
 </html>

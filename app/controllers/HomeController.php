@@ -3,13 +3,6 @@
 class HomeController extends BaseController {
     public function home() {
         
-//        echo $user = User::find(1)->username;
-        
-        Mail::send('emails.auth.test', array('name' => 'Lauris'), function($message){
-            $message->to('lauris.ulpe@gamil.com', 'Lauris Ulpe')->subject('test email');
-            
-        });
-        
         return View::make('home');
     }
 	/*

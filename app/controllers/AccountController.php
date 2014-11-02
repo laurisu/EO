@@ -1,6 +1,6 @@
 <?php
 
-class SalesRepAccountController extends BaseController {
+class AccountController extends BaseController {
 
     public function getSignIn() {
         return View::make('account.signin');
@@ -20,14 +20,14 @@ class SalesRepAccountController extends BaseController {
         } else {
 
             $remember = (Input::has('remember-me')) ? true : false;
-
+            
             $auth = Auth::attempt(array(
                         'username' => Input::get('username'),
                         'password' => Input::get('password'),
                         'active' => 1 // User has to be active to sign in
                             ), $remember);
 
-            if ($auth) {
+            if ($auth) {       
                 // Redirect to the intended page
                 return Redirect::intended('/');
             } else {
@@ -110,7 +110,7 @@ class SalesRepAccountController extends BaseController {
                         'email' => $email,
                         'username' => $username,
                         'password' => Hash::make($password),
-                        'active' => 0
+                        'active' => 1
             ));
 
             if ($user) {
@@ -199,8 +199,8 @@ class SalesRepAccountController extends BaseController {
 //        if($user->count()){
 //            $user = $user->first();
 //            
-//            // Update user Active status
-//            $user->active = 1;
+//            // Update user active status
+//            $user->active = 1; // Or 2 if it will have admin rights
 //            
 //            if($user->save()){
 //                return Redirect::route('home')
