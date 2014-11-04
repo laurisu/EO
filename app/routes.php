@@ -45,9 +45,10 @@ Route::group(array('before' => 'auth'), function() {
         'uses' => 'ProfileController@user'
     ));
 
-    Route::get('/products', function() {
-        return View::make('pages/products');
-    });
+    Route::get('/products', array('as' => 'product-list', 'uses' => 'ProductController@getProductsList'));
+    Route::get('/products/{id}',array('as' => 'product-view', 'uses' => 'ProductController@getProduct'));
+    
+    
     Route::get('/offer', function() {
         return View::make('pages/offer');
     });
