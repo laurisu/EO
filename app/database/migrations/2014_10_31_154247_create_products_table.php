@@ -12,14 +12,19 @@ class CreateProductsTable extends Migration {
      */
     public function up() {
         Schema::create("products", function($table) {
-            $table->engine = "InnoDB";
+//            $table->engine = "InnoDB";
 
             $table->increments("id");
-            $table->string("name");
+            
+            $table->string("product", 60);
+            
             $table->float("purchase_price");
             $table->float("retail_price");
             
+            $table->text("description");
+            
             $table->integer("category_id");
+            
             $table->dateTime("created_at");
             $table->dateTime("updated_at");
             $table->dateTime("deleted_at");
@@ -32,7 +37,7 @@ class CreateProductsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists("products");
+        Schema::drop("products");
     }
 
 }
