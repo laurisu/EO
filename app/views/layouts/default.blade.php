@@ -22,14 +22,15 @@
 
         </div>
 
+        <footer>
+            @include('includes.footer')
+        </footer>  
+        
         <!-- Scripts are placed here -->
-        {{ HTML::script('js/jquery-2.1.1.js') }}
-        {{ HTML::script('js/bootstrap.min.js') }}
-        {{ HTML::script('js/site.js') }}
+        <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/site.js') }}" type="text/javascript"></script>
+        
+    </body>    
 
-    </body>
-
-    <footer>
-        @include('includes.footer')
-    </footer>   
 </html>
