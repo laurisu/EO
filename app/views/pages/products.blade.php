@@ -7,7 +7,7 @@
 
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid my-main-container">
     <table class="table table-condensed table-hover">
         <caption>Products list</caption>
         <thead>

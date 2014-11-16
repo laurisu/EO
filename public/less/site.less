@@ -15,20 +15,21 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
-    
+
+
 }
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: @my-navbar-height + @my-navbar-margin-bottom;
     /* Padding top by navbar-fixed-top height + intended gap */
-    padding-top: 60px;
+    padding-top: @my-navbar-height + @my-navbar-margin-bottom;
 
     background-color: transparent;
     min-height:100%;
 }
 .navbar-fixed-top {
-    /*default height: 50px;*/ 
+    /*default height: 50px;*/
+    height: @my-navbar-height;
 }
 .footer {
     position: absolute;
@@ -36,11 +37,45 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: rgba(200, 54, 54, 0.5);
+    background-color: @my-content-bg-color;
 }
 
 /* Default template styles
 -------------------------------------------------- */
 .my-main-container {
-    background-color: rgba(211, 211, 211, 0.9);
+    background-color: @my-content-bg-color;
+}
+
+/* Login / Forgot password
+-------------------------------------------------- */
+
+.my-pass-form {
+    .my-form-signin,
+    .my-pass-recover {
+        padding: 15px;
+        background-color: @my-content-bg-color;
+        border: 1px solid #fff;
+    }
+    .container {
+        max-width: @my-form-max-width;
+    }
+    .my-form-group {
+        padding-bottom: 10px;
+    }
+    .my-login-helpers-container {
+        min-height: 50px;
+
+    }
+    .remeber-me {
+        .checkbox {
+            padding-left: 10px;
+        }
+    }
+    .forgot-password {
+        text-align: right;
+        padding-right: 0; 
+        a {
+            padding: 10px 5px;
+        }
+    }
 }

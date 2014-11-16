@@ -1,20 +1,24 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
+<div class="my-pass-form">
+    <div class="container">
 
-    <form class="form" role="form" action="{{ URL::route('forgot-password-post') }}" method="post">
-        <h2 class="form-heading">Password recovery</h2>
+        <form class="form my-pass-recover" role="form" action="{{ URL::route('forgot-password-post') }}" method="post">
+            <h2 class="form-heading">Password recovery</h2>
 
-        <input type="email" name="email" class="form-control" placeholder="Email" autofocus>
-        @if($errors->has('email'))
-        {{ $errors->first('email') }}
-        @endif
+            <div class="my-form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" autofocus>
+                @if($errors->has('email'))
+                {{ $errors->first('email') }}
+                @endif
+            </div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Recover</button>
-        
-        {{ Form::token() }}
-    </form>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Recover</button>
 
+            {{ Form::token() }}
+        </form>
+
+    </div>
 </div>
 @stop
