@@ -2,6 +2,7 @@
 
 @section('content')
 
+<a href="{{ URL::route('account-create') }}">Crate user</a>
 Users list (Admin only)<br>   
 Information about user's<br>
 What offers and how many offers they have sent and to whom.<br> 

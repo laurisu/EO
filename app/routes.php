@@ -46,9 +46,9 @@ Route::group(array('before' => 'auth'), function() {
     ));
 
     Route::get('/products', array('as' => 'product-list', 'uses' => 'ProductController@getProductsList'));
-    Route::get('/products/{id}',array('as' => 'product-view', 'uses' => 'ProductController@getProduct'));
-    
-    
+    Route::get('/products/{id}', array('as' => 'product-view', 'uses' => 'ProductController@getProduct'));
+
+
     Route::get('/offer', function() {
         return View::make('pages/offer');
     });
@@ -56,10 +56,35 @@ Route::group(array('before' => 'auth'), function() {
     /*
      * ADMIN ROUTES (GET)
      */
-
     Route::group(array('before' => 'admin'), function() {
 
-        Route::resource('user', 'UserController');
+//        Route::resource('user', 'UserController');
+
+        /*
+         * CSFR protection group
+         */
+        Route::group(array('before' => 'csfr'), function() {
+
+            /*
+             * Create account (POST)
+             */
+            Route::post('/account/create', array(
+                'as' => 'account-create-post',
+                'uses' => 'AdminController@postCreate'
+            ));
+        });
+
+        /*
+         * ADMIN ROUTES (GET)
+         */
+
+        /*
+         * Create account (GET)
+         */
+        Route::get('/account/create', array(
+            'as' => 'account-create',
+            'uses' => 'AdminController@getCreate'
+        ));
 
         Route::get('/admin/users', array(
             'as' => 'admin-users-list',
@@ -78,13 +103,7 @@ Route::group(array('before' => 'guest'), function () {
      */
     Route::group(array('before' => 'csfr'), function () {
 
-        /*
-         * Create account (POST)
-         */
-        Route::post('/account/create', array(
-            'as' => 'account-create-post',
-            'uses' => 'AccountController@postCreate'
-        ));
+
 
         /*
          * Sign in (POST)
@@ -122,13 +141,5 @@ Route::group(array('before' => 'guest'), function () {
     Route::get('/sign-in', array(
         'as' => 'sign-in',
         'uses' => 'AccountController@getSignIn'
-    ));
-
-    /*
-     * Create account (GET)
-     */
-    Route::get('/account/create', array(
-        'as' => 'account-create',
-        'uses' => 'AccountController@getCreate'
     ));
 });

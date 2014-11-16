@@ -20,27 +20,24 @@
             <ul class="nav navbar-nav navbar-right">
 
                 @if(Auth::check())
-                
+
                 <li><a href="{{ URL::route('product-list') }}">Products</a></li>
                 <li><a href="{{ URL::to('/offer') }}">Offer</a></li>
-                
+
                     @if(Auth::user()->role == 2)
-                        <li><a href="{{ URL::route('admin-users-list') }}">Users</a></li>
-                          
+
+                    <li><a href="{{ URL::route('admin-users-list') }}">Users</a></li>
+
                     @endif  
-                
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} profile <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} Profile <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="{{ URL::route('change-password') }}">Change password</a></li>
                         <li><a href="{{ URL::route('sign-out') }}">Sign out</a></li>
                     </ul>
                 </li>
-                
-                @else
-                
-                <li><a href="{{ URL::route('account-create') }}">Crate an account</a></li>
-                
+
                 @endif
 
             </ul> 
