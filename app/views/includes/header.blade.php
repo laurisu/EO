@@ -22,11 +22,12 @@
                 @if(Auth::check())
 
                 <li><a href="{{ URL::route('product-list') }}">Products</a></li>
+                <li><a href="{{ URL::route('customer-list') }}">Customers</a></li>
                 <li><a href="{{ URL::to('/offer') }}">Offer</a></li>
 
                     @if(Auth::user()->role == 2)
 
-                    <li><a href="{{ URL::route('admin-users-list') }}">Users</a></li>
+                    <li><a href="{{ URL::route('users-list') }}">Users</a></li>
 
                     @endif  
 
