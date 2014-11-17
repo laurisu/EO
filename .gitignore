@@ -8,4 +8,5 @@ composer.lock
 Thumbs.db
 
 /nbproject/*
+/.idea
 /public/assets/
