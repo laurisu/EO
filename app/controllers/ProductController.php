@@ -5,8 +5,8 @@ class ProductController extends BaseController {
     public function getProductsList() {
         
         return View::make('pages.products')
-//                ->with('products', Product::all())
-        ->with('products', Product::orderBy('product')->get());
+                ->with('products', Product::paginate(3));
+//                ->with('products', Product::orderBy('product')->get())
 
     }
     

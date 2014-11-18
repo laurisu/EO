@@ -37,6 +37,8 @@
                     </td>
                 </tr>
             @endforeach
+            
+            {{ $products->links() }}
 
             <tr>
                 <td>1</td>
