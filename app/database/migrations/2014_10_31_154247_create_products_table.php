@@ -12,7 +12,7 @@ class CreateProductsTable extends Migration {
      */
     public function up() {
         Schema::create("products", function($table) {
-//            $table->engine = "InnoDB";
+            $table->engine = "InnoDB";
 
             $table->increments("id");
             

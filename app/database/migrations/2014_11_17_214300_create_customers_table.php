@@ -12,7 +12,8 @@ class CreateCustomersTable extends Migration {
      */
     public function up() {
         Schema::create("customers", function($table) {
-
+            $table->engine = "InnoDB";
+            
             $table->increments("id");
             
             $table->string("customer", 60);

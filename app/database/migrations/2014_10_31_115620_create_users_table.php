@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration {
 	public function up()
 	{
             Schema::create('users', function($table){
-//                $table->engine = "InnoDB";
+                $table->engine = "InnoDB";
                 
                 $table->increments('id');
                 
@@ -23,7 +23,10 @@ class CreateUsersTable extends Migration {
                 $table->string('password_temp', 60);
                 $table->string('code', 60);
                 
+                // Simple user -  | Admin - 2
                 $table->integer('role');
+                
+                // User status: Inactive - 0 | Actice - 1
                 $table->integer('active');
                 
                 $table->rememberToken();
