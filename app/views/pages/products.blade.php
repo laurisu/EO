@@ -38,22 +38,12 @@
                 </tr>
             @endforeach
             
-            {{ $products->links() }}
-
-            <tr>
-                <td>1</td>
-                <td>123</td>
-                <td>Table</td>
-                <td>brown table</td>
-                <td><i class="fa fa-eur"></i> 5</td>
-                <td><i class="fa fa-eur"></i> 7</td>
-                <td>
-                    <button class="btn btn-xs">Offer</button>
-                    <button class="btn btn-xs">Remove</button>
-                </td>
-            </tr>
+            
 
         </tbody>
+        <tfoot>
+            {{ $products->links() }}
+        </tfoot>
     </table>
 </div>
 

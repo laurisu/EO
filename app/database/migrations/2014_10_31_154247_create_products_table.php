@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration {
             
             $table->string("product", 60);
             
-            $table->float("purchase_price");
-            $table->float("retail_price");
+            $table->decimal("purchase_price", 8, 2);
+            $table->decimal("retail_price", 8, 2);
             
             $table->text("description");
             
