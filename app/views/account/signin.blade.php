@@ -6,7 +6,6 @@
 @stop
 
 @section('content')
-
 <div class="my-pass-form">
     <div class="container">
         <form class="form-signin my-form-signin" role="form" action="{{ URL::route('sign-in-post') }}" method="post">
@@ -42,5 +41,4 @@
         </form>
     </div>
 </div>
-
 @stop

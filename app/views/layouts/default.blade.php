@@ -4,7 +4,7 @@
         @include('includes.head')
     </head>
 
-    <body
+    <body>
 
         <header>
             @if(Auth::check())
@@ -17,15 +17,26 @@
             <p>{{ Session::get('global') }}</p>
         </div>
         @endif
+        
+        @if(Auth::check())
+            <!--Container--> 
+            <div class="container my-main-container">
 
-        <!--Container--> 
-        <div class="container">
-            
-            <!-- Content -->
-            @yield('content') 
-            @yield('pagination')
-            
-        </div>
+                <!-- Content -->
+                @yield('content') 
+                @yield('pagination')
+
+            </div>
+        @else
+            <!--Container--> 
+            <div class="container">
+
+                <!-- Content -->
+                @yield('content') 
+
+            </div>
+        @endif
+        
 
         @include('includes.footer')
 

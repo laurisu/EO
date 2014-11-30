@@ -5,7 +5,7 @@
 :: Products
 @stop
 
-<div class="container my-main-container">
+<div class="container">
     
     @section('content')
     <table class="table table-condensed table-hover">
