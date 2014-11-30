@@ -7,7 +7,9 @@
     <body
 
         <header>
+            @if(Auth::check())
             @include('includes.header')
+            @endif
         </header> 
 
         @if(Session::has('global'))
@@ -21,7 +23,8 @@
             
             <!-- Content -->
             @yield('content') 
-
+            @yield('pagination')
+            
         </div>
 
         @include('includes.footer')

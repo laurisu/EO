@@ -53,11 +53,18 @@ body {
 -------------------------------------------------- */
 
 .my-pass-form {
+    color: @my-light-font-color;
+    a {
+      color: @my-light-font-color;  
+    }
+    a:hover {
+        color: @my-hover-color;
+    }
     .my-form-signin,
     .my-pass-recover {
         padding: 15px;
-        background-color: @my-content-bg-color;
-        border: 1px solid #fff;
+        background-color: @my-dark-bg-color;
+        border: 1px solid @my-light-font-color;
     }
     .container {
         max-width: @my-form-max-width;
@@ -66,27 +73,33 @@ body {
         padding-bottom: 10px;
     }
     .my-login-helpers-container {
-        min-height: 50px;
+        min-height: 40px;
 
     }
     .remeber-me {
         .checkbox {
+            font-weight: normal;
             padding-left: 10px;
+            min-height: 100%;
         }
     }
     .forgot-password {
         text-align: right;
         padding-right: 0; 
         a {
+            border: none;
             padding: 10px 5px;
         }
     }
 }
 
 .my-navbar-styles {
-    background: #232323;
+    background: @my-dark-bg-color;
     a {
-      color: #f0d8a8;  
+      color: @my-light-font-color;  
+    }
+    a:hover {
+        color: @my-hover-color;
     }
 }
 

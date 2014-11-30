@@ -2,8 +2,13 @@
 
 class HomeController extends BaseController {
     public function home() {
-        
-        return View::make('home');
+            
+        if (Auth::check()) {
+            return View::make('home');
+        } else {
+            return Redirect::route('sign-in');
+        }
+  
     }
 	/*
 	|--------------------------------------------------------------------------
