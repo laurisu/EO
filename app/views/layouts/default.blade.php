@@ -4,8 +4,8 @@
         @include('includes.head')
     </head>
 
-    <body>
-
+    <body @yield('bodyparams')>
+        
         <header>
             @if(Auth::check())
             @include('includes.header')

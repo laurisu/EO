@@ -42,6 +42,7 @@ class AccountController extends BaseController {
 
     public function getSignOut() {
         Auth::logout();
+        Session::flush();
         return Redirect::route('sign-in');
     }
 

@@ -6,25 +6,25 @@
 /* Sticky footer, Fixed to top navbar and Background styles
 ------------------------------------------------------------ */
 html {
-    position: relative;
-    min-height: 100%;
     
-    /* Background image displayed fullscreen */
-        background: url('../img/handshake.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    height: 100%;
+    background: yellow;
+    
 }
 
 body {
+    
+    position: relative;
+    
     /* Margin bottom by footer height */
-    margin-bottom: @my-navbar-height + @my-navbar-margin-bottom;
+    padding-bottom: @my-footer-height + @my-navbar-margin-bottom + 10;
     /* Padding top by navbar-fixed-top height + intended gap */
     padding-top: @my-navbar-height + @my-navbar-margin-bottom;
 
-    background-color: transparent;
+    background-color: green;
     min-height:100%;
+    
+    box-sizing: border-box; 
 }
 .navbar-fixed-top {
     /*default height: 50px;*/
@@ -35,11 +35,11 @@ body {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: @my-content-bg-color;
+    height: @my-footer-height;
+    background-color: rgba(255, 0, 255, 0.5);
     
     margin: auto;
-
+    
 }
 
 /* Default template styles
@@ -50,6 +50,17 @@ body {
 
 /* Login / Forgot password
 -------------------------------------------------- */
+
+.my-login-bg {
+    border: solid 1px red;
+    
+    /*     Background image displayed fullscreen */        
+    background: url('../img/handshake.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 .my-pass-form {
     color: @my-light-font-color;
