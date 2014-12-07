@@ -4,20 +4,25 @@
         @include('includes.head')
     </head>
 
-    <body @yield('bodyparams')>
-        
-        <header>
-            @if(Auth::check())
-            @include('includes.header')
-            @endif
-        </header> 
+    @if(Auth::check())
+    <body>
+    @else
+    <body class="my-login-bg">
+    @endif
+
+        @if(Auth::check())
+            <header>
+                @include('includes.header')
+            </header> 
+        @endif
+
 
         @if(Session::has('global'))
-        <div class="alert alert-dismissible">
-            <p>{{ Session::get('global') }}</p>
-        </div>
+            <div class="alert alert-dismissible">
+                <p>{{ Session::get('global') }}</p>
+            </div>
         @endif
-        
+
         @if(Auth::check())
             <!--Container--> 
             <div class="container my-main-container">
@@ -36,7 +41,7 @@
 
             </div>
         @endif
-        
+
 
         @include('includes.footer')
 

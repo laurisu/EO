@@ -5,10 +5,6 @@
 :: Sign in
 @stop
 
-@section('bodyparams')
-    class="my-login-bg"
-@stop
-
 @section('content')
 <div class="my-pass-form">
     <div class="container">
