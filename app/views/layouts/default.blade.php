@@ -23,6 +23,7 @@
             </div>
         @endif
 
+        
         @if(Auth::check())
             <!--Container--> 
             <div class="container my-main-container">
