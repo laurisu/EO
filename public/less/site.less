@@ -3,33 +3,46 @@
     Author     : Lauris Ulpe
 */
 
-/* Sticky footer, Fixed to top navbar and Background styles
------------------------------------------------------------- */
 html {
-    
     height: 100%;
     background: black;
     
 }
 
 body {
-    
     position: relative;
-    
-    /* Margin bottom by footer height */
-    padding-bottom: @my-footer-height + @my-navbar-margin-bottom + 10;
+
     /* Padding top by navbar-fixed-top height + intended gap */
     padding-top: @my-navbar-height + @my-navbar-margin-bottom;
 
-    background-color: green;
-    min-height:100%;
-    
+    background-color: @my-bg-color;
+    min-height: 100%;
+
     box-sizing: border-box; 
 }
+
+/* Sticky footer, Fixed to top navbar 
+------------------------------------------------------------ */
+
 .navbar-fixed-top {
     /*default height: 50px;*/
     height: @my-navbar-height;
+
+    -webkit-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
 }
+
+.my-navbar-styles {
+    background: @my-dark-bg-color;
+    a {
+        color: @my-light-font-color;  
+    }
+    a:hover {
+        color: @my-hover-color;
+    }
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -37,15 +50,21 @@ body {
     /* Set the fixed height of the footer here */
     height: @my-footer-height;
     background-color: rgba(255, 0, 255, 0.5);
-    
+
     margin: auto;
-    
 }
 
 /* Default template styles
 -------------------------------------------------- */
+
 .my-main-container {
     background-color: @my-content-bg-color;
+    border: solid 1px #c9c9c9;
+    margin-bottom: @my-footer-height;
+
+    -webkit-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.5);
 }
 
 /* Login / Forgot password
@@ -55,7 +74,7 @@ body {
     border: solid 1px green;
     
     /*     Background image displayed fullscreen */        
-    background: url('../img/handshake.jpg') no-repeat center center fixed;
+    background: url('../img/login-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -65,7 +84,7 @@ body {
 .my-pass-form {
     color: @my-light-font-color;
     a {
-      color: @my-light-font-color;  
+        color: @my-light-font-color;  
     }
     a:hover {
         color: @my-hover-color;
@@ -103,15 +122,16 @@ body {
     }
 }
 
-.my-navbar-styles {
-    background: @my-dark-bg-color;
-    a {
-      color: @my-light-font-color;  
-    }
-    a:hover {
-        color: @my-hover-color;
-    }
+/* Pagination - all views
+-------------------------------------------------- */
+
+.pagination a:hover,
+.pagination .active a {
+    background-color: #f5f5f5;
 }
+
+/* Home page
+-------------------------------------------------- */
 
 .my-welocome-page {
     max-width: 300px;
