@@ -10,3 +10,4 @@ Thumbs.db
 /nbproject/*
 /.idea
 /public/assets/
+/node_modules/
