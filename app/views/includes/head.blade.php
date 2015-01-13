@@ -15,7 +15,7 @@
   };
 </script>-->
 
-<!--<link href="{{ asset('less/init.less') }}" rel="stylesheet/less" type="text/css">-->
-<!--<script src="{{ asset('assets/less/dist/less.min.js') }}" type="text/javascript"></script>-->
+<link href="{{ asset('less/init.less') }}" rel="stylesheet/less" type="text/css">
+<script src="{{ asset('assets/less/dist/less.min.js') }}" type="text/javascript"></script>
 
-<link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
+<!--<link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">-->

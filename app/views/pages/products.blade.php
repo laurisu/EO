@@ -5,7 +5,7 @@
 :: Products
 @stop
 
-<div class="container">
+<div class="container my-products-container">
     
     @section('content')
     <table class="table table-condensed table-hover">
@@ -41,6 +41,7 @@
         </tbody>
 
     </table>
+
     @stop
 
     @section('pagination')
@@ -48,5 +49,6 @@
         {{ $products->links() }}
     </div>
     @stop
-
+    
 </div>
+

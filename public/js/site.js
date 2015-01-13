@@ -1,4 +1,16 @@
 $(function () {
+    $(".offer-previw-btn").click(function (e) {
+        e.preventDefault();
+        $("#menu").toggleClass("preview-offer");
+    });
+    $("#menu a").click(function (event) {
+        event.preventDefault();
+        if ($(this).next('ul').length) {
+            $(this).next().toggle('fast');
+            $(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
+        }
+    });
+});
 //   $('.offer-preview').click(function (){
 //       console.log('Click');
 //        $('.offer-preview').toggle('slide');
@@ -14,18 +26,18 @@ $(function () {
 //        }
 //        ;
 //    });
+    
 
-    $("#button").click(function () {
-
-        // Set the effect type
-        var effect = 'slide';
-
-        // Set the options for the effect type chosen
-        var options = {direction: 'right'};
-
-        // Set the duration (default: 400 milliseconds)
-        var duration = 700;
-
-        $('#offer').toggle(effect, options, duration);
-    });
-});
+//    $("#button").click(function () {
+//
+//        // Set the effect type
+//        var effect = 'slide';
+//
+//        // Set the options for the effect type chosen
+//        var options = {direction: 'right'};
+//
+//        // Set the duration (default: 400 milliseconds)
+//        var duration = 700;
+//
+//        $('#offer').toggle(effect, options, duration);
+//    });

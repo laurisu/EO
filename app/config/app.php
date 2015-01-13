@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,7 +122,6 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
                 'Barryvdh\Debugbar\ServiceProvider',
-                'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 
