@@ -5,50 +5,47 @@
 :: Products
 @stop
 
-<div class="container my-products-container">
-    
-    @section('content')
-    <table class="table table-condensed table-hover">
-        
-        <caption>Products list</caption>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>code</th>
-                <th>name</th>
-                <th>description</th>
-                <th>purchase price</th>
-                <th>retail price</th>
-                <th>options</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($products as $product)
-            <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->product_code }}</td>
-                <td>{{ $product->product }}</td>
-                <td>{{ $product->description }}</td>
-                <td><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
-                <td><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
-                <td>
-                    <button class="btn btn-xs">{{ HTML::linkRoute('product-view', 'View', array($product->id)) }}</button>
-                    <button class="btn btn-xs">Offer</button>
-                    <button class="btn btn-xs">Remove</button>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
+@section('content')
+<table class="table table-condensed table-hover my-table">
 
-    </table>
+    <caption>Products list</caption>
+    <thead>
+        <tr>
+            <th>code</th>
+            <th>name</th>
+            <th>description</th>
+            <th>purchase price</th>
+            <th>retail price</th>
+            <th>discount</th>
+            <th>offer price</th>
+            <th>options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($products as $product)
+        <tr>
+            <td class="col-md-1">{{ $product->product_code }}</td>
+            <td class="col-md-2">{{ $product->product }}</td>
+            <td class="col-md-3">{{ $product->description }}</td>
+            <td class="col-md-1"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
+            <td class="col-md-1"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
+            <td class="col-md-1">%</td>
+            <td class="col-md-1">offer</td>
+            <td class="col-md-2">
+                <button class="btn btn-xs my-tbl-btn-view">{{ HTML::linkRoute('product-view', 'View', array($product->id)) }}</button>
+                <button class="btn btn-xs my-tbl-btn-offer">Offer</button>
+                <button class="btn btn-xs my-tbl-btn-edit">Edit</button>
+                <button class="btn btn-xs my-tbl-btn-delete">Delete</button>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
 
-    @stop
+</table>
+@stop
 
-    @section('pagination')
-    <div class="row">
-        {{ $products->links() }}
-    </div>
-    @stop
-    
+@section('pagination')
+<div>
+    {{ $products->links() }}
 </div>
-
+@stop

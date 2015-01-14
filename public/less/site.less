@@ -16,7 +16,7 @@ body {
     padding-top: @my-navbar-height + @my-navbar-margin-bottom;
 
     background-color: @my-bg-color;
-    min-height: 90%;
+    min-height: 100%;
 
     box-sizing: border-box; 
 }
@@ -118,6 +118,36 @@ body {
         a {
             border: none;
             padding: 10px 5px;
+        }
+    }
+}
+
+/* Tables - all views
+-------------------------------------------------- */
+
+.my-table {
+    thead > tr > th {
+        vertical-align: top;
+        text-align: top;
+        background-color: @my-thead-bg-color;
+        border-bottom: 1px solid @my-tr-border-color;
+    }
+    tbody > tr {
+        border: 1px solid @my-tr-border-color;
+        > td > button {
+            background-color: none;
+        }
+        
+    }
+    .btn {
+        background-color: #fff;
+        &.my-tbl-btn-view {border: 1px solid #f4b350}
+        &.my-tbl-btn-offer {border: 1px solid #2f9f9e}
+        &.my-tbl-btn-edit {border: 1px solid #4897cc}
+        &.my-tbl-btn-delete {border: 1px solid #fb948b}
+        > a {
+            color: inherit;
+            text-decoration: none;
         }
     }
 }
