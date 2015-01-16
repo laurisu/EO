@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<p>Customer {{ $customer->customer }} view</p>
+<p>Customer {{ $customer->customer }} view with details</p>
 
 
 @stop
