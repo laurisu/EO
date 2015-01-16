@@ -18,6 +18,17 @@ module.exports = function (grunt) {
                     "public/css/site.css": "public/less/init.less"
                 }
             }
+            prod: {
+                options: {
+                    compress: true,
+                    cleancss: true,
+                    optimization: 2,
+                    sourceMap: false
+                },
+                files: {
+                    "public/css/compiled.css": "public/less/init.less"
+                }
+            }
         },
         watch: {
             styles: {
