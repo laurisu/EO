@@ -9,13 +9,41 @@
 @font-family-sans-serif: 'Open Sans', sans-serif;
 @headings-font-weight:    400;
 
-@my-dark-font-color: #232323;
-@my-light-font-color: #a48668;
-@my-hover-color: #f0d8a8;
+/* COLORS */
+@my-white: rgba(255, 255, 255, 1);
+@my-black: #222222; /*#232323*/
+@my-orange: #f4b350; /*#a48668*/
+@my-green: #2f9f9e;
+@my-blue: #4897cc;
+@my-red: #fb948b;
+@my-grey: #ddd;
+@my-light-grey: #f1f1f1;
 
-/* Navbar */
+
+/* Background colors */
+@my-bg-color: @my-light-grey;
+@my-dark-bg-color: @my-black;
+@my-content-bg-color: @my-white;
+
+/* Table colors */
+@my-thead-bg-color: @my-orange;
+@my-tr-border-color: @my-grey;
+
+@my-dark-font-color: @my-black;
+@my-light-font-color: @my-orange;
+@my-hover-color: #f0d8a8;            /* ???*/
+
+/* NAVBAR */
 @my-navbar-height: 50px; 
 @my-navbar-margin-bottom: 20px;
+@navbar-default-color: @my-light-font-color;
+@navbar-default-bg: #f8f8f8;
+@navbar-default-link-color:             darken(@my-light-font-color, 20%);
+@navbar-default-link-hover-color:       @my-white;
+@navbar-default-link-hover-bg:          @my-orange;
+@navbar-default-toggle-hover-bg:        lighten(@my-light-font-color, 10%);
+@navbar-default-toggle-icon-bar-bg:     @my-light-font-color;
+@navbar-default-toggle-border-color:    @my-light-font-color;
 
 /* Footer */
 @my-footer-height: 50px;
@@ -23,14 +51,7 @@
 /* Sign in / Porgot password / change password */ 
 @my-form-max-width: 400px;
 
-/* Background colors */
-@my-bg-color: #f1f1f1;
-@my-dark-bg-color: #232323;
-@my-content-bg-color: rgba(255, 255, 255, 1);
 
-/* Table colors */
-@my-thead-bg-color: #f4b350;
-@my-tr-border-color: #ddd;
 
 /* OVERWRITTEN TWITTER BOOTSTRAP VARIABLES */
 

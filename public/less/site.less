@@ -5,8 +5,6 @@
 
 html {
     height: 100%;
-    background: black;
-
 }
 
 body {
@@ -35,12 +33,7 @@ body {
 
 .my-navbar-styles {
     background: @my-dark-bg-color;
-    a {
-        color: @my-light-font-color;  
-    }
-    a:hover {
-        color: @my-hover-color;
-    }
+    
 }
 
 .footer {
@@ -141,10 +134,25 @@ body {
     }
     .btn {
         background-color: #fff;
-        &.my-tbl-btn-view {border: 1px solid #f4b350}
-        &.my-tbl-btn-offer {border: 1px solid #2f9f9e}
-        &.my-tbl-btn-edit {border: 1px solid #4897cc}
-        &.my-tbl-btn-delete {border: 1px solid #fb948b}
+        transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        
+        &.my-tbl-btn-view {border: 1px solid @my-orange}
+        &.my-tbl-btn-view:hover {background-color: @my-orange; color: #fff;}
+        
+        &.my-tbl-btn-offer {border: 1px solid @my-green}
+        &.my-tbl-btn-offer:hover {background-color: @my-green; color: #fff;}
+        
+        &.my-tbl-btn-edit {border: 1px solid @my-blue}
+        &.my-tbl-btn-edit:hover {background-color: @my-blue; color: #fff;}
+        
+        &.my-tbl-btn-delete {border: 1px solid @my-red}
+        &.my-tbl-btn-delete:hover {background-color: @my-red; color: #fff;}
+        
         > a {
             color: inherit;
             text-decoration: none;

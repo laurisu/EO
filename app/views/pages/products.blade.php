@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-<table class="table table-condensed table-hover my-table">
+<table class="table  table-hover my-table">
 
     <caption>Products list</caption>
     <thead>

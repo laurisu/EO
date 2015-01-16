@@ -1,5 +1,5 @@
 <!--Navbar--> 
-<div class="navbar navbar-fixed-top my-navbar-styles" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top my-navbar-styles" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -44,4 +44,4 @@
             </ul> 
         </div>
     </div>
-</div> 
+</nav> 

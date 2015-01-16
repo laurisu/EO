@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-                "barryvdh/laravel-debugbar": "1.7.*@dev"
+                "barryvdh/laravel-debugbar": "1.7.*@dev",
+                "way/generators": "~2.0"
 	},
 	"autoload": {
 		"classmap": [
@@ -25,7 +26,6 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
-                        "php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
