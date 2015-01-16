@@ -28,4 +28,12 @@ $(function () {
 
         $('#offer').toggle(effect, options, duration);
     });
+    
+    $(".xo-toggle-headding").on("click", function () {
+        var element = $(this).closest(".xo-toggle-dropdown");
+        var content = element.find(".xo-toggle-content");
+        
+        content.toggleClass("is-hidden");
+    });
+    
 });

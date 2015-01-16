@@ -41,6 +41,26 @@
         </tbody>
 
     </table>
+    
+    <div class="container">
+        <div class="xo-toggle-dropdown">
+            <div class="xo-toggle-headding">
+                <p>jkahf</p>
+            </div>
+            <div class="xo-toggle-content is-hidden">
+                <p>asjchasjkchk alksjalksajdlksajx ALKDJADLK</p>
+            </div>
+        </div>
+        <div class="xo-toggle-dropdown">
+            <div class="xo-toggle-headding">
+                <p>jkahf</p>
+            </div>
+            <div class="xo-toggle-content is-hidden">
+                <p>asjchasjkchk alksjalksajdlksajx ALKDJADLK</p>
+            </div>
+        </div>
+    </div>
+    
     @stop
 
     @section('pagination')
