@@ -18,4 +18,23 @@ class ProductController extends BaseController {
         
     }
     
+    public function addProduct() {
+        
+//        $product = new Product;
+//        $product->product = 'Chair';
+//        $product->description = 'Lorem Ipsum';
+//        $product->purchase_price = '55.50';
+//        $product->retail_price = '110.00';
+//        $product->save();
+//        dd('Product created');
+        
+        $data = array(
+            'product' => 'Chair',
+            'description' => 'Lorem Ipsum',
+            'purchase_price' => '0',
+            'retail_price' => '0',
+        );
+        Product::create($data);
+        dd('Product added');
+    }
 }
