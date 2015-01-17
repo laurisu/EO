@@ -32,8 +32,9 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/user/{username}', array('as' => 'user-profile', 'uses' => 'ProfileController@user'));
 
     Route::get('/products', array('as' => 'product-list', 'uses' => 'ProductController@getProductsList'));
+    Route::get('/products/new', array('as' => 'product-new', 'uses' => 'ProductController@addProduct')); 
     Route::get('/products/{id}', array('as' => 'product-view', 'uses' => 'ProductController@getProduct'));
-    Route::get('/products/new', array('as' => 'product-view', 'uses' => 'ProductController@addProduct'));
+
     
     Route::get('/customers', array('as' => 'customer-list', 'uses' => 'CustomerController@getCustomerList'));
     Route::get('/customers/{id}', array('as' => 'customer-view', 'uses' => 'CustomerController@getCustomer'));
