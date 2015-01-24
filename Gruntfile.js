@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
 
     // Project configuration.
-    grunt.initConfig({
+    grunt.initConfig({        
         less: {
             development: {
                 options: {
@@ -17,8 +17,37 @@ module.exports = function (grunt) {
                 files: {
                     "public/css/site.css": "public/less/init.less"
                 }
+            },
+            prod: {
+                options: {
+                    compress: true,
+                    cleancss: true,
+                    optimization: 2,
+                    sourceMap: false
+                },
+                files: {
+                    "public/css/compiled.css": "public/less/init.less"
+                }
             }
         },
+        
+        autoprefixer: {
+            dist: {
+                options: {
+                    // Task-specific options go here.
+                    // Default browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+                    // lai atjaunotu statistiku par izmantotajām pārlūku versijām
+                    // komandridā jāieraksta: npm update caniuse-db
+                    browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9', 'ie 10']
+                },
+//                src: "public/css/site.css", // ja izmanto src bez dist, tad tas automātiski prefikso un nomaina
+//                dest: "public/css/site.dist.css"
+                files: {
+                    "public/css/site.dist.css": "public/css/site.css"
+                }
+            }
+        },
+        
         watch: {
             styles: {
                 files: ['public/less/**/*.less'], // faili, kurus vērot, ** - visās mapēs
@@ -26,17 +55,37 @@ module.exports = function (grunt) {
                 options: {
                     nospawn: true // true neizvadīs komadrindā tehnisko informāciju
                 }
+            },
+            css: {
+                files: ['public/css/site.css'], // faili, kurus vērot, ** - visās mapēs
+                tasks: ['autoprefixer'], // atrodot failus tiek pielietots uzdevums (task) "autoprefixer"
+                options: {
+                    nospawn: true // true neizvadīs komadrindā tehnisko informāciju
+                }
+            }
+        },
+        bower: {
+            install: {
+               //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+                options: {
+                    targetDir: "public/assets"
+                }
             }
         }
-
     });
 
     // Load the plugin that provides the tasks.
     grunt.loadNpmTasks('grunt-contrib-less'); // kompilē less failus uz css
     grunt.loadNpmTasks('grunt-contrib-watch'); // vēro un pārkompilē less failu izmaiņas
-
+    grunt.loadNpmTasks('grunt-autoprefixer'); // 
+    grunt.loadNpmTasks('grunt-bower-task');
+    
     // Default task(s).
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['watch']); // 
+    grunt.registerTask('my-comand', ['bower:install','less:development','autoprefixer:dist']); // 
 
 };
 
+// SĀKOT STRĀDĀT PIE PROJEKTA
+//
+// $ grunt wathc / izslēdz ar ctrl+c
