@@ -41,9 +41,8 @@
             <td class="col-md-2">
                 <button class="btn btn-xs my-tbl-btn-view">View</button>
                 <button type="button" class="btn btn-xs my-tbl-btn-view" data-toggle="modal" data-target="#myModal">Modal</button>
-                <button class="btn btn-xs my-tbl-btn-offer">Offer</button>
+                <button class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
                 <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
-                <button class="btn btn-xs my-tbl-btn-delete">Delete</button>
             </td>
         </tr>
         @endforeach

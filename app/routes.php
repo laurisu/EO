@@ -21,6 +21,10 @@ Route::group(array('before' => 'auth'), function() {
          * Products page (POST)
          */
         Route::post('/products/create-product', array('as' => 'product-create-post', 'uses' => 'ProductController@postCreatedProduct'));
+        
+        
+        Route::put('/products/product-update', array('uses' => 'ProductController@putProductChanges'));
+        
     });
 
     /*
@@ -66,13 +70,13 @@ Route::group(array('before' => 'auth'), function() {
             /*
              * Create account (POST)
              */
-            Route::post('/account/create', array('as' => 'account-create-post', 'uses' => 'AdminController@postCreate'));
+            Route::post('/account/create', array('as' => 'account-create-post', 'uses' => 'AdminController@postCreateAccount'));
         });
 
         /*
          * Create account (GET)
          */
-        Route::get('/account/create', array('as' => 'account-create', 'uses' => 'AdminController@getCreate'));
+        Route::get('/account/create', array('as' => 'account-create', 'uses' => 'AdminController@getCreateAccount'));
 
         Route::get('/users', array('as' => 'users-list', 'uses' => 'AdminController@getUsersList'));
     });

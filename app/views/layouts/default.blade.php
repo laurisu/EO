@@ -18,8 +18,11 @@
 
 
         @if(Session::has('global'))
-            <div class="alert alert-dismissible">
-                <p>{{ Session::get('global') }}</p>
+            <div class="container">
+                <div class="alert alert-dismissible {{ Session::get('alert-class') }}">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ Session::get('global') }}
+                </div>
             </div>
         @endif
 

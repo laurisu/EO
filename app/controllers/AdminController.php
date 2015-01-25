@@ -6,15 +6,16 @@ class AdminController extends BaseController {
         return View::make('pages.users');
     }
     
-    public function getCreate() {
+    public function getCreateAccount() {
         return View::make('account.create');
     }
 
-    public function postCreate() {
+    public function postCreateAccount() {
         $validator = Validator::make(Input::all(), array(
                     'email' => 'required|max:50|email|unique:users',
                     'username' => 'required|max:20|min:3|unique:users',
                     'password' => 'required|min:6',
+                    'role' => 'required|max:1',
                     'password_again' => 'required|same:password'
                         )
         );
@@ -27,17 +28,20 @@ class AdminController extends BaseController {
             $email = Input::get('email');
             $username = Input::get('username');
             $password = Input::get('password');
+            $role = Input::get('role');
 
             $user = User::create(array(
                         'email' => $email,
                         'username' => $username,
+                        'role' => $role,
                         'password' => Hash::make($password),
                         'active' => 1
             ));
 
             if ($user) {
-                return Redirect::route('sign-in')
-                                ->with('global', 'The account has been created.');
+                return Redirect::route('home')
+                    ->with('global', 'The account has been created.')
+                    ->with('alert-class', 'alert-success');
             }
         }
     }

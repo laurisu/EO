@@ -12,7 +12,7 @@
     <div class="col-sm-12 my-form-headding">
         <h4>Product editor</h4>
     </div>
-
+    
     <form class="form-horizontal" action="{{ URL::route('product-edit') }}" method="post">
 
         <div class="form-group">
@@ -74,8 +74,14 @@
             <div class="col-sm-offset-2 col-sm-10">
                 <button class="btn btn-lg my-btn-save" type="submit">Save</button>
                 <button class="btn btn-lg my-btn-delete" type="submit">Delete</button>
-                <button class="btn btn-lg my-btn-back" type="submit">Back to products</button>
+                <button class="btn btn-lg my-btn-back">{{ HTML::linkRoute('product-list', 'Products list') }}</button>
                 {{ Form::token() }}
+                <form method="POST" action="" accept-charset="UTF-8">
+                    <button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmDelete" data-title="Delete User" data-message="Are you sure you want to delete this user ?">
+                        <i class="glyphicon glyphicon-trash"></i> Delete
+                    </button>
+                </form>
+                
             </div>
         </div>
 
@@ -83,4 +89,5 @@
 
 </div>
 
+@include('includes.delete_confirm')
 @stop

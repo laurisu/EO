@@ -1,9 +1,9 @@
 @extends('layouts.default')
 
-<!--@section('title')
+@section('title')
 @parent
-:: Sign in
-@stop-->
+:: Change password
+@stop
 
 @section('content')
 

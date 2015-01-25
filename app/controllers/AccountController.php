@@ -32,12 +32,14 @@ class AccountController extends BaseController {
                 return Redirect::intended('/');
             } else {
                 return Redirect::route('sign-in')
-                                ->with('global', 'Username/passwor incorrect, or account not activated!');
+                    ->with('global', 'Username/passwor incorrect, or account not activated!')
+                    ->with('alert-class', 'alert-danger');
             }
         }
 
         return Redirect::route('sign-in')
-                        ->with('global', 'There was a problem to sign you in!');
+            ->with('global', 'There was a problem to sign you in!')
+            ->with('alert-class', 'alert-warning');
     }
 
     public function getSignOut() {
@@ -73,16 +75,19 @@ class AccountController extends BaseController {
 
                 if ($user->save()) {
                     return Redirect::route('home')
-                                    ->with('global', 'Your password has been changed!');
+                        ->with('global', 'Your password has been changed!')
+                        ->with('alert-class', 'alert-succes');
                 }
             } else {
                 return Redirect::route('change-password')
-                                ->with('global', 'Your old password is incorrect!');
+                    ->with('global', 'Your old password is incorrect!')
+                    ->with('alert-class', 'alert-warning');
             }
         }
 
         return Redirect::route('change-password')
-                        ->with('global', 'Your password could not be changed!');
+            ->with('global', 'Your password could not be changed!')
+            ->with('alert-class', 'alert-danger');
     }
 
     public function getForgotPassword() {
@@ -96,8 +101,9 @@ class AccountController extends BaseController {
 
         if ($validator->fails()) {
             return Redirect::route('forgot-password')
-                            ->withErrors($validator)
-                            ->with('global', '');
+                    ->withErrors($validator)
+                    ->with('global', 'Provided incorrect email address')
+                    ->with('alert-class', 'alert-warning');
         } else {
             // Change password
             $user = User::where('email', '=', Input::get('email'));
@@ -125,13 +131,15 @@ class AccountController extends BaseController {
                     });
 
                     return Redirect::route('home')
-                                    ->with('global', 'We have sent you a new password by email');
+                        ->with('global', 'We have sent you a new password by email')
+                        ->with('alert-class', 'alert-info');
                 }
             }
         }
 
         return Redirect::route('forgot-password')
-                        ->with('global', 'Could not request new password');
+            ->with('global', 'Could not request new password')
+            ->with('alert-class', 'alert-danger');
     }
 
     public function getRecover($code) {
@@ -148,32 +156,16 @@ class AccountController extends BaseController {
             if ($user->save()) {
 
                 return Redirect::route('home')
-                                ->with('global', 'Your account has been recovered and you can sign in with yopur new password.');
+                    ->with('global', 'Your account has been recovered and you can sign in with yopur new password.')
+                    ->with('alert-class', 'alert-succes');
 
                 // Additional functionality here
             }
         }
 
         return Redirect::route('home')
-                        ->with('global', 'Could not activate your user account!');
+            ->with('global', 'Could not activate your user account!')
+            ->with('alert-class', 'alert-danger');
     }
-
-//    public function getActivateUserAccount() {
-//        $user = User::where()->where();
-//        
-//        if($user->count()){
-//            $user = $user->first();
-//            
-//            // Update user active status
-//            $user->active = 1; // Or 2 if it will have admin rights
-//            
-//            if($user->save()){
-//                return Redirect::route('home')
-//                        ->with('global', '{{ $username }} account has been activated.');
-//            }
-//        }
-//        
-//        return Redirect::route('home')
-//                ->with('global', 'We could not activate your account');
-//    }
+    
 }
