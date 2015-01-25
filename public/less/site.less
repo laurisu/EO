@@ -19,6 +19,13 @@ body {
     box-sizing: border-box; 
 }
 
+/* Bootstrap 3 */
+
+.btn > a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Sticky footer, Fixed to top navbar 
 ------------------------------------------------------------ */
 
@@ -33,7 +40,7 @@ body {
 
 .my-navbar-styles {
     background: @my-dark-bg-color;
-    
+
 }
 
 .footer {
@@ -115,9 +122,72 @@ body {
     }
 }
 
-/* Tables - all views
+/* CRUD form styles
 -------------------------------------------------- */
 
+.my-crud-form {
+    .my-form-headding {
+        h4 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        background: @my-orange;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        /*background-color: #fff;*/
+        transition: background 0.1s ease-in-out;
+        -webkit-transition: background 0.1s ease-in-out;
+        -moz-transition: background 0.1s ease-in-out;
+        -ms-transition: background 0.1s ease-in-out;
+        -o-transition: background 0.1s ease-in-out;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+
+
+        &.my-btn-back {
+            background-color: lighten(@my-orange, 25%);
+            border: 1px solid @my-orange
+        }
+        &.my-btn-back:hover {background-color: @my-orange; color: #fff;}      
+
+        &.my-btn-save {
+            background-color: lighten(@my-blue, 30%);
+            border: 1px solid @my-blue
+        }
+        &.my-btn-save:hover {background-color: @my-blue; color: #fff;}
+
+        &.my-btn-delete {
+            background-color: lighten(@my-red, 15%);
+            border: 1px solid @my-red
+        }
+        &.my-btn-delete:hover {background-color: @my-red; color: #fff;}
+    }
+}
+
+/* Tables - all views
+-------------------------------------------------- */
+.my-table-headding {
+    background: @my-orange;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    h4 {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .btn {
+        background-color: #fff;
+        transition: background 0.1s ease-in-out;
+        -webkit-transition: background 0.1s ease-in-out;
+        -moz-transition: background 0.1s ease-in-out;
+        -ms-transition: background 0.1s ease-in-out;
+        -o-transition: background 0.1s ease-in-out;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        &.my-btn-create {border: 1px solid @my-green; float: right}
+        &.my-btn-create:hover {background-color: @my-green; color: #fff;}
+    }
+}
 .my-table {
     thead > tr > th {
         vertical-align: top;
@@ -130,33 +200,28 @@ body {
         > td > button {
             background-color: none;
         }
-        
+
     }
     .btn {
         background-color: #fff;
         transition: background 0.1s ease-in-out;
-	-webkit-transition: background 0.1s ease-in-out;
-	-moz-transition: background 0.1s ease-in-out;
-	-ms-transition: background 0.1s ease-in-out;
-	-o-transition: background 0.1s ease-in-out;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        
+        -webkit-transition: background 0.1s ease-in-out;
+        -moz-transition: background 0.1s ease-in-out;
+        -ms-transition: background 0.1s ease-in-out;
+        -o-transition: background 0.1s ease-in-out;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+
         &.my-tbl-btn-view {border: 1px solid @my-orange}
         &.my-tbl-btn-view:hover {background-color: @my-orange; color: #fff;}
-        
+
         &.my-tbl-btn-offer {border: 1px solid @my-green}
         &.my-tbl-btn-offer:hover {background-color: @my-green; color: #fff;}
-        
+
         &.my-tbl-btn-edit {border: 1px solid @my-blue}
         &.my-tbl-btn-edit:hover {background-color: @my-blue; color: #fff;}
-        
+
         &.my-tbl-btn-delete {border: 1px solid @my-red}
         &.my-tbl-btn-delete:hover {background-color: @my-red; color: #fff;}
-        
-        > a {
-            color: inherit;
-            text-decoration: none;
-        }
     }
 }
 
@@ -176,24 +241,3 @@ body {
     max-width: 300px;
     text-align: center;
 }
-
-/* TOGGLE dropdown */
-.xo-toggle-dropdown {
-    padding: 5px;
-    .xo-toggle-headding {
-        display: block;
-        border: solid 3px green;
-    }
-    .xo-toggle-content {
-        border: solid 1px red;
-        &.is-hidden {
-            display: none;
-        }
-    }
-}
-
-/*do toggle color mixin*/
-
-
-
-

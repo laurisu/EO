@@ -1,6 +1,6 @@
 <title>
     @section('title')
-    EasyOffer
+    EO
     @show
 </title>
 
