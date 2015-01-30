@@ -1,14 +1,8 @@
-$(function () {
-    $(".offer-previw-btn").click(function (e) {
-        e.preventDefault();
-        $("#menu").toggleClass("preview-offer");
-    });
-    $("#menu a").click(function (event) {
-        event.preventDefault();
-        if ($(this).next('ul').length) {
-            $(this).next().toggle('fast');
-            $(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
-        }
-    });
+$('.open-product-view').click(function(event){
+    event.preventDefault();
+    var id = $(this).data('id');
+        console.log(id);
+        // pass id to appropriate element here  
+        $(".modal-header #myModalLabel").val(id);
+        
 });
-

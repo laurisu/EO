@@ -23,8 +23,6 @@
             <th>description</th>
             <th>purchase price</th>
             <th>retail price</th>
-            <th>discount</th>
-            <th>offer price</th>
             <th>options</th>
         </tr>
     </thead>
@@ -33,14 +31,12 @@
         @foreach($products as $product)
         <tr>
             <td class="col-md-2">{{ $product->product_name }}</td>
-            <td class="col-md-3">{{ $product->description }}</td>
-            <td class="col-md-1"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
-            <td class="col-md-1"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
-            <td class="col-md-1">%</td>
-            <td class="col-md-1">offer</td>
+            <td class="col-md-4" style="">{{ $product->description }}</td>
+            <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
+            <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
             <td class="col-md-2">
                 <button class="btn btn-xs my-tbl-btn-view">View</button>
-                <button type="button" class="btn btn-xs my-tbl-btn-view" data-toggle="modal" data-target="#myModal">Modal</button>
+                <button type="button" class="btn btn-xs my-tbl-btn-view open-product-view" data-toggle="modal" data-target="#myModal" data-id="{{ $product->id }}">Modal</button>
                 <button class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
                 <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
             </td>
@@ -56,7 +52,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">{{ $product->product }}</h4>
+                <h4 class="modal-title" id="myModalLabel">{{ $product->product_name }}</h4>
             </div>
             <div class="modal-body">
                 ...

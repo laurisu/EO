@@ -3,7 +3,10 @@
 class AdminController extends BaseController {
     
     public function getUsersList() {
-        return View::make('pages.users');
+        
+        $users = User::all();
+        return View::make('pages.users.list')
+                 ->with('users', $users);
     }
     
     public function getCreateAccount() {

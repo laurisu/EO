@@ -14,11 +14,12 @@ class ProductController extends BaseController {
                 ->with('product', Product::find($id));
     }
 
+    // NOT WORKING!!!!!
     public function putProductChanges() {
         
         $id = Input::get('id');
         
-        $validator = Product::validate(Input::all(), array(
+        $validator = Validator::make(Input::all(), array(
                     'product_name' => 'required|max:60|unique:products',
                     'description' => 'required',
                     'purchase_price' => 'required',

@@ -11,6 +11,6 @@ class Product extends Eloquent {
     
 ////    $guarded masīvs norāda kurus laukus nevar pievienot no mass assignment
 //    protected $guarded = ['description'];
-//    protected $table = 'products';
+    protected $table = 'products';
 
 }
