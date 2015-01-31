@@ -24,11 +24,8 @@ class ProductController extends BaseController {
                         ->with('product', Product::find($id));
     }
 
-    // NOT WORKING!!!!!
-    public function putProductChanges() {
-
-        $id = Input::get('id');
-
+    public function putProductChanges($id) {
+//        print_r($id);exit();
         $validator = Validator::make(Input::all(), array(
                     'product_name' => 'required|max:60|unique:products',
                     'description' => 'required',
@@ -37,26 +34,21 @@ class ProductController extends BaseController {
         ));
 
         if ($validator->fails()) {
+//            print_r($validator->messages());exit();
             return Redirect::route('product-edit', $id)
                             ->withErrors($validator);
         } else {
-            Author::update($id, array(
-                'product_name' => Input::get('product_name'),
-                'description' => input::get('description'),
-                'purchase_price' => input::get('purchase_price'),
-                'retail_price' => input::get('retail_price')
-            ));
-            return Redirect::route('product-edit', $id)
-                            ->with('global', 'Product updated succesfully')
+            $product = Product::find($id);
+            $product->product_name = Input::get('product_name');
+            $product->description = Input::get('description');
+            $product->purchase_price = Input::get('purchase_price');
+            $product->retail_price = Input::get('retail_price');
+            $product->update();
+
+            return Redirect::route('product-list')
+                            ->with('global', 'Product <b>' . $product->product_name . '</b> updated succesfully')
                             ->with('alert-class', 'alert-success');
         }
-
-
-//        $product = Product::find($id);
-//        $product->$product_name = input::get('product_name');
-//        $product->$description = input::get('description');
-//        $product->$purchase_price = input::get('purchase_price');
-//        $product->$retail_price = input::get('retail_price');
     }
 
     public function getProductCreator() {

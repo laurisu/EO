@@ -13,13 +13,13 @@
         <h4>Product editor</h4>
     </div>
     
-    <form class="form-horizontal" action="{{ URL::route('product-edit') }}" method="post">
+    <form class="form-horizontal" action="{{ URL::route('product-update', array($product->id)) }}" method="post">
 
         <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Product name</label>
             <div class="col-sm-4">
                 <input 
-                    type="text" name="product" 
+                    type="text" name="product_name" 
                     class="form-control" id="inputName"
                     placeholder="Product name" 
                     value="{{ $product->product_name }}" autofocus>

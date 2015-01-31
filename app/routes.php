@@ -23,7 +23,7 @@ Route::group(array('before' => 'auth'), function() {
         Route::post('/products/create-product', array('as' => 'product-create-post', 'uses' => 'ProductController@postCreatedProduct'));
         
         
-        Route::put('/products/product-update', array('uses' => 'ProductController@putProductChanges'));
+        Route::post('/products/product-update/{id}', array('as' => 'product-update', 'uses' => 'ProductController@putProductChanges'));
         
     });
 
