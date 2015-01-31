@@ -55,6 +55,7 @@ class ProductController extends BaseController {
         return View::make('pages.products.create');
     }
 
+    // HAS TO BE EDITED - FORM VALIDATION FOR FLOATING NUMBERS
     public function postCreatedProduct() {
 
         $validator = Validator::make(Input::all(), array(
