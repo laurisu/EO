@@ -1,8 +1,16 @@
-$('.open-product-view').click(function(event){
-    event.preventDefault();
-    var id = $(this).data('id');
-        console.log(id);
-        // pass id to appropriate element here  
-        $(".modal-header #myModalLabel").val(id);
-        
+$(function () {
+    $('.open-product-view').click(function (event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: $(this).attr("href"),
+            beforeSend: function(){
+                $("#myModal .modal-content").html('<div class="my-loader-container"><div class="my-loader"></div></div>');
+                $("#myModal").modal();
+            },
+            success: function(result){
+                $("#myModal .modal-content").html(result);
+            }
+        });
+    });
 });

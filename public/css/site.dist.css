@@ -7954,6 +7954,11 @@ body {
   min-height: 100%;
   box-sizing: border-box;
 }
+/* Bootstrap 3 */
+.btn > a {
+  color: inherit;
+  text-decoration: none;
+}
 /* Sticky footer, Fixed to top navbar 
 ------------------------------------------------------------ */
 .navbar-fixed-top {
@@ -8026,8 +8031,78 @@ body {
   border: none;
   padding: 10px 5px;
 }
+/* CRUD form styles
+-------------------------------------------------- */
+.my-crud-form .my-form-headding {
+  background: #f4b350;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.my-crud-form .my-form-headding h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.my-crud-form .btn {
+  /*background-color: #fff;*/
+  transition: background 0.1s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  -ms-transition: background 0.1s ease-in-out;
+  -o-transition: background 0.1s ease-in-out;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+.my-crud-form .btn.my-btn-back {
+  background-color: #fce7c8;
+  border: 1px solid #f4b350;
+}
+.my-crud-form .btn.my-btn-back:hover {
+  background-color: #f4b350;
+  color: #fff;
+}
+.my-crud-form .btn.my-btn-save {
+  background-color: #c0dbed;
+  border: 1px solid #4897cc;
+}
+.my-crud-form .btn.my-btn-save:hover {
+  background-color: #4897cc;
+  color: #fff;
+}
+.my-crud-form .btn.my-btn-delete {
+  background-color: #fed8d5;
+  border: 1px solid #fb948b;
+}
+.my-crud-form .btn.my-btn-delete:hover {
+  background-color: #fb948b;
+  color: #fff;
+}
 /* Tables - all views
 -------------------------------------------------- */
+.my-table-headding {
+  background: #f4b350;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.my-table-headding h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.my-table-headding .btn {
+  background-color: #fff;
+  transition: background 0.1s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  -ms-transition: background 0.1s ease-in-out;
+  -o-transition: background 0.1s ease-in-out;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+.my-table-headding .btn.my-btn-create {
+  border: 1px solid #2f9f9e;
+  float: right;
+}
+.my-table-headding .btn.my-btn-create:hover {
+  background-color: #2f9f9e;
+  color: #fff;
+}
 .my-table thead > tr > th {
   vertical-align: top;
   text-align: top;
@@ -8077,10 +8152,6 @@ body {
   background-color: #fb948b;
   color: #fff;
 }
-.my-table .btn > a {
-  color: inherit;
-  text-decoration: none;
-}
 /* Pagination - all views
 -------------------------------------------------- */
 .pagination a:hover,
@@ -8093,18 +8164,17 @@ body {
   max-width: 300px;
   text-align: center;
 }
-/* TOGGLE dropdown */
-.xo-toggle-dropdown {
+/* USERS LIST
+-------------------------------------------------- */
+.my-user-profile .my-usr-head {
+  color: #fff;
+  background: #f4b350;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+.my-user-profile .my-usr-img {
+  max-width: 100%;
   padding: 5px;
+  min-height: 100px;
+  border: 1px solid #dddddd;
 }
-.xo-toggle-dropdown .xo-toggle-headding {
-  display: block;
-  border: solid 3px green;
-}
-.xo-toggle-dropdown .xo-toggle-content {
-  border: solid 1px red;
-}
-.xo-toggle-dropdown .xo-toggle-content.is-hidden {
-  display: none;
-}
-/*do toggle color mixin*/

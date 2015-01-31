@@ -55,13 +55,6 @@ module.exports = function (grunt) {
                 options: {
                     nospawn: true // true neizvadīs komadrindā tehnisko informāciju
                 }
-            },
-            css: {
-                files: ['public/css/site.css'], // faili, kurus vērot, ** - visās mapēs
-                tasks: ['autoprefixer'], // atrodot failus tiek pielietots uzdevums (task) "autoprefixer"
-                options: {
-                    nospawn: true // true neizvadīs komadrindā tehnisko informāciju
-                }
             }
         },
         bower: {

@@ -35,8 +35,8 @@
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
             <td class="col-md-2">
-                <button class="btn btn-xs my-tbl-btn-view">View</button>
-                <button type="button" class="btn btn-xs my-tbl-btn-view open-product-view" data-toggle="modal" data-target="#myModal" data-id="{{ $product->id }}">Modal</button>
+                <button class="btn btn-xs my-tbl-btn-view">{{ HTML::linkRoute('product-view', 'View', array($product->id)) }}</button>
+                <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal">Modal</button>
                 <button class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
                 <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
             </td>
@@ -52,14 +52,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">{{ $product->product_name }}</h4>
+                <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
             <div class="modal-body">
-                ...
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

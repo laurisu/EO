@@ -11,25 +11,35 @@ class ProductController extends BaseController {
     public function editProduct($id) {
 
         return View::make('pages.products.edit')
-                ->with('product', Product::find($id));
+                        ->with('product', Product::find($id));
+    }
+
+    public function viewProduct($id) {
+
+        if (Request::ajax()) {
+            return View::make('pages.products.view-ajax')
+                            ->with('product', Product::find($id));
+        }
+        return View::make('pages.products.view')
+                        ->with('product', Product::find($id));
     }
 
     // NOT WORKING!!!!!
     public function putProductChanges() {
-        
+
         $id = Input::get('id');
-        
+
         $validator = Validator::make(Input::all(), array(
                     'product_name' => 'required|max:60|unique:products',
                     'description' => 'required',
                     'purchase_price' => 'required',
                     'retail_price' => 'required'
         ));
-        
-        if($validator->fails()) {
+
+        if ($validator->fails()) {
             return Redirect::route('product-edit', $id)
-                    ->withErrors($validator);
-        }else{
+                            ->withErrors($validator);
+        } else {
             Author::update($id, array(
                 'product_name' => Input::get('product_name'),
                 'description' => input::get('description'),
@@ -37,20 +47,16 @@ class ProductController extends BaseController {
                 'retail_price' => input::get('retail_price')
             ));
             return Redirect::route('product-edit', $id)
-                    ->with('global', 'Product updated succesfully')
-                    ->with('alert-class', 'alert-success');
+                            ->with('global', 'Product updated succesfully')
+                            ->with('alert-class', 'alert-success');
         }
-        
-        
+
+
 //        $product = Product::find($id);
 //        $product->$product_name = input::get('product_name');
 //        $product->$description = input::get('description');
 //        $product->$purchase_price = input::get('purchase_price');
 //        $product->$retail_price = input::get('retail_price');
-
-        
-    
-        
     }
 
     public function getProductCreator() {
