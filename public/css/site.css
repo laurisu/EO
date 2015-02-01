@@ -8013,7 +8013,7 @@ body {
 }
 .my-loader {
   display: inline-block;
-  background: url(../img/ajax-loader.gif) 50% 50% no-repeat;
+  background: url(../img/assets/ajax-loader.gif) 50% 50% no-repeat;
   background-size: contain;
 }
 /* Sticky footer, Fixed to top navbar 
