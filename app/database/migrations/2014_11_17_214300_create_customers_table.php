@@ -16,9 +16,9 @@ class CreateCustomersTable extends Migration {
             
             $table->increments("id");
             
-            $table->string("customer", 60);
+            $table->string("customer", 255);
             $table->string("contact_person", 255);
-            $table->string("email", 60);
+            $table->string("email", 100);
             $table->string("phone", 20);
             $table->string("mobile", 20);
             

@@ -1,10 +1,13 @@
 @extends('layouts.default')
 
 @section('title')
+
 @parent
-:: Customers
+:: Customer
 @stop
 
 @section('content')
-<p>Customers list with option to view</p>
+<p>Customer {{ $customer->customer }} view with details</p>
+
+
 @stop

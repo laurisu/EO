@@ -27,6 +27,7 @@ class CreateOffersTable extends Migration {
                     ->references('id')->on('customers')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
+                    
             
             // 0 - saved, but not sent | 1 - sent
             $table->integer('status');

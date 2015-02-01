@@ -21,8 +21,6 @@ Route::group(array('before' => 'auth'), function() {
          * Products page (POST)
          */
         Route::post('/products/create-product', array('as' => 'product-create-post', 'uses' => 'ProductController@postCreatedProduct'));
-        
-        
         Route::post('/products/product-update/{id}', array('as' => 'product-update', 'uses' => 'ProductController@putProductChanges'));
         
     });
@@ -47,10 +45,11 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/products/view/{id}', array('as' => 'product-view', 'uses' => 'ProductController@viewProduct'));
     Route::get('/products/edit-product/{id}', array('as' => 'product-edit', 'uses' => 'ProductController@editProduct'));
 
-
-
+    /*
+     * Products page (GET)
+     */
     Route::get('/customers', array('as' => 'customer-list', 'uses' => 'CustomerController@getCustomerList'));
-    Route::get('/customers/{id}', array('as' => 'customer-view', 'uses' => 'CustomerController@getCustomer'));
+    Route::get('/customers/view/{id}', array('as' => 'customer-view', 'uses' => 'CustomerController@getCustomer'));
 
     Route::get('/offer', function() {
         return View::make('pages/offer');

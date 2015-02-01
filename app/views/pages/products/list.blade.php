@@ -2,14 +2,14 @@
 
 @section('title')
 @parent
-:: Products list
+:: Products
 @stop
 
 @section('content')
 
 <div class="row my-table-headding">
     <div class="col-sm-6">
-        <h4>Product list</h4>
+        <h4>Products</h4>
     </div>
     <div class="col-sm-6"><button class="btn btn-sm my-btn-create">{{ HTML::linkRoute('product-create', 'Add product') }}</button></div>  
 </div>
@@ -37,8 +37,7 @@
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
             <td class="col-md-2">
-                <button class="btn btn-xs my-tbl-btn-view">{{ HTML::linkRoute('product-view', 'View', array($product->id)) }}</button>
-                <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal">Modal</button>
+                <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal">View</button>
                 <button class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
                 <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
             </td>

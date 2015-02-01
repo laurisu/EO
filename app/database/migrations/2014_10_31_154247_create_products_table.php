@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration {
 
             $table->increments("id");
             
-            $table->string("product_name", 60);
+            $table->string("product_name", 255);
             
             $table->decimal("purchase_price", 8, 2);
             $table->decimal("retail_price", 8, 2);

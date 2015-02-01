@@ -4,15 +4,18 @@ class CustomerController extends BaseController {
     
     public function getCustomerList() {
         
-        return View::make('pages.customers')
-//                ->with('customers', Product::all())
-        ->with('customers', Customer::orderBy('customer')->get());
+        return View::make('pages.customers.list')
+                ->with('customers', Customer::orderBy('customer', 'ASC')->paginate(20));
 
     }
     
     public function getCustomer($id) {
         
-        return View::make('pages.customer')
+        if (Request::ajax()) {
+            return View::make('pages.customers.view-ajax')
+                            ->with('customer', Customer::find($id));
+        }
+        return View::make('pages.customers.view')
                 ->with('title', 'Customer view page')
                 ->with('customer', Customer::find($id));
         
