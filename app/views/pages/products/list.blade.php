@@ -31,7 +31,9 @@
         @foreach($products as $product)
         <tr>
             <td class="col-md-2">{{ $product->product_name }}</td>
-            <td class="col-md-4" style="">{{ $product->description }}</td>
+            <td class="col-md-4 my-td-ellipsis" style="">
+                <div>{{ $product->description }}</div>          
+            </td>
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
             <td class="col-md-2">
@@ -55,7 +57,7 @@
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
             <div class="modal-body">
-                
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

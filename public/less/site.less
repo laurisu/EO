@@ -41,6 +41,11 @@ body {
     background: url(../img/assets/ajax-loader.gif) 50% 50% no-repeat;
     background-size: contain; 
 }
+.my-modal-header {
+    background: @my-orange;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px; 
+}
 
 /* Sticky footer, Fixed to top navbar 
 ------------------------------------------------------------ */
@@ -182,7 +187,7 @@ body {
     }
 }
 
-/* Tables - all views
+/* TABLES - all views
 -------------------------------------------------- */
 .my-table-headding {
     background: @my-orange;
@@ -241,6 +246,12 @@ body {
     }
 }
 
+.my-td-ellipsis div {
+    width: 300px; // has to be changed in viewpoints in order to be responsive
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
 /* Pagination - all views
 -------------------------------------------------- */

@@ -8016,6 +8016,11 @@ body {
   background: url(../img/assets/ajax-loader.gif) 50% 50% no-repeat;
   background-size: contain;
 }
+.my-modal-header {
+  background: #f4b350;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
 /* Sticky footer, Fixed to top navbar 
 ------------------------------------------------------------ */
 .navbar-fixed-top {
@@ -8139,7 +8144,7 @@ body {
   background-color: #fb948b;
   color: #fff;
 }
-/* Tables - all views
+/* TABLES - all views
 -------------------------------------------------- */
 .my-table-headding {
   background: #f4b350;
@@ -8215,6 +8220,12 @@ body {
 .my-table .btn.my-tbl-btn-delete:hover {
   background-color: #fb948b;
   color: #fff;
+}
+.my-td-ellipsis div {
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 /* Pagination - all views
 -------------------------------------------------- */

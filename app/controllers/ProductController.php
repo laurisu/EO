@@ -5,7 +5,7 @@ class ProductController extends BaseController {
     public function getProductsList() {
 
         return View::make('pages.products.list')
-                        ->with('products', Product::orderBy('purchase_price', 'ASC')->paginate(7));
+                        ->with('products', Product::orderBy('purchase_price', 'ASC')->paginate(30));
     }
 
     public function editProduct($id) {
