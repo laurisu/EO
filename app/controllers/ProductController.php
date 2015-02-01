@@ -5,7 +5,7 @@ class ProductController extends BaseController {
     public function getProductsList() {
 
         return View::make('pages.products.list')
-                        ->with('products', Product::orderBy('purchase_price', 'ASC')->paginate(30));
+                        ->with('products', Product::orderBy('product_name', 'ASC')->paginate(30));
     }
 
     public function editProduct($id) {
@@ -27,10 +27,10 @@ class ProductController extends BaseController {
     public function putProductChanges($id) {
 //        print_r($id);exit();
         $validator = Validator::make(Input::all(), array(
-                    'product_name' => 'required|max:60|unique:products',
+                    'product_name' => 'required|max:255',
                     'description' => 'required',
-                    'purchase_price' => 'required',
-                    'retail_price' => 'required'
+                    'purchase_price' => 'required|numeric',
+                    'retail_price' => 'required|numeric'
         ));
 
         if ($validator->fails()) {

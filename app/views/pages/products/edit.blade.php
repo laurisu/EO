@@ -23,8 +23,8 @@
                     class="form-control" id="inputName"
                     placeholder="Product name" 
                     value="{{ $product->product_name }}" autofocus>
-                @if($errors->has('email'))
-                {{ $errors->first('product') }}
+                @if($errors->has('product_name'))
+                {{ $errors->first('product_name') }}
                 @endif  
             </div>
         </div>
@@ -36,7 +36,7 @@
                     name="description" rows="5"
                     class="form-control" id="description"
                     placeholder="Description">{{ $product->description }}</textarea>
-                @if($errors->has('email'))
+                @if($errors->has('description'))
                 {{ $errors->first('description') }}
                 @endif  
             </div>
@@ -50,7 +50,7 @@
                     class="form-control" id="purchase_price"
                     placeholder="Purchase price" 
                     value="{{ $product->purchase_price }}">
-                @if($errors->has('email'))
+                @if($errors->has('purchase_price'))
                 {{ $errors->first('purchase_price') }}
                 @endif  
             </div>
@@ -64,7 +64,7 @@
                     class="form-control" id="retail_price"
                     placeholder="Retail_price" 
                     value="{{ $product->retail_price }}">
-                @if($errors->has('email'))
+                @if($errors->has('retail_price'))
                 {{ $errors->first('retail_price') }}
                 @endif  
             </div>
