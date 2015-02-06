@@ -159,6 +159,7 @@ body {
 
     .btn {
         /*background-color: #fff;*/
+        color: #fff;
         transition: background 0.1s ease-in-out;
         -webkit-transition: background 0.1s ease-in-out;
         -moz-transition: background 0.1s ease-in-out;
@@ -168,22 +169,23 @@ body {
 
 
         &.my-btn-back {
-            background-color: lighten(@my-orange, 25%);
-            border: 1px solid @my-orange
+            /*background-color: lighten(@my-orange, 25%);*/
+            background-color: @my-orange;
+            border: 1px solid darken(@my-orange, 20%);
         }
-        &.my-btn-back:hover {background-color: @my-orange; color: #fff;}      
+        &.my-btn-back:hover {background-color: darken(@my-orange, 20%);}      
 
         &.my-btn-save {
-            background-color: lighten(@my-blue, 30%);
-            border: 1px solid @my-blue
+            background-color: @my-blue;
+            border: 1px solid darken(@my-blue, 20%);
         }
-        &.my-btn-save:hover {background-color: @my-blue; color: #fff;}
+        &.my-btn-save:hover {background-color: darken(@my-blue, 20%);}
 
         &.my-btn-delete {
-            background-color: lighten(@my-red, 15%);
-            border: 1px solid @my-red
+            background-color: @my-red;
+            border: 1px solid darken(@my-red, 20%);
         }
-        &.my-btn-delete:hover {background-color: @my-red; color: #fff;}
+        &.my-btn-delete:hover {background-color: darken(@my-red, 20%);}
     }
 }
 
@@ -198,15 +200,18 @@ body {
         font-weight: bold;
     }
     .btn {
-        background-color: #fff;
+        color: #fff;
         transition: background 0.1s ease-in-out;
         -webkit-transition: background 0.1s ease-in-out;
         -moz-transition: background 0.1s ease-in-out;
         -ms-transition: background 0.1s ease-in-out;
         -o-transition: background 0.1s ease-in-out;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        &.my-btn-create {border: 1px solid @my-green; float: right}
-        &.my-btn-create:hover {background-color: @my-green; color: #fff;}
+        
+        &.my-btn-create {background-color: @my-green; float: right}
+        &:hover {
+            background-color: @my-black; color: @my-orange;
+        }
     }
 }
 .my-table {
@@ -224,7 +229,7 @@ body {
 
     }
     .btn {
-        background-color: #fff;
+        color: #fff;
         transition: background 0.1s ease-in-out;
         -webkit-transition: background 0.1s ease-in-out;
         -moz-transition: background 0.1s ease-in-out;
@@ -232,17 +237,16 @@ body {
         -o-transition: background 0.1s ease-in-out;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 
-        &.my-tbl-btn-view {border: 1px solid @my-orange}
-        &.my-tbl-btn-view:hover {background-color: @my-orange; color: #fff;}
-
-        &.my-tbl-btn-offer {border: 1px solid @my-green}
-        &.my-tbl-btn-offer:hover {background-color: @my-green; color: #fff;}
-
-        &.my-tbl-btn-edit {border: 1px solid @my-blue}
-        &.my-tbl-btn-edit:hover {background-color: @my-blue; color: #fff;}
-
-        &.my-tbl-btn-delete {border: 1px solid @my-red}
-        &.my-tbl-btn-delete:hover {background-color: @my-red; color: #fff;}
+        &.my-tbl-btn-view {background-color: @my-orange;}
+        &.my-tbl-btn-offer {background-color: @my-green;}
+        &.my-tbl-btn-edit {background-color: @my-blue;}
+        &.my-tbl-btn-delete {background-color: @my-red;}
+        
+        &:hover {
+            /*background-color: darken(@color, 20%); color: @my-orange;*/
+            background-color: @my-black; color: @my-orange;
+            /*background-color: #fff; color: #000; border: solid 1px #000;*/
+        }
     }
 }
 

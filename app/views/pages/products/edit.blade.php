@@ -12,7 +12,7 @@
     <div class="col-sm-12 my-form-headding">
         <h4>Product editor</h4>
     </div>
-    
+
     <form class="form-horizontal" action="{{ URL::route('product-update', array($product->id)) }}" method="post">
 
         <div class="form-group">
@@ -72,15 +72,32 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-lg my-btn-save" type="submit">Save</button>
-                <button class="btn btn-lg my-btn-delete" type="submit">Delete</button>
-                <button class="btn btn-lg my-btn-back">{{ HTML::linkRoute('product-list', 'Products list') }}</button>
+                <button class="btn btn-lg my-btn-save" type="submit">
+                    <i class="fa fa-floppy-o"></i> Save
+                </button>
+                <button class="btn btn-lg my-btn-back">
+                    <i class="fa fa-list-alt"></i> {{ HTML::linkRoute('product-list', 'Products list') }}
+                </button>
                 {{ Form::token() }}
-                <form method="POST" action="" accept-charset="UTF-8">
-                    <button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmDelete" data-title="Delete User" data-message="Are you sure you want to delete this user ?">
-                        <i class="glyphicon glyphicon-trash"></i> Delete
+                
+                <form method="POST" action="">
+                    <button class="btn btn-lg my-btn-delete" type="submit" 
+                            data-toggle="modal" 
+                            data-target="#confirmDelete" 
+                            data-title="Delete Product">
+                        <i class="fa fa-trash-o"></i> Delete
                     </button>
                 </form>
+
+                <div id="confirmDelete" class="modal hide fade">
+                    <div class="modal-body">
+                        Are you sure you want to delete product - {{ $product->product_name }}?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                    </div>
+                </div>
                 
             </div>
         </div>

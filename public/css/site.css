@@ -8113,6 +8113,7 @@ body {
 }
 .my-crud-form .btn {
   /*background-color: #fff;*/
+  color: #fff;
   transition: background 0.1s ease-in-out;
   -webkit-transition: background 0.1s ease-in-out;
   -moz-transition: background 0.1s ease-in-out;
@@ -8121,28 +8122,26 @@ body {
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 .my-crud-form .btn.my-btn-back {
-  background-color: #fce7c8;
-  border: 1px solid #f4b350;
+  /*background-color: lighten(@my-orange, 25%);*/
+  background-color: #f4b350;
+  border: 1px solid #d1830d;
 }
 .my-crud-form .btn.my-btn-back:hover {
-  background-color: #f4b350;
-  color: #fff;
+  background-color: #d1830d;
 }
 .my-crud-form .btn.my-btn-save {
-  background-color: #c0dbed;
-  border: 1px solid #4897cc;
+  background-color: #4897cc;
+  border: 1px solid #266188;
 }
 .my-crud-form .btn.my-btn-save:hover {
-  background-color: #4897cc;
-  color: #fff;
+  background-color: #266188;
 }
 .my-crud-form .btn.my-btn-delete {
-  background-color: #fed8d5;
-  border: 1px solid #fb948b;
+  background-color: #fb948b;
+  border: 1px solid #f83928;
 }
 .my-crud-form .btn.my-btn-delete:hover {
-  background-color: #fb948b;
-  color: #fff;
+  background-color: #f83928;
 }
 /* TABLES - all views
 -------------------------------------------------- */
@@ -8156,7 +8155,7 @@ body {
   font-weight: bold;
 }
 .my-table-headding .btn {
-  background-color: #fff;
+  color: #fff;
   transition: background 0.1s ease-in-out;
   -webkit-transition: background 0.1s ease-in-out;
   -moz-transition: background 0.1s ease-in-out;
@@ -8165,12 +8164,12 @@ body {
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 .my-table-headding .btn.my-btn-create {
-  border: 1px solid #2f9f9e;
+  background-color: #2f9f9e;
   float: right;
 }
-.my-table-headding .btn.my-btn-create:hover {
-  background-color: #2f9f9e;
-  color: #fff;
+.my-table-headding .btn:hover {
+  background-color: #222222;
+  color: #f4b350;
 }
 .my-table thead > tr > th {
   vertical-align: top;
@@ -8185,7 +8184,7 @@ body {
   background-color: none;
 }
 .my-table .btn {
-  background-color: #fff;
+  color: #fff;
   transition: background 0.1s ease-in-out;
   -webkit-transition: background 0.1s ease-in-out;
   -moz-transition: background 0.1s ease-in-out;
@@ -8194,32 +8193,22 @@ body {
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 .my-table .btn.my-tbl-btn-view {
-  border: 1px solid #f4b350;
-}
-.my-table .btn.my-tbl-btn-view:hover {
   background-color: #f4b350;
-  color: #fff;
 }
 .my-table .btn.my-tbl-btn-offer {
-  border: 1px solid #2f9f9e;
-}
-.my-table .btn.my-tbl-btn-offer:hover {
   background-color: #2f9f9e;
-  color: #fff;
 }
 .my-table .btn.my-tbl-btn-edit {
-  border: 1px solid #4897cc;
-}
-.my-table .btn.my-tbl-btn-edit:hover {
   background-color: #4897cc;
-  color: #fff;
 }
 .my-table .btn.my-tbl-btn-delete {
-  border: 1px solid #fb948b;
-}
-.my-table .btn.my-tbl-btn-delete:hover {
   background-color: #fb948b;
-  color: #fff;
+}
+.my-table .btn:hover {
+  /*background-color: darken(@color, 20%); color: @my-orange;*/
+  background-color: #222222;
+  color: #f4b350;
+  /*background-color: #fff; color: #000; border: solid 1px #000;*/
 }
 .my-td-ellipsis div {
   width: 300px;

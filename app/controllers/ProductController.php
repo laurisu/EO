@@ -27,7 +27,7 @@ class ProductController extends BaseController {
     public function putProductChanges($id) {
 //        print_r($id);exit();
         $validator = Validator::make(Input::all(), array(
-                    'product_name' => 'required|max:255',
+                    'product_name' => 'required|max:255|unique:products,product_name,'.$id,
                     'description' => 'required',
                     'purchase_price' => 'required|numeric',
                     'retail_price' => 'required|numeric'
@@ -50,7 +50,9 @@ class ProductController extends BaseController {
                             ->with('alert-class', 'alert-success');
         }
     }
+    
 
+    
     public function getProductCreator() {
         return View::make('pages.products.create');
     }

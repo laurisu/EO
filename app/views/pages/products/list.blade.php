@@ -37,9 +37,9 @@
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
             <td class="col-md-2"><i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
             <td class="col-md-2">
-                <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal">View</button>
+                <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</button>
                 <button class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
-                <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
+                <button class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
             </td>
         </tr>
         @endforeach

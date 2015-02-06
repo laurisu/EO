@@ -73,9 +73,9 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-lg my-btn-save" type="submit">Save</button>
+                <button class="btn btn-lg my-btn-save" type="submit"><i class="fa fa-floppy-o"></i> Save</button>
                 {{ Form::token() }}
-                <button class="btn btn-lg my-btn-back">{{ HTML::linkRoute('product-list', 'Products list') }}</button>
+                <button class="btn btn-lg my-btn-back"><i class="fa fa-list-alt"></i> {{ HTML::linkRoute('product-list', 'Products list') }}</button>
             </div>
         </div>
 
