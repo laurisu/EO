@@ -80,14 +80,10 @@
                 </button>
                 {{ Form::token() }}
                 
-                <form method="POST" action="">
-                    <button class="btn btn-lg my-btn-delete" type="submit" 
-                            data-toggle="modal" 
-                            data-target="#confirmDelete" 
-                            data-title="Delete Product">
+                    <a href="{{ Url::route('product-delete', array('id' => $product->id)) }}" class="btn btn-lg my-btn-delete" type="submit" 
+                       >
                         <i class="fa fa-trash-o"></i> Delete
-                    </button>
-                </form>
+                    </a>
 
                 <div id="confirmDelete" class="modal hide fade">
                     <div class="modal-body">

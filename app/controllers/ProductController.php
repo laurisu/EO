@@ -5,7 +5,15 @@ class ProductController extends BaseController {
     public function getProductsList() {
 
         return View::make('pages.products.list')
-                        ->with('products', Product::orderBy('product_name', 'ASC')->paginate(30));
+                        ->with('products', Product::orderBy('product_name', 'ASC')->paginate(200));
+    }
+    
+    public function deleteProduct($id) {
+        
+        $product = Product::find($id);
+        $product->delete();
+        
+        return Redirect::route('product-list');
     }
 
     public function editProduct($id) {

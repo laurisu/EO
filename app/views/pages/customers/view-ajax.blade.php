@@ -3,13 +3,13 @@
         <span aria-hidden="true">&times;</span>
     </button>
     <h4 class="modal-title" id="myModalLabel">
-        <b>{{ $customer->customer }}</b>
+        <b>{{ $customer->customer }}</b>s
     </h4>
 </div>
 <div class="modal-body">
 
     <dl class="dl-horizontal">
-        <dt>Coffee</dt>
+        <dt>Contact person</dt>
         <dd>{{ $customer->contact_person }}</dd>
         <dt>Mobile</dt>
         <dd>{{ $customer->mobile }}</dd>

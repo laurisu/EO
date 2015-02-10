@@ -43,6 +43,7 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/products', array('as' => 'product-list', 'uses' => 'ProductController@getProductsList'));
     Route::get('/products/create-product', array('as' => 'product-create', 'uses' => 'ProductController@getProductCreator'));
     Route::get('/products/view/{id}', array('as' => 'product-view', 'uses' => 'ProductController@viewProduct'));
+    Route::get('/products/delete/{id}', array('as' => 'product-delete', 'uses' => 'ProductController@deleteProduct'));
     Route::get('/products/edit-product/{id}', array('as' => 'product-edit', 'uses' => 'ProductController@editProduct'));
 
     /*
