@@ -13,9 +13,11 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'Admin', 
-                   'name' => 'Admin', 
-                   'surname' => 'Adminovič', 
-                   'email' => 'VincentVega@inbox.lv', 
+                   'name' => 'John', 
+                   'surname' => 'Malkovič', 
+                   'job_title' => 'Sales Manager',
+                   'phone' => '+37167000001', 
+                   'email' => 'admin@eo.zz', 
                    'password' => Hash::make('123456'),
                    'role' => '2', 
                    'active' => '1' 
@@ -23,9 +25,11 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'User', 
-                   'name' => 'User', 
-                   'surname' => 'Userovič',
-                   'email' => 'VincentVega@inbox.lv',  
+                   'name' => 'Bruce', 
+                   'surname' => 'Almighty',
+                   'job_title' => 'Sales Representative', 
+                   'phone' => '+37167000002', 
+                   'email' => 'user1@eo.zz',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
                    'active' => '1' 

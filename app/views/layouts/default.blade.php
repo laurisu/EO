@@ -52,6 +52,7 @@
         <!-- Scripts are placed here -->
         <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/plugins/bootstrap-filestyle.min.js') }}" type="text/javascript"> </script>
         <script src="{{ asset('js/site.js') }}" type="text/javascript"></script>
 
     </body>    
