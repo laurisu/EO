@@ -14,13 +14,30 @@ $(function () {
         });
     });
 
-    $('#filter').keyup(function () {
+    $('.js-ajax-search').on('submit', function (event) {
+        event.preventDefault();
 
-        var rex = new RegExp($(this).val(), 'i');
-        $('.searchable tr').hide();
-        $('.searchable tr').filter(function () {
-            return rex.test($(this).text());
-        }).show();
-
+        $.ajax({
+            url: $(this).attr("action"), // paņem linku no formas attr action un sūta uz to formas datus 
+            type: $(this).attr("method"), // paņem metodi no formas
+            data: $(this).serializeArray(), // sagatavo fromas datus sūtīšanai ar AJAX
+            beforeSend: function () {
+                $(".js-ajax-products").html('<div class="my-loader-container"><div class="my-loader"></div></div>');
+                $(".js-ajax-pages").html('');
+            },
+            success: function (result) {
+                $(".js-ajax-products").html($(result).find('.js-products').html());
+                $(".js-ajax-pages").html($(result).find('.js-pages').html());
+            }
+        });
     });
+
+   $(function() {
+      $('.table-responsive').responsiveTable({
+            pattern: 'priority-columns',
+            stickyTableHeader: false,
+            addFocusBtn: false
+      });
+   });
+    
 });

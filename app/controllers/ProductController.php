@@ -3,9 +3,39 @@
 class ProductController extends BaseController {
 
     public function getProductsList() {
-
+        
+        $sortName = Request::get('sort');
+        $sortDirrection = Request::get('order');
+        $search = Request::get('search');
+        $products = DB::table('products');
+        
+        switch ($sortName) {
+            case 'id':
+                $sortName = "id";
+                break;
+            default:
+                $sortName = "product_name";
+                break;
+        }
+        
+        if ($sortDirrection == "DESC") {
+            $sortDirrection = 'DESC';
+        } else {
+            $sortDirrection = 'ASC';
+        }
+        
+        if ($search) {
+            $products->where('product_name', 'LIKE',  '%'.$search.'%')
+                ->orWhere('description', 'LIKE',  '%'.$search.'%')
+                ->orWhere('id', 'LIKE',  '%'.$search.'%');
+        }
+        
+        if (Request::ajax()) {
+            return View::make('pages.products.list-ajax')
+                        ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(15));
+        }
         return View::make('pages.products.list')
-                        ->with('products', Product::orderBy('product_name', 'ASC')->paginate(200));
+                        ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(15));
     }
     
     public function deleteProduct($id) {

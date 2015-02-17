@@ -28,10 +28,13 @@
     <div class="well my-well">
         <div class="container my-well-container">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group"> 
-                    <span class="input-group-addon">Filter</span>
-                    <input id="filter" type="text" class="form-control" placeholder="Type here...">
-                </div>
+                <form class="js-ajax-search" name="" action="{{ URL::route('product-list') }}" method="GET">
+                    <div class="input-group"> 
+                        <span class="input-group-addon">Filter</span>
+                        <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->
+                        <input type="text" name="search" class="form-control" placeholder="Type here...">
+                    </div>
+                </form>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <button class="btn btn-sm my-btn-create">{{ HTML::linkRoute('product-create', 'Add product') }}</button>
@@ -40,47 +43,46 @@
     </div>
 </div>
 
-<table class="table table-hover my-table">
+<div class="table-responsive" data-pattern="priority-columns">
+    <table class="table table-small-font table-hover my-table">
 
-    <caption>Products list</caption>
-    <thead>
-        <tr>
-            <th>name</th>
-            <th class="hidden-sm hidden-xs">description</th>
-            <th class="hidden-sm hidden-xs">purchase price</th>
-            <th>retail price</th>
-            <th>discount</th>
-            <th>profit</th>
-            <th>offer price</th>
-            <th>options</th>
-        </tr>
-    </thead>
-    <tbody class="searchable">
+        <caption>Products list</caption>
+        <thead>
+            <tr>
+                <th data-priority="5">#</th>
+                <th data-priority="1">name</th>
+                <th data-priority="6">description</th>
+                <th data-priority="5">purchase price</th>
+                <th data-priority="3">retail price</th>
+                <th data-priority="5">discount</th>
+                <th data-priority="5">profit</th>
+                <th data-priority="1">offer price</th>
+                <th data-priority="1">options</th>
+            </tr>
+        </thead>
+        <tbody class="js-ajax-products">
 
-        @foreach($products as $product)
-        <tr>
-            <td class="col-md-2">{{ $product->product_name }}</td>
-            <td class="col-md-3 hidden-sm hidden-xs my-td-ellipsis" style="">
-                <div>{{ $product->description }}</div></td>
-            <td class="col-md-1 hidden-sm hidden-xs">
-                <i class="fa fa-eur"></i> {{ $product->purchase_price }}</td>
-            <td class="col-md-1">
-                <i class="fa fa-eur"></i> {{ $product->retail_price }}</td>
-            <td class="col-md-1">
-                20 %</td>
-            <td class="col-md-1">
-                <i class="fa fa-eur"></i> </td>
-            <td class="col-md-1">
-                <i class="fa fa-eur"></i> </td>
-            <td class="col-md-2">
-                <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</button>
-                <button class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
-                <button class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button></td>
-        </tr>
-        @endforeach
+            @foreach($products as $product)
+            <tr>
+                <td>{{ $product->id }}</td>
+                <td class="col-md-2">{{ $product->product_name }}</td>
+                <td class="my-td-ellipsis" style=""><div>{{ $product->description }}</div></td>
+                <td>{{ $product->purchase_price }}</td>
+                <td>{{ $product->retail_price }}</td>
+                <td>20 %</td>
+                <td><i class="fa fa-eur"></i> </td>
+                <td><i class="fa fa-eur"></i> </td>
+                <td>
+                    <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view open-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</button>
+                    <button type="button" class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
+                    <button type="button" class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', 'Edit', array($product->id)) }}</button>
+                </td>
+            </tr>
+            @endforeach
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -102,7 +104,7 @@
 @stop
 
 @section('pagination')
-<div>
+<div class="js-products-pagination js-ajax-pages">
     {{ $products->links() }}
 </div>
 @stop

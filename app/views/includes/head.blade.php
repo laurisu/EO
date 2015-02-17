@@ -20,3 +20,4 @@
 
 
 <link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('assets/RWD-Table-Patterns/dist/css/rwd-table.css') }}" rel="stylesheet" type="text/css"/>
