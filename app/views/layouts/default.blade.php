@@ -29,12 +29,16 @@
         
         @if(Auth::check())
             <!--Container--> 
-            <div class="container my-main-container">
+            <div class="container-fluid my-max-width my-main-container">
 
                 <!-- Content -->
-                @yield('content') 
+                @yield('content')
+                
+                <!-- Paginatin of tables -->
+                <div class="text-center">
                 @yield('pagination')
-
+                </div>
+                
             </div>
         @else
             <!--Container--> 

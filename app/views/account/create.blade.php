@@ -1,5 +1,10 @@
 @extends('layouts.default')
 
+@section('title')
+@parent
+:: Create account
+@stop
+
 @section('content')
 <div class="my-crud-form">
 
@@ -7,7 +12,7 @@
         <h4>Create account</h4>
     </div>
 
-    <form class="form-horizontal" action="{{ URL::route('account-create-post') }}" method="post">
+    <form class="form-horizontal" action="{{ URL::route('users-list') }}" method="post">
 
         <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Name</label>
@@ -16,7 +21,7 @@
                     type="text" name="name" 
                     class="form-control" id="inputName"
                     placeholder="Name" 
-                    {{ (Input::old('name')) ? ' value="' . e(Input::old('name')) . '"' : '' }}>
+                    {{ (Input::old('name')) ? ' value="' . e(Input::old('name')) . '"' : '' }} autofocus>
 
                 @if($errors->has('name'))
                 {{ $errors->first('name') }}
@@ -57,13 +62,28 @@
         </div>
 
         <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">Email</label>
+            <label for="userPhone" class="col-sm-2 control-label">Phone</label>
             <div class="col-sm-4">
                 <input 
-                    type="text" name="email" 
-                    class="form-control" id="inputName"
-                    placeholder="Email address"
-                    {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : '' }} autofocus>
+                    type="text" name="phone" 
+                    class="form-control" id="userPhone"
+                    placeholder="Phone number"
+                    {{ (Input::old('phone')) ? ' value="' . e(Input::old('phone')) . '"' : '' }}>
+
+                @if($errors->has('phone'))
+                {{ $errors->first('phone') }}
+                @endif  
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="userEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-4">
+                <input 
+                    type="email" name="email" 
+                    class="form-control" id="userEmail"
+                    placeholder="Email"
+                    {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : '' }}>
 
                 @if($errors->has('email'))
                 {{ $errors->first('email') }}
@@ -75,7 +95,7 @@
             <label for="jobTitle" class="col-sm-2 control-label">Job title</label>
             <div class="col-sm-4">
                 <input 
-                    type="text" name="title" 
+                    type="text" name="job_title" 
                     class="form-control" id="jobTitle"
                     placeholder="Title"
                     {{ (Input::old('job_title')) ? ' value="' . e(Input::old('job_title')) . '"' : '' }}>
@@ -123,9 +143,9 @@
                     data-buttonText="Choose file"
                     data-buttonName="btn-primary">
 
-                @if($errors->has('role'))
+<!--                @if($errors->has('role'))
                 {{ $errors->first('role') }}
-                @endif
+                @endif-->
             </div>
         </div>
 

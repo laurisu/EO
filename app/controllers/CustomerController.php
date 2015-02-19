@@ -21,4 +21,54 @@ class CustomerController extends BaseController {
         
     }
     
+    public function editCustomer($id) {
+
+        return View::make('pages.customers.edit')
+                        ->with('customer', Customer::find($id));
+    }
+    
+    public function putCustomerChanges($id) {
+//        print_r($id);exit();
+        $validator = Validator::make(Input::all(), array(
+                    'customer'          => 'required|max:255|unique:customers,customer,'.$id,
+                    'contact_person'    => 'required',
+                    'email'             => 'required|email',
+                    'phone'             => 'required',
+                    'mobile'            => 'required',
+                    'web_page'          => 'required',
+                    'address'           => 'required'
+        ));
+
+        if ($validator->fails()) {
+//            print_r($validator->messages());exit();
+            return Redirect::route('customer-edit', $id)
+                            ->withErrors($validator);
+        } else {
+            $customer = Customer::find($id);
+            $customer->customer         = Input::get('customer');
+            $customer->contact_person   = Input::get('contact_person');
+            $customer->email            = Input::get('email');
+            $customer->phone            = Input::get('phone');
+            $customer->mobile           = Input::get('mobile');
+            $customer->web_page         = Input::get('web_page');
+            $customer->address          = Input::get('address');
+            $customer->update();
+
+            return Redirect::route('customer-list')
+                            ->with('global', 'Information about customer <b>' . $customer->customer . '</b> updated succesfully')
+                            ->with('alert-class', 'alert-success');
+        }
+    }
+    
+    public function deleteCustomer($id) {
+
+        $customer = Customer::find($id);
+        $customer->delete();
+
+        return Redirect::route('customer-list')
+                        ->with('global', 'Customer <b>' . $customer->customer . '</b> has been <b>DELETED</b> succesfully')
+                        ->with('alert-class', 'alert-success');
+    }
+
+    
 }

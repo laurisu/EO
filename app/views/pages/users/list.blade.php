@@ -1,5 +1,10 @@
 @extends('layouts.default')
 
+@section('title')
+@parent
+:: Users
+@stop
+
 @section('content')
 
 <a href="{{ URL::route('account-create') }}">Crate user</a>

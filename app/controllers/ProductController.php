@@ -3,12 +3,12 @@
 class ProductController extends BaseController {
 
     public function getProductsList() {
-        
+
         $sortName = Request::get('sort');
         $sortDirrection = Request::get('order');
         $search = Request::get('search');
         $products = DB::table('products');
-        
+
         switch ($sortName) {
             case 'id':
                 $sortName = "id";
@@ -17,33 +17,35 @@ class ProductController extends BaseController {
                 $sortName = "product_name";
                 break;
         }
-        
+
         if ($sortDirrection == "DESC") {
             $sortDirrection = 'DESC';
         } else {
             $sortDirrection = 'ASC';
         }
-        
+
         if ($search) {
-            $products->where('product_name', 'LIKE',  '%'.$search.'%')
-                ->orWhere('description', 'LIKE',  '%'.$search.'%')
-                ->orWhere('id', 'LIKE',  '%'.$search.'%');
+            $products->where('product_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('description', 'LIKE', '%' . $search . '%')
+                    ->orWhere('id', 'LIKE', '%' . $search . '%');
         }
-        
+
         if (Request::ajax()) {
             return View::make('pages.products.list-ajax')
-                        ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(15));
+                            ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(15));
         }
         return View::make('pages.products.list')
                         ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(15));
     }
-    
+
     public function deleteProduct($id) {
-        
+
         $product = Product::find($id);
         $product->delete();
-        
-        return Redirect::route('product-list');
+
+        return Redirect::route('product-list')
+                        ->with('global', 'Product <b>' . $product->product_name . '</b> has been <b>DELETED</b> succesfully')
+                        ->with('alert-class', 'alert-success');
     }
 
     public function editProduct($id) {
@@ -65,10 +67,10 @@ class ProductController extends BaseController {
     public function putProductChanges($id) {
 //        print_r($id);exit();
         $validator = Validator::make(Input::all(), array(
-                    'product_name' => 'required|max:255|unique:products,product_name,'.$id,
-                    'description' => 'required',
-                    'purchase_price' => 'required|numeric',
-                    'retail_price' => 'required|numeric'
+                    'product_name'      => 'required|max:255|unique:products,product_name,' . $id,
+                    'description'       => 'required',
+                    'purchase_price'    => 'required|numeric',
+                    'retail_price'      => 'required|numeric'
         ));
 
         if ($validator->fails()) {
@@ -77,10 +79,10 @@ class ProductController extends BaseController {
                             ->withErrors($validator);
         } else {
             $product = Product::find($id);
-            $product->product_name = Input::get('product_name');
-            $product->description = Input::get('description');
-            $product->purchase_price = Input::get('purchase_price');
-            $product->retail_price = Input::get('retail_price');
+            $product->product_name      = Input::get('product_name');
+            $product->description       = Input::get('description');
+            $product->purchase_price    = Input::get('purchase_price');
+            $product->retail_price      = Input::get('retail_price');
             $product->update();
 
             return Redirect::route('product-list')
@@ -88,9 +90,7 @@ class ProductController extends BaseController {
                             ->with('alert-class', 'alert-success');
         }
     }
-    
 
-    
     public function getProductCreator() {
         return View::make('pages.products.create');
     }
@@ -99,10 +99,10 @@ class ProductController extends BaseController {
     public function postCreatedProduct() {
 
         $validator = Validator::make(Input::all(), array(
-                    'product_name' => 'required|max:60|unique:products',
-                    'description' => 'required',
-                    'purchase_price' => 'required',
-                    'retail_price' => 'required'
+                    'product_name'      => 'required|max:60|unique:products',
+                    'description'       => 'required',
+                    'purchase_price'    => 'required',
+                    'retail_price'      => 'required'
         ));
 
         if ($validator->fails()) {
@@ -111,16 +111,16 @@ class ProductController extends BaseController {
                             ->withInput(); // Returns previously typed input values
         } else {
             // Add new product to DB
-            $product_name = Input::get('product_name');
-            $description = Input::get('description');
-            $purchase_price = Input::get('purchase_price');
-            $retail_price = Input::get('retail_price');
+            $product_name       = Input::get('product_name');
+            $description        = Input::get('description');
+            $purchase_price     = Input::get('purchase_price');
+            $retail_price       = Input::get('retail_price');
 
             $create = Product::create(array(
-                        'product_name' => $product_name,
-                        'description' => $description,
-                        'purchase_price' => $purchase_price,
-                        'retail_price' => $retail_price
+                        'product_name'      => $product_name,
+                        'description'       => $description,
+                        'purchase_price'    => $purchase_price,
+                        'retail_price'      => $retail_price
             ));
 
             if ($create) {

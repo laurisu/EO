@@ -14,47 +14,39 @@
     <!--<div class="col-sm-6"><button class="btn btn-sm my-btn-create">{{ HTML::linkRoute('product-create', 'Add product') }}</button></div>-->  
 </div>
 
-<table class="table table-hover my-table">
+<div class="table-responsive" data-pattern="priority-columns">
+    <table class="table table-small-font table-hover my-table">
 
-    <caption>Customers list</caption>
-    <thead>
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Mobile</th>
-            <th>Office</th>
-            <th>Email</th>
-            <th>Options</th>
-        </tr>
-    </thead>
-    <tbody>
+        <caption>Customers list</caption>
+        <thead>
+            <tr>
+                <th data-priority="1">Company</th>
+                <th data-priority="1">Contact</th>
+                <th data-priority="2">Mobile</th>
+                <th data-priority="4">Office</th>
+                <th data-priority="3">Email</th>
+                <th data-priority="1">Options</th>
+            </tr>
+        </thead>
+        <tbody>
 
-        @foreach($customers as $customer)
-        <tr>
-            <td class="col-md-2">
-                {{ $customer->customer }}
-            </td>
-            <td class="col-md-2" style="">
-                {{ $customer->contact_person }}         
-            </td>
-            <td class="col-md-2">
-                {{ $customer->mobile }}
-            </td>
-            <td class="col-md-2">
-                {{ $customer->phone }}
-            </td>
-            <td class="col-md-2">
-                {{ $customer->email }}
-            </td>
-            <td class="col-md-2">
-                <button type="button" href="{{ route('customer-view', array($customer->id)) }}" class="btn btn-xs my-tbl-btn-view open-customer-view"  data-target="#myModal">View</button>
-                <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('product-edit', 'Edit', array($customer->id)) }}</button>
-            </td>
-        </tr>
-        @endforeach
+            @foreach($customers as $customer)
+            <tr>
+                <td>{{ $customer->customer }}</td>
+                <td>{{ $customer->contact_person }}</td>
+                <td>{{ $customer->mobile }}</td>
+                <td>{{ $customer->phone }}</td>
+                <td>{{ $customer->email }}</td>
+                <td>
+                    <button type="button" href="{{ route('customer-view', array($customer->id)) }}" class="btn btn-xs my-tbl-btn-view open-customer-view"  data-target="#myModal">View</button>
+                    <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('customer-edit', 'Edit', array($customer->id)) }}</button>
+                </td>
+            </tr>
+            @endforeach
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

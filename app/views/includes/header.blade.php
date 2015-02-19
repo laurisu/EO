@@ -16,7 +16,7 @@
             @endif
         </div>
         <!--        Everything you want hidden at 940px or less, place within here -->
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse my-collapse">
             <ul class="nav navbar-nav navbar-right">
 
                 @if(Auth::check())
