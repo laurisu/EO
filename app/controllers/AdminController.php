@@ -55,7 +55,7 @@ class AdminController extends BaseController {
             ));
 
             if ($user) {
-                return Redirect::route('home')
+                return Redirect::route('users-list')
                     ->with('global', 'The <b>' . $user->name . ' ' . $user->surname . '</b> account has been created.')
                     ->with('alert-class', 'alert-success');
             }

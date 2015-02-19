@@ -12,7 +12,7 @@
         <h4>Create account</h4>
     </div>
 
-    <form class="form-horizontal" action="{{ URL::route('users-list') }}" method="post">
+    <form class="form-horizontal" action="{{ URL::route('account-create-post') }}" method="post">
 
         <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Name</label>
