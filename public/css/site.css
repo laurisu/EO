@@ -8602,14 +8602,14 @@ body {
   background-color: #222222;
   color: #f4b350;
 }
+.table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {
+  white-space: normal;
+}
 .my-table thead > tr > th {
   vertical-align: top;
   text-align: top;
   background-color: #f4b350;
   border-bottom: 1px solid #dddddd;
-}
-.my-table tbody > tr {
-  border: 1px solid #dddddd;
 }
 .my-table tbody > tr > td > button {
   background-color: none;

@@ -20,26 +20,26 @@ class AccountController extends BaseController {
         } else {
 
             $remember = (Input::has('remember-me')) ? true : false;
-            
+
             $auth = Auth::attempt(array(
                         'username' => Input::get('username'),
                         'password' => Input::get('password'),
                         'active' => 1 // User has to be active to sign in
                             ), $remember);
 
-            if ($auth) {       
+            if ($auth) {
                 // Redirect to the intended page
                 return Redirect::intended('/');
             } else {
                 return Redirect::route('sign-in')
-                    ->with('global', 'Username/passwor incorrect, or account not activated!')
-                    ->with('alert-class', 'alert-danger');
+                                ->with('global', 'Username/passwor incorrect, or account not activated!')
+                                ->with('alert-class', 'alert-danger');
             }
         }
 
         return Redirect::route('sign-in')
-            ->with('global', 'There was a problem to sign you in!')
-            ->with('alert-class', 'alert-warning');
+                        ->with('global', 'There was a problem to sign you in!')
+                        ->with('alert-class', 'alert-warning');
     }
 
     public function getSignOut() {
@@ -75,19 +75,19 @@ class AccountController extends BaseController {
 
                 if ($user->save()) {
                     return Redirect::route('home')
-                        ->with('global', 'Your password has been changed!')
-                        ->with('alert-class', 'alert-succes');
+                                    ->with('global', 'Your password has been changed!')
+                                    ->with('alert-class', 'alert-succes');
                 }
             } else {
                 return Redirect::route('change-password')
-                    ->with('global', 'Your old password is incorrect!')
-                    ->with('alert-class', 'alert-warning');
+                                ->with('global', 'Your old password is incorrect!')
+                                ->with('alert-class', 'alert-warning');
             }
         }
 
         return Redirect::route('change-password')
-            ->with('global', 'Your password could not be changed!')
-            ->with('alert-class', 'alert-danger');
+                        ->with('global', 'Your password could not be changed!')
+                        ->with('alert-class', 'alert-danger');
     }
 
     public function getForgotPassword() {
@@ -101,9 +101,9 @@ class AccountController extends BaseController {
 
         if ($validator->fails()) {
             return Redirect::route('forgot-password')
-                    ->withErrors($validator)
-                    ->with('global', 'Provided incorrect email address')
-                    ->with('alert-class', 'alert-warning');
+                            ->withErrors($validator)
+                            ->with('global', 'Provided incorrect email address')
+                            ->with('alert-class', 'alert-warning');
         } else {
             // Change password
             $user = User::where('email', '=', Input::get('email'));
@@ -120,6 +120,7 @@ class AccountController extends BaseController {
                 $user->password_temp = Hash::make($password);
 
                 // If save is succesfull we email them a view
+
                 if ($user->save()) {
 
                     Mail::send('emails.auth.recover', array(
@@ -131,15 +132,19 @@ class AccountController extends BaseController {
                     });
 
                     return Redirect::route('home')
-                        ->with('global', 'We have sent you a new password by email')
-                        ->with('alert-class', 'alert-info');
+                                    ->with('global', 'We have sent you a new password by email')
+                                    ->with('alert-class', 'alert-info');
                 }
+            } else {
+                return Redirect::route('forgot-password')
+                                ->with('global', 'No such email in database')
+                                ->with('alert-class', 'alert-danger');
             }
         }
 
         return Redirect::route('forgot-password')
-            ->with('global', 'Could not request new password')
-            ->with('alert-class', 'alert-danger');
+                        ->with('global', 'Could not request new password')
+                        ->with('alert-class', 'alert-danger');
     }
 
     public function getRecover($code) {
@@ -156,16 +161,16 @@ class AccountController extends BaseController {
             if ($user->save()) {
 
                 return Redirect::route('home')
-                    ->with('global', 'Your account has been recovered and you can sign in with yopur new password.')
-                    ->with('alert-class', 'alert-succes');
+                                ->with('global', 'Your account has been recovered and you can sign in with yopur new password.')
+                                ->with('alert-class', 'alert-succes');
 
                 // Additional functionality here
             }
         }
 
         return Redirect::route('home')
-            ->with('global', 'Could not activate your user account!')
-            ->with('alert-class', 'alert-danger');
+                        ->with('global', 'Could not activate your user account!')
+                        ->with('alert-class', 'alert-danger');
     }
-    
+
 }

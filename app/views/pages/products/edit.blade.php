@@ -80,12 +80,16 @@
                 </button>
                 {{ Form::token() }}
                 
-                    <a href="{{ Url::route('product-delete', array('id' => $product->id)) }}" class="btn btn-lg my-btn-delete" type="submit" 
-                       >
+<!--                <button class="btn btn-lg my-btn-delete" type="submit"
+                        data-toggle="modal" data-target="#confirmDelete" data-title="Delete Product" data-message='Are you sure you want to delete product - {{ $product->product_name }}?'>
+                        <i class="fa fa-trash-o"></i> Delete
+                    </button>-->
+                    
+                    <a href="{{ Url::route('product-delete', array('id' => $product->id)) }}" class="btn btn-lg my-btn-delete">
                         <i class="fa fa-trash-o"></i> Delete
                     </a>
 
-                <div id="confirmDelete" class="modal hide fade">
+<!--                <div id="confirmDelete" class="modal hide fade">
                     <div class="modal-body">
                         Are you sure you want to delete product - {{ $product->product_name }}?
                     </div>
@@ -93,7 +97,7 @@
                         <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
                         <button type="button" data-dismiss="modal" class="btn">Cancel</button>
                     </div>
-                </div>
+                </div>-->
                 
             </div>
         </div>

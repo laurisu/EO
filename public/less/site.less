@@ -278,6 +278,12 @@ body {
 
 }
 
+// Priority isssue after applying responsive table plugin "RWD-Table-Patterns"
+.table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td {
+    &:nth-child(2) {
+            white-space: normal;
+        }
+}
 .my-table {
     thead > tr > th {
         vertical-align: top;
@@ -286,11 +292,9 @@ body {
         border-bottom: 1px solid @my-tr-border-color;
     }
     tbody > tr {
-        border: 1px solid @my-tr-border-color;
         > td > button {
             background-color: none;
         }
-
     }
     .btn {
         color: #fff;

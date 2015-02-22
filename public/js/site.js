@@ -27,17 +27,22 @@ $(function () {
             },
             success: function (result) {
                 $(".js-ajax-products").html($(result).find('.js-products').html());
+                applyResponsiveTable('.table-responsive');
+                
                 $(".js-ajax-pages").html($(result).find('.js-pages').html());
             }
         });
     });
 
-   $(function() {
-      $('.table-responsive').responsiveTable({
-            pattern: 'priority-columns',
-            stickyTableHeader: false,
-            addFocusBtn: false
-      });
-   });
-    
+    applyResponsiveTable('.table-responsive');
+
 });
+
+
+function applyResponsiveTable(selector){
+    $(selector).responsiveTable({
+        pattern: 'priority-columns',
+        stickyTableHeader: false,
+        addFocusBtn: false
+    });
+}

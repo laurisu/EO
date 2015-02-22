@@ -20,8 +20,10 @@
 
 <!-- Dialog show event handler -->
 <script type="text/javascript">
-    
-  $('#confirmDelete').on('show.bs.modal', function (e) {
+    $('.my-btn-delete').on('click', function(e){
+        e.preventDefault();
+    });
+  $('.js-delete-confirm').on('show.bs.modal', function (e) {
       $message = $(e.relatedTarget).attr('data-message');
       $(this).find('.modal-body p').text($message);
       $title = $(e.relatedTarget).attr('data-title');

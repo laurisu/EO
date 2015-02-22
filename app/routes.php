@@ -24,8 +24,8 @@ Route::group(array('before' => 'auth'), function() {
         Route::post('/products/product-update/{id}', array('as' => 'product-update', 'uses' => 'ProductController@putProductChanges'));
         
         /*
-        * Products page (POST)
-        */
+         * Customers page (POST)
+         */
         Route::post('/customers/customer-update/{id}', array('as' => 'customer-update', 'uses' => 'CustomerController@putCustomerChanges'));
         
     });
