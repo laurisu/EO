@@ -36,6 +36,11 @@ $(function () {
 
     applyResponsiveTable('.table-responsive');
 
+    $.slidebars({
+
+
+    });
+    
 });
 
 

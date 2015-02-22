@@ -4,7 +4,8 @@
     @show
 </title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0
+      minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- This row os for Sidebars plugin -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
@@ -19,5 +20,6 @@
 <script src="{{ asset('assets/less/dist/less.min.js') }}" type="text/javascript"></script>-->
 
 
-<link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/RWD-Table-Patterns/dist/css/rwd-table.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('assets/Slidebars/development/slidebars.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
