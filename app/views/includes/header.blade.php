@@ -23,7 +23,7 @@
 
                 <li><a href="{{ URL::route('product-list') }}">Products</a></li>
                 <li><a href="{{ URL::route('customer-list') }}">Customers</a></li>
-                <li><a href="{{ URL::to('/offer') }}">Offer</a></li>
+                <li><a href="{{ URL::route('offers-list') }}">Offers</a></li>
 
                     @if(Auth::user()->role == 2)
 

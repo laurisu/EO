@@ -15,7 +15,7 @@ Route::group(array('before' => 'auth'), function() {
         /*
          * Change password (POST)
          */
-        Route::post('/account/change-password', array('as' => 'change-password-post', 'uses' => 'AccountController@postChangePassword'));
+        Route::post('/account/change-password', array('as' => 'change-password-post', 'uses' => 'UserController@postChangePassword'));
 
         /*
          * Products page (POST)
@@ -33,12 +33,12 @@ Route::group(array('before' => 'auth'), function() {
     /*
      * Change password (GET)
      */
-    Route::get('/account/change-password', array('as' => 'change-password', 'uses' => 'AccountController@getChangePassword'));
+    Route::get('/account/change-password', array('as' => 'change-password', 'uses' => 'UserController@getChangePassword'));
 
     /*
      * Sign out (GET)
      */
-    Route::get('/account/sign-out', array('as' => 'sign-out', 'uses' => 'AccountController@getSignOut'));
+    Route::get('/account/sign-out', array('as' => 'sign-out', 'uses' => 'UserController@getSignOut'));
 
     Route::get('/user/{username}', array('as' => 'user-profile', 'uses' => 'ProfileController@user'));
 
@@ -50,6 +50,7 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/products/view/{id}', array('as' => 'product-view', 'uses' => 'ProductController@viewProduct'));
     Route::get('/products/delete/{id}', array('as' => 'product-delete', 'uses' => 'ProductController@deleteProduct'));
     Route::get('/products/edit-product/{id}', array('as' => 'product-edit', 'uses' => 'ProductController@editProduct'));
+    Route::get('/products/ad_to_offer/{id}', array('as' => 'product-add-to-offer', 'uses' => 'ProductController@addToOffer'));
 
     /*
      * Customers page (GET)
@@ -59,9 +60,10 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/customers/delete/{id}', array('as' => 'customer-delete', 'uses' => 'CustomerController@deleteCustomer'));
     Route::get('/customers/edit-customer/{id}', array('as' => 'customer-edit', 'uses' => 'CustomerController@editCustomer'));
 
-    Route::get('/offer', function() {
-        return View::make('pages/offer');
-    });
+    /*
+     * Customers page (GET)
+     */
+    Route::get('/offers', array('as' => 'offers-list', 'uses' => 'OfferControler@getOfferList'));
 
     /*
      * ADMIN ONLY ROUTES
@@ -110,22 +112,22 @@ Route::group(array('before' => 'guest'), function () {
         /*
          * Sign in (POST)
          */
-        Route::post('/sign-in', array('as' => 'sign-in-post', 'uses' => 'AccountController@postSignIn'));
+        Route::post('/sign-in', array('as' => 'sign-in-post', 'uses' => 'UserController@postSignIn'));
 
         /*
          * Forgot password (POST)
          */
-        Route::post('account/forgot-password', array('as' => 'forgot-password-post', 'uses' => 'AccountController@postForgotPassword'));
+        Route::post('account/forgot-password', array('as' => 'forgot-password-post', 'uses' => 'UserController@postForgotPassword'));
     });
 
     /*
      * Forgot/recover password (GET)
      */
-    Route::get('account/forgot-password', array('as' => 'forgot-password', 'uses' => 'AccountController@getForgotPassword'));
-    Route::get('account/recover/{code}', array('as' => 'password-recover', 'uses' => 'AccountController@getRecover'));
+    Route::get('account/forgot-password', array('as' => 'forgot-password', 'uses' => 'UserController@getForgotPassword'));
+    Route::get('account/recover/{code}', array('as' => 'password-recover', 'uses' => 'UserController@getRecover'));
 
     /*
      * Sign in (GET)
      */
-    Route::get('/sign-in', array('as' => 'sign-in', 'uses' => 'AccountController@getSignIn'));
+    Route::get('/sign-in', array('as' => 'sign-in', 'uses' => 'UserController@getSignIn'));
 });

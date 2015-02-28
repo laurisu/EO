@@ -12,5 +12,9 @@ class Customer extends Eloquent {
         'address'
     );
     protected $table = 'customers';
-
+    
+    public function offers() {
+        $this->hasMany('Offer', 'customer_id');
+    }
+    
 }

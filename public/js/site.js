@@ -33,13 +33,9 @@ $(function () {
             }
         });
     });
-
+    
+    // Responsive tables plugin
     applyResponsiveTable('.table-responsive');
-
-    $.slidebars({
-
-
-    });
     
 });
 

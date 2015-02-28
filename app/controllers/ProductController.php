@@ -130,5 +130,14 @@ class ProductController extends BaseController {
             }
         }
     }
+    
+    
+    // UNFINISHED
+    public function addToOffer($id) {
+        
+        $product = Product::find($id);
+        
+        
+    }
 
 }

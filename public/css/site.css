@@ -8369,10 +8369,6 @@ body {
   min-height: 100%;
   box-sizing: border-box;
 }
-.sb-slidebar {
-  top: 56px;
-  height: 95%;
-}
 /* Bootstrap 3 */
 .btn > a {
   color: inherit;
@@ -8380,9 +8376,6 @@ body {
 }
 .my-max-width {
   max-width: 1170px;
-}
-body.modal-open {
-  margin-right: 0px;
 }
 /* Modal window loader
 ------------------------------------------------------------ */

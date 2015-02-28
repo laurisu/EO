@@ -1,6 +1,6 @@
 <?php
 
-class AccountController extends BaseController {
+class UserController extends BaseController {
 
     public function getSignIn() {
         return View::make('account.signin');

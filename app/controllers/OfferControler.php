@@ -1,6 +1,7 @@
 <?php
 
 class OfferControler extends \BaseController {
+        
 
 	/**
 	 * Display a listing of the resource.
@@ -10,7 +11,16 @@ class OfferControler extends \BaseController {
 	 */
 	public function getOfferList()
 	{
-		//
+            
+                if (Auth::user()->isAdmin()) {
+                    $offers  = Offer::all();
+                } else {
+                    $offers  = Offer::with('author')->where('user_id', Auth::user()->id)->get();
+                }				
+
+                return View::make('pages.offers.list')
+                        ->with('offers', $offers->all());
+                
 	}
 
 	/**
