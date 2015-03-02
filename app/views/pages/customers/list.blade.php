@@ -7,11 +7,15 @@
 
 @section('content')
 
-<div class="row my-table-headding">
-    <div class="col-sm-6">
-        <h4>Customers</h4>
+<div class="my-view-header-wrapper">
+    <div class="row my-view-header">
+        <div class="col-sm-4">
+            <h4>Customers</h4>
+        </div>
+        <div class="col-sm-8 text-right">
+            <!--<button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('account-create', 'Add customer') }}</button>-->
+        </div>  
     </div>
-    <!--<div class="col-sm-6"><button class="btn btn-sm my-btn-create">{{ HTML::linkRoute('product-create', 'Add product') }}</button></div>-->  
 </div>
 
 <div class="table-responsive" data-pattern="priority-columns">

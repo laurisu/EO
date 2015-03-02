@@ -8408,9 +8408,16 @@ body {
 }
 .my-navbar-styles {
   background: #222222;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 .my-navbar-styles .my-collapse {
   background: #222222;
+}
+.my-navbar-brand {
+  padding-bottom: 10px;
+}
+.my-navbar-brand > img {
+  max-height: 100%;
 }
 .footer {
   position: absolute;
@@ -8533,29 +8540,42 @@ body {
 .my-crud-form .btn.my-btn-delete:hover {
   background-color: #f83928;
 }
-/* Heading - all views
+/* Header - all views
 -------------------------------------------------- */
-.my-heading-wrapper {
+.my-view-header-wrapper {
+  position: relative;
   margin-left: -15px;
   margin-right: -15px;
+  margin-bottom: 15px;
   background-size: cover;
   background-color: #f4b350;
   background: url(../img/heading1.jpg);
   padding-top: 0;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 0;
 }
-/* TABLES - all views
--------------------------------------------------- */
-.my-table-headding {
+.my-view-header-wrapper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to left, #222222 0%, #425767 35%, rgba(98, 140, 172, 0.7) 70%, rgba(125, 185, 232, 0) 100%);
+  opacity: 0.7;
+}
+.my-view-header-wrapper .my-view-header {
   color: #fff;
   position: relative;
 }
-.my-table-headding h4 {
+.my-view-header-wrapper .my-view-header h4 {
   text-transform: uppercase;
   font-weight: bold;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.8);
 }
-.my-table-headding .btn {
+.my-view-header-wrapper .my-view-header .btn {
+  border: solid 1px #fff;
   color: #fff;
   transition: background 0.1s ease-in-out;
   -webkit-transition: background 0.1s ease-in-out;
@@ -8564,29 +8584,35 @@ body {
   -o-transition: background 0.1s ease-in-out;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
-.my-table-headding .btn.my-collapse-btn {
-  background-color: #f4b350;
-  float: right;
+.my-view-header-wrapper .my-view-header .btn.my-view-header-btn {
+  margin-top: 5px;
+  background-color: transparent;
+  vertical-align: top;
 }
-.my-table-headding .btn:hover {
+.my-view-header-wrapper .my-view-header .btn:hover {
+  border: solid 1px #222222;
   background-color: #222222;
-  color: #f4b350;
+  color: #fff;
+  opacity: 0.8;
 }
-.my-table-headding .my-collapse-btn {
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  right: 30px;
+.my-view-header-wrapper .my-view-header .my-options-toolbar {
+  display: inline-block;
 }
-.my-well {
+.my-view-header-wrapper .my-view-header .my-options-toolbar .btn-toolbar {
+  margin-bottom: 0;
+}
+.my-view-header-wrapper .my-well {
   padding: 5px 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  margin-bottom: 5px;
 }
-.my-well .my-well-container {
+.my-view-header-wrapper .my-well .my-well-container {
   padding: 0;
 }
-.my-well .my-well-container .btn {
+.my-view-header-wrapper .my-well .my-well-container .btn {
+  border: solid 1px #fff;
   color: #fff;
   transition: background 0.1s ease-in-out;
   -webkit-transition: background 0.1s ease-in-out;
@@ -8595,15 +8621,20 @@ body {
   -o-transition: background 0.1s ease-in-out;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
-.my-well .my-well-container .btn.my-btn-create {
-  background-color: #2f9f9e;
+.my-view-header-wrapper .my-well .my-well-container .btn.my-toolbar-btn {
+  background-color: transparent;
 }
-.my-well .my-well-container .btn:hover {
+.my-view-header-wrapper .my-well .my-well-container .btn:hover {
+  border: solid 1px #222222;
   background-color: #222222;
-  color: #f4b350;
+  opacity: 0.8;
+  color: #fff;
 }
 .table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {
   white-space: normal;
+}
+.my-table caption {
+  padding-left: 10px;
 }
 .my-table thead > tr > th {
   vertical-align: top;

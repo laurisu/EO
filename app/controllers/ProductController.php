@@ -35,7 +35,7 @@ class ProductController extends BaseController {
                             ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(3));
         }
         return View::make('pages.products.list')
-                        ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(15));
+                        ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(30));
     }
 
     public function deleteProduct($id) {

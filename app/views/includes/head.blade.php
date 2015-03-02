@@ -1,13 +1,13 @@
 <title>
     @section('title')
-    EO
+    
     @show
 </title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0
       minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- This row os for Sidebars plugin -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+<link rel="shortcut icon" href="{{ asset('img/assets/easyoffer.ico') }}">
 
 <!-- Less are placed here -->
 <!--<script>

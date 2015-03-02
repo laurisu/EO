@@ -40,7 +40,7 @@ Route::group(array('before' => 'auth'), function() {
      */
     Route::get('/account/sign-out', array('as' => 'sign-out', 'uses' => 'UserController@getSignOut'));
 
-    Route::get('/user/{username}', array('as' => 'user-profile', 'uses' => 'ProfileController@user'));
+    Route::get('/user/{username}', array('as' => 'user-profile', 'uses' => 'ProfileController@getUserProfile'));
 
     /*
      * Products page (GET)

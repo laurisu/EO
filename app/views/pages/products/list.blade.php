@@ -7,41 +7,42 @@
 
 @section('content')
 
-<div class="my-heading-wrapper">
-    <div class="row my-table-headding">
-        <div class="">
-
-        </div>
-        <div class="col-sm-6">
+<div class="my-view-header-wrapper">
+    <div class="row my-view-header">
+        <div class="col-xs-4">
             <h4>Products</h4>
         </div>
-        <div class="col-sm-6"></div>  
-
-        <button class="btn my-collapse-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
-            Options
-        </button>
+        <div class="col-xs-8 text-right">
+            <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('product-create', 'Add product') }}</button>
+            <button class="btn btn-sm my-view-header-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
+                Search
+            </button>
+            <div class="my-options-toolbar text-right">
+                <!--Here goes the button toolbar from Responsive Table plugin (jQuery)-->
+            </div>     
+        </div>  
     </div>
-</div>
-
-
-<div class="collapse" id="collapseFilters">
-    <div class="well my-well">
-        <div class="container my-well-container">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <form class="js-ajax-search" name="" action="{{ URL::route('product-list') }}" method="GET">
-                    <div class="input-group"> 
-                        <span class="input-group-addon">Filter</span>
-                        <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->
-                        <input type="text" name="search" class="form-control" placeholder="Type here...">
+    <div class="row">
+        <div class="collapse" id="collapseFilters">
+            <div class="well my-well">
+                <div class="my-well-container">
+                    <div class="col-xs-12 col-sm-4 text-left">
+                        <form class="js-ajax-search" name="" action="{{ URL::route('product-list') }}" method="GET">
+                            <div class="input-group"> 
+                                <span class="input-group-addon">Filter</span>
+                                <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->
+                                <input type="text" name="search" class="form-control" placeholder="Type here...">
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <button class="btn btn-sm my-btn-create">{{ HTML::linkRoute('product-create', 'Add product') }}</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
 <div class="js-ajax-products">
     <div class="table-responsive" data-pattern="priority-columns">
         <table class="table table-small-font table-hover my-table">

@@ -10,9 +10,13 @@
             </button>
 
             @if(Auth::check())
-            <a class="navbar-brand" href="{{ URL::route('home') }}">EasyOffer</a>
+                <a class="navbar-brand my-navbar-brand" href="{{ URL::route('home') }}">
+                    <img src="{{ asset('img/assets/EO-logo-sm.png') }}" class="img-responsive" alt="EasyOffer">
+                </a>
             @else
-            <a class="navbar-brand" href="{{ URL::route('sign-in') }}">EasyOffer</a>
+                <a class="navbar-brand my-navbar-brand" href="{{ URL::route('sign-in') }}">
+                    EasyOffer
+                </a>
             @endif
         </div>
         <!--        Everything you want hidden at 940px or less, place within here -->
@@ -32,10 +36,14 @@
                     @endif  
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} Profile <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">My EO <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ URL::route('user-profile') }}">My profile</a></li>
                         <li><a href="{{ URL::route('change-password') }}">Change password</a></li>
                         <li><a href="{{ URL::route('sign-out') }}">Sign out</a></li>
+                        <li class="divider">xxx{{ Auth::user()->name }}</li>
+                        <li class="dropdown-header">You're signed in</li>
+                        <li class="dropdown-header">as {{ Auth::user()->name . ' ' . Auth::user()->surname }}</li>
                     </ul>
                 </li>
 

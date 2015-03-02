@@ -6,24 +6,91 @@
 @stop
 
 @section('content')
-<div class="container">
-    <div class="offer-container">
-         <h1>Here goes the offers list</h1>
 
-         @foreach($offers as $offer)
+<div class="my-view-header-wrapper">
+    <div class="row my-view-header">
+        <div class="col-sm-4">
+            <h4>Offers</h4>
+        </div>
+        <div class="col-sm-8 text-right">
             
-                <ul>
-                    <li>{{ $offer->id }}</li>
-                    <li>{{ $offer->author->name }}</li>
-                    <li>{{ $offer->receiver->customer }}</li>
-                    <li>{{ $offer->status }}</li>
-
-                </ul>
-            
-         @endforeach
-
+        </div>  
     </div>
-   
 </div>
+
+    <div class="offer-container">
+        
+        <div class="col-md-6">
+            
+            <div class="table-responsive" data-pattern="priority-columns">
+                <table class="table table-small-font table-hover my-table">
+
+                    <caption>
+                        Unfinished offers
+                    </caption>
+
+                    <thead>
+                        <th>ID</th>
+                        <th>Created</th>
+                        <th>User</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                    </thead>
+
+                    <tbody>
+                        @foreach($offers as $pendingOffer)
+                            @if($pendingOffer->status !== 1)
+                            <tr>
+                                <td>{{ $pendingOffer->id }}</td>
+                                <td>{{ date('d M Y', strtotime($pendingOffer->updated_at)) }}</td>
+                                <td>{{ $pendingOffer->author->name }}</td>
+                                <td>{{ $pendingOffer->receiver->customer }}</td>
+                                <td>{{ $pendingOffer->status }}</td>
+                            </tr>
+                            @endif
+                        @endforeach
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+
+            <div class="table-responsive" data-pattern="priority-columns">
+                <table class="table table-small-font table-hover my-table">
+
+                    <caption>
+                        Sent offers
+                    </caption>
+
+                    <thead>
+                        <th>ID</th>
+                        <th>Sent at</th>
+                        <th>User</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                    </thead>
+
+                    <tbody>
+                        @foreach($offers as $sentOffer)
+                            @if($sentOffer->status == 1)
+                            <tr>
+                                <td>{{ $sentOffer->id }}</td>
+                                <td>{{ date('d M Y', strtotime($sentOffer->updated_at)) }}</td>
+                                <td>{{ $sentOffer->author->name }}</td>
+                                <td>{{ $sentOffer->receiver->customer }}</td>
+                                <td>{{ $sentOffer->status }}</td>
+                            </tr>
+                            @endif
+                        @endforeach
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 @stop

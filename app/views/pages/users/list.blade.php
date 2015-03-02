@@ -7,10 +7,16 @@
 
 @section('content')
 
-<a href="{{ URL::route('account-create') }}">Crate user</a>
-Users list (Admin only)<br>   
-Information about user's<br>
-What offers and how many offers they have sent and to whom.<br> 
+<div class="my-view-header-wrapper">
+    <div class="row my-view-header">
+        <div class="col-sm-4">
+            <h4>Users</h4>
+        </div>
+        <div class="col-sm-8 text-right">
+            <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('account-create', 'Create account') }}</button>
+        </div>  
+    </div>
+</div>
 
 @foreach($users as $user)
 

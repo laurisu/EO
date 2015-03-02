@@ -16,7 +16,7 @@
     <form class="form-horizontal" action="{{ URL::route('product-create-post') }}" method="post">
 
         <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">Product name</label>
+            <label for="inputName" class="col-sm-3 control-label">Product name</label>
             <div class="col-sm-4">
                 <input 
                     type="text" name="product_name"
@@ -31,10 +31,10 @@
         </div>
 
         <div class="form-group">
-            <label for="description" class="col-sm-2 control-label">Description</label>
-            <div class="col-sm-9">
+            <label for="description" class="col-sm-3 control-label">Description</label>
+            <div class="col-sm-8">
                 <textarea 
-                    name="description" rows="3"
+                    name="description" rows="5"
                     class="form-control" id="description"
                     placeholder="description">{{{ Input::old('description') }}}</textarea>
                 @if($errors->has('description'))
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            <label for="purchase_price" class="col-sm-2 control-label">Purchase price</label>
+            <label for="purchase_price" class="col-sm-3 control-label">Purchase price</label>
             <div class="col-sm-3">
                 <input 
                     type="text" name="purchase_price" 
@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-            <label for="retail_price" class="col-sm-2 control-label">Retail price</label>
+            <label for="retail_price" class="col-sm-3 control-label">Retail price</label>
             <div class="col-sm-3">
                 <input 
                     type="text" name="retail_price" 
@@ -72,10 +72,10 @@
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-lg my-btn-save" type="submit"><i class="fa fa-floppy-o"></i> Save</button>
+            <div class="col-sm-offset-3 col-sm-10">
+                <button class="btn btn-sm my-btn-save" type="submit"><i class="fa fa-floppy-o"></i> Save</button>
                 {{ Form::token() }}
-                <button class="btn btn-lg my-btn-back"><i class="fa fa-list-alt"></i> {{ HTML::linkRoute('product-list', 'Products list') }}</button>
+                <button class="btn btn-sm my-btn-back"><i class="fa fa-list-alt"></i> {{ HTML::linkRoute('product-list', 'Products list') }}</button>
             </div>
         </div>
 
