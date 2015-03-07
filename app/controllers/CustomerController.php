@@ -60,6 +60,57 @@ class CustomerController extends BaseController {
         }
     }
     
+    public function getCustomerCreator() {
+        return View::make('pages.customers.create');
+    }
+    
+    public function postNewCustomer() {
+        
+        $validator = Validator::make(Input::all(), array(
+            'customer'          => 'required|max:255|unique:customers',
+            'contact_person'    => 'required|max:255',
+            'email'             => 'required|max:100|email|unique:customers',
+            'phone'             => 'required|numeric|max:20',
+            'mobile'            => 'required|numeric|max:20',
+            'web_page'          => 'required',
+            'address'           => 'required'
+        ));
+        
+        if($validator->fails()) {
+            return Redirect::route('customer-create')
+                            ->withErrors($validator)
+                            ->withInput(); // Returns previously typed input values
+        } else {
+            // Add new customer to DB
+            
+            // Geters
+            $customer          = Input::get('customer');
+            $contact_person    = Input::get('contact_person');
+            $email             = Input::get('email');
+            $phone             = Input::get('phone');
+            $mobile            = Input::get('mobile');
+            $web_page          = Input::get('web_page');
+            $address           = Input::get('address');
+            
+            // Setters
+            $create = Customer::create(array(
+                'customer'          => $customer,
+                'contact_person'    => $contact_person,
+                'email'             => $email,
+                'phone'             => $phone,
+                'mobile'            => $mobile,
+                'web_page'          => $web_page,
+                'address'           => $address
+            ));
+            
+            if ($create) {
+                return Redirect::route('customer-list')
+                                ->with('global', 'Customer profile of <b>' . $customer->customer . '</b> has been created')
+                                ->with('alert-class', 'alert-success');
+            }
+        }
+    }
+
     public function deleteCustomer($id) {
 
         $customer = Customer::find($id);

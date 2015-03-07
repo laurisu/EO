@@ -1,5 +1,5 @@
 $(function () {
-    $('.open-product-view, .open-customer-view').click(function (event) {
+    $('.ajax-product-view, .ajax-product-edit, .open-customer-view ').click(function (event) {
         event.preventDefault();
 
         $.ajax({
@@ -35,7 +35,9 @@ $(function () {
     });
     
     // Responsive tables plugin
-    applyResponsiveTable('.table-responsive');
+    applyResponsiveTable('.table-responsive', {
+        
+    });
     
 });
 

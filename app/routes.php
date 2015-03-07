@@ -20,12 +20,13 @@ Route::group(array('before' => 'auth'), function() {
         /*
          * Products page (POST)
          */
-        Route::post('/products/create-product', array('as' => 'product-create-post', 'uses' => 'ProductController@postCreatedProduct'));
+        Route::post('/products/create-product', array('as' => 'product-create-post', 'uses' => 'ProductController@postNewProduct'));
         Route::post('/products/product-update/{id}', array('as' => 'product-update', 'uses' => 'ProductController@putProductChanges'));
         
         /*
          * Customers page (POST)
          */
+        Route::post('/customers/create-customer', array('as' => 'customer-create-post', 'uses' => 'CustomerController@postNewCustomer'));
         Route::post('/customers/customer-update/{id}', array('as' => 'customer-update', 'uses' => 'CustomerController@putCustomerChanges'));
         
     });
@@ -56,6 +57,7 @@ Route::group(array('before' => 'auth'), function() {
      * Customers page (GET)
      */
     Route::get('/customers', array('as' => 'customer-list', 'uses' => 'CustomerController@getCustomerList'));
+    Route::get('/customers/create-customer', array('as' => 'customer-create', 'uses' => 'CustomerController@getCustomerCreator'));
     Route::get('/customers/view/{id}', array('as' => 'customer-view', 'uses' => 'CustomerController@getCustomer'));
     Route::get('/customers/delete/{id}', array('as' => 'customer-delete', 'uses' => 'CustomerController@deleteCustomer'));
     Route::get('/customers/edit-customer/{id}', array('as' => 'customer-edit', 'uses' => 'CustomerController@editCustomer'));
@@ -91,12 +93,6 @@ Route::group(array('before' => 'auth'), function() {
         Route::get('/users', array('as' => 'users-list', 'uses' => 'AdminController@getUsersList'));
     });
 });
-
-
-
-
-
-
 
 
 /*

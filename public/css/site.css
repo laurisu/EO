@@ -8425,7 +8425,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 50px;
-  background-color: rgba(255, 0, 255, 0.5);
+  background-image: linear-gradient(to top, #222222 0%, rgba(66, 87, 103, 0.6) 35%, rgba(98, 140, 172, 0.4) 70%, rgba(125, 185, 232, 0) 100%);
   margin: auto;
 }
 /* Default template styles
@@ -8448,6 +8448,58 @@ body {
   outline: none;
   /*    -webkit-box-shadow: none;
         box-shadow: none;*/
+}
+/* BUTTONS
+-------------------------------------------------- */
+.btn {
+  transition: background 0.1s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  -ms-transition: background 0.1s ease-in-out;
+  -o-transition: background 0.1s ease-in-out;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  /* View header button styles */
+}
+.btn.my-btn-back {
+  /*background-color: lighten(@my-orange, 25%);*/
+  background-color: #f4b350;
+  border: 1px solid #d1830d;
+}
+.btn.my-btn-back:hover {
+  background-color: #d1830d;
+}
+.btn.my-btn-save {
+  background-color: #4897cc;
+  border: 1px solid #266188;
+}
+.btn.my-btn-save:hover {
+  background-color: #266188;
+}
+.btn.my-btn-delete {
+  background-color: #fb948b;
+  border: 1px solid #f83928;
+}
+.btn.my-btn-delete:hover {
+  background-color: #f83928;
+}
+.btn.my-view-header-btn {
+  margin-top: 5px;
+  background-color: transparent;
+  vertical-align: top;
+  border: solid 1px #fff;
+  color: #fff;
+}
+.btn.my-toolbar-btn {
+  background-color: transparent;
+  border: solid 1px #fff;
+  color: #fff;
+}
+.btn.my-view-header-btn:hover,
+.btn.my-toolbar-btn:hover {
+  border: solid 1px #222222;
+  background-color: #222222;
+  color: #fff;
+  opacity: 0.8;
 }
 /* Login / Forgot password
 -------------------------------------------------- */
@@ -8509,36 +8561,7 @@ body {
   font-weight: bold;
 }
 .my-crud-form .btn {
-  /*background-color: #fff;*/
   color: #fff;
-  transition: background 0.1s ease-in-out;
-  -webkit-transition: background 0.1s ease-in-out;
-  -moz-transition: background 0.1s ease-in-out;
-  -ms-transition: background 0.1s ease-in-out;
-  -o-transition: background 0.1s ease-in-out;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-}
-.my-crud-form .btn.my-btn-back {
-  /*background-color: lighten(@my-orange, 25%);*/
-  background-color: #f4b350;
-  border: 1px solid #d1830d;
-}
-.my-crud-form .btn.my-btn-back:hover {
-  background-color: #d1830d;
-}
-.my-crud-form .btn.my-btn-save {
-  background-color: #4897cc;
-  border: 1px solid #266188;
-}
-.my-crud-form .btn.my-btn-save:hover {
-  background-color: #266188;
-}
-.my-crud-form .btn.my-btn-delete {
-  background-color: #fb948b;
-  border: 1px solid #f83928;
-}
-.my-crud-form .btn.my-btn-delete:hover {
-  background-color: #f83928;
 }
 /* Header - all views
 -------------------------------------------------- */
@@ -8574,27 +8597,6 @@ body {
   font-weight: bold;
   text-shadow: 0 2px rgba(0, 0, 0, 0.8);
 }
-.my-view-header-wrapper .my-view-header .btn {
-  border: solid 1px #fff;
-  color: #fff;
-  transition: background 0.1s ease-in-out;
-  -webkit-transition: background 0.1s ease-in-out;
-  -moz-transition: background 0.1s ease-in-out;
-  -ms-transition: background 0.1s ease-in-out;
-  -o-transition: background 0.1s ease-in-out;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-}
-.my-view-header-wrapper .my-view-header .btn.my-view-header-btn {
-  margin-top: 5px;
-  background-color: transparent;
-  vertical-align: top;
-}
-.my-view-header-wrapper .my-view-header .btn:hover {
-  border: solid 1px #222222;
-  background-color: #222222;
-  color: #fff;
-  opacity: 0.8;
-}
 .my-view-header-wrapper .my-view-header .my-options-toolbar {
   display: inline-block;
 }
@@ -8614,21 +8616,6 @@ body {
 .my-view-header-wrapper .my-well .my-well-container .btn {
   border: solid 1px #fff;
   color: #fff;
-  transition: background 0.1s ease-in-out;
-  -webkit-transition: background 0.1s ease-in-out;
-  -moz-transition: background 0.1s ease-in-out;
-  -ms-transition: background 0.1s ease-in-out;
-  -o-transition: background 0.1s ease-in-out;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-}
-.my-view-header-wrapper .my-well .my-well-container .btn.my-toolbar-btn {
-  background-color: transparent;
-}
-.my-view-header-wrapper .my-well .my-well-container .btn:hover {
-  border: solid 1px #222222;
-  background-color: #222222;
-  opacity: 0.8;
-  color: #fff;
 }
 .table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {
   white-space: normal;
@@ -8647,12 +8634,6 @@ body {
 }
 .my-table .btn {
   color: #fff;
-  transition: background 0.1s ease-in-out;
-  -webkit-transition: background 0.1s ease-in-out;
-  -moz-transition: background 0.1s ease-in-out;
-  -ms-transition: background 0.1s ease-in-out;
-  -o-transition: background 0.1s ease-in-out;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 .my-table .btn.my-tbl-btn-view {
   background-color: #f4b350;

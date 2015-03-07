@@ -85,7 +85,13 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: @my-footer-height;
-    background-color: rgba(255, 0, 255, 0.5);
+    background-image: linear-gradient(
+        to top, 
+        rgba(34,34,34,1) 0%,
+        rgba(66,87,103,0.6) 35%,
+        rgba(98,140,172,0.4) 70%,
+        rgba(125,185,232,0) 100%
+        );
 
     margin: auto;
 }
@@ -113,6 +119,63 @@ body {
         box-shadow: none;*/
 }
 
+/* BUTTONS
+-------------------------------------------------- */
+
+.btn {
+    transition: background 0.1s ease-in-out;
+    -webkit-transition: background 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out;
+    -ms-transition: background 0.1s ease-in-out;
+    -o-transition: background 0.1s ease-in-out;
+    
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+
+    &.my-btn-back {
+        /*background-color: lighten(@my-orange, 25%);*/
+        background-color: @my-orange;
+        border: 1px solid darken(@my-orange, 20%);
+    }
+    &.my-btn-back:hover {
+        background-color: darken(@my-orange, 20%);
+    }      
+    &.my-btn-save {
+        background-color: @my-blue;
+        border: 1px solid darken(@my-blue, 20%);
+    }
+    &.my-btn-save:hover {
+        background-color: darken(@my-blue, 20%);
+    }
+    &.my-btn-delete {
+        background-color: @my-red;
+        border: 1px solid darken(@my-red, 20%);
+    }
+    &.my-btn-delete:hover {
+        background-color: darken(@my-red, 20%);
+    }
+
+    /* View header button styles */
+    &.my-view-header-btn {
+        margin-top: 5px;
+        background-color: transparent;
+        vertical-align: top;
+        border: solid 1px #fff;
+        color: #fff;
+    }
+    &.my-toolbar-btn {
+        background-color: transparent;
+        border: solid 1px #fff;
+        color: #fff;
+    }    
+    &.my-view-header-btn:hover,
+    &.my-toolbar-btn:hover    {
+        border: solid 1px @my-black;
+        background-color: @my-black; 
+        color: #fff;
+        opacity: 0.8;
+    }
+
+}
 
 /* Login / Forgot password
 -------------------------------------------------- */
@@ -182,38 +245,8 @@ body {
         margin-top: 15px;
         margin-bottom: 15px;
     }
-
     .btn {
-        /*background-color: #fff;*/
         color: #fff;
-        transition: background 0.1s ease-in-out;
-        -webkit-transition: background 0.1s ease-in-out;
-        -moz-transition: background 0.1s ease-in-out;
-        -ms-transition: background 0.1s ease-in-out;
-        -o-transition: background 0.1s ease-in-out;
-        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-
-
-        &.my-btn-back {
-            /*background-color: lighten(@my-orange, 25%);*/
-            background-color: @my-orange;
-            border: 1px solid darken(@my-orange, 20%);
-        }
-        &.my-btn-back:hover {background-color: darken(@my-orange, 20%);}      
-
-        &.my-btn-save {
-            background-color: @my-blue;
-            border: 1px solid darken(@my-blue, 20%);
-        }
-        &.my-btn-save:hover {background-color: darken(@my-blue, 20%);}
-
-        &.my-btn-delete {
-            background-color: @my-red;
-            border: 1px solid darken(@my-red, 20%);
-        }
-        &.my-btn-delete:hover {background-color: darken(@my-red, 20%);}
-
-
     }
 }
 /* Header - all views
@@ -224,7 +257,7 @@ body {
     margin-left: -15px;
     margin-right: -15px;
     margin-bottom: 15px;
-    
+
     background-size: cover;
     background-color: @my-orange;
     background: url(../img/heading1.jpg);
@@ -233,7 +266,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 0;
-    
+
     &:before {
         content: '';
         position: absolute;
@@ -259,28 +292,6 @@ body {
             font-weight: bold;
             text-shadow: 0 2px rgba(0, 0, 0, 0.8);
         }
-        .btn {
-            border: solid 1px #fff;
-            color: #fff;
-            transition: background 0.1s ease-in-out;
-            -webkit-transition: background 0.1s ease-in-out;
-            -moz-transition: background 0.1s ease-in-out;
-            -ms-transition: background 0.1s ease-in-out;
-            -o-transition: background 0.1s ease-in-out;
-            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-
-            &.my-view-header-btn {
-                margin-top: 5px;
-                background-color: transparent;
-                vertical-align: top;
-            }
-            &:hover {
-                border: solid 1px @my-black;
-                background-color: @my-black; 
-                color: #fff;
-                opacity: 0.8;
-            }
-        }
         .my-options-toolbar {
             display: inline-block;
             .btn-toolbar {
@@ -300,23 +311,6 @@ body {
             .btn {
                 border: solid 1px #fff;
                 color: #fff;
-
-                transition: background 0.1s ease-in-out;
-                -webkit-transition: background 0.1s ease-in-out;
-                -moz-transition: background 0.1s ease-in-out;
-                -ms-transition: background 0.1s ease-in-out;
-                -o-transition: background 0.1s ease-in-out;
-                text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-
-                &.my-toolbar-btn {
-                    background-color: transparent;
-                }
-                &:hover {
-                    border: solid 1px @my-black;
-                    background-color: @my-black;
-                    opacity: 0.8;
-                    color: #fff;
-                }
             }
         }
     }
@@ -346,12 +340,6 @@ body {
     }
     .btn {
         color: #fff;
-        transition: background 0.1s ease-in-out;
-        -webkit-transition: background 0.1s ease-in-out;
-        -moz-transition: background 0.1s ease-in-out;
-        -ms-transition: background 0.1s ease-in-out;
-        -o-transition: background 0.1s ease-in-out;
-        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 
         &.my-tbl-btn-view {background-color: @my-orange;}
         &.my-tbl-btn-offer {background-color: @my-green;}

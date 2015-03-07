@@ -13,7 +13,7 @@
             <h4>Customers</h4>
         </div>
         <div class="col-sm-8 text-right">
-            <!--<button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('account-create', 'Add customer') }}</button>-->
+            <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('customer-create', 'Add customer') }}</button>
         </div>  
     </div>
 </div>

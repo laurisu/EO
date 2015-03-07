@@ -49,7 +49,11 @@ class ProductController extends BaseController {
     }
 
     public function editProduct($id) {
-
+        
+        if (Request::ajax()) {
+            return View::make('pages.products.edit-ajax')
+                            ->with('product', Product::find($id));
+        }
         return View::make('pages.products.edit')
                         ->with('product', Product::find($id));
     }
@@ -96,7 +100,7 @@ class ProductController extends BaseController {
     }
 
     // HAS TO BE EDITED - FORM VALIDATION FOR FLOATING NUMBERS
-    public function postCreatedProduct() {
+    public function postNewProduct() {
 
         $validator = Validator::make(Input::all(), array(
                     'product_name'      => 'required|max:60|unique:products',
