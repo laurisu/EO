@@ -3,13 +3,13 @@
 class ProfileController extends BaseController {
 
     public function getUserProfile($username) {
-        $user = User::where('username', '=', $username);
+        $users = User::where('username', '=', $username);
 
-        if ($user->count()) {
-            $username = $user->first();
+        if ($users->count()) {
+            $user = $users->first();
             
             return View::make('profile.user')
-                    ->with('username', $username);
+                    ->with('user', $user);
         }
 
         return App::abort(404);

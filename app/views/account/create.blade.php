@@ -142,10 +142,6 @@
                     class="filestyle"               
                     data-buttonText="Choose file"
                     data-buttonName="btn-primary">
-
-<!--                @if($errors->has('role'))
-                {{ $errors->first('role') }}
-                @endif-->
             </div>
         </div>
 
@@ -176,7 +172,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-lg my-btn-save" type="submit">Create account</button>
+                <button class="btn btn-md my-btn-save" type="submit">Create account</button>
                 {{ Form::token() }}
             </div>
         </div>

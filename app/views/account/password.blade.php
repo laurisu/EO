@@ -47,7 +47,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-10">
-                <button class="btn btn-sm my-btn-save" type="submit"><i class="fa fa-floppy-o"></i> Change password</button>
+                <button class="btn btn-md my-btn-save" type="submit"><i class="fa fa-floppy-o"></i> Change password</button>
                 {{ Form::token() }}
             </div>
         </div>

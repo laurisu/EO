@@ -21,6 +21,19 @@
 @foreach($users as $user)
 
 <div class="row">
+    <div class="col-xs-12 col-lg-4">
+        
+    </div>
+    <div class="col-xs-12 col-lg-8">
+        
+    </div>
+</div>
+
+@endforeach
+
+@foreach($users as $user)
+
+<div class="row">
     <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
         <div class="my-user-profile">
             <div class="col-sm-12">
@@ -31,8 +44,6 @@
                     <p><strong>mobile: </strong> </p>
                     <p><strong>permisions: </strong> </p>
                     <p><strong>status: </strong> </p>
-                    <p><strong>manager code: </strong> </p>
-                    <p><strong>manager code: </strong> </p>
                     <p><strong>manager code: </strong> </p>
                 </div>             
                 <div class="col-xs-12 col-sm-4 text-center hidden-xs">

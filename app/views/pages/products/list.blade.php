@@ -47,10 +47,50 @@
     <div class="table-responsive" data-pattern="priority-columns">
         <table class="table table-small-font table-hover my-table">
 
+            <?php
+                // Retrieving GET parameters from query string
+                $queryParameters = Input::query();
+            ?>
+            
             <thead>
                 <tr>
-                    <th data-priority="5">#</th>
-                    <th data-priority="1">name</th>
+                    <th data-priority="5">
+                        
+                        <?php
+                            $queryParameters['sort'] = 'id';
+                            if ($sortName == 'id' &&  $sortDirrection == 'ASC') {
+                                $queryParameters['order'] = 'DESC';
+                            } else {
+                                $queryParameters['order'] = 'ASC';
+                            }
+                        ?>
+                        <a href="{{{ route('product-list', $queryParameters) }}}" class="btn btn-sm my-view-header-btn">
+                            #
+                            @if( $queryParameters['order'] == 'DESC')
+                                <i class="fa fa-arrow-down"></i>
+                            @else
+                                <i class="fa fa-arrow-up"></i>
+                            @endif
+                        </a>
+                    </th>
+                    <th data-priority="1">
+                        <?php
+                            $queryParameters['sort'] = 'name';
+                            if ($sortName == 'name' &&  $sortDirrection == 'ASC') {
+                                $queryParameters['order'] = 'DESC';
+                            } else {
+                                $queryParameters['order'] = 'ASC';
+                            }
+                        ?>
+                        <a href="{{{ route('product-list', $queryParameters) }}}" class="btn btn-sm my-view-header-btn">
+                            name
+                            @if( $queryParameters['order'] == 'DESC')
+                                <i class="fa fa-arrow-down"></i>
+                            @else
+                                <i class="fa fa-arrow-up"></i>
+                            @endif
+                        </a>
+                    </th>
                     <th data-priority="6">description</th>
                     <th data-priority="5">purchase<br> price <i class="fa fa-eur"></th>
                     <th data-priority="3">retail<br> price <i class="fa fa-eur"></th>
@@ -65,7 +105,7 @@
                 @foreach($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
-                    <td>{{ $product->product_name }}</td>
+                    <td>{{ $product->product_name }}</td> 
                     <td class="my-td-ellipsis" style=""><div>{{ $product->description }}</div></td>
                     <td>{{ $product->purchase_price }}</td>
                     <td>{{ $product->retail_price }}</td>
@@ -73,9 +113,9 @@
                     <td>25.99</td>
                     <td>105.99</td>
                     <td class="col-xs-1">
-                        <button type="button" href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view ajax-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</button>
-                        <button type="button" class="btn btn-xs my-tbl-btn-offer">Add to offer</button>
-                        <button type="button" href="{{ route('product-edit', array($product->id)) }}" class="btn btn-xs my-tbl-btn-edit ajax-product-edit" data-target="#myModal"><i class="fa fa-pencil"></i> Edit</button>
+                        <a href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view ajax-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</a>
+                        <a class="btn btn-xs my-tbl-btn-offer">Add to offer</a>
+                        <a href="{{ route('product-edit', array($product->id)) }}" class="btn btn-xs my-tbl-btn-edit " data-target="#myModal"><i class="fa fa-pencil"></i> Edit</a>
                         <!--<button type="button" href="" class="btn btn-xs my-tbl-btn-edit ajax-product-edit" data-target="#myModal"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', ' Edit', array($product->id)) }}</button>-->
                     </td>
                 </tr>

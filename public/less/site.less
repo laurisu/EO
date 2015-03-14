@@ -44,6 +44,7 @@ body {
     display: inline-block;
     background: url(../img/assets/ajax-loader.gif) 50% 50% no-repeat;
     background-size: contain; 
+    opacity: 0.5;
 }
 .my-modal-header {
     background: @my-orange;
@@ -58,9 +59,7 @@ body {
 .navbar-fixed-top {
     /*default height: 50px;*/
     height: @my-navbar-height;
-
-    -webkit-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
+    
     box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
 }
 
@@ -104,8 +103,6 @@ body {
     border: solid 1px #c9c9c9;
     margin-bottom: @my-footer-height;
 
-    -webkit-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.5);
     box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.5);
 }
 
@@ -123,35 +120,31 @@ body {
 -------------------------------------------------- */
 
 .btn {
-    transition: background 0.1s ease-in-out;
-    -webkit-transition: background 0.1s ease-in-out;
-    -moz-transition: background 0.1s ease-in-out;
-    -ms-transition: background 0.1s ease-in-out;
-    -o-transition: background 0.1s ease-in-out;
-    
+    transition: background 0.1s ease-in-out;  
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 
     &.my-btn-back {
         /*background-color: lighten(@my-orange, 25%);*/
         background-color: @my-orange;
         border: 1px solid darken(@my-orange, 20%);
+        &:hover,&:focus {
+            background-color: darken(@my-orange, 20%);
+            outline: none;
+        }      
     }
-    &.my-btn-back:hover {
-        background-color: darken(@my-orange, 20%);
-    }      
     &.my-btn-save {
         background-color: @my-blue;
         border: 1px solid darken(@my-blue, 20%);
-    }
-    &.my-btn-save:hover {
-        background-color: darken(@my-blue, 20%);
+        &:hover {
+            background-color: darken(@my-blue, 20%);
+        }
     }
     &.my-btn-delete {
         background-color: @my-red;
         border: 1px solid darken(@my-red, 20%);
-    }
-    &.my-btn-delete:hover {
-        background-color: darken(@my-red, 20%);
+        &:hover {
+            background-color: darken(@my-red, 20%);
+        }
     }
 
     /* View header button styles */
@@ -161,13 +154,19 @@ body {
         vertical-align: top;
         border: solid 1px #fff;
         color: #fff;
+        &:hover, &:focus {
+            border: solid 1px @my-black;
+            background-color: rgba(red(@my-black),green(@my-black),blue(@my-black), 0.8); 
+            color: #fff;
+        }
     }
+    
+    /* View header button styles */
     &.my-toolbar-btn {
         background-color: transparent;
         border: solid 1px #fff;
         color: #fff;
     }    
-    &.my-view-header-btn:hover,
     &.my-toolbar-btn:hover    {
         border: solid 1px @my-black;
         background-color: @my-black; 
@@ -185,9 +184,6 @@ body {
 
     /*     Background image displayed fullscreen */        
     background: url('../img/login-bg.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -253,9 +249,23 @@ body {
 -------------------------------------------------- */
 
 .my-view-header-wrapper {
+    &.affix {
+        position: relative;
+    }
+    
+    @media (min-width: @grid-float-breakpoint){
+        &.affix {
+            position: fixed;
+            box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
+            top: @my-navbar-height;
+            right: 0;
+            left: 0;
+        }
+    }
+    
     position: relative;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -@my-half-gutter;
+    margin-right: -@my-half-gutter;
     margin-bottom: 15px;
 
     background-size: cover;
@@ -263,8 +273,8 @@ body {
     background: url(../img/heading1.jpg);
 
     padding-top: 0;
-    padding-left: 15px;
-    padding-right: 15px;
+/*    padding-left: @my-half-gutter;
+    padding-right: @my-half-gutter;*/
     padding-bottom: 0;
 
     &:before {
@@ -292,6 +302,15 @@ body {
             font-weight: bold;
             text-shadow: 0 2px rgba(0, 0, 0, 0.8);
         }
+        .my-view-header-nav {
+            padding-bottom: 5px;
+            > .nav.navbar-right {
+                margin-right: 0;
+            }
+            > .nav > li > a {
+                padding: 5px 10px;
+            }
+        }
         .my-options-toolbar {
             display: inline-block;
             .btn-toolbar {
@@ -313,6 +332,13 @@ body {
                 color: #fff;
             }
         }
+    }
+}
+.my-view-header-wrapper-affix-replacer{
+    height: 0;
+    &.affix {
+        height: @navbar-height*2;
+        position: relative;
     }
 }
 

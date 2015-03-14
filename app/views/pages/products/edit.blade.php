@@ -72,22 +72,25 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-lg my-btn-save" type="submit">
+                <button class="btn btn-md my-btn-save" type="submit">
                     <i class="fa fa-floppy-o"></i> Save
                 </button>
-                <button class="btn btn-lg my-btn-back">
-                    <i class="fa fa-list-alt"></i> {{ HTML::linkRoute('product-list', 'Products list') }}
-                </button>
+                <a href="{{{ route('product-list') }}}" class="btn btn-md my-btn-back">
+                    <i class="fa fa-list-alt"></i> Products list
+                </a>
                 {{ Form::token() }}
-                
-<!--                <button class="btn btn-lg my-btn-delete" type="submit"
-                        data-toggle="modal" data-target="#confirmDelete" data-title="Delete Product" data-message='Are you sure you want to delete product - {{ $product->product_name }}?'>
-                        <i class="fa fa-trash-o"></i> Delete
-                    </button>-->
+                <button
+                    type="button"
+                    class="btn btn-md my-btn-delete" 
+                    data-toggle="modal" data-target="#confirmDelete" 
+                    data-title="Delete Product" 
+                    data-test="test" 
+                    data-message='Are you sure you want to delete product - {{ $product->product_name }}?'
+                    data-href="{{ route('product-delete', array('id' => $product->id)) }}" 
+                    >
+                    <i class="fa fa-trash-o"></i> Delete
+                </button>    
                     
-                    <a href="{{ Url::route('product-delete', array('id' => $product->id)) }}" class="btn btn-lg my-btn-delete">
-                        <i class="fa fa-trash-o"></i> Delete
-                    </a>
 
 <!--                <div id="confirmDelete" class="modal hide fade">
                     <div class="modal-body">
@@ -107,4 +110,5 @@
 </div>
 
 @include('includes.delete_confirm')
+
 @stop

@@ -3,18 +3,28 @@
 class ProductController extends BaseController {
 
     public function getProductsList() {
-
+        
+//        echo '<pre>';
+//        print_r($_SERVER);
+//        echo '</pre>';
+        
         $sortName       = Request::get('sort');
         $sortDirrection = Request::get('order');
         $search         = Request::get('search');
         $products       = DB::table('products');
 
+        // sortName - input by user
+        // sortDbName - column name in database
         switch ($sortName) {
             case 'id':
-                $sortName = "id";
+                $sortDbName = "id";
+                break;
+            case 'name':
+                $sortDbName = "product_name";
                 break;
             default:
-                $sortName = "product_name";
+                $sortName   = 'name';
+                $sortDbName = "product_name";
                 break;
         }
 
@@ -30,12 +40,22 @@ class ProductController extends BaseController {
                     ->orWhere('id', 'LIKE', '%' . $search . '%');
         }
 
+        $productsToView = $products->orderBy($sortDbName, $sortDirrection)->paginate(30);
+        
         if (Request::ajax()) {
             return View::make('pages.products.list-ajax')
-                            ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(3));
+                        ->with(array(
+                            'products' => $productsToView,
+                            'sortDirrection' => $sortDirrection,
+                            'sortName' => $sortName,
+                        ));
         }
         return View::make('pages.products.list')
-                        ->with('products', $products->orderBy($sortName, $sortDirrection)->paginate(30));
+                ->with(array(
+                    'products' => $productsToView,
+                    'sortDirrection' => $sortDirrection,
+                    'sortName' => $sortName,
+                ));
     }
 
     public function deleteProduct($id) {

@@ -115,13 +115,13 @@
 
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-10">
-                <button class="btn btn-sm my-btn-save" type="submit">
+                <button class="btn btn-md my-btn-save" type="submit">
                     <i class="fa fa-floppy-o"></i> Save
                 </button>
                 {{ Form::token() }}
-                <button class="btn btn-sm my-btn-back">
-                    <i class="fa fa-list-alt"></i> {{ HTML::linkRoute('customer-list', 'Customers list') }}
-                </button>
+                <a href="{{{ route('customer-list') }}}" class="btn btn-md my-btn-back">
+                    <i class="fa fa-list-alt"></i> Customers list
+                </a>
             </div>
         </div>
 

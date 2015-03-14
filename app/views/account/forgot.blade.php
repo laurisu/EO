@@ -14,7 +14,7 @@
                 @endif
             </div>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Recover</button>
+            <button class="btn btn-md btn-primary btn-block" type="submit">Recover</button>
 
             {{ Form::token() }}
         </form>

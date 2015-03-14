@@ -8391,6 +8391,7 @@ body {
   display: inline-block;
   background: url(../img/assets/ajax-loader.gif) 50% 50% no-repeat;
   background-size: contain;
+  opacity: 0.5;
 }
 .my-modal-header {
   background: #f4b350;
@@ -8402,8 +8403,6 @@ body {
 .navbar-fixed-top {
   /*default height: 50px;*/
   height: 51px;
-  -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.75);
 }
 .my-navbar-styles {
@@ -8434,8 +8433,6 @@ body {
   background-color: #ffffff;
   border: solid 1px #c9c9c9;
   margin-bottom: 50px;
-  -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.5);
 }
 /* Override browsers default state (blue outline)
@@ -8453,11 +8450,8 @@ body {
 -------------------------------------------------- */
 .btn {
   transition: background 0.1s ease-in-out;
-  -webkit-transition: background 0.1s ease-in-out;
-  -moz-transition: background 0.1s ease-in-out;
-  -ms-transition: background 0.1s ease-in-out;
-  -o-transition: background 0.1s ease-in-out;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  /* View header button styles */
   /* View header button styles */
 }
 .btn.my-btn-back {
@@ -8465,8 +8459,10 @@ body {
   background-color: #f4b350;
   border: 1px solid #d1830d;
 }
-.btn.my-btn-back:hover {
+.btn.my-btn-back:hover,
+.btn.my-btn-back:focus {
   background-color: #d1830d;
+  outline: none;
 }
 .btn.my-btn-save {
   background-color: #4897cc;
@@ -8489,12 +8485,17 @@ body {
   border: solid 1px #fff;
   color: #fff;
 }
+.btn.my-view-header-btn:hover,
+.btn.my-view-header-btn:focus {
+  border: solid 1px #222222;
+  background-color: rgba(34, 34, 34, 0.8);
+  color: #fff;
+}
 .btn.my-toolbar-btn {
   background-color: transparent;
   border: solid 1px #fff;
   color: #fff;
 }
-.btn.my-view-header-btn:hover,
 .btn.my-toolbar-btn:hover {
   border: solid 1px #222222;
   background-color: #222222;
@@ -8507,9 +8508,6 @@ body {
   border: solid 1px green;
   /*     Background image displayed fullscreen */
   background: url('../img/login-bg.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 .my-pass-form {
@@ -8574,9 +8572,21 @@ body {
   background-color: #f4b350;
   background: url(../img/heading1.jpg);
   padding-top: 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  /*    padding-left: @my-half-gutter;
+    padding-right: @my-half-gutter;*/
   padding-bottom: 0;
+}
+.my-view-header-wrapper.affix {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .my-view-header-wrapper.affix {
+    position: fixed;
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.75);
+    top: 51px;
+    right: 0;
+    left: 0;
+  }
 }
 .my-view-header-wrapper:before {
   content: '';
@@ -8597,6 +8607,15 @@ body {
   font-weight: bold;
   text-shadow: 0 2px rgba(0, 0, 0, 0.8);
 }
+.my-view-header-wrapper .my-view-header .my-view-header-nav {
+  padding-bottom: 5px;
+}
+.my-view-header-wrapper .my-view-header .my-view-header-nav > .nav.navbar-right {
+  margin-right: 0;
+}
+.my-view-header-wrapper .my-view-header .my-view-header-nav > .nav > li > a {
+  padding: 5px 10px;
+}
 .my-view-header-wrapper .my-view-header .my-options-toolbar {
   display: inline-block;
 }
@@ -8616,6 +8635,13 @@ body {
 .my-view-header-wrapper .my-well .my-well-container .btn {
   border: solid 1px #fff;
   color: #fff;
+}
+.my-view-header-wrapper-affix-replacer {
+  height: 0;
+}
+.my-view-header-wrapper-affix-replacer.affix {
+  height: 100px;
+  position: relative;
 }
 .table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {
   white-space: normal;

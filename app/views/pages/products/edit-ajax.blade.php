@@ -70,9 +70,9 @@
                 <button type="button" class="btn btn-sm my-btn-save" type="submit">
                     <i class="fa fa-floppy-o"></i> Save
                 </button>
-                <button type="button" class="btn btn-sm my-btn-back">
-                    <i class="fa fa-list-alt"></i> {{ HTML::linkRoute('product-list', 'Products list') }}
-                </button>
+                <a href="{{{ route('product-list') }}}" type="button" class="btn btn-sm my-btn-back">
+                    <i class="fa fa-list-alt"></i> Products list
+                </a>
                 {{ Form::token() }}
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">
                     Close
