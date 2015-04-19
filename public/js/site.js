@@ -62,13 +62,13 @@ $(function () {
     /**
      * Bootstrap 3 Scrollspy
      */
-    var scrollSpyOffset = 100;
+    var scrollSpyOffset = 122;
 
     $('body').scrollspy({
         offset: scrollSpyOffset,
         target: '.my-view-header-nav'
     });
-//
+
     $('.my-view-header .nav a').click(function (event) {
 //        event.preventDefault();
 //        var targetSelector = $(this).attr('href');

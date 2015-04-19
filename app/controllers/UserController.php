@@ -76,7 +76,7 @@ class UserController extends BaseController {
                 if ($user->save()) {
                     return Redirect::route('home')
                                     ->with('global', 'Your password has been changed!')
-                                    ->with('alert-class', 'alert-succes');
+                                    ->with('alert-class', 'alert-success');
                 }
             } else {
                 return Redirect::route('change-password')

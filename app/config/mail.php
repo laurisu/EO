@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.gmial.com',
+	'host' => 'smtp.gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return array(
 	|
 	*/
 
-	'port' => 587,
+	'port' => 465,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'lauris.ulpe@gmail.com', 'name' => 'Authentication'),
+	'from' => array('address' => 'inboxfortesting@gmail.com', 'name' => 'Easy Offer'),
 //	'from' => array('address' => null, 'name' => null),
 
 	/*
@@ -68,7 +68,7 @@ return array(
 	|
 	*/
 
-	'encryption' => 'tls',
+	'encryption' => 'ssl',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'inboxfortesting@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'eo123456',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -8572,12 +8572,12 @@ body {
   background-color: #f4b350;
   background: url(../img/heading1.jpg);
   padding-top: 0;
-  /*    padding-left: @my-half-gutter;
-    padding-right: @my-half-gutter;*/
   padding-bottom: 0;
 }
 .my-view-header-wrapper.affix {
   position: relative;
+  z-index: 999;
+  /* 9999 is too mutch - because dropdown menu default z-index is 1000 */
 }
 @media (min-width: 768px) {
   .my-view-header-wrapper.affix {
@@ -8640,7 +8640,7 @@ body {
   height: 0;
 }
 .my-view-header-wrapper-affix-replacer.affix {
-  height: 100px;
+  height: 122px;
   position: relative;
 }
 .table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {

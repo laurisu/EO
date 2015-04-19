@@ -7,16 +7,19 @@
 
 @section('content')
 
-<div class="my-view-header-wrapper">
-    <div class="row my-view-header">
-        <div class="col-sm-4">
-            <h4>Users</h4>
+<div class="my-view-header-wrapper" data-spy="affix" data-offset-top="20">
+    <div class="container-fluid my-max-width">
+        <div class="row my-view-header">
+            <div class="col-sm-4">
+                <h4>Users</h4>
+            </div>
+            <div class="col-sm-8 text-right">
+                <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('account-create', 'Create account') }}</button>
+            </div>  
         </div>
-        <div class="col-sm-8 text-right">
-            <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('account-create', 'Create account') }}</button>
-        </div>  
     </div>
 </div>
+<div class="my-view-header-wrapper-affix-replacer" data-spy="affix" data-offset-top="20"></div>
 
 @foreach($users as $user)
 

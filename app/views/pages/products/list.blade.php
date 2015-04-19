@@ -7,40 +7,42 @@
 
 @section('content')
 
-<div class="my-view-header-wrapper">
-    <div class="row my-view-header">
-        <div class="col-xs-4">
-            <h4>Products</h4>
+<div class="my-view-header-wrapper" data-spy="affix" data-offset-top="20">
+    <div class="container-fluid my-max-width">
+        <div class="row my-view-header">
+            <div class="col-xs-4">
+                <h4>Products</h4>
+            </div>
+            <div class="col-xs-8 text-right">
+                <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('product-create', 'Add product') }}</button>
+                <button class="btn btn-sm my-view-header-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
+                    Search
+                </button>
+                <div class="my-options-toolbar text-right">
+                    <!--Here goes the button toolbar from Responsive Table plugin (jQuery)-->
+                </div>     
+            </div>  
         </div>
-        <div class="col-xs-8 text-right">
-            <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('product-create', 'Add product') }}</button>
-            <button class="btn btn-sm my-view-header-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
-                Search
-            </button>
-            <div class="my-options-toolbar text-right">
-                <!--Here goes the button toolbar from Responsive Table plugin (jQuery)-->
-            </div>     
-        </div>  
-    </div>
-    <div class="row">
-        <div class="collapse" id="collapseFilters">
-            <div class="well my-well">
-                <div class="my-well-container">
-                    <div class="col-xs-12 col-sm-4 text-left">
-                        <form class="js-ajax-search" name="" action="{{ URL::route('product-list') }}" method="GET">
-                            <div class="input-group"> 
-                                <span class="input-group-addon">Filter</span>
-                                <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->
-                                <input type="text" name="search" class="form-control" placeholder="Type here...">
-                            </div>
-                        </form>
+        <div class="row">
+            <div class="collapse" id="collapseFilters">
+                <div class="well my-well">
+                    <div class="my-well-container">
+                        <div class="col-xs-12 col-sm-4 text-left">
+                            <form class="js-ajax-search" name="" action="{{ URL::route('product-list') }}" method="GET">
+                                <div class="input-group"> 
+                                    <span class="input-group-addon">Filter</span>
+                                    <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->
+                                    <input type="text" name="search" class="form-control" placeholder="Type here...">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<div class="my-view-header-wrapper-affix-replacer" data-spy="affix" data-offset-top="20"></div>
 
 
 <div class="js-ajax-products">

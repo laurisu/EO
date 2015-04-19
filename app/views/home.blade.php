@@ -25,135 +25,143 @@
 </div>
 <div class="my-view-header-wrapper-affix-replacer" data-spy="affix" data-offset-top="20"></div>
 
-@if(Auth::check())
-<p>Hello, {{ Auth::user()->username }}.</p>
-@else
 
-<div class="my-welocome-page center-block">
-    <p>You are not signed in!</p>
 
-    <a class="btn btn-lg btn-warning" href="{{ URL::route('sign-in') }}">Sign in</a>
-</div>
+<div class="container-fluid">
+    
+    <div class="my-home-container"> <!-- Unused class -->
+    
+<!--        <div class="row">
+            @if(Auth::check())
+                <p>Hello, {{ Auth::user()->username }}.</p>
+            @else
+                <div class="my-welocome-page center-block">
+                    <p>You are not signed in!</p>
 
-@endif  
+                    <a class="btn btn-lg btn-warning" href="{{ URL::route('sign-in') }}">Sign in</a>
+                </div>
+            @endif  
+        </div>-->
 
-<div class="">
-    <div class="row">
-        <div id="homeLatestOffers">
-            <h4>
-                Latest offers
-            </h4>
-            <p>1SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>2SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>3SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>4SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
+        <div class="row">
+            <div id="homeLatestOffers">
+                <h4>
+                    Latest offers
+                </h4>
+                <p>1SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>2SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>3SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>4SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div id="homeSalesRepStats">
-            <h4>
-                Sales Rep Stats
-            </h4>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
+        <div class="row">
+            <div id="homeSalesRepStats">
+                <h4>
+                    Sales Rep Stats
+                </h4>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div id="homeNewPotential">
-            <h4>
-                New potential customers
-            </h4>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
-            <p>SLKDsj LKDJaldkj lKDJLadk</p>
+        <div class="row">
+            <div id="homeNewPotential">
+                <h4>
+                    New potential customers
+                </h4>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+            </div>
         </div>
+        
     </div>
+    
 </div>
 @stop

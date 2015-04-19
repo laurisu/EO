@@ -37,7 +37,7 @@
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">My EO <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu my-open-dropdown-menu" role="menu">
                         <li><a href="{{ URL::route('user-profile', Auth::user()->username) }}">My profile</a></li>
                         <li><a href="{{ URL::route('change-password') }}">Change password</a></li>
                         <li><a href="{{ URL::route('sign-out') }}">Sign out</a></li>

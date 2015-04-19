@@ -251,6 +251,7 @@ body {
 .my-view-header-wrapper {
     &.affix {
         position: relative;
+        z-index: 999;  /* 9999 is too mutch - because dropdown menu default z-index is 1000 */
     }
     
     @media (min-width: @grid-float-breakpoint){
@@ -273,8 +274,6 @@ body {
     background: url(../img/heading1.jpg);
 
     padding-top: 0;
-/*    padding-left: @my-half-gutter;
-    padding-right: @my-half-gutter;*/
     padding-bottom: 0;
 
     &:before {
@@ -336,8 +335,8 @@ body {
 }
 .my-view-header-wrapper-affix-replacer{
     height: 0;
-    &.affix {
-        height: @navbar-height*2;
+    &.affix { 
+        height: @my-navbar-height * 2 + @my-navbar-margin-bottom;
         position: relative;
     }
 }
