@@ -1,4 +1,5 @@
 $(function () {
+    
     $('.ajax-product-view, .ajax-product-edit, .open-customer-view ').click(function (event) {
         event.preventDefault();
 

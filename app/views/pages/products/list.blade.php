@@ -116,7 +116,7 @@
                     <td>105.99</td>
                     <td class="col-xs-1">
                         <a href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view ajax-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</a>
-                        <a class="btn btn-xs my-tbl-btn-offer">Add to offer</a>
+                        <a href="{{ route('add-to-offer', array($product->id)) }}" class="btn btn-xs my-tbl-btn-offer ajax-add-to">Add to offer</a>
                         <a href="{{ route('product-edit', array($product->id)) }}" class="btn btn-xs my-tbl-btn-edit " data-target="#myModal"><i class="fa fa-pencil"></i> Edit</a>
                         <!--<button type="button" href="" class="btn btn-xs my-tbl-btn-edit ajax-product-edit" data-target="#myModal"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', ' Edit', array($product->id)) }}</button>-->
                     </td>

@@ -157,10 +157,19 @@ class ProductController extends BaseController {
     
     
     // UNFINISHED
-    public function addToOffer($id) {
+    public function addToOffer($id, $qty=1) {
         
         $product = Product::find($id);
         
+        Cart::associate('Product')->add([
+            'id'    => $product->id,
+            'name'  => $product->product_name,
+            'qty'   => $qty,
+            'price' => $product->retail_price
+        ]);
+        
+        return Redirect::back()
+                ->with('global', 'Product <b>' . $product->product_name . '</b> has been added to latest offer');
         
     }
 

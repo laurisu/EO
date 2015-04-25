@@ -22,9 +22,39 @@
 <div class="my-view-header-wrapper-affix-replacer" data-spy="affix" data-offset-top="20"></div>
 
 <div class="offer-container">
+@if(!empty($cart))
+    <div class="col-xs-12">
+        <table class="table table-small-font table-hover my-table">
+            <caption>
+                Prepeared offer - for customer ......
+            </caption>
+            
+            <thead>
+                <th>product id</th>
+                <th>name</th>
+                <th>price</th>
+            </thead>
+            
+            <tbody>
+                @foreach($cart as $row)
+                <tr>
+                    <td>{{ $row->id }}</td>
+                    <td>{{ $row->name }}</td>
+                    <td>{{ $row->price }}</td>
 
+                </tr>
+                @endforeach
+            </tbody>
+            
+            <tfoot>
+                
+            </tfoot>
+            
+        </table>
+    </div>
+ @endif   
     <div class="col-md-6">
-
+        
         <div class="table-responsive" data-pattern="priority-columns">
             <table class="table table-small-font table-hover my-table">
 
@@ -57,7 +87,7 @@
             </table>
         </div>
     </div>
-
+    
     <div class="col-md-6">
 
         <div class="table-responsive" data-pattern="priority-columns">

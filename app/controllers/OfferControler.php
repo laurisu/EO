@@ -14,13 +14,19 @@ class OfferControler extends \BaseController {
             
                 if (Auth::user()->isAdmin()) {
                     $offers  = Offer::all();
+                    $cart = Cart::content();
                 } else {
                     $offers  = Offer::with('author')->where('user_id', Auth::user()->id)->get();
+                    $cart = Cart::content();
                 }				
-
-                return View::make('pages.offers.list')
-                        ->with('offers', $offers->all());
                 
+                print_r($cart);
+                
+                return View::make('pages.offers.list')
+                        ->with('offers', $offers->all())
+                        ->with('cart', $cart->all());
+                
+               
 	}
 
 	/**
