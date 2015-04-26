@@ -29,6 +29,10 @@ Route::group(array('before' => 'auth'), function() {
         Route::post('/customers/create-customer', array('as' => 'customer-create-post', 'uses' => 'CustomerController@postNewCustomer'));
         Route::post('/customers/customer-update/{id}', array('as' => 'customer-update', 'uses' => 'CustomerController@putCustomerChanges'));
         
+        /*
+         * Offers page (POST)
+         */
+        
     });
 
     /*
@@ -65,8 +69,9 @@ Route::group(array('before' => 'auth'), function() {
     /*
      * Customers page (GET)
      */
-    Route::get('/offers', array('as' => 'offers-list', 'uses' => 'OfferControler@getOfferList'));
-
+    Route::get('/offers', array('as' => 'offers-list', 'uses' => 'OfferController@getOfferList'));
+    Route::get('/offers/create-offer', array('as' => 'offer-create-post', 'uses' => 'OfferController@postNewOffer'));
+    Route::get('/offers/edit-offer/add-customer', array('as' => 'offer-add-customer', 'uses' => 'OfferController@addRecipient'));
     /*
      * ADMIN ONLY ROUTES
      */

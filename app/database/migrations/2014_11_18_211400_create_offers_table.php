@@ -22,14 +22,13 @@ class CreateOffersTable extends Migration {
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
                     
-            $table->integer('customer_id')->unsigned();
+            $table->integer('customer_id')->unsigned()->nullable();
             $table->foreign('customer_id')
                     ->references('id')->on('customers')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
-                    
-            
-            // 0 - saved, but not sent | 1 - sent
+
+            // 0 - products only | 1 - products + customer | 2 - sent
             $table->integer('status');
 
             $table->dateTime("created_at");

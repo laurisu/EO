@@ -157,14 +157,14 @@ class ProductController extends BaseController {
     
     
     // UNFINISHED
-    public function addToOffer($id, $qty=1) {
+    public function addToOffer($id) {
         
         $product = Product::find($id);
         
         Cart::associate('Product')->add([
             'id'    => $product->id,
             'name'  => $product->product_name,
-            'qty'   => $qty,
+            'qty'   => 1,
             'price' => $product->retail_price
         ]);
         

@@ -26,14 +26,27 @@
     <div class="col-xs-12">
         <table class="table table-small-font table-hover my-table">
             <caption>
-                Prepeared offer - for customer ......
+                Pending offer
             </caption>
             
             <thead>
-                <th>product id</th>
-                <th>name</th>
-                <th>price</th>
+                <tr>
+                    <th>product id</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>description</th>
+                </tr>
             </thead>
+            
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <a href="" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
+                        <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-save"><i class="fa fa-floppy-o"> Save for later</i></a>
+                        <a href="" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
+                    </td>
+                </tr>
+            </tfoot>
             
             <tbody>
                 @foreach($cart as $row)
@@ -41,15 +54,11 @@
                     <td>{{ $row->id }}</td>
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->price }}</td>
-
+                    <td>{{ $row->product->description }}</td>
                 </tr>
                 @endforeach
             </tbody>
-            
-            <tfoot>
-                
-            </tfoot>
-            
+
         </table>
     </div>
  @endif   
@@ -72,12 +81,18 @@
 
                 <tbody>
                     @foreach($offers as $pendingOffer)
-                        @if($pendingOffer->status !== 1)
+                        @if($pendingOffer->status == 0 or 1)
                         <tr>
                             <td>{{ $pendingOffer->id }}</td>
                             <td>{{ date('d M Y', strtotime($pendingOffer->updated_at)) }}</td>
                             <td>{{ $pendingOffer->author->name }}</td>
-                            <td>{{ $pendingOffer->receiver->customer }}</td>
+                            <td>
+                                @if(isset($pendingOffer->recipient->customer))
+                                    $pendingOffer->recipient->customer
+                                @else
+                                    n/a
+                                @endif
+                            </td>
                             <td>{{ $pendingOffer->status }}</td>
                         </tr>
                         @endif
@@ -107,7 +122,7 @@
 
                 <tbody>
                     @foreach($offers as $sentOffer)
-                        @if($sentOffer->status == 1)
+                        @if($sentOffer->status == 2)
                         <tr>
                             <td>{{ $sentOffer->id }}</td>
                             <td>{{ date('d M Y', strtotime($sentOffer->updated_at)) }}</td>

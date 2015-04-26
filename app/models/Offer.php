@@ -3,8 +3,9 @@
 class Offer extends Eloquent {
 
     protected $fillable = array(
+        'user_id',
         'customer_id',
-        'manager_id'
+        'status'
     );
     protected $table = 'offers';
     
@@ -12,7 +13,7 @@ class Offer extends Eloquent {
     public function author() {
         return $this->user();
     }
-    public function receiver() {
+    public function recipient() {
         return $this->customer();
     }
     
