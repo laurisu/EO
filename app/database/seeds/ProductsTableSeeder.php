@@ -9,7 +9,7 @@ class ProductsTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		\DB::table('products')->truncate();
+		\DB::table('products')->delete();
         
 		\DB::table('products')->insert(array (
 			0 => 
@@ -206,54 +206,6 @@ class ProductsTableSeeder extends Seeder {
 			),
 			16 => 
 			array (
-				'id' => 17,
-				'product_name' => 'AllerNaze',
-				'purchase_price' => '3.81',
-				'retail_price' => '99.84',
-				'description' => 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl.',
-				'category_id' => 4,
-				'created_at' => '2014-09-10 02:42:59',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			17 => 
-			array (
-				'id' => 18,
-				'product_name' => 'FINASTERIDE',
-				'purchase_price' => '9.08',
-				'retail_price' => '47.92',
-				'description' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.',
-				'category_id' => 4,
-				'created_at' => '2014-03-08 21:55:21',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			18 => 
-			array (
-				'id' => 19,
-				'product_name' => 'Glipizide',
-				'purchase_price' => '3.79',
-				'retail_price' => '60.96',
-				'description' => 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
-				'category_id' => 1,
-				'created_at' => '2014-06-12 06:53:17',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			19 => 
-			array (
-				'id' => 20,
-				'product_name' => 'Acacia',
-				'purchase_price' => '18.52',
-				'retail_price' => '73.85',
-				'description' => 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus.',
-				'category_id' => 1,
-				'created_at' => '2014-07-18 11:26:38',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			20 => 
-			array (
 				'id' => 21,
 				'product_name' => 'Tea Tree Antiseptic',
 				'purchase_price' => '2.99',
@@ -264,7 +216,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			21 => 
+			17 => 
 			array (
 				'id' => 22,
 				'product_name' => 'Bronchi',
@@ -276,7 +228,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			22 => 
+			18 => 
 			array (
 				'id' => 23,
 				'product_name' => 'oxycodone hydrochloride',
@@ -288,7 +240,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			23 => 
+			19 => 
 			array (
 				'id' => 24,
 				'product_name' => 'Lusti Therapeutic Ice Analgesic Rub',
@@ -300,7 +252,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			24 => 
+			20 => 
 			array (
 				'id' => 25,
 				'product_name' => 'Likewise Facial Moisturizer - Sun Protectant SPF 50 Normal t',
@@ -312,19 +264,19 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			25 => 
+			21 => 
 			array (
 				'id' => 26,
-				'product_name' => 'TUBERSOL',
+				'product_name' => 'TUBERSOLE',
 				'purchase_price' => '16.95',
 				'retail_price' => '32.45',
 				'description' => 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.',
 				'category_id' => 3,
 				'created_at' => '2014-07-25 00:42:22',
-				'updated_at' => '2015-01-01 00:00:00',
+				'updated_at' => '2015-02-18 18:31:49',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			26 => 
+			22 => 
 			array (
 				'id' => 27,
 				'product_name' => 'Alprazolam',
@@ -336,7 +288,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			27 => 
+			23 => 
 			array (
 				'id' => 28,
 				'product_name' => 'Naloxone Hydrochloride',
@@ -348,7 +300,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			28 => 
+			24 => 
 			array (
 				'id' => 29,
 				'product_name' => 'FAMOTIDINE',
@@ -360,7 +312,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			29 => 
+			25 => 
 			array (
 				'id' => 30,
 				'product_name' => 'Warfarin Sodium',
@@ -372,7 +324,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			30 => 
+			26 => 
 			array (
 				'id' => 31,
 				'product_name' => 'e-HCG',
@@ -384,19 +336,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			31 => 
-			array (
-				'id' => 32,
-				'product_name' => 'Levofloxacin',
-				'purchase_price' => '15.77',
-				'retail_price' => '44.01',
-				'description' => 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.',
-				'category_id' => 1,
-				'created_at' => '2014-04-11 14:03:50',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			32 => 
+			27 => 
 			array (
 				'id' => 33,
 				'product_name' => 'Sheer Tint Moisturizer SPF 15',
@@ -408,19 +348,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			33 => 
-			array (
-				'id' => 34,
-				'product_name' => 'Oxygen',
-				'purchase_price' => '16.91',
-				'retail_price' => '37.11',
-				'description' => 'Morbi non quam nec dui luctus rutrum. Nulla tellus.',
-				'category_id' => 4,
-				'created_at' => '2014-10-28 05:33:01',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			34 => 
+			28 => 
 			array (
 				'id' => 35,
 				'product_name' => 'Isosorbide Mononitrate',
@@ -432,7 +360,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			35 => 
+			29 => 
 			array (
 				'id' => 36,
 				'product_name' => 'VITALUMIERE AQUA',
@@ -444,7 +372,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			36 => 
+			30 => 
 			array (
 				'id' => 37,
 				'product_name' => 'Anti-Itch Scalp Relief Maximum Strength',
@@ -456,7 +384,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			37 => 
+			31 => 
 			array (
 				'id' => 38,
 				'product_name' => 'Pleo Mucedo',
@@ -468,7 +396,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			38 => 
+			32 => 
 			array (
 				'id' => 39,
 				'product_name' => 'SUPRESS-PE',
@@ -480,7 +408,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			39 => 
+			33 => 
 			array (
 				'id' => 40,
 				'product_name' => 'Kogenate FS',
@@ -492,7 +420,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			40 => 
+			34 => 
 			array (
 				'id' => 41,
 				'product_name' => 'Methimazole',
@@ -504,7 +432,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			41 => 
+			35 => 
 			array (
 				'id' => 42,
 				'product_name' => 'UNITHROID',
@@ -516,7 +444,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			42 => 
+			36 => 
 			array (
 				'id' => 43,
 				'product_name' => 'Urea',
@@ -528,7 +456,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			43 => 
+			37 => 
 			array (
 				'id' => 44,
 				'product_name' => 'Hepatatox',
@@ -540,7 +468,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			44 => 
+			38 => 
 			array (
 				'id' => 45,
 				'product_name' => 'Nitroglycerin Transdermal Delivery System',
@@ -552,7 +480,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			45 => 
+			39 => 
 			array (
 				'id' => 46,
 				'product_name' => 'Neutrogena Ultra Sheer Body Mist Sunscreen',
@@ -564,7 +492,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			46 => 
+			40 => 
 			array (
 				'id' => 47,
 				'product_name' => 'Cough',
@@ -576,7 +504,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			47 => 
+			41 => 
 			array (
 				'id' => 48,
 				'product_name' => 'Sepia comp.',
@@ -588,7 +516,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			48 => 
+			42 => 
 			array (
 				'id' => 49,
 				'product_name' => 'Labetalol HCl',
@@ -600,7 +528,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			49 => 
+			43 => 
 			array (
 				'id' => 50,
 				'product_name' => 'Povidone-Iodine',
@@ -612,7 +540,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			50 => 
+			44 => 
 			array (
 				'id' => 51,
 				'product_name' => 'Shang Shi Zhi Tong Pain Relieving Plaster',
@@ -624,7 +552,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			51 => 
+			45 => 
 			array (
 				'id' => 52,
 				'product_name' => 'Pedipirox-4 Nail Kit',
@@ -636,7 +564,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			52 => 
+			46 => 
 			array (
 				'id' => 53,
 				'product_name' => 'Hesol Rim',
@@ -648,7 +576,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			53 => 
+			47 => 
 			array (
 				'id' => 54,
 				'product_name' => 'BullFrog Quik Gel Sport',
@@ -660,7 +588,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			54 => 
+			48 => 
 			array (
 				'id' => 55,
 				'product_name' => 'FERROUS SULFATE',
@@ -672,7 +600,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			55 => 
+			49 => 
 			array (
 				'id' => 56,
 				'product_name' => 'GoLYTELY',
@@ -684,7 +612,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			56 => 
+			50 => 
 			array (
 				'id' => 57,
 				'product_name' => 'Medique Alcalak',
@@ -696,7 +624,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			57 => 
+			51 => 
 			array (
 				'id' => 58,
 				'product_name' => 'Gemcitabine',
@@ -708,7 +636,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			58 => 
+			52 => 
 			array (
 				'id' => 59,
 				'product_name' => 'SULINDAC',
@@ -720,7 +648,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			59 => 
+			53 => 
 			array (
 				'id' => 60,
 				'product_name' => 'Rough Pigweed',
@@ -732,7 +660,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			60 => 
+			54 => 
 			array (
 				'id' => 61,
 				'product_name' => 'NHS Muscle Cramps 1',
@@ -744,7 +672,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			61 => 
+			55 => 
 			array (
 				'id' => 62,
 				'product_name' => 'Diphenhydramine',
@@ -756,7 +684,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			62 => 
+			56 => 
 			array (
 				'id' => 63,
 				'product_name' => 'Promethazine Hydrochloride',
@@ -768,7 +696,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			63 => 
+			57 => 
 			array (
 				'id' => 64,
 				'product_name' => 'povidine iodine',
@@ -780,7 +708,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			64 => 
+			58 => 
 			array (
 				'id' => 65,
 				'product_name' => 'Metoprolol succinate',
@@ -792,7 +720,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			65 => 
+			59 => 
 			array (
 				'id' => 66,
 			'product_name' => 'Seldicine (Massage Cream)',
@@ -804,7 +732,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			66 => 
+			60 => 
 			array (
 				'id' => 67,
 				'product_name' => 'Haloperidol',
@@ -816,7 +744,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			67 => 
+			61 => 
 			array (
 				'id' => 68,
 				'product_name' => 'Happy Happy',
@@ -828,7 +756,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			68 => 
+			62 => 
 			array (
 				'id' => 69,
 				'product_name' => 'LBEL MAXIMUM COMFORT AND LONG-LASTING FOUNDATION SPF 10',
@@ -840,7 +768,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			69 => 
+			63 => 
 			array (
 				'id' => 70,
 				'product_name' => 'K-EFFERVESCENT',
@@ -852,7 +780,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			70 => 
+			64 => 
 			array (
 				'id' => 71,
 				'product_name' => 'Valproic',
@@ -864,7 +792,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			71 => 
+			65 => 
 			array (
 				'id' => 72,
 				'product_name' => 'Menstrual - PMS',
@@ -876,7 +804,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			72 => 
+			66 => 
 			array (
 				'id' => 73,
 				'product_name' => 'Aricept',
@@ -888,7 +816,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			73 => 
+			67 => 
 			array (
 				'id' => 74,
 				'product_name' => 'Advanced Healing',
@@ -900,7 +828,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			74 => 
+			68 => 
 			array (
 				'id' => 75,
 				'product_name' => 'Methocarbamol',
@@ -912,7 +840,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			75 => 
+			69 => 
 			array (
 				'id' => 76,
 				'product_name' => 'Moxatag',
@@ -924,19 +852,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			76 => 
-			array (
-				'id' => 77,
-				'product_name' => 'Instant Hand sanitizer',
-				'purchase_price' => '3.17',
-				'retail_price' => '25.85',
-				'description' => 'Sed accumsan felis. Ut at dolor quis odio consequat varius.',
-				'category_id' => 4,
-				'created_at' => '2014-02-18 17:00:34',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			77 => 
+			70 => 
 			array (
 				'id' => 78,
 				'product_name' => 'nicotine',
@@ -948,7 +864,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			78 => 
+			71 => 
 			array (
 				'id' => 79,
 				'product_name' => 'PredniSONE',
@@ -960,7 +876,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			79 => 
+			72 => 
 			array (
 				'id' => 80,
 				'product_name' => 'Levothyroxine sodium',
@@ -972,7 +888,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			80 => 
+			73 => 
 			array (
 				'id' => 81,
 				'product_name' => 'Tussin Chest',
@@ -984,7 +900,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			81 => 
+			74 => 
 			array (
 				'id' => 82,
 				'product_name' => 'ANTI-DANDRUFF SHAMPOO AND CONDITIONER',
@@ -996,7 +912,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			82 => 
+			75 => 
 			array (
 				'id' => 83,
 				'product_name' => 'Clonidine Hydrochloride',
@@ -1008,7 +924,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			83 => 
+			76 => 
 			array (
 				'id' => 84,
 				'product_name' => 'Climara',
@@ -1020,7 +936,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			84 => 
+			77 => 
 			array (
 				'id' => 85,
 				'product_name' => 'KETOROLAC TROMETHAMINE',
@@ -1032,7 +948,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			85 => 
+			78 => 
 			array (
 				'id' => 86,
 				'product_name' => 'Cranberry Spice Antibacterial Foaming Hand Wash',
@@ -1044,7 +960,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			86 => 
+			79 => 
 			array (
 				'id' => 87,
 				'product_name' => 'Leader Senna Laxative',
@@ -1056,7 +972,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			87 => 
+			80 => 
 			array (
 				'id' => 88,
 				'product_name' => 'SOFT DERM INTENSIVE DEFENSE 8 SPF',
@@ -1068,19 +984,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			88 => 
-			array (
-				'id' => 89,
-				'product_name' => 'LBEL',
-				'purchase_price' => '17.61',
-				'retail_price' => '22.28',
-				'description' => 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
-				'category_id' => 3,
-				'created_at' => '2014-11-13 18:00:08',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			89 => 
+			81 => 
 			array (
 				'id' => 90,
 				'product_name' => 'Repaglinide',
@@ -1092,7 +996,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			90 => 
+			82 => 
 			array (
 				'id' => 91,
 				'product_name' => 'Spironolactone',
@@ -1104,7 +1008,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			91 => 
+			83 => 
 			array (
 				'id' => 92,
 				'product_name' => 'Cell Salts',
@@ -1116,7 +1020,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			92 => 
+			84 => 
 			array (
 				'id' => 93,
 				'product_name' => 'PREZISTA',
@@ -1128,7 +1032,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			93 => 
+			85 => 
 			array (
 				'id' => 94,
 				'product_name' => 'Eszopiclone',
@@ -1140,7 +1044,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			94 => 
+			86 => 
 			array (
 				'id' => 95,
 				'product_name' => 'Ferric Subsulfate',
@@ -1152,7 +1056,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			95 => 
+			87 => 
 			array (
 				'id' => 96,
 				'product_name' => 'Curly Dock',
@@ -1164,7 +1068,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			96 => 
+			88 => 
 			array (
 				'id' => 97,
 				'product_name' => 'PINCHOT CEDAR POLLEN',
@@ -1176,7 +1080,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			97 => 
+			89 => 
 			array (
 				'id' => 98,
 				'product_name' => 'AHC Revitalizing Special Gen Cream',
@@ -1188,7 +1092,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			98 => 
+			90 => 
 			array (
 				'id' => 99,
 				'product_name' => 'good neighbor pharmacy complete',
@@ -1200,7 +1104,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			99 => 
+			91 => 
 			array (
 				'id' => 100,
 				'product_name' => 'hydrocortisone Iodoquinol',
@@ -1212,7 +1116,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			100 => 
+			92 => 
 			array (
 				'id' => 101,
 				'product_name' => 'Penicillin V Potassium',
@@ -1224,7 +1128,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			101 => 
+			93 => 
 			array (
 				'id' => 102,
 				'product_name' => 'Bipolaris sorokiniana',
@@ -1236,7 +1140,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			102 => 
+			94 => 
 			array (
 				'id' => 103,
 				'product_name' => 'Ranitidine',
@@ -1248,7 +1152,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			103 => 
+			95 => 
 			array (
 				'id' => 104,
 				'product_name' => 'BAROX',
@@ -1260,7 +1164,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			104 => 
+			96 => 
 			array (
 				'id' => 105,
 				'product_name' => 'Triple Complex UT Tonic',
@@ -1272,7 +1176,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			105 => 
+			97 => 
 			array (
 				'id' => 106,
 				'product_name' => 'Skintegrity Antibacterial Hand',
@@ -1284,7 +1188,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			106 => 
+			98 => 
 			array (
 				'id' => 107,
 				'product_name' => 'Aspirin Free Pain Relief',
@@ -1296,7 +1200,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			107 => 
+			99 => 
 			array (
 				'id' => 108,
 				'product_name' => 'LBEL',
@@ -1308,7 +1212,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			108 => 
+			100 => 
 			array (
 				'id' => 109,
 				'product_name' => 'NARS PRO-PRIME LIGHT OPTIMIZING PRIMER',
@@ -1320,7 +1224,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			109 => 
+			101 => 
 			array (
 				'id' => 110,
 				'product_name' => 'Zohydro',
@@ -1332,19 +1236,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			110 => 
-			array (
-				'id' => 111,
-				'product_name' => 'Acetaminophen and Codeine Phosphate',
-				'purchase_price' => '11.48',
-				'retail_price' => '26.14',
-				'description' => 'Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
-				'category_id' => 5,
-				'created_at' => '2014-07-17 16:52:31',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			111 => 
+			102 => 
 			array (
 				'id' => 112,
 				'product_name' => 'risedronate sodium',
@@ -1356,19 +1248,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			112 => 
-			array (
-				'id' => 113,
-				'product_name' => 'Hydrochlorothiazide',
-				'purchase_price' => '2.37',
-				'retail_price' => '44.56',
-				'description' => 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.',
-				'category_id' => 4,
-				'created_at' => '2014-05-02 06:57:31',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			113 => 
+			103 => 
 			array (
 				'id' => 114,
 				'product_name' => 'Exuviance CoverBlend Skin Caring Foundation',
@@ -1380,7 +1260,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			114 => 
+			104 => 
 			array (
 				'id' => 115,
 				'product_name' => 'Levofloxacin',
@@ -1392,7 +1272,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			115 => 
+			105 => 
 			array (
 				'id' => 116,
 				'product_name' => 'Hydralazine Hydrochloride',
@@ -1404,7 +1284,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			116 => 
+			106 => 
 			array (
 				'id' => 117,
 				'product_name' => 'Sterile Diluent',
@@ -1416,7 +1296,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			117 => 
+			107 => 
 			array (
 				'id' => 118,
 				'product_name' => 'pain relief',
@@ -1428,7 +1308,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			118 => 
+			108 => 
 			array (
 				'id' => 119,
 				'product_name' => 'Head and Shoulders Conditioner',
@@ -1440,19 +1320,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			119 => 
-			array (
-				'id' => 120,
-				'product_name' => 'ACCOLATE',
-				'purchase_price' => '6.55',
-				'retail_price' => '45.89',
-				'description' => 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.',
-				'category_id' => 3,
-				'created_at' => '2014-06-26 11:28:29',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			120 => 
+			109 => 
 			array (
 				'id' => 121,
 				'product_name' => 'DIAZEPAM',
@@ -1464,7 +1332,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			121 => 
+			110 => 
 			array (
 				'id' => 122,
 				'product_name' => 'Gabapentin',
@@ -1476,7 +1344,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			122 => 
+			111 => 
 			array (
 				'id' => 123,
 				'product_name' => 'Fentanyl',
@@ -1488,7 +1356,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			123 => 
+			112 => 
 			array (
 				'id' => 124,
 				'product_name' => 'Hydrocodone Bitartrate and Acetaminophen',
@@ -1500,7 +1368,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			124 => 
+			113 => 
 			array (
 				'id' => 125,
 				'product_name' => 'Furosemide',
@@ -1512,31 +1380,19 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			125 => 
-			array (
-				'id' => 126,
-				'product_name' => 'Diclofenac Sodium',
-				'purchase_price' => '4.60',
-				'retail_price' => '77.88',
-				'description' => 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
-				'category_id' => 3,
-				'created_at' => '2014-03-12 11:57:28',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			126 => 
+			114 => 
 			array (
 				'id' => 127,
-				'product_name' => 'ACETAMINOPHEN AND CODEINE PHOSPHATE',
+				'product_name' => 'AOPHEN AND CODEINE PHOSPHATE',
 				'purchase_price' => '15.29',
 				'retail_price' => '49.73',
 				'description' => 'Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.',
 				'category_id' => 1,
 				'created_at' => '2014-08-07 19:50:31',
-				'updated_at' => '2015-01-01 00:00:00',
+				'updated_at' => '2015-03-04 16:49:59',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			127 => 
+			115 => 
 			array (
 				'id' => 128,
 				'product_name' => 'simple pleasures',
@@ -1548,7 +1404,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			128 => 
+			116 => 
 			array (
 				'id' => 129,
 				'product_name' => 'Fever Inflammations',
@@ -1560,7 +1416,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			129 => 
+			117 => 
 			array (
 				'id' => 130,
 				'product_name' => 'BETHANECHOL CHLORIDE',
@@ -1572,7 +1428,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			130 => 
+			118 => 
 			array (
 				'id' => 131,
 				'product_name' => 'QUERCUS VIRGINIANA POLLEN',
@@ -1584,19 +1440,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			131 => 
-			array (
-				'id' => 132,
-				'product_name' => 'Doxycycline',
-				'purchase_price' => '2.45',
-				'retail_price' => '54.88',
-				'description' => 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.',
-				'category_id' => 2,
-				'created_at' => '2014-09-25 21:13:41',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			132 => 
+			119 => 
 			array (
 				'id' => 133,
 				'product_name' => 'Alendronate Sodium',
@@ -1608,7 +1452,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			133 => 
+			120 => 
 			array (
 				'id' => 134,
 				'product_name' => 'Nabumetone',
@@ -1620,7 +1464,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			134 => 
+			121 => 
 			array (
 				'id' => 135,
 				'product_name' => 'CEFPODOXIME PROXETIL',
@@ -1632,7 +1476,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			135 => 
+			122 => 
 			array (
 				'id' => 136,
 				'product_name' => 'Saline Nasal',
@@ -1644,7 +1488,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			136 => 
+			123 => 
 			array (
 				'id' => 137,
 				'product_name' => 'Probenecid',
@@ -1656,7 +1500,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			137 => 
+			124 => 
 			array (
 				'id' => 138,
 				'product_name' => 'Plus Pharma',
@@ -1668,7 +1512,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			138 => 
+			125 => 
 			array (
 				'id' => 139,
 				'product_name' => 'LBEL EFFET PARFAIT Spots Reducing Effect Foundation SPF 18 -',
@@ -1680,7 +1524,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			139 => 
+			126 => 
 			array (
 				'id' => 140,
 				'product_name' => 'Food - Plant Source, Banana Musa sapientum',
@@ -1692,7 +1536,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			140 => 
+			127 => 
 			array (
 				'id' => 141,
 				'product_name' => 'The Natural Dentist',
@@ -1704,7 +1548,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			141 => 
+			128 => 
 			array (
 				'id' => 142,
 				'product_name' => 'Vyvanse',
@@ -1716,7 +1560,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			142 => 
+			129 => 
 			array (
 				'id' => 143,
 				'product_name' => 'Meclizine HCl',
@@ -1728,7 +1572,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			143 => 
+			130 => 
 			array (
 				'id' => 144,
 				'product_name' => 'INSTANT HAND SANITIZER',
@@ -1740,7 +1584,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			144 => 
+			131 => 
 			array (
 				'id' => 145,
 				'product_name' => 'Fear Phobia',
@@ -1752,7 +1596,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			145 => 
+			132 => 
 			array (
 				'id' => 146,
 				'product_name' => 'CAREONE',
@@ -1764,7 +1608,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			146 => 
+			133 => 
 			array (
 				'id' => 147,
 				'product_name' => 'Pain Soother',
@@ -1776,7 +1620,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			147 => 
+			134 => 
 			array (
 				'id' => 148,
 				'product_name' => 'Lescol',
@@ -1788,7 +1632,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			148 => 
+			135 => 
 			array (
 				'id' => 149,
 				'product_name' => 'Degree Clinical Protection Clean',
@@ -1800,7 +1644,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			149 => 
+			136 => 
 			array (
 				'id' => 150,
 				'product_name' => 'Sore Throat',
@@ -1812,7 +1656,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			150 => 
+			137 => 
 			array (
 				'id' => 151,
 				'product_name' => 'EndaCof DM',
@@ -1824,7 +1668,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			151 => 
+			138 => 
 			array (
 				'id' => 152,
 				'product_name' => 'Aire-Master',
@@ -1836,7 +1680,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			152 => 
+			139 => 
 			array (
 				'id' => 153,
 				'product_name' => 'Folic Acid',
@@ -1848,7 +1692,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			153 => 
+			140 => 
 			array (
 				'id' => 154,
 				'product_name' => 'CORYLUS AMERICANA POLLEN',
@@ -1860,7 +1704,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			154 => 
+			141 => 
 			array (
 				'id' => 155,
 				'product_name' => 'Maxair Autohaler',
@@ -1872,7 +1716,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			155 => 
+			142 => 
 			array (
 				'id' => 156,
 				'product_name' => 'Kiehls Since 1851 Dermatologist Solutions',
@@ -1884,7 +1728,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			156 => 
+			143 => 
 			array (
 				'id' => 157,
 				'product_name' => 'SKIN CAVIAR CONCEALER FOUNDATION SUNSCREEN SPF 15 - Creme Bl',
@@ -1896,7 +1740,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			157 => 
+			144 => 
 			array (
 				'id' => 158,
 				'product_name' => 'CHAMOMILLA',
@@ -1908,7 +1752,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			158 => 
+			145 => 
 			array (
 				'id' => 159,
 				'product_name' => 'EMBEDA',
@@ -1920,7 +1764,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			159 => 
+			146 => 
 			array (
 				'id' => 160,
 				'product_name' => 'Risperidone',
@@ -1932,7 +1776,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			160 => 
+			147 => 
 			array (
 				'id' => 161,
 				'product_name' => 'Satohap',
@@ -1944,7 +1788,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			161 => 
+			148 => 
 			array (
 				'id' => 162,
 				'product_name' => 'Pleo Muscar',
@@ -1956,7 +1800,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			162 => 
+			149 => 
 			array (
 				'id' => 163,
 				'product_name' => 'Cardinal Health Antimicrobial Soap with Triclosan',
@@ -1968,7 +1812,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			163 => 
+			150 => 
 			array (
 				'id' => 164,
 				'product_name' => 'No7 Lift and Luminate Foundation Sunscreen Broad Spectrum SP',
@@ -1980,7 +1824,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			164 => 
+			151 => 
 			array (
 				'id' => 165,
 				'product_name' => 'Dexmethylphenidate Hydrochloride Extended-Release',
@@ -1992,7 +1836,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			165 => 
+			152 => 
 			array (
 				'id' => 166,
 				'product_name' => 'Tramadol Hydrochloride',
@@ -2004,7 +1848,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			166 => 
+			153 => 
 			array (
 				'id' => 167,
 				'product_name' => 'Sunmark Hydrocortisone with Aloe',
@@ -2016,43 +1860,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			167 => 
-			array (
-				'id' => 168,
-				'product_name' => 'Candesartan cilexetil',
-				'purchase_price' => '2.24',
-				'retail_price' => '44.88',
-				'description' => 'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.',
-				'category_id' => 2,
-				'created_at' => '2014-03-28 14:48:20',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			168 => 
-			array (
-				'id' => 169,
-				'product_name' => 'nasal decongestant pe',
-				'purchase_price' => '11.70',
-				'retail_price' => '60.44',
-				'description' => 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.',
-				'category_id' => 2,
-				'created_at' => '2014-02-20 17:49:37',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			169 => 
-			array (
-				'id' => 170,
-				'product_name' => 'Body',
-				'purchase_price' => '19.76',
-				'retail_price' => '71.56',
-				'description' => 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',
-				'category_id' => 2,
-				'created_at' => '2014-04-11 17:21:52',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			170 => 
+			154 => 
 			array (
 				'id' => 171,
 				'product_name' => 'ETHYL ALCOHOL',
@@ -2064,7 +1872,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			171 => 
+			155 => 
 			array (
 				'id' => 172,
 				'product_name' => 'Cold Spot',
@@ -2076,7 +1884,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			172 => 
+			156 => 
 			array (
 				'id' => 173,
 				'product_name' => 'Laxative',
@@ -2088,7 +1896,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			173 => 
+			157 => 
 			array (
 				'id' => 174,
 				'product_name' => 'Salsalate',
@@ -2100,7 +1908,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			174 => 
+			158 => 
 			array (
 				'id' => 175,
 				'product_name' => 'Banana',
@@ -2112,7 +1920,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			175 => 
+			159 => 
 			array (
 				'id' => 176,
 				'product_name' => 'Pollens - Trees, Gum, Sweet Liquidambar styraciflua',
@@ -2124,7 +1932,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			176 => 
+			160 => 
 			array (
 				'id' => 177,
 				'product_name' => 'Revatio',
@@ -2136,7 +1944,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			177 => 
+			161 => 
 			array (
 				'id' => 178,
 				'product_name' => 'Good Sense Pain Relief',
@@ -2148,7 +1956,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			178 => 
+			162 => 
 			array (
 				'id' => 179,
 				'product_name' => 'Zep E-2 Hand Sanitizing Cleaner',
@@ -2160,7 +1968,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			179 => 
+			163 => 
 			array (
 				'id' => 180,
 				'product_name' => 'benzphetamine hydrochloride',
@@ -2172,7 +1980,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			180 => 
+			164 => 
 			array (
 				'id' => 181,
 				'product_name' => 'Lytensopril-90',
@@ -2184,7 +1992,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			181 => 
+			165 => 
 			array (
 				'id' => 182,
 				'product_name' => 'FreAmine HBC',
@@ -2196,7 +2004,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			182 => 
+			166 => 
 			array (
 				'id' => 183,
 				'product_name' => 'Dextroamphetamine saccharate, amphetamine aspartate monohydr',
@@ -2208,7 +2016,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			183 => 
+			167 => 
 			array (
 				'id' => 184,
 				'product_name' => 'Niaspan',
@@ -2220,67 +2028,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			184 => 
-			array (
-				'id' => 185,
-				'product_name' => 'Aminosyn II',
-				'purchase_price' => '6.76',
-				'retail_price' => '39.06',
-				'description' => 'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.',
-				'category_id' => 1,
-				'created_at' => '2014-03-20 03:24:52',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			185 => 
-			array (
-				'id' => 186,
-				'product_name' => 'Instant Foam',
-				'purchase_price' => '11.41',
-				'retail_price' => '96.12',
-				'description' => 'Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.',
-				'category_id' => 1,
-				'created_at' => '2014-07-14 23:23:53',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			186 => 
-			array (
-				'id' => 187,
-				'product_name' => 'LAMIVUDINE',
-				'purchase_price' => '9.61',
-				'retail_price' => '96.24',
-				'description' => 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.',
-				'category_id' => 3,
-				'created_at' => '2014-05-13 23:53:56',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			187 => 
-			array (
-				'id' => 188,
-				'product_name' => 'OXYGEN',
-				'purchase_price' => '9.50',
-				'retail_price' => '36.95',
-				'description' => 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.',
-				'category_id' => 1,
-				'created_at' => '2014-09-09 11:28:08',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			188 => 
-			array (
-				'id' => 189,
-				'product_name' => 'Oxycodone Hydrochloride',
-				'purchase_price' => '15.31',
-				'retail_price' => '55.74',
-				'description' => 'Maecenas rhoncus aliquam lacus.',
-				'category_id' => 1,
-				'created_at' => '2014-07-01 20:29:45',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			189 => 
+			168 => 
 			array (
 				'id' => 190,
 				'product_name' => 'Artificial Tears',
@@ -2292,7 +2040,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			190 => 
+			169 => 
 			array (
 				'id' => 191,
 				'product_name' => 'Carbon Dioxide-Oxygen Mixture',
@@ -2304,7 +2052,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			191 => 
+			170 => 
 			array (
 				'id' => 192,
 				'product_name' => 'MALE-PROS',
@@ -2316,7 +2064,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			192 => 
+			171 => 
 			array (
 				'id' => 193,
 				'product_name' => 'PROSOPIS JULIFLORA POLLEN',
@@ -2328,7 +2076,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			193 => 
+			172 => 
 			array (
 				'id' => 194,
 				'product_name' => 'Midazolam Hydrochloride',
@@ -2340,7 +2088,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			194 => 
+			173 => 
 			array (
 				'id' => 195,
 				'product_name' => 'Stemphylium sarciniforms',
@@ -2352,7 +2100,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			195 => 
+			174 => 
 			array (
 				'id' => 196,
 				'product_name' => 'NICORETTE',
@@ -2364,7 +2112,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			196 => 
+			175 => 
 			array (
 				'id' => 197,
 				'product_name' => 'Skin Defense Concealer Broad Spectrum SPF 15',
@@ -2376,7 +2124,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			197 => 
+			176 => 
 			array (
 				'id' => 198,
 				'product_name' => 'ESTRACE',
@@ -2388,7 +2136,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			198 => 
+			177 => 
 			array (
 				'id' => 199,
 				'product_name' => 'CELEBREX',
@@ -2400,7 +2148,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			199 => 
+			178 => 
 			array (
 				'id' => 200,
 				'product_name' => 'Lidocaine Hydrochloride',
@@ -2412,7 +2160,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			200 => 
+			179 => 
 			array (
 				'id' => 201,
 				'product_name' => 'TYLENOL SINUS',
@@ -2424,7 +2172,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			201 => 
+			180 => 
 			array (
 				'id' => 202,
 				'product_name' => 'Listerine',
@@ -2436,7 +2184,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			202 => 
+			181 => 
 			array (
 				'id' => 203,
 				'product_name' => 'Food - Plant Source, Yeast, Brewer Saccharomyces cerevisiae',
@@ -2448,7 +2196,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			203 => 
+			182 => 
 			array (
 				'id' => 204,
 				'product_name' => 'Extra Strength Pain Reliever',
@@ -2460,7 +2208,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			204 => 
+			183 => 
 			array (
 				'id' => 205,
 				'product_name' => 'Treatment Set TS349705',
@@ -2472,7 +2220,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			205 => 
+			184 => 
 			array (
 				'id' => 206,
 				'product_name' => 'Anti-Bacterial Hand Gel Fresh Picked Strawberries',
@@ -2484,7 +2232,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			206 => 
+			185 => 
 			array (
 				'id' => 207,
 				'product_name' => 'Miconazole 7',
@@ -2496,7 +2244,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			207 => 
+			186 => 
 			array (
 				'id' => 208,
 				'product_name' => 'Hydrocodone Acetaminophen',
@@ -2508,7 +2256,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			208 => 
+			187 => 
 			array (
 				'id' => 209,
 				'product_name' => 'Dog Epithelium',
@@ -2520,19 +2268,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			209 => 
-			array (
-				'id' => 210,
-				'product_name' => 'Simvastatin',
-				'purchase_price' => '16.99',
-				'retail_price' => '49.16',
-				'description' => 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-				'category_id' => 3,
-				'created_at' => '2014-10-19 08:29:58',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			210 => 
+			188 => 
 			array (
 				'id' => 211,
 				'product_name' => 'Publix Burn Relief',
@@ -2544,7 +2280,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			211 => 
+			189 => 
 			array (
 				'id' => 212,
 				'product_name' => 'Natazia',
@@ -2556,7 +2292,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			212 => 
+			190 => 
 			array (
 				'id' => 213,
 				'product_name' => 'Doxycycline',
@@ -2568,7 +2304,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			213 => 
+			191 => 
 			array (
 				'id' => 214,
 				'product_name' => 'Natural Advantage SPF 15 All Day Moisture with AHAs',
@@ -2580,7 +2316,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			214 => 
+			192 => 
 			array (
 				'id' => 215,
 				'product_name' => 'Hand Sanitizer',
@@ -2592,67 +2328,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			215 => 
-			array (
-				'id' => 216,
-				'product_name' => 'Adenosine',
-				'purchase_price' => '3.44',
-				'retail_price' => '31.57',
-				'description' => 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
-				'category_id' => 3,
-				'created_at' => '2014-03-24 10:00:57',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			216 => 
-			array (
-				'id' => 217,
-				'product_name' => 'NUTRITIOUS',
-				'purchase_price' => '10.86',
-				'retail_price' => '46.86',
-				'description' => 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
-				'category_id' => 3,
-				'created_at' => '2014-09-29 09:02:25',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			217 => 
-			array (
-				'id' => 218,
-				'product_name' => 'Nicotiana Carbo',
-				'purchase_price' => '16.99',
-				'retail_price' => '95.08',
-				'description' => 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
-				'category_id' => 1,
-				'created_at' => '2014-02-11 04:20:53',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			218 => 
-			array (
-				'id' => 219,
-				'product_name' => 'SABRIL',
-				'purchase_price' => '9.46',
-				'retail_price' => '62.43',
-				'description' => 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.',
-				'category_id' => 2,
-				'created_at' => '2014-12-20 19:03:33',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			219 => 
-			array (
-				'id' => 220,
-				'product_name' => 'Stool Softener',
-				'purchase_price' => '10.61',
-				'retail_price' => '96.17',
-				'description' => 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
-				'category_id' => 4,
-				'created_at' => '2014-02-04 02:44:24',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			220 => 
+			193 => 
 			array (
 				'id' => 221,
 				'product_name' => 'Fosamax',
@@ -2664,7 +2340,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			221 => 
+			194 => 
 			array (
 				'id' => 222,
 				'product_name' => 'Influenza',
@@ -2676,7 +2352,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			222 => 
+			195 => 
 			array (
 				'id' => 223,
 				'product_name' => 'SudoGest Nasal Decongestant',
@@ -2688,7 +2364,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			223 => 
+			196 => 
 			array (
 				'id' => 224,
 				'product_name' => 'Nasal Decongestant PE',
@@ -2700,7 +2376,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			224 => 
+			197 => 
 			array (
 				'id' => 225,
 				'product_name' => 'Libera Tos',
@@ -2712,7 +2388,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			225 => 
+			198 => 
 			array (
 				'id' => 226,
 				'product_name' => 'Oxycodone and Acetaminophen',
@@ -2724,7 +2400,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			226 => 
+			199 => 
 			array (
 				'id' => 227,
 				'product_name' => 'Ranitidine Hydrochloride',
@@ -2736,7 +2412,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			227 => 
+			200 => 
 			array (
 				'id' => 228,
 				'product_name' => 'tamsulosin hydrochloride',
@@ -2748,7 +2424,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			228 => 
+			201 => 
 			array (
 				'id' => 229,
 				'product_name' => 'Male Tonicity',
@@ -2760,7 +2436,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			229 => 
+			202 => 
 			array (
 				'id' => 230,
 				'product_name' => 'Moisture Renew',
@@ -2772,7 +2448,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			230 => 
+			203 => 
 			array (
 				'id' => 231,
 				'product_name' => 'Diethylpropion Hydrochloride',
@@ -2784,7 +2460,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			231 => 
+			204 => 
 			array (
 				'id' => 232,
 				'product_name' => 'Felbamate',
@@ -2796,7 +2472,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			232 => 
+			205 => 
 			array (
 				'id' => 233,
 				'product_name' => 'Number Four Weed Mixture',
@@ -2808,7 +2484,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			233 => 
+			206 => 
 			array (
 				'id' => 234,
 				'product_name' => 'First Aid Original Bacitraycin Plus',
@@ -2820,7 +2496,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			234 => 
+			207 => 
 			array (
 				'id' => 235,
 				'product_name' => 'womans laxative',
@@ -2832,7 +2508,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			235 => 
+			208 => 
 			array (
 				'id' => 236,
 				'product_name' => 'Leader',
@@ -2844,7 +2520,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			236 => 
+			209 => 
 			array (
 				'id' => 237,
 				'product_name' => 'Halls',
@@ -2856,7 +2532,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			237 => 
+			210 => 
 			array (
 				'id' => 238,
 				'product_name' => 'Estradiol / Norethindrone Acetate',
@@ -2868,7 +2544,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			238 => 
+			211 => 
 			array (
 				'id' => 239,
 				'product_name' => 'Ganciclovir',
@@ -2880,7 +2556,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			239 => 
+			212 => 
 			array (
 				'id' => 240,
 				'product_name' => 'IDOLE CARROT',
@@ -2892,7 +2568,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			240 => 
+			213 => 
 			array (
 				'id' => 241,
 				'product_name' => 'Orphenadrine Citrate',
@@ -2904,7 +2580,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			241 => 
+			214 => 
 			array (
 				'id' => 242,
 				'product_name' => 'Raspberry Scented Hand Sanitizer',
@@ -2916,7 +2592,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			242 => 
+			215 => 
 			array (
 				'id' => 243,
 				'product_name' => 'Lisinopril',
@@ -2928,7 +2604,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			243 => 
+			216 => 
 			array (
 				'id' => 244,
 				'product_name' => 'CLE DE PEAU BEAUTE SILKY FOUNDATION I',
@@ -2940,19 +2616,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			244 => 
-			array (
-				'id' => 245,
-				'product_name' => 'Acacia',
-				'purchase_price' => '3.64',
-				'retail_price' => '97.09',
-				'description' => 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
-				'category_id' => 4,
-				'created_at' => '2014-11-13 14:40:17',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			245 => 
+			217 => 
 			array (
 				'id' => 246,
 				'product_name' => 'Phenazopyridine HCl',
@@ -2964,7 +2628,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			246 => 
+			218 => 
 			array (
 				'id' => 247,
 				'product_name' => 'Wal Fex Allergy',
@@ -2976,7 +2640,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			247 => 
+			219 => 
 			array (
 				'id' => 248,
 				'product_name' => 'Amoxicillin',
@@ -2988,7 +2652,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			248 => 
+			220 => 
 			array (
 				'id' => 249,
 				'product_name' => 'Honey Bee hymenoptera venom Venomil Maintenance',
@@ -3000,7 +2664,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			249 => 
+			221 => 
 			array (
 				'id' => 250,
 				'product_name' => 'NEO-POLYCIN',
@@ -3012,7 +2676,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			250 => 
+			222 => 
 			array (
 				'id' => 251,
 				'product_name' => 'UP AND UP',
@@ -3024,7 +2688,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			251 => 
+			223 => 
 			array (
 				'id' => 252,
 				'product_name' => 'Hydrochlorothiazide',
@@ -3036,7 +2700,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			252 => 
+			224 => 
 			array (
 				'id' => 253,
 				'product_name' => 'Potassium Chloride',
@@ -3048,7 +2712,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			253 => 
+			225 => 
 			array (
 				'id' => 254,
 				'product_name' => 'Minocycline Hydrochloride',
@@ -3060,7 +2724,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			254 => 
+			226 => 
 			array (
 				'id' => 255,
 				'product_name' => 'Fire Ant',
@@ -3072,7 +2736,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			255 => 
+			227 => 
 			array (
 				'id' => 256,
 				'product_name' => 'LASTACAFT',
@@ -3084,7 +2748,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			256 => 
+			228 => 
 			array (
 				'id' => 257,
 				'product_name' => 'TARCEVA',
@@ -3096,7 +2760,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			257 => 
+			229 => 
 			array (
 				'id' => 258,
 				'product_name' => 'Bladder - Kidney',
@@ -3108,7 +2772,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			258 => 
+			230 => 
 			array (
 				'id' => 259,
 				'product_name' => 'fulton street market cold',
@@ -3120,7 +2784,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			259 => 
+			231 => 
 			array (
 				'id' => 260,
 				'product_name' => 'Systemic Detox',
@@ -3132,7 +2796,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			260 => 
+			232 => 
 			array (
 				'id' => 261,
 				'product_name' => 'Personal Care Petroleum Jelly Skin Protectant',
@@ -3144,7 +2808,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			261 => 
+			233 => 
 			array (
 				'id' => 262,
 				'product_name' => 'Smooth texture Orange flavor',
@@ -3156,7 +2820,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			262 => 
+			234 => 
 			array (
 				'id' => 263,
 				'product_name' => 'Soft Care Foaming Instant Hand Sanitizer',
@@ -3168,7 +2832,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			263 => 
+			235 => 
 			array (
 				'id' => 264,
 				'product_name' => 'Finasteride',
@@ -3180,19 +2844,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			264 => 
-			array (
-				'id' => 265,
-				'product_name' => '12 Hour Nasal Decongestant',
-				'purchase_price' => '7.37',
-				'retail_price' => '91.80',
-				'description' => 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
-				'category_id' => 4,
-				'created_at' => '2014-03-24 01:43:04',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			265 => 
+			236 => 
 			array (
 				'id' => 266,
 				'product_name' => 'Nortriptyline Hydrochloride',
@@ -3204,7 +2856,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			266 => 
+			237 => 
 			array (
 				'id' => 267,
 				'product_name' => 'SIMVASTATIN',
@@ -3216,19 +2868,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			267 => 
-			array (
-				'id' => 268,
-				'product_name' => 'OXYGEN',
-				'purchase_price' => '16.86',
-				'retail_price' => '74.59',
-				'description' => 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.',
-				'category_id' => 1,
-				'created_at' => '2014-02-13 01:02:03',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			268 => 
+			238 => 
 			array (
 				'id' => 269,
 				'product_name' => 'Bambusa Pulsatilla',
@@ -3240,31 +2880,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			269 => 
-			array (
-				'id' => 270,
-				'product_name' => 'Acyclovir',
-				'purchase_price' => '14.98',
-				'retail_price' => '25.72',
-				'description' => 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.',
-				'category_id' => 3,
-				'created_at' => '2014-09-07 08:29:23',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			270 => 
-			array (
-				'id' => 271,
-				'product_name' => 'Modicon',
-				'purchase_price' => '12.05',
-				'retail_price' => '33.24',
-				'description' => 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.',
-				'category_id' => 3,
-				'created_at' => '2014-07-12 20:16:28',
-				'updated_at' => '2015-01-01 00:00:00',
-				'deleted_at' => '0000-00-00 00:00:00',
-			),
-			271 => 
+			239 => 
 			array (
 				'id' => 272,
 				'product_name' => 'Candesartan Cilexetil',
@@ -3276,7 +2892,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			272 => 
+			240 => 
 			array (
 				'id' => 273,
 				'product_name' => 'Citalopram Hydrobromide',
@@ -3288,7 +2904,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			273 => 
+			241 => 
 			array (
 				'id' => 274,
 				'product_name' => 'Mephyton',
@@ -3300,7 +2916,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			274 => 
+			242 => 
 			array (
 				'id' => 275,
 				'product_name' => 'Glipizide',
@@ -3312,7 +2928,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			275 => 
+			243 => 
 			array (
 				'id' => 276,
 				'product_name' => 'DermaTAF Antifungal Treatment',
@@ -3324,7 +2940,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			276 => 
+			244 => 
 			array (
 				'id' => 277,
 				'product_name' => 'Severe Cold and Flu',
@@ -3336,7 +2952,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			277 => 
+			245 => 
 			array (
 				'id' => 278,
 				'product_name' => 'Formucare Triple Antibiotic',
@@ -3348,7 +2964,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			278 => 
+			246 => 
 			array (
 				'id' => 279,
 				'product_name' => 'Treatment Set TS348490',
@@ -3360,7 +2976,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			279 => 
+			247 => 
 			array (
 				'id' => 280,
 				'product_name' => 'Body',
@@ -3372,7 +2988,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			280 => 
+			248 => 
 			array (
 				'id' => 281,
 				'product_name' => 'Diltiazem Hydrochloride',
@@ -3384,7 +3000,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			281 => 
+			249 => 
 			array (
 				'id' => 282,
 				'product_name' => 'LOreal Paris Visible Lift',
@@ -3396,7 +3012,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			282 => 
+			250 => 
 			array (
 				'id' => 283,
 				'product_name' => 'PAROXETINE',
@@ -3408,7 +3024,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			283 => 
+			251 => 
 			array (
 				'id' => 284,
 				'product_name' => 'ED-SPAZ',
@@ -3420,7 +3036,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			284 => 
+			252 => 
 			array (
 				'id' => 285,
 				'product_name' => 'Annual Bluegrass',
@@ -3432,7 +3048,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			285 => 
+			253 => 
 			array (
 				'id' => 286,
 				'product_name' => 'OXYGEN',
@@ -3444,7 +3060,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			286 => 
+			254 => 
 			array (
 				'id' => 287,
 				'product_name' => 'Famciclovir',
@@ -3456,7 +3072,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			287 => 
+			255 => 
 			array (
 				'id' => 288,
 				'product_name' => 'Ibuprofen',
@@ -3468,7 +3084,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			288 => 
+			256 => 
 			array (
 				'id' => 289,
 				'product_name' => 'Methylprednisolone',
@@ -3480,7 +3096,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			289 => 
+			257 => 
 			array (
 				'id' => 290,
 				'product_name' => 'Arnica Montana Nartex',
@@ -3492,7 +3108,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			290 => 
+			258 => 
 			array (
 				'id' => 291,
 				'product_name' => 'Topiramate',
@@ -3504,7 +3120,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			291 => 
+			259 => 
 			array (
 				'id' => 292,
 				'product_name' => 'Diclofenac Sodium',
@@ -3516,7 +3132,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			292 => 
+			260 => 
 			array (
 				'id' => 293,
 				'product_name' => 'Sheer Genius Liquid Foundation - Light Look',
@@ -3528,7 +3144,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			293 => 
+			261 => 
 			array (
 				'id' => 294,
 				'product_name' => 'VERELAN PM',
@@ -3540,7 +3156,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			294 => 
+			262 => 
 			array (
 				'id' => 295,
 			'product_name' => 'Anticoagulant Citrate Phosphate Dextrose (CPD) Blood-Pack Un',
@@ -3552,7 +3168,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			295 => 
+			263 => 
 			array (
 				'id' => 296,
 				'product_name' => 'NEOCIDIN',
@@ -3564,7 +3180,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			296 => 
+			264 => 
 			array (
 				'id' => 297,
 				'product_name' => 'SHENG CHUN HERBAL',
@@ -3576,7 +3192,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			297 => 
+			265 => 
 			array (
 				'id' => 298,
 				'product_name' => 'Meropenem',
@@ -3588,7 +3204,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			298 => 
+			266 => 
 			array (
 				'id' => 299,
 				'product_name' => 'Nitroglycerin In Dextrose',
@@ -3600,7 +3216,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' => '2015-01-01 00:00:00',
 				'deleted_at' => '0000-00-00 00:00:00',
 			),
-			299 => 
+			267 => 
 			array (
 				'id' => 300,
 				'product_name' => 'Renewal 7-in-1 Anti-Aging Vitamin',

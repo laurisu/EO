@@ -25,6 +25,10 @@ class CreateCustomersTable extends Migration {
             $table->text("web_page");
             $table->text("address");
             
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users');
+            
             $table->dateTime("created_at");
             $table->dateTime("updated_at");
         });

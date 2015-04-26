@@ -9,23 +9,10 @@ class CustomersTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		\DB::table('customers')->truncate();
+		\DB::table('customers')->delete();
         
 		\DB::table('customers')->insert(array (
 			0 => 
-			array (
-				'id' => 1,
-				'customer' => 'Trudoo',
-				'contact_person' => 'James Stanley',
-				'email' => 'jstanley0@amazon.co.uk',
-			'phone' => '2-(712)769-3247',
-			'mobile' => '3-(844)400-8105',
-				'web_page' => 'upenn.edu',
-				'address' => '484 Ridgeview Way',
-				'created_at' => '2015-01-08 10:22:30',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			1 => 
 			array (
 				'id' => 2,
 				'customer' => 'Shufflester',
@@ -35,10 +22,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(320)181-2467',
 				'web_page' => 'sourceforge.net',
 				'address' => '4 Alpine Plaza',
+				'user_id' => 6,
 				'created_at' => '2014-11-22 02:12:57',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			2 => 
+			1 => 
 			array (
 				'id' => 3,
 				'customer' => 'Skynoodle',
@@ -48,23 +36,25 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(221)259-8467',
 				'web_page' => 'feedburner.com',
 				'address' => '073 Fairfield Center',
+				'user_id' => 1,
 				'created_at' => '2014-05-07 04:04:19',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			3 => 
+			2 => 
 			array (
 				'id' => 4,
 				'customer' => 'Ailane',
-				'contact_person' => 'Sharon Coleman',
+				'contact_person' => 'Sharon Coleman Jr',
 				'email' => 'scoleman3@barnesandnoble.com',
 			'phone' => '9-(099)302-0720',
 			'mobile' => '0-(825)489-3562',
 				'web_page' => '163.com',
 				'address' => '4108 Hayes Pass',
+				'user_id' => 3,
 				'created_at' => '2014-11-06 17:38:23',
-				'updated_at' => '0000-00-00 00:00:00',
+				'updated_at' => '2015-02-18 21:20:44',
 			),
-			4 => 
+			3 => 
 			array (
 				'id' => 5,
 				'customer' => 'Skippad',
@@ -74,10 +64,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(074)872-7909',
 				'web_page' => 'reddit.com',
 				'address' => '11209 Vermont Avenue',
+				'user_id' => 5,
 				'created_at' => '2014-05-19 07:41:28',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			5 => 
+			4 => 
 			array (
 				'id' => 6,
 				'customer' => 'Twitternation',
@@ -87,10 +78,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(761)161-8933',
 				'web_page' => 'dot.gov',
 				'address' => '24410 Ryan Hill',
+				'user_id' => 1,
 				'created_at' => '2014-07-11 19:23:00',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			6 => 
+			5 => 
 			array (
 				'id' => 7,
 				'customer' => 'Tambee',
@@ -100,10 +92,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '3-(845)107-9775',
 				'web_page' => 'acquirethisname.com',
 				'address' => '3 Myrtle Way',
+				'user_id' => 4,
 				'created_at' => '2014-08-21 15:22:26',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			7 => 
+			6 => 
 			array (
 				'id' => 8,
 				'customer' => 'Realbuzz',
@@ -113,62 +106,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(222)376-3545',
 				'web_page' => 'eventbrite.com',
 				'address' => '7925 Birchwood Junction',
+				'user_id' => 2,
 				'created_at' => '2014-12-04 20:51:39',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			8 => 
-			array (
-				'id' => 9,
-				'customer' => 'Youopia',
-				'contact_person' => 'Carol Rose',
-				'email' => 'crose8@1und1.de',
-			'phone' => '3-(679)815-0731',
-			'mobile' => '8-(592)453-2687',
-				'web_page' => 'apple.com',
-				'address' => '82080 Hallows Point',
-				'created_at' => '2014-06-21 10:28:59',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			9 => 
-			array (
-				'id' => 10,
-				'customer' => 'Linklinks',
-				'contact_person' => 'Debra Gonzalez',
-				'email' => 'dgonzalez9@statcounter.com',
-			'phone' => '6-(095)719-1988',
-			'mobile' => '7-(170)947-2601',
-				'web_page' => 'geocities.jp',
-				'address' => '31 Nevada Point',
-				'created_at' => '2014-09-04 10:10:33',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			10 => 
-			array (
-				'id' => 11,
-				'customer' => 'Linklinks',
-				'contact_person' => 'Anne Oliver',
-				'email' => 'aolivera@discuz.net',
-			'phone' => '8-(598)931-1668',
-			'mobile' => '4-(898)511-6849',
-				'web_page' => 'paypal.com',
-				'address' => '7690 Surrey Hill',
-				'created_at' => '2014-09-06 20:52:50',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			11 => 
-			array (
-				'id' => 12,
-				'customer' => 'Gabspot',
-				'contact_person' => 'Harry Spencer',
-				'email' => 'hspencerb@hao123.com',
-			'phone' => '8-(972)386-4363',
-			'mobile' => '9-(639)067-9414',
-				'web_page' => 'nsw.gov.au',
-				'address' => '69 Sunbrook Avenue',
-				'created_at' => '2014-04-07 22:42:02',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			12 => 
+			7 => 
 			array (
 				'id' => 13,
 				'customer' => 'Trilia',
@@ -178,10 +120,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '9-(329)143-0732',
 				'web_page' => 'trellian.com',
 				'address' => '18142 Boyd Hill',
+				'user_id' => 2,
 				'created_at' => '2014-02-19 11:00:48',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			13 => 
+			8 => 
 			array (
 				'id' => 14,
 				'customer' => 'Pixoboo',
@@ -191,10 +134,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '3-(320)408-5521',
 				'web_page' => 'latimes.com',
 				'address' => '22 Crowley Junction',
+				'user_id' => 1,
 				'created_at' => '2014-11-11 05:10:57',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			14 => 
+			9 => 
 			array (
 				'id' => 15,
 				'customer' => 'Shufflebeat',
@@ -204,10 +148,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '9-(468)613-1489',
 				'web_page' => 'fotki.com',
 				'address' => '7220 Thierer Place',
+				'user_id' => 4,
 				'created_at' => '2014-03-04 12:39:22',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			15 => 
+			10 => 
 			array (
 				'id' => 16,
 				'customer' => 'Devpulse',
@@ -217,10 +162,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(193)219-7383',
 				'web_page' => 'booking.com',
 				'address' => '34096 Merrick Point',
+				'user_id' => 3,
 				'created_at' => '2014-05-15 16:34:45',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			16 => 
+			11 => 
 			array (
 				'id' => 17,
 				'customer' => 'Skilith',
@@ -230,10 +176,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '6-(049)178-6160',
 				'web_page' => 'linkedin.com',
 				'address' => '879 Novick Parkway',
+				'user_id' => 5,
 				'created_at' => '2014-07-19 15:14:55',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			17 => 
+			12 => 
 			array (
 				'id' => 18,
 				'customer' => 'Tazzy',
@@ -243,10 +190,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(319)547-2272',
 				'web_page' => 'webs.com',
 				'address' => '0599 Trailsway Trail',
+				'user_id' => 6,
 				'created_at' => '2014-06-01 12:28:11',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			18 => 
+			13 => 
 			array (
 				'id' => 19,
 				'customer' => 'Yabox',
@@ -256,10 +204,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(703)437-1411',
 				'web_page' => 'wikia.com',
 				'address' => '546 Saint Paul Center',
+				'user_id' => 1,
 				'created_at' => '2015-01-11 13:35:36',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			19 => 
+			14 => 
 			array (
 				'id' => 20,
 				'customer' => 'Skimia',
@@ -269,23 +218,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(026)023-4853',
 				'web_page' => 'ucoz.ru',
 				'address' => '1388 Lighthouse Bay Point',
+				'user_id' => 2,
 				'created_at' => '2014-03-06 01:37:54',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			20 => 
-			array (
-				'id' => 21,
-				'customer' => 'Realfire',
-				'contact_person' => 'Fred Smith',
-				'email' => 'fsmithk@europa.eu',
-			'phone' => '7-(064)188-3815',
-			'mobile' => '8-(497)017-8605',
-				'web_page' => 'ameblo.jp',
-				'address' => '273 Sycamore Road',
-				'created_at' => '2014-09-15 03:19:01',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			21 => 
+			15 => 
 			array (
 				'id' => 22,
 				'customer' => 'Tanoodle',
@@ -295,10 +232,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(160)565-2491',
 				'web_page' => 'webs.com',
 				'address' => '2 Kedzie Terrace',
+				'user_id' => 4,
 				'created_at' => '2014-11-13 22:31:22',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			22 => 
+			16 => 
 			array (
 				'id' => 23,
 				'customer' => 'Zoombeat',
@@ -308,10 +246,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(268)578-7946',
 				'web_page' => 'moonfruit.com',
 				'address' => '92969 Jackson Avenue',
+				'user_id' => 1,
 				'created_at' => '2014-12-29 08:38:52',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			23 => 
+			17 => 
 			array (
 				'id' => 24,
 				'customer' => 'Youopia',
@@ -321,10 +260,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(304)628-3394',
 				'web_page' => 'wordpress.org',
 				'address' => '38308 Dixon Alley',
+				'user_id' => 4,
 				'created_at' => '2014-08-26 14:47:19',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			24 => 
+			18 => 
 			array (
 				'id' => 25,
 				'customer' => 'Eare',
@@ -334,10 +274,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(629)693-0835',
 				'web_page' => 'businessinsider.com',
 				'address' => '03571 Mallory Point',
+				'user_id' => 3,
 				'created_at' => '2014-07-12 21:13:52',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			25 => 
+			19 => 
 			array (
 				'id' => 26,
 				'customer' => 'Photolist',
@@ -347,10 +288,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(616)566-2655',
 				'web_page' => 'ning.com',
 				'address' => '69313 Main Drive',
+				'user_id' => 1,
 				'created_at' => '2014-03-31 17:16:22',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			26 => 
+			20 => 
 			array (
 				'id' => 27,
 				'customer' => 'Edgetag',
@@ -360,23 +302,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(285)585-2970',
 				'web_page' => 'unblog.fr',
 				'address' => '09 Hallows Hill',
+				'user_id' => 3,
 				'created_at' => '2014-11-23 05:40:05',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			27 => 
-			array (
-				'id' => 28,
-				'customer' => 'Yoveo',
-				'contact_person' => 'Janet Harper',
-				'email' => 'jharperr@foxnews.com',
-			'phone' => '1-(649)082-0943',
-			'mobile' => '6-(142)202-8237',
-				'web_page' => 'unesco.org',
-				'address' => '32278 Clove Crossing',
-				'created_at' => '2014-05-29 09:33:58',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			28 => 
+			21 => 
 			array (
 				'id' => 29,
 				'customer' => 'Fatz',
@@ -386,10 +316,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '3-(065)066-1208',
 				'web_page' => 'github.com',
 				'address' => '13 Dixon Plaza',
+				'user_id' => 5,
 				'created_at' => '2014-10-27 07:50:22',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			29 => 
+			22 => 
 			array (
 				'id' => 30,
 				'customer' => 'Realfire',
@@ -399,10 +330,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '9-(199)445-6374',
 				'web_page' => 'theguardian.com',
 				'address' => '3342 Oakridge Park',
+				'user_id' => 4,
 				'created_at' => '2014-12-08 10:29:17',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			30 => 
+			23 => 
 			array (
 				'id' => 31,
 				'customer' => 'Gigabox',
@@ -412,10 +344,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(232)703-5117',
 				'web_page' => 'dmoz.org',
 				'address' => '9 Hovde Road',
+				'user_id' => 1,
 				'created_at' => '2014-05-22 07:36:10',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			31 => 
+			24 => 
 			array (
 				'id' => 32,
 				'customer' => 'Fliptune',
@@ -425,10 +358,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(280)599-5898',
 				'web_page' => 'wordpress.org',
 				'address' => '39479 Monterey Point',
+				'user_id' => 3,
 				'created_at' => '2014-10-21 00:08:56',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			32 => 
+			25 => 
 			array (
 				'id' => 33,
 				'customer' => 'Gabspot',
@@ -438,10 +372,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(952)623-3820',
 				'web_page' => 'people.com.cn',
 				'address' => '0 Sutteridge Park',
+				'user_id' => 3,
 				'created_at' => '2014-07-09 22:46:01',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			33 => 
+			26 => 
 			array (
 				'id' => 34,
 				'customer' => 'Linklinks',
@@ -451,10 +386,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(669)604-8022',
 				'web_page' => 'jigsy.com',
 				'address' => '7059 Buena Vista Pass',
+				'user_id' => 1,
 				'created_at' => '2014-05-29 12:30:06',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			34 => 
+			27 => 
 			array (
 				'id' => 35,
 				'customer' => 'Avamba',
@@ -464,10 +400,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(204)743-7140',
 				'web_page' => 'ted.com',
 				'address' => '036 Helena Avenue',
+				'user_id' => 6,
 				'created_at' => '2014-12-26 05:22:30',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			35 => 
+			28 => 
 			array (
 				'id' => 36,
 				'customer' => 'Leexo',
@@ -477,10 +414,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(077)750-7136',
 				'web_page' => 'statcounter.com',
 				'address' => '1561 Jay Parkway',
+				'user_id' => 5,
 				'created_at' => '2014-11-09 22:38:09',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			36 => 
+			29 => 
 			array (
 				'id' => 37,
 				'customer' => 'Omba',
@@ -490,10 +428,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(619)160-7526',
 				'web_page' => 'behance.net',
 				'address' => '9924 Blackbird Junction',
+				'user_id' => 4,
 				'created_at' => '2014-05-30 11:42:31',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			37 => 
+			30 => 
 			array (
 				'id' => 38,
 				'customer' => 'Thoughtbeat',
@@ -503,10 +442,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(086)384-7896',
 				'web_page' => 'pagesperso-orange.fr',
 				'address' => '31703 Mesta Drive',
+				'user_id' => 3,
 				'created_at' => '2014-12-21 07:06:49',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			38 => 
+			31 => 
 			array (
 				'id' => 39,
 				'customer' => 'Thoughtblab',
@@ -516,23 +456,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(327)762-4505',
 				'web_page' => 'spotify.com',
 				'address' => '820 Fairfield Avenue',
+				'user_id' => 2,
 				'created_at' => '2014-11-14 07:32:01',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			39 => 
-			array (
-				'id' => 40,
-				'customer' => 'Jaxspan',
-				'contact_person' => 'Billy Jones',
-				'email' => 'bjones13@techcrunch.com',
-			'phone' => '6-(015)681-8405',
-			'mobile' => '0-(842)930-7274',
-				'web_page' => 'fc2.com',
-				'address' => '1 Pankratz Hill',
-				'created_at' => '2014-12-09 11:30:49',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			40 => 
+			32 => 
 			array (
 				'id' => 41,
 				'customer' => 'Kimia',
@@ -542,10 +470,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(735)312-5741',
 				'web_page' => 'lulu.com',
 				'address' => '9129 Sugar Way',
+				'user_id' => 4,
 				'created_at' => '2015-01-04 17:17:17',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			41 => 
+			33 => 
 			array (
 				'id' => 42,
 				'customer' => 'Ooba',
@@ -555,10 +484,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(801)878-7676',
 				'web_page' => 'un.org',
 				'address' => '876 Parkside Terrace',
+				'user_id' => 2,
 				'created_at' => '2014-07-01 02:52:07',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			42 => 
+			34 => 
 			array (
 				'id' => 43,
 				'customer' => 'Babbleopia',
@@ -568,10 +498,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(294)122-9045',
 				'web_page' => 'who.int',
 				'address' => '14194 Goodland Place',
+				'user_id' => 3,
 				'created_at' => '2015-01-17 16:01:05',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			43 => 
+			35 => 
 			array (
 				'id' => 44,
 				'customer' => 'Photojam',
@@ -581,23 +512,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(197)389-0721',
 				'web_page' => 'live.com',
 				'address' => '177 Declaration Drive',
+				'user_id' => 1,
 				'created_at' => '2014-02-23 04:39:53',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			44 => 
-			array (
-				'id' => 45,
-				'customer' => 'Meezzy',
-				'contact_person' => 'Eric Greene',
-				'email' => 'egreene18@goo.gl',
-			'phone' => '0-(975)407-7690',
-			'mobile' => '4-(093)737-7701',
-				'web_page' => 'github.com',
-				'address' => '88 Londonderry Plaza',
-				'created_at' => '2014-08-29 02:25:49',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			45 => 
+			36 => 
 			array (
 				'id' => 46,
 				'customer' => 'Bubbletube',
@@ -607,10 +526,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(414)785-2433',
 				'web_page' => 'wix.com',
 				'address' => '10611 Ilene Lane',
+				'user_id' => 1,
 				'created_at' => '2014-07-14 06:41:08',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			46 => 
+			37 => 
 			array (
 				'id' => 47,
 				'customer' => 'Twitterworks',
@@ -620,10 +540,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(053)061-9632',
 				'web_page' => 'ow.ly',
 				'address' => '671 Grim Plaza',
+				'user_id' => 3,
 				'created_at' => '2015-01-19 21:26:04',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			47 => 
+			38 => 
 			array (
 				'id' => 48,
 				'customer' => 'Einti',
@@ -633,10 +554,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(016)827-3805',
 				'web_page' => 'fotki.com',
 				'address' => '9 Spaight Avenue',
+				'user_id' => 5,
 				'created_at' => '2014-09-14 21:02:15',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			48 => 
+			39 => 
 			array (
 				'id' => 49,
 				'customer' => 'Demimbu',
@@ -646,10 +568,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(616)795-8891',
 				'web_page' => 'yandex.ru',
 				'address' => '297 Merrick Court',
+				'user_id' => 6,
 				'created_at' => '2014-04-30 19:57:37',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			49 => 
+			40 => 
 			array (
 				'id' => 50,
 				'customer' => 'Oyonder',
@@ -659,10 +582,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(887)294-4769',
 				'web_page' => 'webeden.co.uk',
 				'address' => '3 Northwestern Parkway',
+				'user_id' => 6,
 				'created_at' => '2014-09-27 12:38:30',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			50 => 
+			41 => 
 			array (
 				'id' => 51,
 				'customer' => 'Ntag',
@@ -672,10 +596,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(356)056-1143',
 				'web_page' => 'arizona.edu',
 				'address' => '31224 Mifflin Park',
+				'user_id' => 1,
 				'created_at' => '2014-11-18 20:50:24',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			51 => 
+			42 => 
 			array (
 				'id' => 52,
 				'customer' => 'Centidel',
@@ -685,10 +610,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(712)056-8027',
 				'web_page' => 'discovery.com',
 				'address' => '6 Merchant Way',
+				'user_id' => 1,
 				'created_at' => '2015-01-12 19:12:13',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			52 => 
+			43 => 
 			array (
 				'id' => 53,
 				'customer' => 'Brainlounge',
@@ -698,23 +624,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(915)760-6154',
 				'web_page' => 'wisc.edu',
 				'address' => '271 Sunbrook Park',
+				'user_id' => 5,
 				'created_at' => '2014-06-11 02:51:12',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			53 => 
-			array (
-				'id' => 54,
-				'customer' => 'Jaxspan',
-				'contact_person' => 'Ernest Webb',
-				'email' => 'ewebb1h@typepad.com',
-			'phone' => '5-(943)338-3907',
-			'mobile' => '1-(434)425-4677',
-				'web_page' => 'fotki.com',
-				'address' => '2512 Westridge Crossing',
-				'created_at' => '2014-07-08 15:53:07',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			54 => 
+			44 => 
 			array (
 				'id' => 55,
 				'customer' => 'Muxo',
@@ -724,10 +638,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(780)179-6336',
 				'web_page' => 'jugem.jp',
 				'address' => '9 Talisman Street',
+				'user_id' => 5,
 				'created_at' => '2014-10-02 15:30:25',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			55 => 
+			45 => 
 			array (
 				'id' => 56,
 				'customer' => 'Kwideo',
@@ -737,10 +652,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '3-(118)747-1945',
 				'web_page' => 'desdev.cn',
 				'address' => '18 Independence Hill',
+				'user_id' => 4,
 				'created_at' => '2014-02-27 15:09:33',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			56 => 
+			46 => 
 			array (
 				'id' => 57,
 				'customer' => 'Skipstorm',
@@ -750,10 +666,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(842)959-4066',
 				'web_page' => 'blogspot.com',
 				'address' => '09483 Beilfuss Drive',
+				'user_id' => 4,
 				'created_at' => '2014-10-17 06:24:07',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			57 => 
+			47 => 
 			array (
 				'id' => 58,
 				'customer' => 'Buzzbean',
@@ -763,10 +680,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(773)698-0963',
 				'web_page' => 'vk.com',
 				'address' => '76 Brentwood Pass',
+				'user_id' => 4,
 				'created_at' => '2014-11-10 19:17:47',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			58 => 
+			48 => 
 			array (
 				'id' => 59,
 				'customer' => 'Zoomzone',
@@ -776,10 +694,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(499)099-0815',
 				'web_page' => 'freewebs.com',
 				'address' => '4 Katie Crossing',
+				'user_id' => 2,
 				'created_at' => '2014-03-11 07:42:51',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			59 => 
+			49 => 
 			array (
 				'id' => 60,
 				'customer' => 'Kanoodle',
@@ -789,36 +708,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(358)806-9096',
 				'web_page' => 'weibo.com',
 				'address' => '73410 Golf Park',
+				'user_id' => 2,
 				'created_at' => '2014-10-20 04:54:53',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			60 => 
-			array (
-				'id' => 61,
-				'customer' => 'Agimba',
-				'contact_person' => 'Louis Wilson',
-				'email' => 'lwilson1o@networksolutions.com',
-			'phone' => '1-(279)600-8658',
-			'mobile' => '9-(818)637-1907',
-				'web_page' => 'yellowbook.com',
-				'address' => '7 Bultman Center',
-				'created_at' => '2014-07-31 13:24:23',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			61 => 
-			array (
-				'id' => 62,
-				'customer' => 'Babbleopia',
-				'contact_person' => 'Sharon Fisher',
-				'email' => 'sfisher1p@drupal.org',
-			'phone' => '3-(391)928-5932',
-			'mobile' => '7-(690)775-8284',
-				'web_page' => 'wisc.edu',
-				'address' => '70760 Oakridge Park',
-				'created_at' => '2014-07-30 09:23:17',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			62 => 
+			50 => 
 			array (
 				'id' => 63,
 				'customer' => 'Edgewire',
@@ -828,10 +722,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(201)427-5500',
 				'web_page' => 'stumbleupon.com',
 				'address' => '3818 Stuart Place',
+				'user_id' => 2,
 				'created_at' => '2014-09-17 01:17:56',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			63 => 
+			51 => 
 			array (
 				'id' => 64,
 				'customer' => 'Skiba',
@@ -841,10 +736,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '4-(187)265-8547',
 				'web_page' => 'stanford.edu',
 				'address' => '99726 Darwin Alley',
+				'user_id' => 3,
 				'created_at' => '2014-07-18 17:16:33',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			64 => 
+			52 => 
 			array (
 				'id' => 65,
 				'customer' => 'Wordpedia',
@@ -854,10 +750,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(448)303-2580',
 				'web_page' => 'drupal.org',
 				'address' => '7 Bartelt Drive',
+				'user_id' => 1,
 				'created_at' => '2014-08-05 06:22:39',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			65 => 
+			53 => 
 			array (
 				'id' => 66,
 				'customer' => 'Yambee',
@@ -867,10 +764,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(418)666-9544',
 				'web_page' => 'privacy.gov.au',
 				'address' => '7833 Crowley Hill',
+				'user_id' => 3,
 				'created_at' => '2014-04-18 21:43:57',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			66 => 
+			54 => 
 			array (
 				'id' => 67,
 				'customer' => 'Geba',
@@ -880,10 +778,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(015)909-5598',
 				'web_page' => 'google.com.au',
 				'address' => '190 Corben Avenue',
+				'user_id' => 3,
 				'created_at' => '2014-09-06 09:11:42',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			67 => 
+			55 => 
 			array (
 				'id' => 68,
 				'customer' => 'Divape',
@@ -893,10 +792,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '6-(681)719-7086',
 				'web_page' => 'illinois.edu',
 				'address' => '10639 Anzinger Park',
+				'user_id' => 3,
 				'created_at' => '2014-11-04 11:16:42',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			68 => 
+			56 => 
 			array (
 				'id' => 69,
 				'customer' => 'Trudoo',
@@ -906,10 +806,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(851)421-7766',
 				'web_page' => 'cmu.edu',
 				'address' => '548 Dawn Way',
+				'user_id' => 5,
 				'created_at' => '2014-04-15 11:32:15',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			69 => 
+			57 => 
 			array (
 				'id' => 70,
 				'customer' => 'Eamia',
@@ -919,10 +820,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(965)836-3935',
 				'web_page' => 'huffingtonpost.com',
 				'address' => '149 Stoughton Avenue',
+				'user_id' => 5,
 				'created_at' => '2014-03-21 11:10:32',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			70 => 
+			58 => 
 			array (
 				'id' => 71,
 				'customer' => 'Jetwire',
@@ -932,10 +834,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(882)520-0466',
 				'web_page' => 'people.com.cn',
 				'address' => '29768 Toban Lane',
+				'user_id' => 5,
 				'created_at' => '2014-12-15 00:35:54',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			71 => 
+			59 => 
 			array (
 				'id' => 72,
 				'customer' => 'Wikibox',
@@ -945,10 +848,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '3-(767)602-0689',
 				'web_page' => 'answers.com',
 				'address' => '88501 Springs Street',
+				'user_id' => 4,
 				'created_at' => '2014-06-23 17:15:03',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			72 => 
+			60 => 
 			array (
 				'id' => 73,
 				'customer' => 'Yoveo',
@@ -958,10 +862,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(093)592-4510',
 				'web_page' => 'xing.com',
 				'address' => '2129 Dapin Plaza',
+				'user_id' => 4,
 				'created_at' => '2014-11-06 05:32:23',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			73 => 
+			61 => 
 			array (
 				'id' => 74,
 				'customer' => 'Buzzshare',
@@ -971,10 +876,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(098)874-8451',
 				'web_page' => 'reference.com',
 				'address' => '93760 Rusk Crossing',
+				'user_id' => 1,
 				'created_at' => '2014-10-11 10:59:09',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			74 => 
+			62 => 
 			array (
 				'id' => 75,
 				'customer' => 'Meezzy',
@@ -984,10 +890,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '6-(297)299-5919',
 				'web_page' => 'usda.gov',
 				'address' => '7341 Messerschmidt Road',
+				'user_id' => 4,
 				'created_at' => '2014-12-15 03:56:12',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			75 => 
+			63 => 
 			array (
 				'id' => 76,
 				'customer' => 'Voonyx',
@@ -997,10 +904,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(510)442-5979',
 				'web_page' => 'freewebs.com',
 				'address' => '8624 Fairfield Park',
+				'user_id' => 3,
 				'created_at' => '2014-10-05 20:40:01',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			76 => 
+			64 => 
 			array (
 				'id' => 77,
 				'customer' => 'Realmix',
@@ -1010,10 +918,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(581)529-2591',
 				'web_page' => 'craigslist.org',
 				'address' => '20 Mccormick Center',
+				'user_id' => 3,
 				'created_at' => '2014-04-18 09:28:25',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			77 => 
+			65 => 
 			array (
 				'id' => 78,
 				'customer' => 'Pixope',
@@ -1023,10 +932,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(829)939-0943',
 				'web_page' => 'un.org',
 				'address' => '3 Manitowish Lane',
+				'user_id' => 1,
 				'created_at' => '2014-08-08 01:56:12',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			78 => 
+			66 => 
 			array (
 				'id' => 79,
 				'customer' => 'Jaxspan',
@@ -1036,10 +946,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '6-(235)143-2066',
 				'web_page' => 'google.co.jp',
 				'address' => '8348 Toban Terrace',
+				'user_id' => 5,
 				'created_at' => '2014-03-01 22:53:41',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			79 => 
+			67 => 
 			array (
 				'id' => 80,
 				'customer' => 'Cogidoo',
@@ -1049,10 +960,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '0-(609)590-0763',
 				'web_page' => '163.com',
 				'address' => '83391 Homewood Court',
+				'user_id' => 4,
 				'created_at' => '2014-12-13 23:46:48',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			80 => 
+			68 => 
 			array (
 				'id' => 81,
 				'customer' => 'Skidoo',
@@ -1062,10 +974,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(661)153-4948',
 				'web_page' => 'imdb.com',
 				'address' => '87 Bayside Court',
+				'user_id' => 3,
 				'created_at' => '2014-08-09 14:19:30',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			81 => 
+			69 => 
 			array (
 				'id' => 82,
 				'customer' => 'Browsedrive',
@@ -1075,10 +988,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(255)132-8185',
 				'web_page' => 'joomla.org',
 				'address' => '4296 Lotheville Terrace',
+				'user_id' => 3,
 				'created_at' => '2014-03-18 16:18:21',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			82 => 
+			70 => 
 			array (
 				'id' => 83,
 				'customer' => 'Quinu',
@@ -1088,10 +1002,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '9-(352)525-3229',
 				'web_page' => 'fda.gov',
 				'address' => '2251 Maryland Crossing',
+				'user_id' => 6,
 				'created_at' => '2014-08-17 21:25:19',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			83 => 
+			71 => 
 			array (
 				'id' => 84,
 				'customer' => 'Zoozzy',
@@ -1101,10 +1016,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(343)336-9819',
 				'web_page' => 'freewebs.com',
 				'address' => '70626 Memorial Crossing',
+				'user_id' => 6,
 				'created_at' => '2015-01-05 02:38:35',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			84 => 
+			72 => 
 			array (
 				'id' => 85,
 				'customer' => 'Jaxnation',
@@ -1114,10 +1030,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '7-(132)434-2802',
 				'web_page' => 'noaa.gov',
 				'address' => '8428 Clyde Gallagher Way',
+				'user_id' => 5,
 				'created_at' => '2014-06-09 12:08:31',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			85 => 
+			73 => 
 			array (
 				'id' => 86,
 				'customer' => 'Realblab',
@@ -1127,10 +1044,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '9-(106)751-7472',
 				'web_page' => 'msn.com',
 				'address' => '558 Randy Terrace',
+				'user_id' => 6,
 				'created_at' => '2014-04-14 13:42:50',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			86 => 
+			74 => 
 			array (
 				'id' => 87,
 				'customer' => 'Blogtags',
@@ -1140,10 +1058,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(671)665-0203',
 				'web_page' => 'mayoclinic.com',
 				'address' => '3 Butternut Junction',
+				'user_id' => 4,
 				'created_at' => '2014-08-15 08:52:13',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			87 => 
+			75 => 
 			array (
 				'id' => 88,
 				'customer' => 'Plajo',
@@ -1153,23 +1072,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(080)489-2228',
 				'web_page' => 'virginia.edu',
 				'address' => '81 New Castle Pass',
+				'user_id' => 2,
 				'created_at' => '2014-05-11 19:33:11',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			88 => 
-			array (
-				'id' => 89,
-				'customer' => 'Dabshots',
-				'contact_person' => 'Betty Mason',
-				'email' => 'bmason2g@vimeo.com',
-			'phone' => '5-(526)964-5443',
-			'mobile' => '7-(688)132-1434',
-				'web_page' => 'spotify.com',
-				'address' => '83 Rieder Point',
-				'created_at' => '2014-06-13 21:50:21',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			89 => 
+			76 => 
 			array (
 				'id' => 90,
 				'customer' => 'Miboo',
@@ -1179,23 +1086,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(124)000-2818',
 				'web_page' => 'google.fr',
 				'address' => '6263 Memorial Pass',
+				'user_id' => 3,
 				'created_at' => '2014-04-10 19:34:08',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			90 => 
-			array (
-				'id' => 91,
-				'customer' => 'Quatz',
-				'contact_person' => 'Emily Weaver',
-				'email' => 'eweaver2i@washingtonpost.com',
-			'phone' => '0-(101)969-0457',
-			'mobile' => '1-(602)633-3771',
-				'web_page' => 'berkeley.edu',
-				'address' => '84347 Alpine Drive',
-				'created_at' => '2015-01-01 16:32:51',
-				'updated_at' => '0000-00-00 00:00:00',
-			),
-			91 => 
+			77 => 
 			array (
 				'id' => 92,
 				'customer' => 'Skaboo',
@@ -1205,10 +1100,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(917)431-6303',
 				'web_page' => 'cornell.edu',
 				'address' => '61796 Hoepker Lane',
+				'user_id' => 3,
 				'created_at' => '2014-11-29 21:29:26',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			92 => 
+			78 => 
 			array (
 				'id' => 93,
 				'customer' => 'Devbug',
@@ -1218,10 +1114,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(284)833-3670',
 				'web_page' => 'blogspot.com',
 				'address' => '6963 Trailsway Place',
+				'user_id' => 3,
 				'created_at' => '2014-07-18 17:06:52',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			93 => 
+			79 => 
 			array (
 				'id' => 94,
 				'customer' => 'Yata',
@@ -1231,10 +1128,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '9-(844)646-3801',
 				'web_page' => 'sitemeter.com',
 				'address' => '3532 Lawn Crossing',
+				'user_id' => 3,
 				'created_at' => '2014-04-27 16:03:32',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			94 => 
+			80 => 
 			array (
 				'id' => 95,
 				'customer' => 'Thoughtmix',
@@ -1244,10 +1142,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '1-(289)846-3700',
 				'web_page' => 'intel.com',
 				'address' => '62774 Kingsford Center',
+				'user_id' => 3,
 				'created_at' => '2015-01-10 16:33:22',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			95 => 
+			81 => 
 			array (
 				'id' => 96,
 				'customer' => 'Trupe',
@@ -1257,10 +1156,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '6-(096)711-7135',
 				'web_page' => 'miitbeian.gov.cn',
 				'address' => '03 Lawn Crossing',
+				'user_id' => 4,
 				'created_at' => '2014-10-25 21:43:42',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			96 => 
+			82 => 
 			array (
 				'id' => 97,
 				'customer' => 'Yombu',
@@ -1270,10 +1170,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '5-(403)610-6555',
 				'web_page' => 'state.tx.us',
 				'address' => '23661 Marquette Parkway',
+				'user_id' => 5,
 				'created_at' => '2014-07-24 22:50:43',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			97 => 
+			83 => 
 			array (
 				'id' => 98,
 				'customer' => 'Dabshots',
@@ -1283,10 +1184,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '2-(374)719-2401',
 				'web_page' => 'plala.or.jp',
 				'address' => '2663 Buell Park',
+				'user_id' => 4,
 				'created_at' => '2014-05-12 09:29:57',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			98 => 
+			84 => 
 			array (
 				'id' => 99,
 				'customer' => 'Mymm',
@@ -1296,10 +1198,11 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '6-(493)342-0521',
 				'web_page' => 'e-recht24.de',
 				'address' => '18 Hoffman Crossing',
+				'user_id' => 3,
 				'created_at' => '2014-04-16 19:23:25',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
-			99 => 
+			85 => 
 			array (
 				'id' => 100,
 				'customer' => 'Quatz',
@@ -1309,8 +1212,23 @@ class CustomersTableSeeder extends Seeder {
 			'mobile' => '8-(610)919-0410',
 				'web_page' => 'cdc.gov',
 				'address' => '1 Pine View Street',
+				'user_id' => 2,
 				'created_at' => '2014-03-05 01:23:33',
 				'updated_at' => '0000-00-00 00:00:00',
+			),
+			86 => 
+			array (
+				'id' => 102,
+				'customer' => 'Company 100',
+				'contact_person' => 'Jonh Smith',
+				'email' => 'johny@johnybits.zz',
+				'phone' => 'adads',
+				'mobile' => 'asdas',
+				'web_page' => 'http://www.google.com',
+				'address' => 'asdad',
+				'user_id' => 6,
+				'created_at' => '2015-03-03 19:46:20',
+				'updated_at' => '2015-03-03 19:46:20',
 			),
 		));
 	}

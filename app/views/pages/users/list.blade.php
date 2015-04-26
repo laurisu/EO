@@ -21,70 +21,108 @@
 </div>
 <div class="my-view-header-wrapper-affix-replacer" data-spy="affix" data-offset-top="20"></div>
 
-@foreach($users as $user)
 
-<div class="row">
-    <div class="col-xs-12 col-lg-4">
-        
-    </div>
-    <div class="col-xs-12 col-lg-8">
-        
-    </div>
-</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-@endforeach
+    @foreach($users as $user)
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading{{ $user->id }}">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $user->id }}" aria-expanded="true" aria-controls="collapse{{ $user->id }}">
+                    {{ $user->name . ' ' . $user->surname . ' <small>(username: ' . $user->username . ')</small>' }}
+                </a>
+            </h4>
+        </div>
+        <div id="collapse{{ $user->id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ $user->id }}">         
+            <div class="panel-body">
 
-@foreach($users as $user)
+                <div role="tabpanel">
 
-<div class="row">
-    <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-        <div class="my-user-profile">
-            <div class="col-sm-12">
-                <div class="col-xs-12 col-sm-8">
-                    <h3>{{ $user->name }} {{ $user->surname }} <br><small>(username: {{ $user->username }})</small></h3>
-                    <p><strong>email: </strong> {{ $user->email }}</p>
-                    <p><strong>title: </strong> </p>
-                    <p><strong>mobile: </strong> </p>
-                    <p><strong>permisions: </strong> </p>
-                    <p><strong>status: </strong> </p>
-                    <p><strong>manager code: </strong> </p>
-                </div>             
-                <div class="col-xs-12 col-sm-4 text-center hidden-xs">
-                    <img src="http://placehold.it/300x400" alt="" class="img-circle img-responsive">
-                </div>
-            </div>            
-            <div class="col-xs-12 my-divider text-center">
-                <div class="col-xs-12 col-sm-4 my-emphasis">
-                    <h2><strong>128</strong></h2>                    
-                    <p><small>Offers total</small></p>
-                    <button class="btn btn-success btn-block"><i class="fa fa-briefcase"></i> Customers </button>
-                </div>
-                <div class="col-xs-12 col-sm-4 my-emphasis">
-                    <h2><strong>12</strong></h2>                    
-                    <p><small>Offers last 30 days</small></p>
-                    <button class="btn btn-info btn-block"><i class="fa fa-archive"></i> Offers </button>
-                </div>
-                <div class="col-xs-12 col-sm-4 my-emphasis">
-                    <h2><strong>22</strong></h2>                    
-                    <p><small>Customers gained</small></p>
-                    <div class="btn-group dropup btn-block">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-cog"></i> Options </button>
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu text-left" role="menu">
-                            <li><a href="#"><i class="fa fa-envelope"></i> Send an email</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-user-secret"></i> Change permisions</a></li>
-                        </ul>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#myUserProfile{{ $user->id }}" aria-controls="myUserProfile{{ $user->id }}" role="tab" data-toggle="tab">Profile</a></li>
+                        <li role="presentation"><a href="#myUserCustomer{{ $user->id }}" aria-controls="myUserCustomer{{ $user->id }}" role="tab" data-toggle="tab">Customers</a></li>
+                        <li role="presentation"><a href="#myUserStats{{ $user->id }}" aria-controls="myUserStats{{ $user->id }}" role="tab" data-toggle="tab">Statistics</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="myUserProfile{{ $user->id }}">   
+                            <div class="my-tab-content-container">
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <div class="">
+                                        <img src="http://placehold.it/300x400" alt="" class="img-responsive">
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <p>Contact</p>
+                                    <br>
+                                    <p><strong>name: </strong>{{ $user->name }}</p>
+                                    <p><strong>surname: </strong>{{ $user->surname }}</p>
+                                    <p><strong>username: </strong>{{ $user->username }}</p>
+                                    <p><strong>title: </strong>{{ $user->job_title }}</p>
+                                    <p><strong>mobile: </strong>{{ $user->phone }}</p>
+                                    <p><strong>email: </strong>{{ $user->email }}</p>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <p>Settings</p>
+                                    <br>
+                                    <p><strong>Permisions: </strong>
+                                        @if($user->role==0)
+                                            Simple user
+                                        @elseif($user->role==2)
+                                            User with Admin rights
+                                        @endif
+                                    </p>
+                                    <p><strong>Profile status: </strong>
+                                        @if($user->active==1)
+                                            Active
+                                        @elseif($user->role==0)
+                                            Disabled
+                                        @endif
+                                    </p>
+
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="myUserCustomer{{ $user->id }}">
+                            <div class="my-tab-content-container">
+                                <div class="col-xs-12 col-sm-4">
+                                    <p>Customer list</p>
+                                    <br>
+
+
+                                </div>       
+                                <div class="col-xs-12 col-sm-4">
+                                    <p>Customer gained</p>
+                                    <br>
+
+
+                                </div>       
+                                <div class="col-xs-12 col-sm-4">
+
+                                </div>       
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="myUserStats{{ $user->id }}">
+                            <div class="my-tab-content-container">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>                 
+        </div>
     </div>
+    @endforeach
+    
 </div>
-
-@endforeach
 
 @stop
