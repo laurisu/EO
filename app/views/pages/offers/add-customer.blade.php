@@ -13,46 +13,53 @@
         <h4>Choose customer</h4>
     </div>
 
-    <form class="form-horizontal" action="{{ URL::route('product-update', array($product->id)) }}" method="post">
-
+    <form class="form-horizontal" action="{{ URL::route('add-recipient', array($offer->id)) }}" method="post">      
+        <p>Offer id: {{ $offer->id }}</p>
+        
         <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">Customer</label>
+            <label for="inputOfferId" class="col-sm-2 control-label">Offer ID:</label>
             <div class="col-sm-4">
-                
+            {{ Form::text('offer', $offer->id, array(
+                        'class' => 'form-control',
+                        'name' => 'offer_id',
+                        'id' => 'inputOfferId',
+                        'readonly' => 'readonly'
+                        )) }}
+                @if($errors->has('offer_id'))
+                    {{ $errors->first('offer_id') }}
+                @endif
             </div>
         </div>
-
+        
+        <div class="form-group">
+            <label for="inputOfferRecipient" class="col-sm-2 control-label">Customer:</label>
+            <div class="col-sm-4">
+            {{ Form::select('customers', array('default' => 'Please select...') + $customer_list, 'default', array(
+                        'class' => 'form-control',
+                        'name' => 'recipient',
+                        'id' => 'inputOfferRecipient'
+                        )) }}               
+                @if($errors->has('recipient'))
+                    {{ $errors->first('recipient') }}
+                @endif
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button class="btn btn-md my-btn-save" type="submit">
-                    <i class="fa fa-floppy-o"></i> Save
+                    <i class="fa fa-floppy-o"></i> Save an continue
                 </button>
-                <a href="{{{ route('product-list') }}}" class="btn btn-md my-btn-back">
-                    <i class="fa fa-list-alt"></i> Products list
+                <a href="{{{ route('offers-list') }}}" class="btn btn-md my-btn-back">
+                    <i class="fa fa-list-alt"></i> Offers list
                 </a>
-                {{ Form::token() }}
-                <button
-                    type="button"
-                    class="btn btn-md my-btn-delete" 
-                    data-toggle="modal" data-target="#confirmDelete" 
-                    data-title="Delete Product" 
-                    data-test="test" 
-                    data-message='Are you sure you want to delete product - {{ $product->product_name }}?'
-                    data-href="{{ route('product-delete', array('id' => $product->id)) }}" 
-                    >
-                    <i class="fa fa-trash-o"></i> Delete
-                </button>    
-
-                
+                {{ Form::token() }}           
             </div>
         </div>
 
     </form>
 
 </div>
-
-@include('includes.delete_confirm')
 
 @stop
 

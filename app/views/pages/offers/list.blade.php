@@ -41,8 +41,7 @@
             <tfoot>
                 <tr>
                     <td colspan="4">
-                        <a href="" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
-                        <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-save"><i class="fa fa-floppy-o"> Save for later</i></a>
+                        <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
                         <a href="" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
                     </td>
                 </tr>

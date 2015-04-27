@@ -59,9 +59,9 @@ class OfferController extends \BaseController {
                                 'product_id' => $itemId
                             ));
                         }
-                        Cart::destroy();
+//                        Cart::destroy();
                         
-                        return Redirect::route('offer-add-customer');
+                        return Redirect::route('offer-add-customer', array('offerId' => $offerId));
                     }
                 }
 	}
@@ -72,9 +72,45 @@ class OfferController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function addRecipient() {
-            
+	public function getRecipientList($offerId) {
                 
+                $lastOffer = Offer::find($offerId);
+                
+                $customer_list = DB::table('customers')
+                        ->orderBy('customer', 'asc')
+                        ->lists('customer','id');
+                return View::make('pages.offers.add-customer', array('customer_list' => $customer_list))
+                        ->with('customers', $customer_list)
+                        ->with('offer', $lastOffer);
+            
+        }
+        
+        /**
+	 * Store a newly created resource in storage.
+	 * POST /offercontroler
+	 *
+	 * @return Response
+	 */
+	public function putRecipient($offerId) {
+            
+            $validator = Validator::make(Input::all(), array(
+                'offer_id'  => 'required|numeric',
+                'recipient' => 'required|numeric'
+            ));
+            
+            if ($validator->fails()) {
+                return Redirect::route('offer-add-customer', $offerId)
+                            ->withErrors($validator)
+                            ->withInput();
+            } else {
+                $offer = Offer::find($offerId);
+                $offer->customer_id = Input::get('recipient');
+                $offer->status = 1; // 0 - products only | 1 - products + customer | 2 - sent
+                $offer->update();               
+                
+                return Redirect::route('view-offer')
+                            ->with('global', 'Customer has been added');
+            }
             
         }
         
@@ -87,14 +123,9 @@ class OfferController extends \BaseController {
 	 */
 	public function getOffer($id)
 	{
-		if (Auth::user()->isAdmin()) {
-                    $offers  = Offer::all();
-                } else {
-                    $offers  = Offer::with('author')->where('user_id', Auth::user()->id)->get();
-                }				
-     
-                return View::make('pages.offers.add-customer')
-                        ->with('offers', $offers->all());
+                $offer = Offer::find($id); 
+                return View::make('pages.offers.view-edit')
+                        ->with('offer', Offer::find($id));
 	}
 
 	/**

@@ -32,6 +32,7 @@ Route::group(array('before' => 'auth'), function() {
         /*
          * Offers page (POST)
          */
+        Route::post('/offers/offer-update/{offerId}', array('as' => 'add-recipient', 'uses' => 'OfferController@putRecipient'));
         
     });
 
@@ -67,11 +68,13 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/customers/edit-customer/{id}', array('as' => 'customer-edit', 'uses' => 'CustomerController@editCustomer'));
 
     /*
-     * Customers page (GET)
+     * Offers page (GET)
      */
     Route::get('/offers', array('as' => 'offers-list', 'uses' => 'OfferController@getOfferList'));
     Route::get('/offers/create-offer', array('as' => 'offer-create-post', 'uses' => 'OfferController@postNewOffer'));
-    Route::get('/offers/edit-offer/add-customer', array('as' => 'offer-add-customer', 'uses' => 'OfferController@addRecipient'));
+    Route::get('/offers/create-offer/{offerId}', array('as' => 'offer-add-customer', 'uses' => 'OfferController@getRecipientList'));
+    Route::get('/offers/view-offer/{offerId}', array('as' => 'view-offer', 'uses' => 'OfferController@getOffer'));
+    
     /*
      * ADMIN ONLY ROUTES
      */
