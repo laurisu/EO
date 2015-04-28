@@ -130,14 +130,19 @@ class OfferController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /offercontroler/{id}/edit
+	 * GET /offercontroler/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function getEditOffer($id)
+	public function deleteOffer($id)
 	{
-		//
+		$offer = Offer::find($id);
+                $offer->delete();
+
+                return Redirect::route('offers-list')
+                                ->with('global', 'Offer has been <b>DELETED</b> succesfully!')
+                                ->with('alert-class', 'alert-success');
 	}
 
 	/**

@@ -76,6 +76,7 @@
                     <th>User</th>
                     <th>Customer</th>
                     <th>Status</th>
+                    <th>Options</th>
                 </thead>
 
                 <tbody>
@@ -87,12 +88,37 @@
                             <td>{{ $pendingOffer->author->name }}</td>
                             <td>
                                 @if(isset($pendingOffer->recipient->customer))
-                                    $pendingOffer->recipient->customer
+                                    {{ $pendingOffer->recipient->customer }}
                                 @else
                                     n/a
                                 @endif
                             </td>
-                            <td>{{ $pendingOffer->status }}</td>
+                            <td>
+                                {{ $pendingOffer->status }}
+                                @if($pendingOffer->status == 0)
+                                    Unfinished
+                                @elseif($pendingOffer->status == 1)
+                                    Not sent!
+                                @endif
+                            </td>
+                            <td>
+                                @if($pendingOffer->status == 0)
+                                    <a href="{{ route('offer-add-customer', array('offerId' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-user-plus"></i></a>
+                                @elseif($pendingOffer->status == 1)
+                                    <a href="{{ route('view-offer', array('offerId' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-view"><i class="fa fa-paper-plane"></i></a>
+                                @endif
+                                <button
+                                    type="button"
+                                    class="btn btn-xs my-btn-delete" 
+                                    data-toggle="modal" data-target="#confirmDelete" 
+                                    data-title="Delete offer" 
+                                    data-test="test" 
+                                    data-message='Are you sure you want to delete this offer (id: {{ $pendingOffer->id }})?'
+                                    data-href="{{ route('offer-delete', array('offerId' => $pendingOffer->id)) }}" 
+                                    >
+                                    <i class="fa fa-trash"></i>
+                                </button>   
+                            </td>
                         </tr>
                         @endif
                     @endforeach
@@ -137,5 +163,7 @@
         </div>
     </div>
 </div>
+
+@include('includes.delete_confirm')
 
 @stop

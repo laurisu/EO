@@ -41,6 +41,11 @@ class ProductController extends BaseController {
         }
 
         $productsToView = $products->orderBy($sortDbName, $sortDirrection)->paginate(30);
+        $cart = Cart::content();
+        
+        if (!empty($cart)) {
+            
+        }
         
         if (Request::ajax()) {
             return View::make('pages.products.list-ajax')
@@ -48,14 +53,14 @@ class ProductController extends BaseController {
                             'products' => $productsToView,
                             'sortDirrection' => $sortDirrection,
                             'sortName' => $sortName,
-                        ));
+                        ))->with('cart', $cart->all());
         }
         return View::make('pages.products.list')
                 ->with(array(
                     'products' => $productsToView,
                     'sortDirrection' => $sortDirrection,
                     'sortName' => $sortName,
-                ));
+                ))->with('cart', $cart->all());
     }
 
     public function deleteProduct($id) {

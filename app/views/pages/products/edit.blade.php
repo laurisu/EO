@@ -89,22 +89,10 @@
                     data-href="{{ route('product-delete', array('id' => $product->id)) }}" 
                     >
                     <i class="fa fa-trash-o"></i> Delete
-                </button>    
-                    
-
-<!--                <div id="confirmDelete" class="modal hide fade">
-                    <div class="modal-body">
-                        Are you sure you want to delete product - {{ $product->product_name }}?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
-                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
-                    </div>
-                </div>-->
-                
+                </button>                   
             </div>
         </div>
-
+        
     </form>
 
 </div>

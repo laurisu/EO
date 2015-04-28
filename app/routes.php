@@ -73,6 +73,7 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/offers', array('as' => 'offers-list', 'uses' => 'OfferController@getOfferList'));
     Route::get('/offers/create-offer', array('as' => 'offer-create-post', 'uses' => 'OfferController@postNewOffer'));
     Route::get('/offers/create-offer/{offerId}', array('as' => 'offer-add-customer', 'uses' => 'OfferController@getRecipientList'));
+    Route::get('/offers/delete-offer/{offerId}', array('as' => 'offer-delete', 'uses' => 'OfferController@deleteOffer'));
     Route::get('/offers/view-offer/{offerId}', array('as' => 'view-offer', 'uses' => 'OfferController@getOffer'));
     
     /*
