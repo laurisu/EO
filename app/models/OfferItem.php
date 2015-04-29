@@ -11,5 +11,9 @@ class OfferItem extends Eloquent {
     );
     
     protected $table = 'products_in_offer';
-
+ 
+    // for db query
+    public function offer() {
+        return $this->belongsTo('Offer');
+    }
 }

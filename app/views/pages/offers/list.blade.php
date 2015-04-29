@@ -152,8 +152,8 @@
                             <td>{{ $sentOffer->id }}</td>
                             <td>{{ date('d M Y', strtotime($sentOffer->updated_at)) }}</td>
                             <td>{{ $sentOffer->author->name }}</td>
-                            <td>{{ $sentOffer->receiver->customer }}</td>
-                            <td>{{ $sentOffer->status }}</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         @endif
                     @endforeach

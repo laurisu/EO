@@ -33,6 +33,7 @@ Route::group(array('before' => 'auth'), function() {
          * Offers page (POST)
          */
         Route::post('/offers/offer-update/{offerId}', array('as' => 'add-recipient', 'uses' => 'OfferController@putRecipient'));
+        Route::post('/offers/send-offer/{id}', array('as' => 'send-offer', 'uses' => 'OfferController@sendOffer'));
         
     });
 

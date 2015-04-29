@@ -124,8 +124,13 @@ class OfferController extends \BaseController {
 	public function getOffer($id)
 	{
                 $offer = Offer::find($id); 
+                $recipient = Customer::find($offer->customer_id);
+                $user = User::find($offer->user_id);
+                
                 return View::make('pages.offers.view-edit')
-                        ->with('offer', Offer::find($id));
+                        ->with('offer', Offer::find($id))
+                        ->with('recipient', $recipient)
+                        ->with('user', $user);
 	}
 
 	/**
@@ -152,9 +157,45 @@ class OfferController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function sendOffer($id)
 	{
-		//
+		
+                $offer = Offer::find($id);
+                $recipient = Customer::find($offer->customer_id);
+                $user = User::find($offer->user_id);
+                
+                $data = Input::all();
+                $rules = array(
+                    'recipient' => 'required',
+                    'email' => 'required|email'
+                );
+                
+//                $message = 'my first offer...';
+                
+                $validator = Validator::make($data, $rules);
+                
+                if($validator -> passes()){
+                    
+                    Mail::send('emails.offer', array(
+                        'user' => $user->name,
+                        'recipient' => $recipient->contact_person,
+                        'offer' => $offer->id
+                    ), function($message) use ($recipient) {
+                        $message->to(Input::get('email'), $recipient->contact_person)->subject('Our offer');
+                    });
+                    
+                    $offer = Offer::find($id);
+                    $offer->status = 2; // 0 - products only | 1 - products + customer | 2 - sent
+                    $offer->update();   
+                    
+                    return Redirect::route('offers-list')
+                                    ->with('global', 'Offer has been sent!')
+                                    ->with('alert-class', 'alert-success');
+                    
+                } else {
+                    return Redirect::back();
+                }
+                
 	}
 
 	/**
