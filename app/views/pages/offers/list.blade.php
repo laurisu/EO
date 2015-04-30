@@ -81,7 +81,7 @@
 
                 <tbody>
                     @foreach($offers as $pendingOffer)
-                        @if($pendingOffer->status == 0 or 1)
+                        @if($pendingOffer->status < 2)
                         <tr>
                             <td>{{ $pendingOffer->id }}</td>
                             <td>{{ date('d M Y', strtotime($pendingOffer->updated_at)) }}</td>
@@ -103,9 +103,9 @@
                             </td>
                             <td>
                                 @if($pendingOffer->status == 0)
-                                    <a href="{{ route('offer-add-customer', array('offerId' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-user-plus"></i></a>
+                                    <a href="{{ route('offer-add-customer', array('id' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-user-plus"></i></a>
                                 @elseif($pendingOffer->status == 1)
-                                    <a href="{{ route('view-offer', array('offerId' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-view"><i class="fa fa-paper-plane"></i></a>
+                                    <a href="{{ route('view-offer', array('id' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-view"><i class="fa fa-paper-plane"></i></a>
                                 @endif
                                 <button
                                     type="button"

@@ -35,8 +35,8 @@ class OfferController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function postNewOffer()
-	{
+	public function postNewOffer() {
+            
 		$offerItems = Cart::content();
                 
                 if(empty($offerItems)) {
@@ -49,19 +49,19 @@ class OfferController extends \BaseController {
                         'customer_id' => NULL,
                         'status' => 0
                     ));
-                    $offerId = $offer->id;
+                    $id = $offer->id;
                     
                     if($offer){
                         foreach($offerItems as $item) {
                             $itemId = $item->id;
                             $add = OfferItem::create(array(
-                                'offer_id' => $offerId,
+                                'offer_id' => $id,
                                 'product_id' => $itemId
                             ));
                         }
-//                        Cart::destroy();
+                        Cart::destroy();
                         
-                        return Redirect::route('offer-add-customer', array('offerId' => $offerId));
+                        return Redirect::route('offer-add-customer', array('id' => $id));
                     }
                 }
 	}
@@ -72,9 +72,9 @@ class OfferController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function getRecipientList($offerId) {
+	public function getRecipientList($id) {
                 
-                $lastOffer = Offer::find($offerId);
+                $lastOffer = Offer::find($id);
                 
                 $customer_list = DB::table('customers')
                         ->orderBy('customer', 'asc')
@@ -91,7 +91,7 @@ class OfferController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function putRecipient($offerId) {
+	public function putRecipient($id) {
             
             $validator = Validator::make(Input::all(), array(
                 'offer_id'  => 'required|numeric',
@@ -99,17 +99,21 @@ class OfferController extends \BaseController {
             ));
             
             if ($validator->fails()) {
-                return Redirect::route('offer-add-customer', $offerId)
+                return Redirect::route('offer-add-customer', $id)
                             ->withErrors($validator)
                             ->withInput();
             } else {
-                $offer = Offer::find($offerId);
+                $offer = Offer::find($id);
                 $offer->customer_id = Input::get('recipient');
                 $offer->status = 1; // 0 - products only | 1 - products + customer | 2 - sent
                 $offer->update();               
                 
-                return Redirect::route('view-offer')
-                            ->with('global', 'Customer has been added');
+                if($offer) {
+                    return Redirect::route('view-offer', array('id' => $offer->id))
+                            ->with('global', 'Recipient added. Offer is ready for sending.')
+                            ->with('alert-class', 'alert-success');;
+                }
+                
             }
             
         }
@@ -123,14 +127,14 @@ class OfferController extends \BaseController {
 	 */
 	public function getOffer($id)
 	{
-                $offer = Offer::find($id); 
-                $recipient = Customer::find($offer->customer_id);
+                $offer = Offer::find($id);              
                 $user = User::find($offer->user_id);
+                $recipient = Customer::find($offer->customer_id);
                 
                 return View::make('pages.offers.view-edit')
-                        ->with('offer', Offer::find($id))
-                        ->with('recipient', $recipient)
-                        ->with('user', $user);
+                        ->with('offer', $offer)
+                        ->with('user', $user)
+                        ->with('recipient', $recipient);
 	}
 
 	/**
@@ -166,20 +170,18 @@ class OfferController extends \BaseController {
                 
                 $data = Input::all();
                 $rules = array(
-                    'recipient' => 'required',
-                    'email' => 'required|email'
+                    'recipient'     => 'required|exists:customers,customer',
+                    'email'         => 'required|email'
                 );
-                
-//                $message = 'my first offer...';
                 
                 $validator = Validator::make($data, $rules);
                 
                 if($validator -> passes()){
                     
                     Mail::send('emails.offer', array(
-                        'user' => $user->name,
+                        'user'      => $user->name,
                         'recipient' => $recipient->contact_person,
-                        'offer' => $offer->id
+                        'offer'     => $offer->id
                     ), function($message) use ($recipient) {
                         $message->to(Input::get('email'), $recipient->contact_person)->subject('Our offer');
                     });
@@ -193,7 +195,7 @@ class OfferController extends \BaseController {
                                     ->with('alert-class', 'alert-success');
                     
                 } else {
-                    return Redirect::back();
+                    return Redirect::back()->withErrors($validator);
                 }
                 
 	}

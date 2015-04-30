@@ -16,4 +16,8 @@ class OfferItem extends Eloquent {
     public function offer() {
         return $this->belongsTo('Offer');
     }
+     
+    public function product() {
+        return $this->belongsTo('Product');
+    }
 }

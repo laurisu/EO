@@ -25,7 +25,7 @@ class Offer extends Eloquent {
         return $this->belongsTo('Customer');
     }
     
-    public function item() {
+    public function items() {
         $this->hasMany('OfferItem', 'offer_id');
     }
 
