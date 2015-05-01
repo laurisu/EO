@@ -185,7 +185,7 @@ class ProductController extends BaseController {
                 
         return Redirect::back()
 //                ->with('rowid', $rowid)
-                ->with('global', 'Product <b>' . $product->product_name . $rowid . '</b> has been added to latest offer');
+                ->with('global', 'Product <b>' . $product->product_name . '</b> has been added to latest offer');
         
     }
     

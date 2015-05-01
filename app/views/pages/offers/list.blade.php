@@ -45,7 +45,7 @@
                     <tr>
                         <td colspan="5">
                             <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
-                            <a href="" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
+                            <a href="{{ route('empty-cart') }}" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
                         </td>
                     </tr>
                 </tfoot>

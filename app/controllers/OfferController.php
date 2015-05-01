@@ -205,20 +205,27 @@ class OfferController extends \BaseController {
                 }
                 
 	}
-
+        
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /offercontroler/{id}
+	 * GET /offercontroler
 	 *
 	 * @return Response
 	 */
-	public function destroyCart()
+	public function emptyCart()
 	{
-		Cart::destroy();
-                
-                return Redirect::back()
+		
+                $cart = Cart::content();
+ 
+                if(!empty($cart)) {
+                    
+                    Cart::destroy();
+                    
+                    return Redirect::back()
                         ->with('global', 'All items has been removed from prepeared offer')
                         ->with('alert-class', 'alert-warning');
+                }
+          
 	}
 
 }
