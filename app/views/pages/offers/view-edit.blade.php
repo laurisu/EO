@@ -57,6 +57,17 @@
             </div>
         </div>
     
+        <div>
+            <div class="col-sm-2">Offered products</div>
+            <div class="col-sm-10">
+                <ol>
+                    @foreach($items as $item)
+                    <li>{{ $item->product->product_name }}</li>
+                    @endforeach
+                </ol>
+            </div>
+        </div>
+        
         <p>Offered id: {{ $offer->id }}</p>
         <p>Offered products</p>
         <ul>

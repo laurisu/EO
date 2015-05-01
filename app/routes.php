@@ -58,6 +58,7 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/products/delete/{id}', array('as' => 'product-delete', 'uses' => 'ProductController@deleteProduct'));
     Route::get('/products/edit-product/{id}', array('as' => 'product-edit', 'uses' => 'ProductController@editProduct'));
     Route::get('/products/add-to-offer/{id}', array('as' => 'add-to-offer', 'uses' => 'ProductController@addToOffer'));
+    Route::get('/products/remove-from-offer/{rowid}', array('as' => 'remove-from-offer', 'uses' => 'ProductController@removeFromOffer'));
 
     /*
      * Customers page (GET)

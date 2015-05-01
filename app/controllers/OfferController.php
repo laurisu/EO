@@ -20,12 +20,9 @@ class OfferController extends \BaseController {
                     $cart = Cart::content();
                 }				
                 
-//                print_r($cart);
-                
                 return View::make('pages.offers.list')
                         ->with('offers', $offers->all())
-                        ->with('cart', $cart->all());
-                
+                        ->with('cart', $cart->all());              
                
 	}
 
@@ -41,7 +38,8 @@ class OfferController extends \BaseController {
                 
                 if(empty($offerItems)) {
                     return Redirect::route('offers-list')
-                            ->with('global', 'No products has been chosen');
+                            ->with('global', 'No products has been added to offer')
+                            ->with('alert-class', 'alert-warning');
                 } else {
                     
                     $offer = Offer::create(array(
@@ -101,7 +99,9 @@ class OfferController extends \BaseController {
             if ($validator->fails()) {
                 return Redirect::route('offer-add-customer', $id)
                             ->withErrors($validator)
-                            ->withInput();
+                            ->withInput()
+                            ->with('global', 'Recipient has not been added. Please try again.')
+                            ->with('alert-class', 'alert-warning');
             } else {
                 $offer = Offer::find($id);
                 $offer->customer_id = Input::get('recipient');
@@ -199,7 +199,9 @@ class OfferController extends \BaseController {
                                     ->with('alert-class', 'alert-success');
                     
                 } else {
-                    return Redirect::back()->withErrors($validator);
+                    return Redirect::back()->withErrors($validator)
+                                    ->with('global', 'Offer has not been sent.')
+                                    ->with('alert-class', 'alert-warning');
                 }
                 
 	}
@@ -208,12 +210,15 @@ class OfferController extends \BaseController {
 	 * Remove the specified resource from storage.
 	 * DELETE /offercontroler/{id}
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroyCart()
 	{
-		//
+		Cart::destroy();
+                
+                return Redirect::back()
+                        ->with('global', 'All items has been removed from prepeared offer')
+                        ->with('alert-class', 'alert-warning');
 	}
 
 }

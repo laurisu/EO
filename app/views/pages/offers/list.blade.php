@@ -23,42 +23,47 @@
 
 <div class="offer-container">
 @if(!empty($cart))
-    <div class="col-xs-12">
-        <table class="table table-small-font table-hover my-table">
-            <caption>
-                Pending offer
-            </caption>
-            
-            <thead>
-                <tr>
-                    <th>product id</th>
-                    <th>name</th>
-                    <th>price</th>
-                    <th>description</th>
-                </tr>
-            </thead>
-            
-            <tfoot>
-                <tr>
-                    <td colspan="4">
-                        <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
-                        <a href="" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
-                    </td>
-                </tr>
-            </tfoot>
-            
-            <tbody>
-                @foreach($cart as $row)
-                <tr>
-                    <td>{{ $row->id }}</td>
-                    <td>{{ $row->name }}</td>
-                    <td>{{ $row->price }}</td>
-                    <td>{{ $row->product->description }}</td>
-                </tr>
-                @endforeach
-            </tbody>
 
-        </table>
+    <div class="col-xs-12">
+        <div class="table-responsive" data-pattern="priority-columns">
+            <table class="table table-small-font table-hover my-table">
+                <caption>
+                    Pending offer
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th>product id</th>
+                        <th>name</th>
+                        <th>price</th>
+                        <th>description</th>
+                        <th>options</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
+                            <a href="" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
+                        </td>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    @foreach($cart as $row)
+                    <tr>
+                        <td>{{ $row->id }}</td>
+                        <td>{{ $row->name }}</td>
+                        <td>{{ $row->price }}</td>
+                        <td class="my-td-ellipsis"><div>{{ $row->product->description }}</div></td>
+                        <td><a href="{{ route('remove-from-offer', $row->rowid) }}" class="btn btn-xs my-tbl-btn-offer">Remove</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+
+            </table>
+        </div>
     </div>
  @endif   
     <div class="col-md-6">
