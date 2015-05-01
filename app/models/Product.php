@@ -13,7 +13,7 @@ class Product extends Eloquent {
 //    protected $guarded = ['description'];
     protected $table = 'products';
     
-    public function offeredItems() {
+    public function offers() {
         $this->hasMany('OfferItem', 'product_id');
     }
 }

@@ -127,14 +127,16 @@ class OfferController extends \BaseController {
 	 */
 	public function getOffer($id)
 	{
-                $offer = Offer::find($id);              
-                $user = User::find($offer->user_id);
-                $recipient = Customer::find($offer->customer_id);
-                
+                $offer      = Offer::find($id);              
+                $user       = User::find($offer->user_id);
+                $recipient  = Customer::find($offer->customer_id);
+                $items      = OfferItem::with('product')->where('offer_id', $id)->get();
+                        
                 return View::make('pages.offers.view-edit')
                         ->with('offer', $offer)
                         ->with('user', $user)
-                        ->with('recipient', $recipient);
+                        ->with('recipient', $recipient)
+                        ->with('items', $items->all());
 	}
 
 	/**
@@ -164,9 +166,10 @@ class OfferController extends \BaseController {
 	public function sendOffer($id)
 	{
 		
-                $offer = Offer::find($id);
-                $recipient = Customer::find($offer->customer_id);
-                $user = User::find($offer->user_id);
+                $offer      = Offer::find($id);
+                $recipient  = Customer::find($offer->customer_id);
+                $user       = User::find($offer->user_id);
+                $items      = OfferItem::with('product')->where('offer_id', $id)->get();
                 
                 $data = Input::all();
                 $rules = array(
@@ -181,7 +184,8 @@ class OfferController extends \BaseController {
                     Mail::send('emails.offer', array(
                         'user'      => $user->name,
                         'recipient' => $recipient->contact_person,
-                        'offer'     => $offer->id
+                        'offer'     => $offer->id,
+                        'items'     => $items->all()
                     ), function($message) use ($recipient) {
                         $message->to(Input::get('email'), $recipient->contact_person)->subject('Our offer');
                     });

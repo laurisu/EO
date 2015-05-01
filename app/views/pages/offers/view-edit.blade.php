@@ -30,7 +30,7 @@
         <div class="form-group{{ $errors->has('contact_person') ? ' has-error' : '' }}">
         {{ Form::label('myOfferContact', 'Contact', array('class' => 'col-sm-2 control-label')) }}
             <div class="col-sm-4">
-            {{ Form::email('myOfferContact', $recipient->contact_person, array(
+            {{ Form::text('myOfferContact', $recipient->contact_person, array(
                         'class' => 'form-control',
                         'name' => 'contact_person')) }}
             {{ $errors->first('contact_person', '<p class="help-block">:message</p>') }}
@@ -50,16 +50,21 @@
         <div class="form-group{{ $errors->has('user') ? ' has-error' : '' }}">
         {{ Form::label('myOfferUser', 'User', array('class' => 'col-sm-2 control-label')) }}
             <div class="col-sm-4">
-            {{ Form::email('myOfferUser', $user->username, array(
+            {{ Form::text('myOfferUser', $offer->user->username, array(
                         'class' => 'form-control',
                         'name' => 'user')) }}
             {{ $errors->first('user', '<p class="help-block">:message</p>') }}
             </div>
         </div>
     
+        <p>Offered id: {{ $offer->id }}</p>
         <p>Offered products</p>
         <ul>
         
+            @foreach($items as $item)
+            <li>{{ $item->product->product_name }}</li>
+            @endforeach
+            
         </ul>
         
         <div class="form-group">
