@@ -58,6 +58,7 @@
             <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
             <script src="{{ asset('assets/bootstrap-filestyle/src/bootstrap-filestyle.js') }}" type="text/javascript"></script>
             <script src="{{ asset('assets/RWD-Table-Patterns/dist/js/rwd-table.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('assets/chartjs/Chart.js') }}" type="text/javascript"></script>
             <script src="{{ asset('js/site.js') }}" type="text/javascript"></script>
 
     </body>    

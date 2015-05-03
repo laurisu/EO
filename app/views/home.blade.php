@@ -48,33 +48,8 @@
                 <h4>
                     Latest offers
                 </h4>
-                <p>1SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>2SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>3SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>4SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                
+                <canvas id="myOfferStatsChart" width="400" height="400"></canvas>
             </div>
         </div>
 
@@ -83,36 +58,8 @@
                 <h4>
                     Sales Rep Stats
                 </h4>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                
+                <canvas id="myUserStatsChart" width="400" height="400"></canvas>
             </div>
         </div>
 

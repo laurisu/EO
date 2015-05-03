@@ -108,21 +108,39 @@
                             </td>
                             <td>
                                 @if($pendingOffer->status == 0)
-                                    <a href="{{ route('offer-add-customer', array('id' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-edit"><i class="fa fa-user-plus"></i></a>
+                                    <a 
+                                        href="{{ route('offer-add-customer', array('id' => $pendingOffer->id)) }}" 
+                                        class="btn btn-xs my-tbl-btn-edit"
+                                        data-toggle="tooltip"
+                                        data-placement="left"
+                                        title="Add recipient">
+                                        <i class="fa fa-user-plus"></i>
+                                    </a>
                                 @elseif($pendingOffer->status == 1)
-                                    <a href="{{ route('view-offer', array('id' => $pendingOffer->id)) }}" class="btn btn-xs my-tbl-btn-view"><i class="fa fa-paper-plane"></i></a>
+                                    <a 
+                                        href="{{ route('view-offer', array('id' => $pendingOffer->id)) }}" 
+                                        class="btn btn-xs my-tbl-btn-view"
+                                        data-toggle="tooltip"
+                                        data-placement="left"
+                                        title="View and send offer">
+                                        <i class="fa fa-paper-plane"></i>
+                                    </a>
                                 @endif
-                                <button
-                                    type="button"
-                                    class="btn btn-xs my-btn-delete" 
-                                    data-toggle="modal" data-target="#confirmDelete" 
-                                    data-title="Delete offer" 
-                                    data-test="test" 
-                                    data-message='Are you sure you want to delete this offer (id: {{ $pendingOffer->id }})?'
-                                    data-href="{{ route('offer-delete', array('offerId' => $pendingOffer->id)) }}" 
-                                    >
-                                    <i class="fa fa-trash"></i>
-                                </button>   
+                                <span 
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Delete offer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-xs my-btn-delete" 
+                                        data-toggle="modal" 
+                                        data-target="#confirmDelete" 
+                                        data-test="test" 
+                                        data-message='Are you sure you want to delete this offer (id: {{ $pendingOffer->id }})?'
+                                        data-href="{{ route('offer-delete', array('offerId' => $pendingOffer->id)) }}">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </span>  
                             </td>
                         </tr>
                         @endif

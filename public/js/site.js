@@ -70,20 +70,23 @@ $(function () {
         target: '.my-view-header-nav'
     });
 
-    $('.my-view-header .nav a').click(function (event) {
-//        event.preventDefault();
-//        var targetSelector = $(this).attr('href');
-//        var targeElement = $(targetSelector);
-//        var position = targeElement.offset().top;
-//
-//        // scroll to element
-//        $('body').scrollTop(position - scrollSpyOffset -1);
-        
+    $('.my-view-header .nav a').click(function (event) {        
         event.preventDefault();
         $($(this).attr('href'))[0].scrollIntoView();
         scrollBy(0, -scrollSpyOffset);
     });
-
+    
+    /**
+     * Bootstrap 3 Tooltip
+     */
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    /**
+     * Chart.js 
+     */
+    initOfferStats();
+    
+    
 });
 
 
@@ -93,4 +96,41 @@ function applyResponsiveTable(selector) {
         stickyTableHeader: false,
         addFocusBtn: false
     });
+}
+
+function initOfferStats() {
+    var ctx = $("#myOfferStatsChart").get(0).getContext("2d");
+
+    var data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+                {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(151,187,205,0.5)",
+                strokeColor: "rgba(151,187,205,0.8)",
+                highlightFill: "rgba(151,187,205,0.75)",
+                highlightStroke: "rgba(151,187,205,1)",
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }
+        ]
+    };
+    var myNewChart = new Chart(ctx).Line(data);
+}
+
+function initUserStats() {
+    var ctx = $("#myUserStatsChart").get(0).getContext("2d");
+    
+    var data = {
+        labels: [],
+        datasets: []
+    };
+    var myNewChart = new Chart(ctx).Bar(data);
 }
