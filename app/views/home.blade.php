@@ -23,7 +23,7 @@
         </div>
     </div>
 </div>
-<div class="my-view-header-wrapper-affix-replacer" data-spy="affix" data-offset-top="20"></div>
+<!--<div class="my-view-header-wrapper-affix-replacer" data-spy="affix"></div>-->
 
 
 
@@ -49,7 +49,7 @@
                     Latest offers
                 </h4>
                 
-                <canvas id="myOfferStatsChart" width="400" height="400"></canvas>
+                <canvas id="myOfferStatsChart" width="auto" height="400"></canvas>
             </div>
         </div>
 
@@ -66,45 +66,32 @@
         <div class="row">
             <div id="homeNewPotential">
                 <h4>
-                    New potential customers
+                    New contacts for last 30 days 
                 </h4>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
-                <p>SLKDsj LKDJaldkj lKDJLadk</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First comunication</th>
+                            <th>Customer</th>
+                            <th>Manager</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($new_customers as $customer)
+                            <tr>
+                                <td>{{ date("d M Y", strtotime($customer->created_at)) }}</td>
+                                <td>{{ $customer->customer }}</td>
+                                <td>{{ $customer->user->name . ' ' . $customer->user->surname }}</td>
+                                <td>Identifying needs / offer sent / offer prepeared</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                
+                
+                
             </div>
         </div>
         

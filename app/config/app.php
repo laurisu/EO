@@ -125,7 +125,8 @@ return array(
                 'Barryvdh\Debugbar\ServiceProvider',
                 'Way\Generators\GeneratorsServiceProvider',
                 'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
-
+                'Laracasts\Utilities\UtilitiesServiceProvider',
+            
 	),
 
 	/*

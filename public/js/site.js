@@ -1,8 +1,10 @@
 $(function () {
     
-    $('.ajax-product-view, .ajax-product-edit, .open-customer-view ').click(function (event) {
+    /**
+     *  Modal windows
+     */
+    $('.ajax-product-view, .open-customer-view ').click(function (event) {
         event.preventDefault();
-
         $.ajax({
             url: $(this).attr("href"),
             beforeSend: function () {
@@ -17,7 +19,6 @@ $(function () {
 
     $('.js-ajax-search').on('submit', function (event) {
         event.preventDefault();
-
         $.ajax({
             url: $(this).attr("action"), // paņem linku no formas attr action un sūta uz to formas datus 
             type: $(this).attr("method"), // paņem metodi no formas
@@ -40,6 +41,8 @@ $(function () {
      */
     applyResponsiveTable('.table-responsive', {
     });
+    //  Override RWD-Table-Patterns responsive tables plugin default values
+    $('.btn-group').children().removeClass('btn-default').addClass('btn-sm my-table-toolbar-btn');
 
     /**
      *  Confirm delete modal window
@@ -63,7 +66,7 @@ $(function () {
     /**
      * Bootstrap 3 Scrollspy
      */
-    var scrollSpyOffset = 122;
+    var scrollSpyOffset = 95;
 
     $('body').scrollspy({
         offset: scrollSpyOffset,
@@ -85,10 +88,19 @@ $(function () {
      * Chart.js 
      */
     initOfferStats();
-    
-    
+    initUserStats();
+
 });
 
+function data(){
+    var offer = myChartData.offer;
+    var user = myChartData.user;
+    var customer = myChartData.customer;
+    
+    console.log(offer); // bar
+    console.log(user[0].name); // User Obj
+    console.log(customer); // 29
+}
 
 function applyResponsiveTable(selector) {
     $(selector).responsiveTable({
@@ -99,11 +111,46 @@ function applyResponsiveTable(selector) {
 }
 
 function initOfferStats() {
-    var ctx = $("#myOfferStatsChart").get(0).getContext("2d");
+    if($('#myOfferStatsChart').length){
+        var ctx = $("#myOfferStatsChart").get(0).getContext("2d");
+        var offer = myChartData.offer;
 
-    var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
+        var data = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                    {
+                    label: "My First dataset",
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 86, 27, 90]
+                }
+            ]
+        };
+        var myNewChart = new Chart(ctx).Line(data, {
+            responsive: true,
+            maintainAspectRatio: false
+        });
+    }
+}
+
+function initUserStats() {
+    if($('#myUserStatsChart').length) {
+        var ctx = $("#myUserStatsChart").get(0).getContext("2d");
+        var user = myChartData.user;
+
+        var data = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
                 {
                 label: "My First dataset",
                 fillColor: "rgba(220,220,220,0.5)",
@@ -120,17 +167,12 @@ function initOfferStats() {
                 highlightStroke: "rgba(151,187,205,1)",
                 data: [28, 48, 40, 19, 86, 27, 90]
             }
-        ]
-    };
-    var myNewChart = new Chart(ctx).Line(data);
+            ]
+        };
+        var myNewChart = new Chart(ctx).Bar(data, {
+            responsive: true,
+            maintainAspectRatio: false
+        });
+    }
 }
 
-function initUserStats() {
-    var ctx = $("#myUserStatsChart").get(0).getContext("2d");
-    
-    var data = {
-        labels: [],
-        datasets: []
-    };
-    var myNewChart = new Chart(ctx).Bar(data);
-}

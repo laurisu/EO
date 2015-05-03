@@ -8453,6 +8453,7 @@ body {
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   /* View header button styles */
   /* View header button styles */
+  /* View header button styles - this class is applied to all btn-group buttons with jQuery*/
 }
 .btn.my-btn-back {
   /*background-color: lighten(@my-orange, 25%);*/
@@ -8501,6 +8502,19 @@ body {
   background-color: #222222;
   color: #fff;
   opacity: 0.8;
+}
+.btn.my-table-toolbar-btn {
+  margin-top: 5px;
+  background-color: #f4b350;
+  vertical-align: top;
+  border: solid 1px #d1830d;
+  color: #fff;
+}
+.btn.my-table-toolbar-btn:hover,
+.btn.my-table-toolbar-btn:focus {
+  border: solid 1px #222222;
+  background-color: rgba(34, 34, 34, 0.8);
+  color: #fff;
 }
 /* Login / Forgot password
 -------------------------------------------------- */
@@ -8640,7 +8654,7 @@ body {
   height: 0;
 }
 .my-view-header-wrapper-affix-replacer.affix {
-  height: 122px;
+  height: 111px;
   position: relative;
 }
 .table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {
@@ -8650,13 +8664,19 @@ body {
   padding-left: 10px;
 }
 .my-table thead > tr > th {
-  vertical-align: top;
-  text-align: top;
+  vertical-align: middle;
+  text-align: left;
+  font-weight: inherit;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   background-color: #f4b350;
   border-bottom: 1px solid #dddddd;
 }
 .my-table tbody > tr > td > button {
   background-color: none;
+}
+.my-table .my-tbl-btn-align-right a {
+  float: right;
 }
 .my-table .btn {
   color: #fff;
@@ -8687,9 +8707,8 @@ body {
 }
 /* Pagination - all views
 -------------------------------------------------- */
-.pagination a:hover,
-.pagination .active a {
-  background-color: #f5f5f5;
+.my-pagination {
+  margin-top: 0;
 }
 /* Home page
 -------------------------------------------------- */

@@ -13,15 +13,29 @@ class OfferController extends \BaseController {
 	{
             
                 if (Auth::user()->isAdmin()) {
-                    $offers  = Offer::all();
+                    $pendingOffers  = Offer::with('author')
+                            ->where('status','=',0)
+                            ->orWhere('status','=',1)
+                            ->orderBy('created_at', 'ASC')
+                            ->get();
+                    $sentOffers = Offer::with('author')
+                            ->where('status','=',2)
+                            ->orWhere('status','=',3)
+                            ->orWhere('status','=',4)
+                            ->orderBy('created_at', 'ASC')
+                            ->get();
                     $cart = Cart::content();
                 } else {
-                    $offers  = Offer::with('author')->where('user_id', Auth::user()->id)->get();
+                    $offers  = Offer::with('author')
+                            ->where('user_id', Auth::user()->id)
+                            ->orderBy('created_at', 'ASC')
+                            ->get();
                     $cart = Cart::content();
                 }				
                 
                 return View::make('pages.offers.list')
-                        ->with('offers', $offers->all())
+                        ->with('pendingOffers', $pendingOffers)
+                        ->with('sentOffers', $sentOffers)
                         ->with('cart', $cart->all());              
                
 	}
@@ -223,9 +237,98 @@ class OfferController extends \BaseController {
                     
                     return Redirect::back()
                         ->with('global', 'All items has been removed from prepeared offer')
-                        ->with('alert-class', 'alert-warning');
+                        ->with('alert-class', 'alert-info');
                 }
+                
+                return Redirect::back()
+                    ->with('global', 'No changes has been made!')
+                    ->with('alert-class', 'alert-warning'); 
           
 	}
+        
+        public function updateStatusToAccepted($id) {
+            
+            $offer = Offer::find($id);
+            $status_accepted = 3; // ...3 - offer accepted | 4 - offer rejected
+            
+            $data = array(
+                'offer_id'  => $offer->id,
+                'status'    => $status_accepted
+            );
+            $rules = array(
+                'offer_id'  => 'required|numeric|exists:offers,id',
+                'status'    => 'required|numeric'
+            );
+            
+            $validator = Validator::make($data, $rules);
+            
+            if($validator->passes()) {             
+                if($offer->status == 2) {
+
+                    $offer = Offer::find($id);
+                    $offer->status = $status_accepted;
+                    $offer->update();
+
+                    return Redirect::back()
+                                ->with('global', 'Offer status has been changed to - Accepted')
+                                ->with('alert-class', 'alert-success');
+
+                } elseif($offer->status <= 1) {
+                    return Redirect::back()
+                                ->with('global', 'This offer has not been sent, yet!')
+                                ->with('alert-class', 'alert-warning');
+                } elseif($offer->status == 4) {
+                    return Redirect::back()
+                                ->with('global', 'This offer already has been rejected')
+                                ->with('alert-class', 'alert-info');
+                }
+            } 
+            return Redirect::back()
+                        ->with('global', 'Somethink went wrong')
+                        ->with('alert-class', 'alert-danger');
+        }
+        
+        public function updateStatusToRejected($id) {
+            
+            $offer = Offer::find($id);
+            $status_rejected = 4; // ...3 - offer accepted | 4 - offer rejected
+            
+            $data = array(
+                'offer_id'  => $offer->id,
+                'status'    => $status_rejected
+            );
+            $rules = array(
+                'offer_id'  => 'required|numeric|exists:offers,id',
+                'status'    => 'required|numeric'
+            );
+            
+            $validator = Validator::make($data, $rules);
+            
+            if($validator->passes()) {             
+                if($offer->status == 2) {
+
+                    $offer = Offer::find($id);
+                    $offer->status = $status_rejected; 
+                    $offer->update();
+
+                    return Redirect::back()
+                                ->with('global', 'Offer status has been changed to - Rejected')
+                                ->with('alert-class', 'alert-success');
+
+                } elseif($offer->status <= 1) {
+                    return Redirect::back()
+                                ->with('global', 'This offer has not been sent, yet!')
+                                ->with('alert-class', 'alert-warning');
+                } elseif($offer->status == 3) {
+                    return Redirect::back()
+                                ->with('global', 'This offer already has been accepted')
+                                ->with('alert-class', 'alert-info');
+                }
+            } 
+            return Redirect::back()
+                        ->with('global', 'Somethink went wrong')
+                        ->with('alert-class', 'alert-danger');
+            
+        }
 
 }

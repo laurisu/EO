@@ -172,33 +172,28 @@ class ProductController extends BaseController {
             'qty'   => 1,
             'price' => $product->retail_price
         ]);
-//        
-//        $cart = Cart::content();
-//        
-//        foreach ($cart as $row) {
-//            if($product->id == $row->id) {
-//                return $newRowId = $row->rowid;
-//            }
-//        }
-//        
-//        $rowid = $newRowId;
-                
+
         return Redirect::back()
-//                ->with('rowid', $rowid)
-                ->with('global', 'Product <b>' . $product->product_name . '</b> has been added to latest offer');
+                ->with('global', 'Product <b>' . $product->product_name . '</b> has been added to latest offer')
+                ->with('alert-class', 'alert-success');
         
     }
     
     public function removeFromOffer($rowid) {
         
         $row = Cart::get($rowid);
-        $product = Product::find($row->id);
         
-        Cart::remove($rowid);
-        
+        if($row){
+            $product = Product::find($row->product->id);
+            Cart::remove($rowid);
+
+            return Redirect::back()
+                        ->with('global', 'Product <b>' . $product->product_name . '</b> has been removed from offer')
+                        ->with('alert-class', 'alert-info');
+        }
         return Redirect::back()
-                ->with('global', 'Product <b>' . $product->product_name . '</b> has been removed from offer');
+                    ->with('global', 'No changes has been made!')
+                    ->with('alert-class', 'alert-warning');  
         
     }
-
 }

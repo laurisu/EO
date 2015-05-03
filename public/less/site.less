@@ -173,7 +173,20 @@ body {
         color: #fff;
         opacity: 0.8;
     }
-
+    
+    /* View header button styles - this class is applied to all btn-group buttons with jQuery*/
+    &.my-table-toolbar-btn {
+        margin-top: 5px;
+        background-color: @my-orange;
+        vertical-align: top;
+        border: solid 1px darken(@my-orange, 20%);
+        color: #fff;
+        &:hover, &:focus {
+            border: solid 1px @my-black;
+            background-color: rgba(red(@my-black),green(@my-black),blue(@my-black), 0.8); 
+            color: #fff;
+        }
+    }
 }
 
 /* Login / Forgot password
@@ -336,7 +349,7 @@ body {
 .my-view-header-wrapper-affix-replacer{
     height: 0;
     &.affix { 
-        height: @my-navbar-height * 2 + @my-navbar-margin-bottom;
+        height: @my-navbar-height + 40 + @my-navbar-margin-bottom;
         position: relative;
     }
 }
@@ -353,14 +366,22 @@ body {
         padding-left: 10px;
     }
     thead > tr > th {
-        vertical-align: top;
-        text-align: top;
+        vertical-align: middle;
+        text-align: left;
+        font-weight: inherit;
+        color: #fff;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
         background-color: @my-thead-bg-color;
         border-bottom: 1px solid @my-tr-border-color;
     }
     tbody > tr {
         > td > button {
             background-color: none;
+        }
+    }
+    .my-tbl-btn-align-right {
+        a {
+            float: right;
         }
     }
     .btn {
@@ -389,9 +410,8 @@ body {
 /* Pagination - all views
 -------------------------------------------------- */
 
-.pagination a:hover,
-.pagination .active a {
-    background-color: #f5f5f5;
+.my-pagination {
+    margin-top: 0;
 }
 
 /* Home page

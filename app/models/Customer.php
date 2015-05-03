@@ -16,5 +16,8 @@ class Customer extends Eloquent {
     public function offers() {
         $this->hasMany('Offer', 'customer_id');
     }
-    
+     
+    public function user() {
+        return $this->belongsTo('User');
+    }
 }

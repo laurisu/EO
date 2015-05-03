@@ -33,7 +33,7 @@
 
                 <thead>
                     <tr>
-                        <th>product id</th>
+                        <th>ID</th>
                         <th>name</th>
                         <th>price</th>
                         <th>description</th>
@@ -57,7 +57,14 @@
                         <td>{{ $row->name }}</td>
                         <td>{{ $row->price }}</td>
                         <td class="my-td-ellipsis"><div>{{ $row->product->description }}</div></td>
-                        <td><a href="{{ route('remove-from-offer', $row->rowid) }}" class="btn btn-xs my-tbl-btn-offer">Remove</a></td>
+                        <td class="col-xs-1">
+                            <a 
+                                href="{{ route('remove-from-offer', $row->rowid) }}" 
+                                class="btn btn-xs my-tbl-btn-delete"
+                                >
+                                <i class="fa fa-trash"></i> Remove
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -85,40 +92,40 @@
                 </thead>
 
                 <tbody>
-                    @foreach($offers as $pendingOffer)
-                        @if($pendingOffer->status < 2)
+                    @foreach($pendingOffers as $offer)
+                        @if($offer->status < 2)
                         <tr>
-                            <td>{{ $pendingOffer->id }}</td>
-                            <td>{{ date('d M Y', strtotime($pendingOffer->updated_at)) }}</td>
-                            <td>{{ $pendingOffer->author->name }}</td>
+                            <td>{{ $offer->id }}</td>
+                            <td>{{ date('d M Y', strtotime($offer->updated_at)) }}</td>
+                            <td>{{ $offer->author->name . ' ' . $offer->author->surname }}</td>
                             <td>
-                                @if(isset($pendingOffer->recipient->customer))
-                                    {{ $pendingOffer->recipient->customer }}
+                                @if(isset($offer->recipient->customer))
+                                    {{ $offer->recipient->customer }}
                                 @else
                                     n/a
                                 @endif
                             </td>
                             <td>
-                                {{ $pendingOffer->status }}
-                                @if($pendingOffer->status == 0)
+                                {{ $offer->status }}
+                                @if($offer->status == 0)
                                     Unfinished
-                                @elseif($pendingOffer->status == 1)
+                                @elseif($offer->status == 1)
                                     Not sent!
                                 @endif
                             </td>
-                            <td>
-                                @if($pendingOffer->status == 0)
+                            <td class="col-xs-1">
+                                @if($offer->status == 0)
                                     <a 
-                                        href="{{ route('offer-add-customer', array('id' => $pendingOffer->id)) }}" 
+                                        href="{{ route('offer-add-customer', array('id' => $offer->id)) }}" 
                                         class="btn btn-xs my-tbl-btn-edit"
                                         data-toggle="tooltip"
                                         data-placement="left"
                                         title="Add recipient">
                                         <i class="fa fa-user-plus"></i>
                                     </a>
-                                @elseif($pendingOffer->status == 1)
+                                @elseif($offer->status == 1)
                                     <a 
-                                        href="{{ route('view-offer', array('id' => $pendingOffer->id)) }}" 
+                                        href="{{ route('view-offer', array('id' => $offer->id)) }}" 
                                         class="btn btn-xs my-tbl-btn-view"
                                         data-toggle="tooltip"
                                         data-placement="left"
@@ -128,16 +135,16 @@
                                 @endif
                                 <span 
                                     data-toggle="tooltip"
-                                    data-placement="top"
+                                    data-placement="left"
                                     title="Delete offer">
                                     <button
                                         type="button"
-                                        class="btn btn-xs my-btn-delete" 
+                                        class="btn btn-xs my-tbl-btn-delete" 
                                         data-toggle="modal" 
                                         data-target="#confirmDelete" 
                                         data-test="test" 
-                                        data-message='Are you sure you want to delete this offer (id: {{ $pendingOffer->id }})?'
-                                        data-href="{{ route('offer-delete', array('offerId' => $pendingOffer->id)) }}">
+                                        data-message='Are you sure you want to delete this offer (id: {{ $offer->id }})?'
+                                        data-href="{{ route('offer-delete', array('offerId' => $offer->id)) }}">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </span>  
@@ -166,17 +173,57 @@
                     <th>User</th>
                     <th>Customer</th>
                     <th>Status</th>
+                    <th>Options</th>
                 </thead>
 
                 <tbody>
-                    @foreach($offers as $sentOffer)
-                        @if($sentOffer->status == 2)
+                    @foreach($sentOffers as $offer)
+                        @if($offer->status >= 2)
                         <tr>
-                            <td>{{ $sentOffer->id }}</td>
-                            <td>{{ date('d M Y', strtotime($sentOffer->updated_at)) }}</td>
-                            <td>{{ $sentOffer->author->name }}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $offer->id }}</td>
+                            <td>{{ date('d M Y', strtotime($offer->created_at)) }}</td>
+                            <td>{{ $offer->author->name . ' ' . $offer->author->surname }}</td>
+                            <td>
+                                @if(isset($offer->recipient->customer))
+                                    {{ $offer->recipient->customer }}
+                                @else
+                                    n/a
+                                @endif
+                            </td>
+                            <td>
+                                {{ $offer->status }}
+                                @if($offer->status == 2)
+                                    Offer sent
+                                @elseif($offer->status == 3)
+                                    Accepted
+                                @elseif($offer->status == 4)    
+                                    Rejectet
+                                @endif
+                            </td>
+                            <td class="col-xs-1">
+                                @if($offer->status == 2)
+                                    <a 
+                                        href="{{ route('accept-offer', array('id' => $offer->id)) }}" 
+                                        class="btn btn-xs my-tbl-btn-offer"
+                                        data-toggle="tooltip"
+                                        data-placement="left"
+                                        title="Offer accepted by customer">
+                                        <i class="fa fa-check"></i></i>
+                                    </a>
+                                    <a 
+                                        href="{{ route('reject-offer', array('id' => $offer->id)) }}" 
+                                        class="btn btn-xs my-tbl-btn-delete"
+                                        data-toggle="tooltip"
+                                        data-placement="left"
+                                        title="Offer rejected by customer">
+                                        <i class="fa fa-times"></i></i>
+                                    </a>
+                                @elseif($offer->status == 3)
+                                    Accepted
+                                @elseif($offer->status == 4)    
+                                    Rejected
+                                @endif
+                            </td>
                         </tr>
                         @endif
                     @endforeach

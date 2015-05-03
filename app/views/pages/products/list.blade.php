@@ -96,8 +96,8 @@
                     <th data-priority="6">description</th>
                     <th data-priority="5">purchase<br> price <i class="fa fa-eur"></th>
                     <th data-priority="3">retail<br> price <i class="fa fa-eur"></th>
-                    <th data-priority="5">discount</th>
-                    <th data-priority="5">profit <i class="fa fa-eur"></th>
+                    <th data-priority="5">discount<br> &percnt;</th>
+                    <th data-priority="5">profit<br> <i class="fa fa-eur"></th>
                     <th data-priority="1">offer<br> price <i class="fa fa-eur"></th>
                     <th data-priority="1">options</th>
                 </tr>
@@ -115,17 +115,17 @@
                     <td>25.99</td>
                     <td>105.99</td>
                     <td class="col-xs-1">
-                        <a href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view ajax-product-view"  data-target="#myModal"><i class="fa fa-eye"></i> View</a>
                         @if(!empty($cart))
                             @if(Cart::search(array('id' => $product->id)) == TRUE)
-                                <a href="{{ route('remove-from-offer') }}" class="btn btn-xs my-tbl-btn-offer">Remove</a>
+                                <a href="{{ route('offers-list') }}" class="btn btn-xs my-tbl-btn-offer">To offer list</a>
                             @else
                                 <a href="{{ route('add-to-offer', array($product->id)) }}" class="btn btn-xs my-tbl-btn-offer">Add to offer</a>
                             @endif
                         @else
                         <a href="{{ route('add-to-offer', array($product->id)) }}" class="btn btn-xs my-tbl-btn-offer">Add to offer</a>
                         @endif
-                        <a href="{{ route('product-edit', array($product->id)) }}" class="btn btn-xs my-tbl-btn-edit " data-target="#myModal"><i class="fa fa-pencil"></i> Edit</a>
+                        <a href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view ajax-product-view"  data-target="#myModal"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('product-edit', array($product->id)) }}" class="btn btn-xs my-tbl-btn-edit " data-target="#myModal"><i class="fa fa-pencil"></i></a>
                         <!--<button type="button" href="" class="btn btn-xs my-tbl-btn-edit ajax-product-edit" data-target="#myModal"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', ' Edit', array($product->id)) }}</button>-->
                     </td>
                 </tr>

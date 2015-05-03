@@ -78,6 +78,8 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/offers/create-offer/{id}', array('as' => 'offer-add-customer', 'uses' => 'OfferController@getRecipientList'));
     Route::get('/offers/delete-offer/{id}', array('as' => 'offer-delete', 'uses' => 'OfferController@deleteOffer'));
     Route::get('/offers/view-offer/{id}', array('as' => 'view-offer', 'uses' => 'OfferController@getOffer'));
+    Route::get('/offers/offer-accepted/{id}', array('as' => 'accept-offer', 'uses' => 'OfferController@updateStatusToAccepted'));
+    Route::get('/offers/offer-rejected/{id}', array('as' => 'reject-offer', 'uses' => 'OfferController@updateStatusToRejected'));
     
     /*
      * ADMIN ONLY ROUTES
