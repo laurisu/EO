@@ -14,6 +14,6 @@ class Product extends Eloquent {
     protected $table = 'products';
     
     public function offers() {
-        $this->hasMany('OfferItem', 'product_id');
+        return $this->hasMany('OfferItem', 'product_id');
     }
 }

@@ -5,6 +5,7 @@ class AdminController extends BaseController {
     public function getUsersList() {
         
         $users = User::all();
+//        dd($users->customers());
         return View::make('pages.users.list')
                  ->with('users', $users);
     }

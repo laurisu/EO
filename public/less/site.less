@@ -425,22 +425,43 @@ body {
 /* USERS LIST
 -------------------------------------------------- */
 
-.my-user-profile {
-    display: inline-block;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-    border: 1px slid #e3e3e3;
-    h3 {
-        margin-top: 0;
+.my-user-list-accordion {
+    .panel-heading {
+        background-color: @my-orange;
+        .panel-title {
+            color: #fff;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+            
+        }
     }
-    .my-divider {
-        border-top:1px solid rgba(0,0,0,0.1);
-        .my-emphasis {
-            border-top: 4px solid transparent;
-            &:hover {
-                border-top: 4px solid @my-blue;
+    .panel-body {
+        background-color: lighten(@my-blue, 20%);
+        border-radius: 0 0 4px 4px;
+        .nav {
+            li {
+                margin-bottom: 3px;
+                a {
+                    margin-right: 3px;
+                    background-color: lighten(@my-blue, 40%);
+                    border-radius: 4px;
+                }
             }
+            
+            li.active {
+                margin-bottom: -1px;
+                a {
+                    background-color: #fff;
+                    padding-bottom: 14px;
+                    border-radius: 4px 4px 0 0;
+                }
+            }
+        }
+        .my-tab-content-container {
+            overflow: auto; 
+            background-color: #fff;
+            border-radius: 0 0 4px 4px;
+            padding-top: 15px;
+            padding-bottom: 15px;
         }
     }
 }

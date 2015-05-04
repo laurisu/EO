@@ -8718,23 +8718,38 @@ body {
 }
 /* USERS LIST
 -------------------------------------------------- */
-.my-user-profile {
-  display: inline-block;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px slid #e3e3e3;
+.my-user-list-accordion .panel-heading {
+  background-color: #f4b350;
 }
-.my-user-profile h3 {
-  margin-top: 0;
+.my-user-list-accordion .panel-heading .panel-title {
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
-.my-user-profile .my-divider {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+.my-user-list-accordion .panel-body {
+  background-color: #98c4e2;
+  border-radius: 0 0 4px 4px;
 }
-.my-user-profile .my-divider .my-emphasis {
-  border-top: 4px solid transparent;
+.my-user-list-accordion .panel-body .nav li {
+  margin-bottom: 3px;
 }
-.my-user-profile .my-divider .my-emphasis:hover {
-  border-top: 4px solid #4897cc;
+.my-user-list-accordion .panel-body .nav li a {
+  margin-right: 3px;
+  background-color: #e8f2f8;
+  border-radius: 4px;
+}
+.my-user-list-accordion .panel-body .nav li.active {
+  margin-bottom: -1px;
+}
+.my-user-list-accordion .panel-body .nav li.active a {
+  background-color: #fff;
+  padding-bottom: 14px;
+  border-radius: 4px 4px 0 0;
+}
+.my-user-list-accordion .panel-body .my-tab-content-container {
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 /*# sourceMappingURL=/css/site.css.map */

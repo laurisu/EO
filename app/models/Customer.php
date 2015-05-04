@@ -14,7 +14,7 @@ class Customer extends Eloquent {
     protected $table = 'customers';
     
     public function offers() {
-        $this->hasMany('Offer', 'customer_id');
+        return $this->hasMany('Offer', 'customer_id');
     }
      
     public function user() {
