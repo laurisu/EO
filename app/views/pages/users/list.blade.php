@@ -28,21 +28,52 @@
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading{{ $user->id }}">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $user->id }}" aria-expanded="true" aria-controls="collapse{{ $user->id }}">
-                        {{ $user->name . ' ' . $user->surname . ' <small>(username: ' . $user->username . ')</small>' }}
+                    <a 
+                        data-toggle="collapse" 
+                        data-parent="#accordion" 
+                        href="#collapse{{ $user->id }}" 
+                        aria-expanded="true" 
+                        aria-controls="collapse{{ $user->id }}">
+                        {{ $user->name . ' ' . $user->surname }}
                     </a>
                 </h4>
             </div>
-            <div id="collapse{{ $user->id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ $user->id }}">         
+            <div 
+                id="collapse{{ $user->id }}" 
+                class="panel-collapse collapse" 
+                role="tabpanel" 
+                aria-labelledby="heading{{ $user->id }}">         
+                
                 <div class="panel-body">
 
                     <div role="tabpanel">
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#myUserProfile{{ $user->id }}" aria-controls="myUserProfile{{ $user->id }}" role="tab" data-toggle="tab">Profile</a></li>
-                            <li role="presentation"><a href="#myUserCustomer{{ $user->id }}" aria-controls="myUserCustomer{{ $user->id }}" role="tab" data-toggle="tab">Customers</a></li>
-                            <li role="presentation"><a href="#myUserStats{{ $user->id }}" aria-controls="myUserStats{{ $user->id }}" role="tab" data-toggle="tab">Statistics</a></li>
+                            <li role="presentation" class="active">
+                                <a 
+                                    href="#myUserProfile{{ $user->id }}" 
+                                    aria-controls="myUserProfile{{ $user->id }}" 
+                                    role="tab" data-toggle="tab">
+                                    <i class="fa fa-user"></i> Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a 
+                                    href="#myUserCustomer{{ $user->id }}" 
+                                    aria-controls="myUserCustomer{{ $user->id }}" 
+                                    role="tab" data-toggle="tab">
+                                    <i class="fa fa-briefcase"></i> Customers
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a 
+                                    href="#myUserStats{{ $user->id }}" 
+                                    aria-controls="myUserStats{{ $user->id }}" 
+                                    role="tab" data-toggle="tab">
+                                    <i class="fa fa-bar-chart"></i> Statistics
+                                </a>
+                            </li>
                         </ul>
 
                         <!-- Tab panes -->

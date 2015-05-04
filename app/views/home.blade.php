@@ -15,7 +15,7 @@
             </div>
             <div class="col-sm-8 my-view-header-nav">
                 <ul class="nav nav-pills navbar-right">
-                    <li><a href="#homeLatestOffers" class="btn btn-sm my-view-header-btn">Latest Offers</a></li>
+                    <li><a href="#homeOfferStats" class="btn btn-sm my-view-header-btn">Offer Stats</a></li>
                     <li><a href="#homeSalesRepStats" class="btn btn-sm my-view-header-btn">User Stats</a></li>
                     <li><a href="#homeNewPotential" class="btn btn-sm my-view-header-btn">New Potential</a></li>
                 </ul>
@@ -29,51 +29,32 @@
 
 <div class="container-fluid">
     
-    <div class="my-home-container"> <!-- Unused class -->
-    
-<!--        <div class="row">
-            @if(Auth::check())
-                <p>Hello, {{ Auth::user()->username }}.</p>
-            @else
-                <div class="my-welocome-page center-block">
-                    <p>You are not signed in!</p>
-
-                    <a class="btn btn-lg btn-warning" href="{{ URL::route('sign-in') }}">Sign in</a>
-                </div>
-            @endif  
-        </div>-->
+    <div class="my-home-container">
 
         <div class="row">
-            <div id="homeLatestOffers">
-                <h4>
-                    Latest offers
-                </h4>
-                
-                <canvas id="myOfferStatsChart" width="auto" height="400"></canvas>
+            <div id="homeOfferStats" class="my-home-offer-stats">
+                <h3>Latest offers</h3>
+                <canvas id="myOfferStatsChart"></canvas>
             </div>
         </div>
 
         <div class="row">
-            <div id="homeSalesRepStats">
-                <h4>
-                    Sales Rep Stats
-                </h4>
-                
-                <canvas id="myUserStatsChart" width="400" height="400"></canvas>
+            <div id="homeSalesRepStats" class="my-home-user-stats">
+                <h3>Sales Rep Stats</h3>
+                <canvas id="myUserStatsChart"></canvas>
             </div>
         </div>
 
         <div class="row">
             <div id="homeNewPotential">
-                <h4>
-                    New contacts for last 30 days 
-                </h4>
+                <h3>New contacts for last 90 days</h3>
                 
-                <table>
+                <table class="table table-small-font table-hover my-table">
                     <thead>
                         <tr>
                             <th>First comunication</th>
                             <th>Customer</th>
+                            <th>Contact person</th>
                             <th>Manager</th>
                             <th>Status</th>
                         </tr>
@@ -82,6 +63,7 @@
                         @foreach($new_customers as $customer)
                             <tr>
                                 <td>{{ date("d M Y", strtotime($customer->created_at)) }}</td>
+                                <td>{{ $customer->contact_person }}</td>
                                 <td>{{ $customer->customer }}</td>
                                 <td>{{ $customer->user->name . ' ' . $customer->user->surname }}</td>
                                 <td>Identifying needs / offer sent / offer prepeared</td>

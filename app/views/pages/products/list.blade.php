@@ -117,16 +117,54 @@
                     <td class="col-xs-1">
                         @if(!empty($cart))
                             @if(Cart::search(array('id' => $product->id)) == TRUE)
-                                <a href="{{ route('offers-list') }}" class="btn btn-xs my-tbl-btn-offer">To offer list</a>
+                                <a 
+                                    href="{{ route('offers-list') }}" 
+                                    class="btn btn-xs my-tbl-btn-offer"
+                                    data-toggle="tooltip"
+                                    data-placement="left"
+                                    title="To offer list">
+                                    <i class="fa fa-list-alt"></i>
+                                    <!--<i class="fa fa-shopping-cart"></i>-->
+                                </a>
                             @else
-                                <a href="{{ route('add-to-offer', array($product->id)) }}" class="btn btn-xs my-tbl-btn-offer">Add to offer</a>
+                                <a 
+                                    href="{{ route('add-to-offer', array($product->id)) }}" 
+                                    class="btn btn-xs my-tbl-btn-offer"
+                                    data-toggle="tooltip"
+                                    data-placement="left"
+                                    title="Add to offer">
+                                    <i class="fa fa-plus"></i>
+                                </a>
                             @endif
                         @else
-                        <a href="{{ route('add-to-offer', array($product->id)) }}" class="btn btn-xs my-tbl-btn-offer">Add to offer</a>
+                            <a 
+                                href="{{ route('add-to-offer', array($product->id)) }}" 
+                                class="btn btn-xs my-tbl-btn-offer"
+                                data-toggle="tooltip"
+                                data-placement="left"
+                                title="Add to offer">
+                                <i class="fa fa-plus"></i>
+                            </a>
                         @endif
-                        <a href="{{ route('product-view', array($product->id)) }}" class="btn btn-xs my-tbl-btn-view ajax-product-view"  data-target="#myModal"><i class="fa fa-eye"></i></a>
-                        <a href="{{ route('product-edit', array($product->id)) }}" class="btn btn-xs my-tbl-btn-edit " data-target="#myModal"><i class="fa fa-pencil"></i></a>
-                        <!--<button type="button" href="" class="btn btn-xs my-tbl-btn-edit ajax-product-edit" data-target="#myModal"><i class="fa fa-pencil"></i> {{ HTML::linkRoute('product-edit', ' Edit', array($product->id)) }}</button>-->
+                        <span
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            title="View product info">
+                            <a 
+                                href="{{ route('product-view', array($product->id)) }}" 
+                                class="btn btn-xs my-tbl-btn-view ajax-product-view"  
+                                data-target="#myModal">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </span>
+                        <a 
+                            href="{{ route('product-edit', array($product->id)) }}" 
+                            class="btn btn-xs my-tbl-btn-edit"
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            title="Edit product info">
+                            <i class="fa fa-pencil"></i>
+                        </a>
                     </td>
                 </tr>
                 @endforeach

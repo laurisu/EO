@@ -89,17 +89,17 @@ $(function () {
      */
     initOfferStats();
     initUserStats();
-
+    data();
 });
 
 function data(){
     var offer = myChartData.offer;
     var user = myChartData.user;
-    var customer = myChartData.customer;
+    
     
     console.log(offer); // bar
     console.log(user[0].name); // User Obj
-    console.log(customer); // 29
+    
 }
 
 function applyResponsiveTable(selector) {
@@ -149,7 +149,7 @@ function initUserStats() {
         var user = myChartData.user;
 
         var data = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ["User 1", "User 2", "User 3", "User 4", "User 5", "User 6", "User 7"],
             datasets: [
                 {
                 label: "My First dataset",
@@ -166,6 +166,14 @@ function initUserStats() {
                 highlightFill: "rgba(151,187,205,0.75)",
                 highlightStroke: "rgba(151,187,205,1)",
                 data: [28, 48, 40, 19, 86, 27, 90]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(156,187,255,0.5)",
+                strokeColor: "rgba(156,187,255,0.8)",
+                highlightFill: "rgba(156,187,255,0.75)",
+                highlightStroke: "rgba(156,187,255,1)",
+                data: [29, 35, 60, 5, 80, 80, 67]
             }
             ]
         };

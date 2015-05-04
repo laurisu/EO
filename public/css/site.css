@@ -8354,6 +8354,7 @@ button.close {
 /* overwriten */
 /* overwriten */
 /* overwriten */
+/* Breakpoints */
 /* 
     Created on : 2014.15.11, 15:06:34
     Author     : Lauris Ulpe
@@ -8561,6 +8562,40 @@ body {
   border: none;
   padding: 10px 5px;
 }
+/* HOME VIEW
+-------------------------------------------------- */
+.my-home-container .my-home-offer-stats h3,
+.my-home-container .my-home-user-stats h3,
+.my-home-container .my-home-potential h3 {
+  color: #222222;
+  text-shadow: 0 1px rgba(244, 179, 80, 0.7);
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 1129px) {
+  .my-home-container .my-home-offer-stats canvas,
+  .my-home-container .my-home-user-stats canvas,
+  .my-home-container .my-home-potential canvas {
+    min-height: 700px;
+    max-height: 750px;
+  }
+}
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  .my-home-container .my-home-offer-stats canvas,
+  .my-home-container .my-home-user-stats canvas,
+  .my-home-container .my-home-potential canvas {
+    min-height: 500px;
+    max-height: 650px;
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  .my-home-container .my-home-offer-stats canvas,
+  .my-home-container .my-home-user-stats canvas,
+  .my-home-container .my-home-potential canvas {
+    min-height: 350px;
+    max-height: 600px;
+  }
+}
 /* CRUD form styles
 -------------------------------------------------- */
 .my-crud-form .my-form-headding {
@@ -8681,6 +8716,12 @@ body {
 .my-table .btn {
   color: #fff;
 }
+.my-table .btn.my-tbl-btn-view,
+.my-table .btn.my-tbl-btn-offer,
+.my-table .btn.my-tbl-btn-edit,
+.my-table .btn.my-tbl-btn-delete {
+  min-width: 25px;
+}
 .my-table .btn.my-tbl-btn-view {
   background-color: #f4b350;
 }
@@ -8710,12 +8751,6 @@ body {
 .my-pagination {
   margin-top: 0;
 }
-/* Home page
--------------------------------------------------- */
-.my-welocome-page {
-  max-width: 300px;
-  text-align: center;
-}
 /* USERS LIST
 -------------------------------------------------- */
 .my-user-list-accordion .panel-heading {
@@ -8724,6 +8759,12 @@ body {
 .my-user-list-accordion .panel-heading .panel-title {
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+.my-user-list-accordion .panel-heading .panel-title a[class=""],
+.my-user-list-accordion .panel-heading .panel-title a:focus,
+.my-user-list-accordion .panel-heading .panel-title a:hover {
+  font-weight: bold;
+  text-decoration: none;
 }
 .my-user-list-accordion .panel-body {
   background-color: #c0dbed;
@@ -8747,6 +8788,7 @@ body {
 }
 .my-user-list-accordion .panel-body .my-tab-content-container {
   overflow: auto;
+  min-height: 430px;
   background-color: #fff;
   border-radius: 0 0 4px 4px;
   padding-top: 15px;

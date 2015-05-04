@@ -57,39 +57,47 @@
             </div>
         </div>
     
-        <div>
-            <div class="col-sm-2">Offered products</div>
-            <div class="col-sm-10">
-                <ol>
-                    @foreach($items as $item)
-                    <li>{{ $item->product->product_name }}</li>
-                    @endforeach
-                </ol>
+        <div class="form-group">
+            <label id="" class="col-sm-2 control-label">Offered products</label>
+            <div class="col-sm-10 col-xs-12">
+                <table class="table table-small-font table-hover my-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($items as $item)
+                        <tr>
+                            <td>{{ $item->product->id }}</td>
+                            <td class="col-xs-2">{{ $item->product->product_name }}</td>
+                            <td>{{ $item->product->retail_price }}</td>
+                            <td>{{ $item->product->description }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-        
-        <p>Offered id: {{ $offer->id }}</p>
-        <p>Offered products</p>
-        <ul>
-        
-            @foreach($items as $item)
-            <li>{{ $item->product->product_name }}</li>
-            @endforeach
-            
-        </ul>
-        
+    
+    <hr>    
+    
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                {{ Form::submit('Send', array('class' => 'btn btn-md my-btn-save')) }}
+                <button class="btn btn-md my-btn-save" type="submit">
+                    <i class="fa fa-envelope-o"></i> Send
+                </button>
+                <a href="{{{ route('offers-list') }}}" class="btn btn-md my-btn-back">
+                    <i class="fa fa-list-alt"></i> Back to offers
+                </a>
             </div>
-        </div>
+        </div>            
                 
-                
-    {{ Form::close() }}
-    
+    {{ Form::close() }}  
 
 </div>
 
-
 @stop
-

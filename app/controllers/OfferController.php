@@ -25,14 +25,20 @@ class OfferController extends \BaseController {
                             ->orderBy('created_at', 'ASC')
                             ->get();
                     $cart = Cart::content();
-                } else {
-                    $offers  = Offer::with('author')
-                            ->where('user_id', Auth::user()->id)
+                } elseif (Auth::user()->isSimpleUser()) {
+                    $pendingOffers  = Offer::with('author')
+                            ->where('status','<=',1)
+                            ->where('user_id','=',Auth::user()->id)
+                            ->orderBy('created_at', 'ASC')
+                            ->get();
+                    $sentOffers = Offer::with('author')
+                            ->where('status','>=',2)
+                            ->where('user_id','=',Auth::user()->id)
                             ->orderBy('created_at', 'ASC')
                             ->get();
                     $cart = Cart::content();
                 }				
-                
+//                dd($pendingOffers);
                 return View::make('pages.offers.list')
                         ->with('pendingOffers', $pendingOffers)
                         ->with('sentOffers', $sentOffers)
@@ -88,9 +94,16 @@ class OfferController extends \BaseController {
                 
                 $lastOffer = Offer::find($id);
                 
-                $customer_list = DB::table('customers')
+                if (Auth::user()->isAdmin()) {
+                    $customer_list = DB::table('customers')
                         ->orderBy('customer', 'asc')
                         ->lists('customer','id');
+                } elseif (Auth::user()->isSimpleUser()) {
+                    $customer_list = DB::table('customers')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('customer', 'asc')
+                        ->lists('customer','id');
+                }
                 return View::make('pages.offers.add-customer', array('customer_list' => $customer_list))
                         ->with('customers', $customer_list)
                         ->with('offer', $lastOffer);
@@ -196,9 +209,11 @@ class OfferController extends \BaseController {
                 if($validator -> passes()){
                     
                     Mail::send('emails.offer', array(
-                        'user'      => $user->name,
                         'recipient' => $recipient->contact_person,
-                        'offer'     => $offer->id,
+                        'user'      => $user->name . ' ' . $user->surname,
+                        'job_title' => $user->job_title,
+                        'phone'     => $user->phone,
+                        'email'     => $user->email,
                         'items'     => $items->all()
                     ), function($message) use ($recipient) {
                         $message->to(Input::get('email'), $recipient->contact_person)->subject('Our offer');

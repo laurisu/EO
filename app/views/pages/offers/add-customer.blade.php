@@ -14,7 +14,6 @@
     </div>
 
     <form class="form-horizontal" action="{{ URL::route('add-recipient', array($offer->id)) }}" method="post">      
-        <p>Offer id: {{ $offer->id }}</p>
         
         <div class="form-group">
             <label for="inputOfferId" class="col-sm-2 control-label">Offer ID:</label>

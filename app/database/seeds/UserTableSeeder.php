@@ -60,7 +60,7 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
-                   'active' => '0' 
+                   'active' => '1' 
                 ));
                 
                 User::create(array(
@@ -83,6 +83,19 @@ class UserTableSeeder extends Seeder {
                    'job_title' => 'Sales Representative', 
                    'phone' => '+37167000002',
                    'img' => 'img/uploads/user6.jpg',
+                   'email' => 'inboxfortesting@gmail.com',  
+                   'password' => Hash::make('123456'),
+                   'role' => '0', 
+                   'active' => '1' 
+                ));
+                
+                User::create(array(
+                   'username' => 'User7', 
+                   'name' => 'Matt', 
+                   'surname' => 'Conor',
+                   'job_title' => 'Sales Representative', 
+                   'phone' => '+37167000002',
+                   'img' => 'img/uploads/user7.jpg',
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 

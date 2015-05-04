@@ -241,6 +241,40 @@ body {
     }
 }
 
+/* HOME VIEW
+-------------------------------------------------- */
+
+.my-home-container {
+    .my-home-offer-stats,
+    .my-home-user-stats,
+    .my-home-potential {
+        h3 {
+            color: @my-black;
+            text-shadow: 0 1px fade(@my-orange, 70%);
+            margin-top: 45px;
+            margin-bottom: 20px;
+        }
+        canvas {
+            @media @desktop-xl {
+                min-height: 700px;
+                max-height: 750px;
+            }
+            @media @desktop {
+                min-height: 500px;
+                max-height: 650px;
+            }
+            @media @tablet {
+                min-height: 350px;
+                max-height: 600px;
+            }
+        }
+    }
+    .my-home-potential {
+        
+    }
+}
+
+
 /* CRUD form styles
 -------------------------------------------------- */
 
@@ -386,7 +420,14 @@ body {
     }
     .btn {
         color: #fff;
-
+        &.my-tbl-btn-view,
+        &.my-tbl-btn-offer,
+        &.my-tbl-btn-edit,
+        &.my-tbl-btn-delete {
+            min-width: 25px;
+            
+        }
+        
         &.my-tbl-btn-view {background-color: @my-orange;}
         &.my-tbl-btn-offer {background-color: @my-green;}
         &.my-tbl-btn-edit {background-color: @my-blue;}
@@ -414,14 +455,6 @@ body {
     margin-top: 0;
 }
 
-/* Home page
--------------------------------------------------- */
-
-.my-welocome-page {
-    max-width: 300px;
-    text-align: center;
-}
-
 /* USERS LIST
 -------------------------------------------------- */
 
@@ -431,7 +464,14 @@ body {
         .panel-title {
             color: #fff;
             text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-            
+            a { 
+                &[class=""], /* Bootstrap adds .collapsed to rest of the elements */
+                &:focus,
+                &:hover {
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+            }
         }
     }
     .panel-body {
@@ -457,7 +497,8 @@ body {
             }
         }
         .my-tab-content-container {
-            overflow: auto; 
+            overflow: auto;
+            min-height: 430px;
             background-color: #fff;
             border-radius: 0 0 4px 4px;
             padding-top: 15px;

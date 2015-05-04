@@ -44,9 +44,28 @@
                 <td>{{ $customer->mobile }}</td>
                 <td>{{ $customer->phone }}</td>
                 <td>{{ $customer->email }}</td>
-                <td>
-                    <button type="button" href="{{ route('customer-view', array($customer->id)) }}" class="btn btn-xs my-tbl-btn-view open-customer-view"  data-target="#myModal">View</button>
-                    <button class="btn btn-xs my-tbl-btn-edit">{{ HTML::linkRoute('customer-edit', 'Edit', array($customer->id)) }}</button>
+                <td class="col-xs-1">
+                    <span
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="View customer profile">
+                        <button 
+                            type="button" 
+                            href="{{ route('customer-view', array($customer->id)) }}" 
+                            class="btn btn-xs my-tbl-btn-view open-customer-view"  
+                            data-target="#myModal">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </span>
+                    <a
+                        type="button" 
+                        href="{{ route('customer-edit', array($customer->id)) }}"
+                        class="btn btn-xs my-tbl-btn-edit"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Edit customer profile">
+                        <i class="fa fa-pencil"></i>
+                    </a>
                 </td>
             </tr>
             @endforeach
