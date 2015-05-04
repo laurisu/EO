@@ -52,7 +52,11 @@
                                     <div class="col-xs-12 col-sm-4">
 
                                         <div class="">
+                                            @if(!empty($user->img))
+                                            <img src="{{ asset($user->img) }}" alt="" class="img-responsive">
+                                            @else
                                             <img src="http://placehold.it/300x400" alt="" class="img-responsive">
+                                            @endif
                                         </div>
 
                                     </div>

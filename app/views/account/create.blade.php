@@ -12,7 +12,7 @@
         <h4>Create account</h4>
     </div>
 
-    <form class="form-horizontal" action="{{ URL::route('account-create-post') }}" method="post">
+    <form class="form-horizontal" action="{{ URL::route('account-create-post') }}" enctype="multipart/form-data" method="post">
 
         <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Name</label>
@@ -125,23 +125,29 @@
             <label for="uploadImage" class="col-sm-2 control-label">Upload Image</label>
             <div class="col-sm-4">
 
-                <!-- Bootstrap Filestyle plugin used / below atributes options -->
-                <!-- class="filestyle"  -> Triggers the plugin -->
-                <!-- data-input         -> Enables or disables the input text (boolean) -->
-                <!-- data-buttonText    -> Changes the button text -->
-                <!-- data-buttonName    -> Change classes bootstrap button -->
-                <!-- data-icon          -> Enables or disables the button icon (boolean) -->
-                <!-- data-size          -> Change size bootstrap of the button and input -->
-                <!-- data-iconName      -> Change classes bootstrap icons -->
-                <!-- data-disabled      -> Disabled button (boolean) -->
-                <!-- data-buttonBefore  -> Button before (boolean) -->
-                <!-- data-badge         -> Enables or disables the badge counter (boolean) -->
+<!--                 Bootstrap Filestyle plugin used / below atributes options 
+                 class="filestyle"  -> Triggers the plugin 
+                 data-input         -> Enables or disables the input text (boolean) 
+                 data-buttonText    -> Changes the button text 
+                 data-buttonName    -> Change classes bootstrap button 
+                 data-icon          -> Enables or disables the button icon (boolean) 
+                 data-size          -> Change size bootstrap of the button and input 
+                 data-iconName      -> Change classes bootstrap icons 
+                 data-disabled      -> Disabled button (boolean) 
+                 data-buttonBefore  -> Button before (boolean) 
+                 data-badge         -> Enables or disables the badge counter (boolean) -->
 
                 <input 
-                    type="file" id="uploadImage"  
+                    name="profile_img"
+                    type="file" 
+                    id="uploadImage"  
                     class="filestyle"               
                     data-buttonText="Choose file"
                     data-buttonName="btn-primary">
+                
+                @if($errors->has('profile_img'))
+                {{ $errors->first('profile_img') }}
+                @endif
             </div>
         </div>
 
@@ -149,8 +155,11 @@
             <label for="inputPass" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-4">
                 <input 
-                    type="password" name="password" id="inputPass"
-                    class="form-control" placeholder="Password" >
+                    type="password" 
+                    name="password" 
+                    id="inputPass"
+                    class="form-control" 
+                    placeholder="Password">
 
                 @if($errors->has('password'))
                 {{ $errors->first('password') }}
@@ -162,8 +171,12 @@
             <label for="inputPassAgain" class="col-sm-2 control-label">Repeat password</label>
             <div class="col-sm-4">
                 <input 
-                    type="password" name="password_again" id="inputPassAgain"
-                    class="form-control" placeholder="Repeat password" >
+                    type="password" 
+                    name="password_again" 
+                    id="inputPassAgain"
+                    class="form-control" 
+                    placeholder="Repeat password" >
+                
                 @if($errors->has('password_again'))
                 {{ $errors->first('password_again') }}
                 @endif

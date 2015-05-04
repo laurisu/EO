@@ -15,6 +15,7 @@ class AdminController extends BaseController {
     }
 
     public function postCreateAccount() {
+        
         $validator = Validator::make(Input::all(), array(
                     'name'              => 'required|max:50|',
                     'surname'           => 'required|max:50|',
@@ -23,6 +24,7 @@ class AdminController extends BaseController {
                     'email'             => 'required|max:50|email|unique:users',
                     'phone'             => 'required|min:6',
                     'role'              => 'required|max:1',
+                    'profile_img'       => 'required|mimes:jpg,jpeg,png',
                     'password'          => 'required|min:6',
                     'password_again'    => 'required|same:password'
                         )
@@ -42,7 +44,16 @@ class AdminController extends BaseController {
             $phone      = Input::get('phone');
             $password   = Input::get('password');
             $role       = Input::get('role');
-
+            
+            $file = Input::file('profile_img');
+            $path       = 'img/uploads/' . $file->getClientOriginalName();
+            $file->move('img/uploads', $file->getClientOriginalName());
+            
+            $image = Image::make(sprintf('img/uploads/%s', $file->getClientOriginalName()))
+                    ->resize(300, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save();
+            
             $user = User::create(array(
                         'name'      => $name,
                         'surname'   => $surname,
@@ -52,7 +63,8 @@ class AdminController extends BaseController {
                         'phone'     => $phone,
                         'role'      => $role,
                         'password'  => Hash::make($password),
-                        'active'    => 1
+                        'active'    => 1,
+                        'img'       => $path
             ));
 
             if ($user) {
@@ -60,6 +72,10 @@ class AdminController extends BaseController {
                     ->with('global', 'The <b>' . $user->name . ' ' . $user->surname . '</b> account has been created.')
                     ->with('alert-class', 'alert-success');
             }
+            return Redirect::route('users-list')
+                    ->with('global', 'Something went wrong!')
+                    ->with('alert-class', 'alert-warning');
+            
         }
     }
     

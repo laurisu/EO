@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration {
                 $table->string('job_title', 50);
                 $table->string('email', 50);
                 $table->string("phone", 20);
+                $table->string("img", 255);
                 
                 // Password related
                 $table->string('password', 60);

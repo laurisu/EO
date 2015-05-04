@@ -10,7 +10,8 @@
                 "orangehill/iseed": "1.1",
                 "barryvdh/laravel-debugbar": "1.7.*@dev",
                 "way/generators": "~2.0",
-                "laracasts/utilities": "~1.0"
+                "laracasts/utilities": "~1.0",
+                "intervention/image": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
