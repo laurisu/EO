@@ -193,28 +193,29 @@ class OfferController extends \BaseController {
 	public function sendOffer($id)
 	{
 		
-                $offer      = Offer::find($id);
-                $recipient  = Customer::find($offer->customer_id);
-                $user       = User::find($offer->user_id);
-                $items      = OfferItem::with('product')->where('offer_id', $id)->get();
-                
-                $data = Input::all();
-                $rules = array(
-                    'recipient'     => 'required|exists:customers,customer',
-                    'email'         => 'required|email'
-                );
+                $offer          = Offer::find($id);
+                $recipient      = Customer::find($offer->customer_id);
+                $user           = User::find($offer->user_id);
+                $items          = OfferItem::with('product')->where('offer_id', $id)->get();
+                $expiry_date    = date("d M Y", strtotime(Carbon::now()->addMonths(1)));
+                $data           = Input::all();
+                $rules          = array(
+                                        'recipient'     => 'required|exists:customers,customer',
+                                        'email'         => 'required|email'
+                                    );
                 
                 $validator = Validator::make($data, $rules);
                 
                 if($validator -> passes()){
                     
                     Mail::send('emails.offer', array(
-                        'recipient' => $recipient->contact_person,
-                        'user'      => $user->name . ' ' . $user->surname,
-                        'job_title' => $user->job_title,
-                        'phone'     => $user->phone,
-                        'email'     => $user->email,
-                        'items'     => $items->all()
+                        'recipient'     => $recipient->contact_person,
+                        'user'          => $user->name . ' ' . $user->surname,
+                        'job_title'     => $user->job_title,
+                        'phone'         => $user->phone,
+                        'email'         => $user->email,
+                        'items'         => $items->all(),
+                        'expiry_date'   => $expiry_date
                     ), function($message) use ($recipient) {
                         $message->to(Input::get('email'), $recipient->contact_person)->subject('Our offer');
                     });

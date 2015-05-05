@@ -21,7 +21,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com', 
                    'password' => Hash::make('123456'),
                    'role' => '2', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s') 
                 ));
                 
                 User::create(array(
@@ -34,7 +35,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com', 
                    'password' => Hash::make('123456'),
                    'role' => '2', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s') 
                 ));
                 
                 User::create(array(
@@ -47,7 +49,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s')  
                 ));
                 
                 User::create(array(
@@ -60,7 +63,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s')  
                 ));
                 
                 User::create(array(
@@ -73,7 +77,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s')  
                 ));
                 
                 User::create(array(
@@ -86,7 +91,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s')  
                 ));
                 
                 User::create(array(
@@ -99,7 +105,8 @@ class UserTableSeeder extends Seeder {
                    'email' => 'inboxfortesting@gmail.com',  
                    'password' => Hash::make('123456'),
                    'role' => '0', 
-                   'active' => '1' 
+                   'active' => '1',
+                   'last_signin' => date('Y-m-d H:i:s')  
                 ));
 	}
 

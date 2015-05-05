@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Europe/Riga',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -197,6 +197,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
                 'Image'             => 'Intervention\Image\Facades\Image',
+                'Carbon'            => 'Carbon\Carbon',
 
 	),
 

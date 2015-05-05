@@ -31,8 +31,7 @@ class CreateOffersTable extends Migration {
             // 0 - products only | 1 - products + customer | 2 - sent
             $table->integer('status');
 
-            $table->dateTime("created_at");
-            $table->dateTime("updated_at");
+            $table->timestamps();
         });
     }
 

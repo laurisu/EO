@@ -18,16 +18,19 @@ class UserController extends BaseController {
                             ->withErrors($validator)
                             ->withInput();
         } else {
-
             $remember = (Input::has('remember-me')) ? true : false;
 
             $auth = Auth::attempt(array(
-                        'username' => Input::get('username'),
-                        'password' => Input::get('password'),
-                        'active' => 1 // User has to be active to sign in
+                        'username'      => Input::get('username'),
+                        'password'      => Input::get('password'),
+                        'active'        => 1 // User has to be active to sign in
                             ), $remember);
 
             if ($auth) {
+                $user = User::find(Auth::user()->id);
+                $user->last_signin = Carbon::now()->toDateTimeString();
+                $user->update();
+                
                 // Redirect to the intended page
                 return Redirect::intended('/');
             } else {

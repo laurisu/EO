@@ -38,6 +38,7 @@ class CreateUsersTable extends Migration {
                 
                 $table->rememberToken();
                 
+                $table->dateTime('last_signin');
                 $table->timestamps();
             });
 	}

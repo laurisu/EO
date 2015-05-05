@@ -4,10 +4,6 @@ class ProductController extends BaseController {
 
     public function getProductsList() {
         
-//        echo '<pre>';
-//        print_r($_SERVER);
-//        echo '</pre>';
-        
         $sortName       = Request::get('sort');
         $sortDirrection = Request::get('order');
         $search         = Request::get('search');

@@ -8,9 +8,9 @@
             thead {background-color: rgb(244, 179, 80);}
             th {padding: 10px;}
             td {padding: 10px;vertical-align: middle;}
-            .col1 {width: 100px; border-right: 1px solid rgb(244, 179, 80);}
-            .col2 {width: 20px; border-right: 1px solid rgb(244, 179, 80);}
-            .col3 {width: auto;}
+            .col1 {width: 25%; border-right: 1px solid rgb(244, 179, 80);}
+            .col2 {width: 10%; border-right: 1px solid rgb(244, 179, 80);}
+            .col3 {width: 65%;}
             .mail-foot {font-style: italic;}
             .line {color: rgb(244, 179, 80);}
         </style>
@@ -37,16 +37,11 @@
                         <td>{{ $item->product->retail_price }}</td>
                         <td>{{ $item->product->description }}</td>
                     </tr>
-                    <tr>
-                        <td>{{ $item->product->product_name }}</td>
-                        <td>{{ $item->product->retail_price }}</td>
-                        <td>{{ $item->product->description }}</td>
-                    </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3">This offer is valid for till</td>
+                        <td colspan="3">Offer  expires on {{ $expiry_date }}</td>
                     </tr>
                 </tfoot>
             </table>

@@ -29,8 +29,7 @@ class CreateCustomersTable extends Migration {
             $table->foreign('user_id')
                 ->references('id')->on('users');
             
-            $table->dateTime("created_at");
-            $table->dateTime("updated_at");
+            $table->timestamps();
         });
     }
 

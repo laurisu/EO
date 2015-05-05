@@ -100,7 +100,11 @@
                                         <p><strong>title: </strong>{{ $user->job_title }}</p>
                                         <p><strong>mobile: </strong>{{ $user->phone }}</p>
                                         <p><strong>email: </strong>{{ $user->email }}</p>
-
+                                        <p><strong>last seen: </strong>
+                                            {{ Carbon::now()
+                                                ->createFromTimeStamp(strtotime($user->last_signin))
+                                                ->diffForHumans() }}
+                                        </p>
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
 

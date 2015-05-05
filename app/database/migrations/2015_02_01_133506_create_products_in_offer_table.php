@@ -31,8 +31,7 @@ class CreateProductsInOfferTable extends Migration {
                         ->onDelete('cascade')
                         ->onUpdate('cascade');
                     
-                    $table->dateTime("created_at");
-                    $table->dateTime("updated_at");
+                    $table->timestamps();
                 });
 	}
 
