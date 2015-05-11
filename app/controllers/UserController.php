@@ -21,16 +21,16 @@ class UserController extends BaseController {
             $remember = (Input::has('remember-me')) ? true : false;
 
             $auth = Auth::attempt(array(
-                        'username'      => Input::get('username'),
-                        'password'      => Input::get('password'),
-                        'active'        => 1 // User has to be active to sign in
+                        'username' => Input::get('username'),
+                        'password' => Input::get('password'),
+                        'active' => 1 // User has to be active to sign in
                             ), $remember);
 
             if ($auth) {
                 $user = User::find(Auth::user()->id);
                 $user->last_signin = Carbon::now()->toDateTimeString();
                 $user->update();
-                
+
                 // Redirect to the intended page
                 return Redirect::intended('/');
             } else {
@@ -56,6 +56,7 @@ class UserController extends BaseController {
     }
 
     public function postChangePassword() {
+        
         $validator = Validator::make(Input::all(), array(
                     'old_password' => 'required',
                     'password' => 'required|min:6',
@@ -99,13 +100,13 @@ class UserController extends BaseController {
 
     public function postForgotPassword() {
         $validator = Validator::make(Input::all(), array(
-                    'email' => 'required|email'
+                    'email' => 'required|email|exists:users,email'
         ));
 
         if ($validator->fails()) {
             return Redirect::route('forgot-password')
                             ->withErrors($validator)
-                            ->with('global', 'Provided incorrect email address')
+                            ->with('global', 'There is no one registered with provided email address')
                             ->with('alert-class', 'alert-warning');
         } else {
             // Change password

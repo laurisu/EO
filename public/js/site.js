@@ -1,5 +1,5 @@
 $(function () {
-    
+
     /**
      *  Modal windows
      */
@@ -73,17 +73,17 @@ $(function () {
         target: '.my-view-header-nav'
     });
 
-    $('.my-view-header .nav a').click(function (event) {        
+    $('.my-view-header .nav a').click(function (event) {
         event.preventDefault();
         $($(this).attr('href'))[0].scrollIntoView();
         scrollBy(0, -scrollSpyOffset);
     });
-    
+
     /**
      * Bootstrap 3 Tooltip
      */
     $('[data-toggle="tooltip"]').tooltip();
-    
+
     /**
      * Chart.js 
      */
@@ -92,14 +92,14 @@ $(function () {
     data();
 });
 
-function data(){
+function data() {
     var offer = myChartData.offer;
     var user = myChartData.user;
-    
-    
+
+
     console.log(offer); // bar
     console.log(user[0].name); // User Obj
-    
+
 }
 
 function applyResponsiveTable(selector) {
@@ -111,14 +111,82 @@ function applyResponsiveTable(selector) {
 }
 
 function initOfferStats() {
-    if($('#myOfferStatsChart').length){
+    if ($('#myOfferStatsChart').length) {
         var ctx = $("#myOfferStatsChart").get(0).getContext("2d");
         var offer = myChartData.offer;
 
+        var theMonths = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        var today = new Date();
+        var aMonth = today.getMonth();
+        var lastSixMonths = [];
+//        var i;
+        for (i = 0; i < 6; i++) {
+            lastSixMonths.push(theMonths[aMonth]);
+            aMonth++;
+            if (aMonth > 5) {
+                aMonth = 0;
+            }
+        }
+        
+        var offersSentLastSixMonths = [];
+        for (i = 0; i <= offer.length; i++) {
+            
+//            offer.updated_at.getMonth();
+//            offersSentLastSixMonths.push();
+//            offer++;
+//            if (offer[1].status >= 2) {
+//                 
+//            }
+        }
+        
+        /* 
+         * Offer status
+         * 0 - products only 
+         * 1 - products + customer 
+         * 2 - sent
+         * 3 - offer accepted 
+         * 4 - offer rejected
+         */
+        console.log(offer[1].updated_at);
+        console.log(today);
+
         var data = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: lastSixMonths,
             datasets: [
-                    {
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 80, 81, 56, 55]
+                },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 86, 27]
+                }
+            ]
+        };
+        var myNewChart = new Chart(ctx).Line(data, {
+            responsive: true,
+            maintainAspectRatio: false
+        });
+    }
+}
+
+function initUserStats() {
+    if ($('#myUserStatsChart').length) {
+        var ctx = $("#myUserStatsChart").get(0).getContext("2d");
+        var user = myChartData.user;
+
+        var data = {
+            labels: ["User 1", "User 2", "User 3", "User 4", "User 5", "User 6", "User 7"],
+            datasets: [
+                {
                     label: "My First dataset",
                     fillColor: "rgba(220,220,220,0.5)",
                     strokeColor: "rgba(220,220,220,0.8)",
@@ -133,48 +201,15 @@ function initOfferStats() {
                     highlightFill: "rgba(151,187,205,0.75)",
                     highlightStroke: "rgba(151,187,205,1)",
                     data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        };
-        var myNewChart = new Chart(ctx).Line(data, {
-            responsive: true,
-            maintainAspectRatio: false
-        });
-    }
-}
-
-function initUserStats() {
-    if($('#myUserStatsChart').length) {
-        var ctx = $("#myUserStatsChart").get(0).getContext("2d");
-        var user = myChartData.user;
-
-        var data = {
-            labels: ["User 1", "User 2", "User 3", "User 4", "User 5", "User 6", "User 7"],
-            datasets: [
+                },
                 {
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,0.8)",
-                highlightFill: "rgba(220,220,220,0.75)",
-                highlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 80, 81, 56, 55, 40]
-            },
-            {
-                label: "My Second dataset",
-                fillColor: "rgba(151,187,205,0.5)",
-                strokeColor: "rgba(151,187,205,0.8)",
-                highlightFill: "rgba(151,187,205,0.75)",
-                highlightStroke: "rgba(151,187,205,1)",
-                data: [28, 48, 40, 19, 86, 27, 90]
-            },
-            {
-                label: "My Second dataset",
-                fillColor: "rgba(156,187,255,0.5)",
-                strokeColor: "rgba(156,187,255,0.8)",
-                highlightFill: "rgba(156,187,255,0.75)",
-                highlightStroke: "rgba(156,187,255,1)",
-                data: [29, 35, 60, 5, 80, 80, 67]
-            }
+                    label: "My Second dataset",
+                    fillColor: "rgba(156,187,255,0.5)",
+                    strokeColor: "rgba(156,187,255,0.8)",
+                    highlightFill: "rgba(156,187,255,0.75)",
+                    highlightStroke: "rgba(156,187,255,1)",
+                    data: [29, 35, 60, 5, 80, 80, 67]
+                }
             ]
         };
         var myNewChart = new Chart(ctx).Bar(data, {
