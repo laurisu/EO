@@ -29,7 +29,7 @@
                 <li><a href="{{ URL::route('customer-list') }}">Customers</a></li>
                 <li><a href="{{ URL::route('offers-list') }}">Offers</a></li>
 
-                    @if(Auth::user()->role == 2)
+                    @if(Auth::user()->isAdmin())
 
                     <li><a href="{{ URL::route('users-list') }}">Users</a></li>
 

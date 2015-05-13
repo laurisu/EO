@@ -61,7 +61,14 @@ class CustomerController extends BaseController {
     }
     
     public function getCustomerCreator() {
-        return View::make('pages.customers.create');
+        
+        $user_list = DB::table('users')
+                ->select(DB::raw('CONCAT(name, " ", surname) AS manager, id'))
+                ->lists('manager', 'id');
+        
+        
+        return View::make('pages.customers.create', array('user_list' => $user_list))
+            ->with('users', $user_list);
     }
     
     public function postNewCustomer() {
@@ -69,11 +76,12 @@ class CustomerController extends BaseController {
         $validator = Validator::make(Input::all(), array(
             'customer'          => 'required|max:255|unique:customers',
             'contact_person'    => 'required|max:255',
-            'email'             => 'required|max:100|email|unique:customers',
-            'phone'             => 'required|numeric|max:20',
-            'mobile'            => 'required|numeric|max:20',
+            'email'             => 'required|max:100|email',
+            'phone'             => 'required|digits_between:3,20',
+            'mobile'            => 'required|digits_between:3,20',
             'web_page'          => 'required',
-            'address'           => 'required'
+            'address'           => 'required',
+            'assigned_manager'  => 'required|exists:users,id'
         ));
         
         if($validator->fails()) {
@@ -91,6 +99,7 @@ class CustomerController extends BaseController {
             $mobile            = Input::get('mobile');
             $web_page          = Input::get('web_page');
             $address           = Input::get('address');
+            $user_id           = Input::get('assigned_manager');
             
             // Setters
             $create = Customer::create(array(
@@ -100,12 +109,25 @@ class CustomerController extends BaseController {
                 'phone'             => $phone,
                 'mobile'            => $mobile,
                 'web_page'          => $web_page,
-                'address'           => $address
-            ));
+                'address'           => $address  
+            )); 
             
             if ($create) {
+                
+                // Asociate to user
+                $manager = User::find($user_id);
+                $new_customer = Customer::find($create->id);
+                $new_customer->user()->associate($manager);
+                $new_customer->save();
+                
+                if ($new_customer) {
+                    return Redirect::route('customer-list')
+                                ->with('global', 'Customer profile of <b>' . $create->customer . '</b> has been created and <b>' . $manager->name . ' ' . $manager->surname . '</b> assigned as manager.')
+                                ->with('alert-class', 'alert-success');
+                }
+                
                 return Redirect::route('customer-list')
-                                ->with('global', 'Customer profile of <b>' . $customer->customer . '</b> has been created')
+                                ->with('global', 'Customer profile of <b>' . $create->customer . '</b> has been created')
                                 ->with('alert-class', 'alert-success');
             }
         }

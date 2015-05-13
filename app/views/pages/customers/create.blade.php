@@ -19,8 +19,10 @@
             <label for="inputCustomerName" class="col-sm-3 control-label">Company name</label>
             <div class="col-sm-4">
                 <input 
-                    type="text" name="customer"
-                    class="form-control" id="inputCustomerName"
+                    type="text" 
+                    name="customer"
+                    class="form-control" 
+                    id="inputCustomerName"
                     placeholder="Company name" 
                     {{ (Input::old('customer')) ? ' value="' . e(Input::old('customer')) . '"' : '' }} 
                     autofocus>
@@ -34,8 +36,10 @@
             <label for="contactPerson" class="col-sm-3 control-label">Contact person</label>
             <div class="col-sm-4">
                 <input 
-                    type="text" name="contact_person" 
-                    class="form-control" id="contactPerson"
+                    type="text" 
+                    name="contact_person" 
+                    class="form-control" 
+                    id="contactPerson"
                     placeholder="Name Surname" 
                     {{ (Input::old('contact_person')) ? ' value="' . e(Input::old('contact_person')) . '"' : '' }}>
                 @if($errors->has('contact_person'))
@@ -48,8 +52,10 @@
             <label for="customerEmail" class="col-sm-3 control-label">Email</label>
             <div class="col-sm-4">
                 <input 
-                    type="email" name="email" 
-                    class="form-control" id="customerEmail"
+                    type="email" 
+                    name="email" 
+                    class="form-control" 
+                    id="customerEmail"
                     placeholder="Email" 
                     {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : '' }}>
                 @if($errors->has('email'))
@@ -62,8 +68,10 @@
             <label for="customerPhone" class="col-sm-3 control-label">Phone</label>
             <div class="col-sm-4">
                 <input 
-                    type="tel" name="phone" 
-                    class="form-control" id="customerPhone"
+                    type="tel" 
+                    name="phone" 
+                    class="form-control" 
+                    id="customerPhone"
                     placeholder="Phone" 
                     {{ (Input::old('phone')) ? ' value="' . e(Input::old('phone')) . '"' : '' }}>
                 @if($errors->has('phone'))
@@ -76,8 +84,10 @@
             <label for="customerMobile" class="col-sm-3 control-label">Mobile</label>
             <div class="col-sm-4">
                 <input 
-                    type="tel" name="mobile" 
-                    class="form-control" id="customerMobile"
+                    type="tel" 
+                    name="mobile" 
+                    class="form-control" 
+                    id="customerMobile"
                     placeholder="Mobile" 
                     {{ (Input::old('mobile')) ? ' value="' . e(Input::old('mobile')) . '"' : '' }}>
                 @if($errors->has('mobile'))
@@ -90,8 +100,10 @@
             <label for="customerPage" class="col-sm-3 control-label">Web page</label>
             <div class="col-sm-4">
                 <input 
-                    type="url" name="web_page" 
-                    class="form-control" id="customerPage"
+                    type="url" 
+                    name="web_page" 
+                    class="form-control" 
+                    id="customerPage"
                     placeholder="Web page" 
                     {{ (Input::old('web_page')) ? ' value="' . e(Input::old('web_page')) . '"' : '' }}>
                 @if($errors->has('web_page'))
@@ -101,11 +113,27 @@
         </div>
 
         <div class="form-group">
+            <label for="assignedManager" class="col-sm-3 control-label">Assigned manager</label>
+            <div class="col-sm-4">
+                {{ Form::select('manager', array('default' => 'Please select...') + $user_list, 'default', array(
+                        'class' => 'form-control',
+                        'name' => 'assigned_manager',
+                        'id' => 'assignedManager'
+                        )) }}
+                @if($errors->has('assigned_manager'))
+                {{ $errors->first('assigned_manager') }}
+                @endif  
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="customerAddress" class="col-sm-3 control-label">Address</label>
             <div class="col-sm-8">
                 <textarea 
-                    name="address" rows="2"
-                    class="form-control" id="customerAddress"
+                    name="address" 
+                    rows="2"
+                    class="form-control" 
+                    id="customerAddress"
                     placeholder="Address">{{{ Input::old('address') }}}</textarea>
                 @if($errors->has('address'))
                 {{ $errors->first('address') }}

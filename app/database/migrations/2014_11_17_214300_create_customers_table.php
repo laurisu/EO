@@ -25,7 +25,7 @@ class CreateCustomersTable extends Migration {
             $table->text("web_page");
             $table->text("address");
             
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')
                 ->references('id')->on('users');
             
