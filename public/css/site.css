@@ -8342,8 +8342,13 @@ button.close {
     Author     : Lauris Ulpe
 */
 /* COLORS */
-/*#232323*/
-/*#a48668*/
+/*HEX #222222 */
+/*HEX #f4b350 */
+/*HEX #2f9f9e */
+/*HEX #4897cc */
+/*HEX #fb948b */
+/*HEX #ddd */
+/*HEX #f1f1f1 */
 /* Background colors */
 /* Table colors */
 /* ???*/
@@ -8564,37 +8569,52 @@ body {
 }
 /* HOME VIEW
 -------------------------------------------------- */
+.my-home-container .my-chart-wrapper {
+  padding: 0 15px;
+}
 .my-home-container .my-home-offer-stats h3,
 .my-home-container .my-home-user-stats h3,
 .my-home-container .my-home-potential h3 {
   color: #222222;
+  text-decoration: underline;
   text-shadow: 0 1px rgba(244, 179, 80, 0.7);
   margin-top: 45px;
   margin-bottom: 20px;
 }
-@media only screen and (min-width: 1129px) {
-  .my-home-container .my-home-offer-stats canvas,
-  .my-home-container .my-home-user-stats canvas,
-  .my-home-container .my-home-potential canvas {
-    min-height: 700px;
-    max-height: 750px;
-  }
+.my-home-container .my-home-offer-stats .my-chart-legend ul,
+.my-home-container .my-home-user-stats .my-chart-legend ul,
+.my-home-container .my-home-potential .my-chart-legend ul {
+  list-style-type: none;
+  border-top: 1px solid #fff;
+  background: #dddddd;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
-  .my-home-container .my-home-offer-stats canvas,
-  .my-home-container .my-home-user-stats canvas,
-  .my-home-container .my-home-potential canvas {
-    min-height: 500px;
-    max-height: 650px;
-  }
+.my-home-container .my-home-offer-stats .my-chart-legend ul > li,
+.my-home-container .my-home-user-stats .my-chart-legend ul > li,
+.my-home-container .my-home-potential .my-chart-legend ul > li {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
 }
-@media only screen and (min-width: 530px) and (max-width: 949px) {
-  .my-home-container .my-home-offer-stats canvas,
-  .my-home-container .my-home-user-stats canvas,
-  .my-home-container .my-home-potential canvas {
-    min-height: 350px;
-    max-height: 600px;
-  }
+.my-home-container .my-home-offer-stats .my-chart-legend ul > li span,
+.my-home-container .my-home-user-stats .my-chart-legend ul > li span,
+.my-home-container .my-home-potential .my-chart-legend ul > li span {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: 15px;
+}
+.my-home-container .my-home-offer-stats canvas,
+.my-home-container .my-home-user-stats canvas,
+.my-home-container .my-home-potential canvas {
+  background: #dddddd;
+  padding: 15px 30px;
+  height: auto;
+  width: 100%;
 }
 /* CRUD form styles
 -------------------------------------------------- */

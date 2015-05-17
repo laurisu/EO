@@ -32,48 +32,55 @@
     <div class="my-home-container">
 
         <div class="row">
-            <div id="homeOfferStats" class="my-home-offer-stats">
-                <h3>Latest offers</h3>
-                <canvas id="myOfferStatsChart"></canvas>
+            <div class="my-chart-wrapper">
+                <div id="homeOfferStats" class="my-home-offer-stats">
+                    <h3>Latest offers</h3>
+                    <canvas id="myOfferStatsChart"></canvas>
+                    <div id="myOfferStatsLegend" class="my-chart-legend"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
-            <div id="homeSalesRepStats" class="my-home-user-stats">
-                <h3>Sales Rep Stats</h3>
-                <canvas id="myUserStatsChart"></canvas>
+            <div class="my-chart-wrapper">
+                <div id="homeSalesRepStats" class="my-home-user-stats">
+                    <h3>Sales Rep Stats</h3>
+                    <canvas id="myUserStatsChart"></canvas>
+                    <div id="myUserStatsLegend" class="my-chart-legend"></div>
+                </div>
             </div>
         </div>
 
         <div class="row">
-            <div id="homeNewPotential">
-                <h3>New contacts for last 90 days</h3>
+            <div class="my-chart-wrapper">
                 
-                <table class="table table-small-font table-hover my-table">
-                    <thead>
-                        <tr>
-                            <th>First comunication</th>
-                            <th>Customer</th>
-                            <th>Contact person</th>
-                            <th>Manager</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($new_customers as $customer)
+                <div id="homeNewPotential" class="my-home-user-stats">
+                    <h3>New contacts for last 90 days</h3>
+
+                    <table class="table table-small-font table-hover my-table">
+                        <thead>
                             <tr>
-                                <td>{{ date("d M Y", strtotime($customer->created_at)) }}</td>
-                                <td>{{ $customer->contact_person }}</td>
-                                <td>{{ $customer->customer }}</td>
-                                <td>{{ $customer->user->name . ' ' . $customer->user->surname }}</td>
-                                <td>Identifying needs / offer sent / offer prepeared</td>
+                                <th>First comunication</th>
+                                <th>Customer</th>
+                                <th>Contact person</th>
+                                <th>Manager</th>
+                                <th>Status</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach($new_customers as $customer)
+                                <tr>
+                                    <td>{{ date("d M Y", strtotime($customer->created_at)) }}</td>
+                                    <td>{{ $customer->contact_person }}</td>
+                                    <td>{{ $customer->customer }}</td>
+                                    <td>{{ $customer->user->name . ' ' . $customer->user->surname }}</td>
+                                    <td>Identifying needs / offer sent / offer prepeared</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 
-                
-                
+                </div>
             </div>
         </div>
         

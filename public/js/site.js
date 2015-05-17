@@ -113,18 +113,14 @@ function initOfferStats() {
 
         var theMonths = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
         var today = new Date();
-        
-        var month = today.getMonth();
         var lastSixMonths = [];
         
         for(var i = 6; i > 0; i -= 1) {
             d = new Date(today.getFullYear(), today.getMonth() +1 - i, 1);
-            // months = theMonths[d.getMonth()];
             lastSixMonths.push(theMonths[d.getMonth()]);
+            // months = theMonths[d.getMonth()];
         }   
         lastSixMonths.reverse();
-        
-        console.log(lastSixMonths);
         
         /* 
          * Offer status
@@ -134,72 +130,75 @@ function initOfferStats() {
          * 3 - offer accepted 
          * 4 - offer rejected
          */
-        
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false
+        };
         var data = {
             labels: lastSixMonths,
             datasets: [
                 {
-                    label: 'Sent offers',
+                    label: 'Offers without feedback',
                     data: myChartData.sentData,
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
-                    highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)"
+                    fillColor:          "rgba(72, 151, 204, 0.5)",
+                    strokeColor:        "rgba(72, 151, 204, 0.8)",
+                    highlightFill:      "rgba(72, 151, 204, 0.75)",
+                    highlightStroke:    "rgba(72, 151, 204, 1)"
                 },
                 {
                     label: 'Accepted offers',
                     data: myChartData.accData,
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
-                    highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)"
+                    fillColor:          "rgba(47, 159, 158, 0.5)",
+                    strokeColor:        "rgba(47, 159, 158, 0.8)",
+                    highlightFill:      "rgba(47, 159, 158, 0.75)",
+                    highlightStroke:    "rgba(47, 159, 158, 1)"
                 },
                 {
                     label:'Rejected offers',
                     data: myChartData.rejData,
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
-                    highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)"
+                    fillColor:          "rgba(251, 148, 139, 0.5)",
+                    strokeColor:        "rgba(251, 148, 139, 0.8)",
+                    highlightFill:      "rgba(251, 148, 139, 0.75)",
+                    highlightStroke:    "rgba(251, 148, 139, 1)"
                 }
             ]
         };
-        var myNewChart = new Chart(ctx).Line(data, {
-            responsive: true,
-            maintainAspectRatio: false
-        });
+        var myLineChart = new Chart(ctx).Line(data, options);
+        $('#myOfferStatsLegend').html(myLineChart.generateLegend());
     }
 }
 
 function initUserStats() {
     if ($('#myUserStatsChart').length) {
         var ctx = $("#myUserStatsChart").get(0).getContext("2d");
-
+        
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false
+        };
         var data = {
             labels: myChartData.users,
             datasets: [
                 {
-                    label: "Offers",
-                    fillColor: "rgba(220,220,220,0.5)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(220,220,220,0.75)",
-                    highlightStroke: "rgba(220,220,220,1)",
-                    data: myChartData.customerTotal
+                    label: "Customers",
+                    data: myChartData.customerTotal,
+                    fillColor:          "rgba(244, 179, 80, 0.5)",
+                    strokeColor:        "rgba(244, 179, 80, 0.8)",
+                    highlightFill:      "rgba(244, 179, 80, 0.75)",
+                    highlightStroke:    "rgba(244, 179, 80, 1)"
                 },
                 {
-                    label: "Customers",
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
-                    highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)",
-                    data: myChartData.offerTotal
+                    label: "Offers",
+                    data: myChartData.offerTotal,
+                    fillColor:          "rgba(47, 159, 158, 0.5)",
+                    strokeColor:        "rgba(47, 159, 158, 0.8)",
+                    highlightFill:      "rgba(47, 159, 158, 0.75)",
+                    highlightStroke:    "rgba(47, 159, 158, 1)"
                 }
             ]
         };
-        var myNewChart = new Chart(ctx).Bar(data, {
-            responsive: true,
-            maintainAspectRatio: false
-        });
+        var myBarChart = new Chart(ctx).Bar(data, options);
+        $('#myUserStatsLegend').html(myBarChart.generateLegend());
     }
 }
 

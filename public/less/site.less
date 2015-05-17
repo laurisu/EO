@@ -203,10 +203,10 @@ body {
 .my-pass-form {
     color: @my-light-font-color;
     a {
-        color: @my-light-font-color;  
-    }
-    a:hover {
-        color: @my-hover-color;
+        color: @my-light-font-color;
+        &:hover {
+            color: @my-hover-color;
+        }
     }
     .my-form-signin,
     .my-pass-recover {
@@ -245,28 +245,45 @@ body {
 -------------------------------------------------- */
 
 .my-home-container {
+    .my-chart-wrapper {
+        padding: 0 15px;
+    }
     .my-home-offer-stats,
     .my-home-user-stats,
     .my-home-potential {
         h3 {
             color: @my-black;
+            text-decoration: underline;
             text-shadow: 0 1px fade(@my-orange, 70%);
             margin-top: 45px;
             margin-bottom: 20px;
         }
+        .my-chart-legend ul {
+            list-style-type: none;
+            border-top: 1px solid #fff;
+            background: @my-grey;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            > li {
+                display: inline-block;
+                height: 26px;
+                line-height: 26px
+            }
+            > li span {
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+                margin-left: 15px;
+            }
+        }
         canvas {
-            @media @desktop-xl {
-                min-height: 700px;
-                max-height: 750px;
-            }
-            @media @desktop {
-                min-height: 500px;
-                max-height: 650px;
-            }
-            @media @tablet {
-                min-height: 350px;
-                max-height: 600px;
-            }
+            background: @my-grey;
+            padding: 15px 30px;
+            height: auto;
+            width: 100%;
         }
     }
     .my-home-potential {
