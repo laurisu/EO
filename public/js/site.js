@@ -93,12 +93,8 @@ $(function () {
 });
 
 function data() {
-    var offer = myChartData.offer;
-    var user = myChartData.user;
-
-
-    console.log(offer); // bar
-    console.log(user[0].name); // User Obj
+    var x = myChartData.offerTotal;
+    console.log(x); // bar
 
 }
 
@@ -117,27 +113,18 @@ function initOfferStats() {
 
         var theMonths = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
         var today = new Date();
-        var aMonth = today.getMonth();
-        var lastSixMonths = [];
-//        var i;
-        for (i = 0; i < 6; i++) {
-            lastSixMonths.push(theMonths[aMonth]);
-            aMonth++;
-            if (aMonth > 5) {
-                aMonth = 0;
-            }
-        }
         
-        var offersSentLastSixMonths = [];
-        for (i = 0; i <= offer.length; i++) {
-            
-//            offer.updated_at.getMonth();
-//            offersSentLastSixMonths.push();
-//            offer++;
-//            if (offer[1].status >= 2) {
-//                 
-//            }
-        }
+        var month = today.getMonth();
+        var lastSixMonths = [];
+        
+        for(var i = 6; i > 0; i -= 1) {
+            d = new Date(today.getFullYear(), today.getMonth() +1 - i, 1);
+            // months = theMonths[d.getMonth()];
+            lastSixMonths.push(theMonths[d.getMonth()]);
+        }   
+        lastSixMonths.reverse();
+        
+        console.log(lastSixMonths);
         
         /* 
          * Offer status
@@ -147,27 +134,33 @@ function initOfferStats() {
          * 3 - offer accepted 
          * 4 - offer rejected
          */
-        console.log(offer[1].updated_at);
-        console.log(today);
-
+        
         var data = {
             labels: lastSixMonths,
             datasets: [
                 {
-                    label: "My First dataset",
-                    fillColor: "rgba(220,220,220,0.5)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(220,220,220,0.75)",
-                    highlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 80, 81, 56, 55]
-                },
-                {
-                    label: "My Second dataset",
+                    label: 'Sent offers',
+                    data: myChartData.sentData,
                     fillColor: "rgba(151,187,205,0.5)",
                     strokeColor: "rgba(151,187,205,0.8)",
                     highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 86, 27]
+                    highlightStroke: "rgba(151,187,205,1)"
+                },
+                {
+                    label: 'Accepted offers',
+                    data: myChartData.accData,
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)"
+                },
+                {
+                    label:'Rejected offers',
+                    data: myChartData.rejData,
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)"
                 }
             ]
         };
@@ -181,34 +174,25 @@ function initOfferStats() {
 function initUserStats() {
     if ($('#myUserStatsChart').length) {
         var ctx = $("#myUserStatsChart").get(0).getContext("2d");
-        var user = myChartData.user;
 
         var data = {
-            labels: ["User 1", "User 2", "User 3", "User 4", "User 5", "User 6", "User 7"],
+            labels: myChartData.users,
             datasets: [
                 {
-                    label: "My First dataset",
+                    label: "Offers",
                     fillColor: "rgba(220,220,220,0.5)",
                     strokeColor: "rgba(220,220,220,0.8)",
                     highlightFill: "rgba(220,220,220,0.75)",
                     highlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 80, 81, 56, 55, 40]
+                    data: myChartData.customerTotal
                 },
                 {
-                    label: "My Second dataset",
+                    label: "Customers",
                     fillColor: "rgba(151,187,205,0.5)",
                     strokeColor: "rgba(151,187,205,0.8)",
                     highlightFill: "rgba(151,187,205,0.75)",
                     highlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(156,187,255,0.5)",
-                    strokeColor: "rgba(156,187,255,0.8)",
-                    highlightFill: "rgba(156,187,255,0.75)",
-                    highlightStroke: "rgba(156,187,255,1)",
-                    data: [29, 35, 60, 5, 80, 80, 67]
+                    data: myChartData.offerTotal
                 }
             ]
         };

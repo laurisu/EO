@@ -4,12 +4,14 @@
     @show
 </title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0
-      minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- This row os for Sidebars plugin -->
+<meta charset="utf-8">
+<meta name="description" content="Web application for sales peple - EasyOffer">
+<!--<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">-->
+<meta name="author" content="Lauris Ulpe">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="{{ asset('img/assets/easyoffer.ico') }}">
 
-<!-- Less are placed here -->
+<!-- Less is placed here -->
 <!--<script>
   less = {
     env: "development",
