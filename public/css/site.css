@@ -8575,11 +8575,17 @@ body {
 .my-home-container .my-home-offer-stats h3,
 .my-home-container .my-home-user-stats h3,
 .my-home-container .my-home-potential h3 {
-  color: #222222;
-  text-decoration: underline;
-  text-shadow: 0 1px rgba(244, 179, 80, 0.7);
   margin-top: 45px;
   margin-bottom: 20px;
+  color: #f4b350;
+  text-transform: uppercase;
+  text-shadow: 1px 1px rgba(34, 34, 34, 0.5);
+  border-bottom: 2px solid #f4b350;
+}
+.my-home-container .my-home-offer-stats h3:first-child,
+.my-home-container .my-home-user-stats h3:first-child,
+.my-home-container .my-home-potential h3:first-child {
+  margin-top: 20px;
 }
 .my-home-container .my-home-offer-stats .my-chart-legend ul,
 .my-home-container .my-home-user-stats .my-chart-legend ul,
@@ -8613,8 +8619,24 @@ body {
 .my-home-container .my-home-potential canvas {
   background: #dddddd;
   padding: 15px 30px;
-  height: auto;
+  /*height: auto;*/
   width: 100%;
+}
+@media only screen and (min-width: 950px) and (max-width: 1366px) {
+  .my-home-container .my-home-offer-stats canvas,
+  .my-home-container .my-home-user-stats canvas,
+  .my-home-container .my-home-potential canvas {
+    min-height: 300px;
+    max-height: 350px;
+  }
+}
+@media only screen and (min-width: 1367px) {
+  .my-home-container .my-home-offer-stats canvas,
+  .my-home-container .my-home-user-stats canvas,
+  .my-home-container .my-home-potential canvas {
+    min-height: 500px;
+    max-height: 600px;
+  }
 }
 /* CRUD form styles
 -------------------------------------------------- */
@@ -8813,5 +8835,23 @@ body {
   border-radius: 0 0 4px 4px;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+/* USER PROFILE
+-------------------------------------------------- */
+.my-user-profile {
+  /* To override Bootstrap Defaults */
+}
+.my-user-profile .panel-heading {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(34, 34, 34, 0.5);
+  background-color: #f4b350;
+  /*background-color: lighten(@my-orange, 30%);*/
+}
+.my-user-profile .my-list-group-heading {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(34, 34, 34, 0.5);
+  background-color: #f4b350;
 }
 /*# sourceMappingURL=/css/site.css.map */

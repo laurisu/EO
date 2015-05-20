@@ -252,11 +252,15 @@ body {
     .my-home-user-stats,
     .my-home-potential {
         h3 {
-            color: @my-black;
-            text-decoration: underline;
-            text-shadow: 0 1px fade(@my-orange, 70%);
+            &:first-child {
+                margin-top: 20px;
+            }
             margin-top: 45px;
             margin-bottom: 20px;
+            color: @my-orange;
+            text-transform: uppercase;
+            text-shadow: 1px 1px fade(@my-black, 50%);
+            border-bottom: 2px solid @my-orange;
         }
         .my-chart-legend ul {
             list-style-type: none;
@@ -282,8 +286,16 @@ body {
         canvas {
             background: @my-grey;
             padding: 15px 30px;
-            height: auto;
+            /*height: auto;*/
             width: 100%;
+            @media @desktop {
+                min-height: 300px;
+                max-height: 350px;
+            }
+            @media @desktop-xl {
+                min-height: 500px;
+                max-height: 600px;
+            }
         }
     }
     .my-home-potential {
@@ -521,5 +533,26 @@ body {
             padding-top: 15px;
             padding-bottom: 15px;
         }
+    }
+}
+
+/* USER PROFILE
+-------------------------------------------------- */
+
+.my-user-profile {
+    
+    /* To override Bootstrap Defaults */
+    .panel-heading {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 1px 1px fade(@my-black, 50%);
+        background-color: @my-orange;
+        /*background-color: lighten(@my-orange, 30%);*/
+    }
+    .my-list-group-heading {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 1px 1px fade(@my-black, 50%);
+        background-color: @my-orange;
     }
 }
