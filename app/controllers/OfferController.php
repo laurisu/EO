@@ -119,8 +119,8 @@ class OfferController extends \BaseController {
 	public function putRecipient($id) {
             
             $validator = Validator::make(Input::all(), array(
-                'offer_id'  => 'required|numeric',
-                'recipient' => 'required|numeric'
+                'offer_id'  => 'required|numeric|exists:offers,id',
+                'recipient' => 'required|numeric|exists:customers,id'
             ));
             
             if ($validator->fails()) {
@@ -141,6 +141,10 @@ class OfferController extends \BaseController {
                             ->with('alert-class', 'alert-success');;
                 }
                 
+                return Redirect::route('offer-add-customer', $id)
+                            ->withInput()
+                            ->with('global', 'Something went wrong!')
+                            ->with('alert-class', 'alert-warning');
             }
             
         }

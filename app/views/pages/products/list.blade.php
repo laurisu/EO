@@ -28,7 +28,7 @@
                 <div class="well my-well">
                     <div class="my-well-container">
                         <div class="col-xs-12 col-sm-4 text-left">
-                            <form class="js-ajax-search" name="" action="{{ URL::route('product-list') }}" method="GET">
+                            <form name="" action="{{ URL::route('product-list') }}" method="GET">
                                 <div class="input-group"> 
                                     <span class="input-group-addon">Filter</span>
                                     <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->

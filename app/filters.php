@@ -52,9 +52,10 @@ Route::filter('auth', function()
 
 Route::filter('admin', function(){
     
-    if (!Auth::user() || Auth::user()->role != 2) {
+    if (!Auth::user() || Auth::user()->isSimpleUser()) {
         return Redirect::route('home')
-                ->with('global', 'You have no acces to this section! Please contact your boss!');
+                ->with('global', 'You have no acces to this section! Please contact your boss!')
+                ->with('alert-class', 'alert-warning');
     }
 
 });

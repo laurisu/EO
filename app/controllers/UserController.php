@@ -8,7 +8,7 @@ class UserController extends BaseController {
 
     public function postSignIn() {
         $validator = Validator::make(Input::all(), array(
-                    'username' => 'required',
+                    'username' => 'required|exists:users,username',
                     'password' => 'required',
                         )
         );

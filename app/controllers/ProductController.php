@@ -33,7 +33,7 @@ class ProductController extends BaseController {
         if ($search) {
             $products->where('product_name', 'LIKE', '%' . $search . '%')
                     ->orWhere('description', 'LIKE', '%' . $search . '%')
-                    ->orWhere('id', 'LIKE', '%' . $search . '%');
+                    ->orWhere('id', '=', $search);
         }
 
         $productsToView = $products->orderBy($sortDbName, $sortDirrection)->paginate(30);

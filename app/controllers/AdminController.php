@@ -23,15 +23,16 @@ class AdminController extends BaseController {
                     'job_title'         => 'required|max:50|',
                     'email'             => 'required|max:50|email|unique:users',
                     'phone'             => 'required|min:6',
-                    'role'              => 'required|max:1',
+                    'role'              => 'required|numeric|between:0,2',
                     'profile_img'       => 'required|mimes:jpg,jpeg,png',
                     'password'          => 'required|min:6',
-                    'password_again'    => 'required|same:password'
+                    'password_again'    => 'required|same:password',
+                    'active'            => 'required|numeric|between:0,1'
                         )
         );
 
         if ($validator->fails()) {
-            print_r($validator->messages());exit();
+//            print_r($validator->messages());exit();
             return Redirect::route('account-create')
                             ->withErrors($validator)
                             ->withInput();
@@ -44,6 +45,7 @@ class AdminController extends BaseController {
             $phone      = Input::get('phone');
             $password   = Input::get('password');
             $role       = Input::get('role');
+            $active     = Input::get('active');
             
             $file = Input::file('profile_img');
             $path       = 'img/uploads/' . $file->getClientOriginalName();
@@ -63,7 +65,7 @@ class AdminController extends BaseController {
                         'phone'     => $phone,
                         'role'      => $role,
                         'password'  => Hash::make($password),
-                        'active'    => 1,
+                        'active'    => $active,
                         'img'       => $path
             ));
 

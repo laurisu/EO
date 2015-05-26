@@ -28,7 +28,7 @@
         <div class="table-responsive" data-pattern="priority-columns">
             <table class="table table-small-font table-hover my-table">
                 <caption>
-                    Pending offer
+                    Current offer: Product management - stage 1 of 3
                 </caption>
 
                 <thead>
@@ -44,7 +44,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="5">
-                            <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-offer">Continue with offer... <i class="fa fa-long-arrow-right"></i></a>
+                            <a href="{{{ route('offer-create-post') }}}" class="btn btn-xs my-tbl-btn-offer">Save and continue... <i class="fa fa-long-arrow-right"></i></a>
                             <a href="{{ route('empty-cart') }}" class="btn btn-xs my-tbl-btn-delete"><i class="fa fa-trash-o"> Delete</i></a>
                         </td>
                     </tr>
@@ -87,7 +87,6 @@
                     <th>Created</th>
                     <th>User</th>
                     <th>Customer</th>
-                    <th>Status</th>
                     <th>Options</th>
                 </thead>
 
@@ -103,14 +102,6 @@
                                     {{ $offer->recipient->customer }}
                                 @else
                                     n/a
-                                @endif
-                            </td>
-                            <td>
-                                {{ $offer->status }}
-                                @if($offer->status == 0)
-                                    Unfinished
-                                @elseif($offer->status == 1)
-                                    Not sent!
                                 @endif
                             </td>
                             <td class="col-xs-1">
@@ -172,7 +163,6 @@
                     <th>Sent at</th>
                     <th>User</th>
                     <th>Customer</th>
-                    <th>Status</th>
                     <th>Options</th>
                 </thead>
 
@@ -188,16 +178,6 @@
                                     {{ $offer->recipient->customer }}
                                 @else
                                     n/a
-                                @endif
-                            </td>
-                            <td>
-                                {{ $offer->status }}
-                                @if($offer->status == 2)
-                                    Offer sent
-                                @elseif($offer->status == 3)
-                                    Accepted
-                                @elseif($offer->status == 4)    
-                                    Rejectet
                                 @endif
                             </td>
                             <td class="col-xs-1">

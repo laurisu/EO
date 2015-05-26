@@ -10,7 +10,7 @@
 <div class="my-crud-form">
 
     <div class="col-sm-12 my-form-headding">
-        <h4>Offer view</h4>
+        <h4>Send offer - Stage 3 of 3</h4>
     </div>
 
     
@@ -50,7 +50,7 @@
         <div class="form-group{{ $errors->has('user') ? ' has-error' : '' }}">
         {{ Form::label('myOfferUser', 'User', array('class' => 'col-sm-2 control-label')) }}
             <div class="col-sm-4">
-            {{ Form::text('myOfferUser', $offer->user->username, array(
+            {{ Form::text('myOfferUser', $offer->user->name . ' ' . $offer->user->surname, array(
                         'class' => 'form-control',
                         'name' => 'user')) }}
             {{ $errors->first('user', '<p class="help-block">:message</p>') }}

@@ -111,7 +111,7 @@
             <label for="inputRole" class="col-sm-2 control-label">Permisions</label>
             <div class="col-sm-4">
                 <select name="role" class="form-control" id="inputRole">
-                    <option value="0" selected>Simple user</option>
+                    <option value="0">Simple user</option>
                     <option value="2">User with Admin rights</option>
                 </select>
 
@@ -120,6 +120,7 @@
                 @endif
             </div>
         </div>
+
 
         <div class="form-group">
             <label for="uploadImage" class="col-sm-2 control-label">Upload Image</label>
@@ -141,7 +142,7 @@
                     name="profile_img"
                     type="file" 
                     id="uploadImage"  
-                    class="filestyle"               
+                    class="filestyle"
                     data-buttonText="Choose file"
                     data-buttonName="btn-primary">
                 
@@ -179,6 +180,20 @@
                 
                 @if($errors->has('password_again'))
                 {{ $errors->first('password_again') }}
+                @endif
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="inputActive" class="col-sm-2 control-label">Account status</label>
+            <div class="col-sm-4">
+                <select name="active" class="form-control" id="inputRole">
+                    <option value="0">Disabled</option>
+                    <option value="1">Activated</option>
+                </select>
+
+                @if($errors->has('active'))
+                {{ $errors->first('active') }}
                 @endif
             </div>
         </div>
