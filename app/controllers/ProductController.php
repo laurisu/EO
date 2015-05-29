@@ -13,18 +13,18 @@ class ProductController extends BaseController {
         // sortDbName - column name in database
         switch ($sortName) {
             case 'id':
-                $sortDbName = "id";
+                $sortDbName = 'id';
                 break;
             case 'name':
-                $sortDbName = "product_name";
+                $sortDbName = 'product_name';
                 break;
             default:
                 $sortName   = 'name';
-                $sortDbName = "product_name";
+                $sortDbName = 'product_name';
                 break;
         }
 
-        if ($sortDirrection == "DESC") {
+        if ($sortDirrection == 'DESC') {
             $sortDirrection = 'DESC';
         } else {
             $sortDirrection = 'ASC';
@@ -39,18 +39,6 @@ class ProductController extends BaseController {
         $productsToView = $products->orderBy($sortDbName, $sortDirrection)->paginate(30);
         $cart = Cart::content();
         
-        if (!empty($cart)) {
-            
-        }
-        
-        if (Request::ajax()) {
-            return View::make('pages.products.list-ajax')
-                        ->with(array(
-                            'products' => $productsToView,
-                            'sortDirrection' => $sortDirrection,
-                            'sortName' => $sortName,
-                        ))->with('cart', $cart->all());
-        }
         return View::make('pages.products.list')
                 ->with(array(
                     'products' => $productsToView,

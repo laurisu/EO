@@ -4,8 +4,48 @@ class CustomerController extends BaseController {
     
     public function getCustomerList() {
         
+        $sortName       = Request::get('sort');
+        $sortDirrection = Request::get('order');
+        $search         = Request::get('search');
+        $customers      = DB::table('customers');
+
+        // sortName - input by user
+        // sortDbName - column name in database
+        switch ($sortName) {
+            case 'company':
+                $sortDbName = 'customer';
+                break;
+            case 'contact':
+                $sortDbName = 'contact_person';
+                break;
+            default:
+                $sortName   = 'company';
+                $sortDbName = 'customer';
+                break;
+        }
+
+        if ($sortDirrection == "DESC") {
+            $sortDirrection = 'DESC';
+        } else {
+            $sortDirrection = 'ASC';
+        }
+        
+        if ($search) {
+            $customers->where('customer', 'LIKE', '%' . $search . '%')
+                    ->orWhere('contact_person', 'LIKE', '%' . $search . '%')
+                    ->orWhere('address', '=', '%' . $search . '%')
+                    ->orWhere('web_page', '=', '%' . $search . '%')
+                    ->orWhere('email', '=', '%' . $search . '%');
+        }
+        
+        $customersToView = $customers->orderBy($sortDbName, $sortDirrection)->paginate(30);
+        
         return View::make('pages.customers.list')
-                ->with('customers', Customer::orderBy('customer', 'ASC')->paginate(20));
+                ->with(array(
+                    'customers' => $customersToView,
+                    'sortDirrection' => $sortDirrection,
+                    'sortName' => $sortName,
+                ));
 
     }
     
