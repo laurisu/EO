@@ -1,5 +1,42 @@
 $(function () {
+    
+    /**
+     * Products table calculator
+     */
+    calcOfferPrice();
+    var tbl = $('.js-table-calc');
+    tbl.find('tr').each(function () {
+        $(this).find('#dis').bind("keyup", function () {
+            calcOfferPrice();
+        });
+    });
 
+    function calcOfferPrice() {
+        var tbl = $('.js-table-calc');
+        tbl.find('tr').each(function () {
+            var offerPrice = 0;
+            var a = $(this).find('#pur').val();
+            var b = $(this).find('#ret').val();
+            var c = $(this).find('#dis').val();
+            
+            if(!isNaN(c) && c.length != 0 && c < 100 && c >= 0) {
+                var result = parseFloat(b) * parseFloat((100 - c)/100);
+                if(result > a) {
+                    offerPrice = result;
+                } else {
+                    offerPrice = parseFloat(b);
+                }
+            } else {
+                offerPrice = parseFloat(b);
+            }
+            
+            var profit = offerPrice - parseFloat(a);
+
+            $(this).find('#total').val(offerPrice.toFixed(2));
+            $(this).find('#pro').val(profit.toFixed(2));
+        });
+    }
+    
     /**
      *  Modal windows
      */
@@ -70,14 +107,7 @@ $(function () {
      */
     initOfferStats();
     initUserStats();
-    data();
 });
-
-function data() {
-    var x = myChartData.offerTotal;
-    console.log(x); // bar
-
-}
 
 function applyResponsiveTable(selector) {
     $(selector).responsiveTable({

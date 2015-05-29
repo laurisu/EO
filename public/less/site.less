@@ -84,14 +84,8 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: @my-footer-height;
-    background-image: linear-gradient(
-        to top, 
-        rgba(34,34,34,1) 0%,
-        rgba(66,87,103,0.6) 35%,
-        rgba(98,140,172,0.4) 70%,
-        rgba(125,185,232,0) 100%
-        );
-
+    color: @my-orange;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     margin: auto;
 }
 
@@ -193,8 +187,6 @@ body {
 -------------------------------------------------- */
 
 .my-login-bg {
-    border: solid 1px green;
-
     /*     Background image displayed fullscreen */        
     background: url('../img/login-bg.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -211,6 +203,7 @@ body {
     .my-form-signin,
     .my-pass-recover {
         padding: 15px;
+        box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.5);
         background-color: @my-dark-bg-color;
         border: 1px solid @my-light-font-color;
     }
@@ -406,6 +399,17 @@ body {
                 border: solid 1px #fff;
                 color: #fff;
             }
+            .input-group {
+                margin-bottom: 10px;
+                .my-search-input {
+                    background-color: transparent;
+                    border: solid 1px #fff;
+                    color: #fff;
+                }
+                .my-view-header-btn {
+                    margin-top: 0;
+                }
+            }
         }
     }
 }
@@ -433,7 +437,7 @@ body {
         text-align: left;
         font-weight: inherit;
         color: #fff;
-        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
         background-color: @my-thead-bg-color;
         border-bottom: 1px solid @my-tr-border-color;
     }
@@ -468,6 +472,28 @@ body {
             /*background-color: #fff; color: #000; border: solid 1px #000;*/
         }
     }
+    
+    /* Products list */
+    .my-row-with-calculator > td {
+        
+        /*Turn Off Number Input Spinners*/
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        
+        input[type="number"] {
+            max-width: 50px;
+            border: none;
+            text-align: center;
+        }
+        
+        input[name="discount"] {
+            background: lighten(@my-orange, 25);
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+        }
+    }
 }
 
 .my-td-ellipsis div {
@@ -490,10 +516,13 @@ body {
 .my-user-list-accordion {
     .panel-heading {
         background-color: @my-orange;
+        padding: 0; /* Override Bootstrap defaults */
         .panel-title {
             color: #fff;
             text-shadow: 0 1px rgba(0, 0, 0, 0.3);
             a { 
+                display: block; 
+                padding: 10px 15px;
                 &[class=""], /* Bootstrap adds .collapsed to rest of the elements */
                 &:focus,
                 &:hover {
@@ -530,8 +559,14 @@ body {
             min-height: 430px;
             background-color: #fff;
             border-radius: 0 0 4px 4px;
+            border-left: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
             padding-top: 15px;
             padding-bottom: 15px;
+            .thumbnail {
+                max-width: 310px;
+            }
         }
     }
 }

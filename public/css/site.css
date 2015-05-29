@@ -8430,7 +8430,8 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 50px;
-  background-image: linear-gradient(to top, #222222 0%, rgba(66, 87, 103, 0.6) 35%, rgba(98, 140, 172, 0.4) 70%, rgba(125, 185, 232, 0) 100%);
+  color: #f4b350;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   margin: auto;
 }
 /* Default template styles
@@ -8525,7 +8526,6 @@ body {
 /* Login / Forgot password
 -------------------------------------------------- */
 .my-login-bg {
-  border: solid 1px green;
   /*     Background image displayed fullscreen */
   background: url('../img/login-bg.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -8542,6 +8542,7 @@ body {
 .my-pass-form .my-form-signin,
 .my-pass-form .my-pass-recover {
   padding: 15px;
+  box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5);
   background-color: #222222;
   border: 1px solid #f4b350;
 }
@@ -8727,6 +8728,17 @@ body {
   border: solid 1px #fff;
   color: #fff;
 }
+.my-view-header-wrapper .my-well .my-well-container .input-group {
+  margin-bottom: 10px;
+}
+.my-view-header-wrapper .my-well .my-well-container .input-group .my-search-input {
+  background-color: transparent;
+  border: solid 1px #fff;
+  color: #fff;
+}
+.my-view-header-wrapper .my-well .my-well-container .input-group .my-view-header-btn {
+  margin-top: 0;
+}
 .my-view-header-wrapper-affix-replacer {
   height: 0;
 }
@@ -8737,6 +8749,9 @@ body {
 .table-responsive[data-pattern="priority-columns"] > .table.my-table > tbody > tr > td:nth-child(2) {
   white-space: normal;
 }
+.my-table {
+  /* Products list */
+}
 .my-table caption {
   padding-left: 10px;
 }
@@ -8745,7 +8760,7 @@ body {
   text-align: left;
   font-weight: inherit;
   color: #fff;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   background-color: #f4b350;
   border-bottom: 1px solid #dddddd;
 }
@@ -8782,6 +8797,23 @@ body {
   color: #f4b350;
   /*background-color: #fff; color: #000; border: solid 1px #000;*/
 }
+.my-table .my-row-with-calculator > td {
+  /*Turn Off Number Input Spinners*/
+}
+.my-table .my-row-with-calculator > td input[type=number]::-webkit-inner-spin-button,
+.my-table .my-row-with-calculator > td input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.my-table .my-row-with-calculator > td input[type="number"] {
+  max-width: 50px;
+  border: none;
+  text-align: center;
+}
+.my-table .my-row-with-calculator > td input[name="discount"] {
+  background: #fce7c8;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
 .my-td-ellipsis div {
   width: 200px;
   overflow: hidden;
@@ -8797,10 +8829,16 @@ body {
 -------------------------------------------------- */
 .my-user-list-accordion .panel-heading {
   background-color: #f4b350;
+  padding: 0;
+  /* Override Bootstrap defaults */
 }
 .my-user-list-accordion .panel-heading .panel-title {
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+.my-user-list-accordion .panel-heading .panel-title a {
+  display: block;
+  padding: 10px 15px;
 }
 .my-user-list-accordion .panel-heading .panel-title a[class=""],
 .my-user-list-accordion .panel-heading .panel-title a:focus,
@@ -8833,8 +8871,14 @@ body {
   min-height: 430px;
   background-color: #fff;
   border-radius: 0 0 4px 4px;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.my-user-list-accordion .panel-body .my-tab-content-container .thumbnail {
+  max-width: 310px;
 }
 /* USER PROFILE
 -------------------------------------------------- */

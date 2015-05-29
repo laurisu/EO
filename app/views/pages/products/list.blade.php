@@ -19,6 +19,7 @@
                     Search
                 </button>
                 <div class="my-options-toolbar text-right">
+                    <!--If decided-->
                     <!--Here goes the button toolbar from Responsive Table plugin (jQuery)-->
                 </div>     
             </div>  
@@ -27,12 +28,16 @@
             <div class="collapse" id="collapseFilters">
                 <div class="well my-well">
                     <div class="my-well-container">
-                        <div class="col-xs-12 col-sm-4 text-left">
+                        <div class="col-xs-12 col-sm-4 pull-right">
                             <form name="" action="{{ URL::route('product-list') }}" method="GET">
                                 <div class="input-group"> 
-                                    <span class="input-group-addon">Filter</span>
-                                    <!--<input type="text" class="form-control js-my-filter" placeholder="Type here...">-->
-                                    <input type="text" name="search" class="form-control" placeholder="Type here...">
+                                    <!--<span class="input-group-addon">Search box</span>-->
+                                    <input type="text" name="search" class="form-control my-search-input" placeholder="Type here...">
+                                    <div class="input-group-btn">
+                                        <button class="btn my-view-header-btn" type="submit">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -47,7 +52,7 @@
 
 <div class="js-ajax-products">
     <div class="table-responsive" data-pattern="priority-columns">
-        <table class="table table-small-font table-hover my-table">
+        <table class="table table-small-font table-hover my-table js-table-calc">
 
             <?php
                 // Retrieving GET parameters from query string
@@ -96,8 +101,8 @@
                     <th data-priority="6">description</th>
                     <th data-priority="5">purchase<br> price <i class="fa fa-eur"></th>
                     <th data-priority="3">retail<br> price <i class="fa fa-eur"></th>
-                    <th data-priority="5">discount<br> &percnt;</th>
-                    <th data-priority="5">profit<br> <i class="fa fa-eur"></th>
+                    <th data-priority="1">discount<br> &percnt;</th>
+                    <th data-priority="1">profit<br> <i class="fa fa-eur"></th>
                     <th data-priority="1">offer<br> price <i class="fa fa-eur"></th>
                     <th data-priority="1">options</th>
                 </tr>
@@ -105,15 +110,16 @@
             <tbody>
 
                 @foreach($products as $product)
-                <tr>
+                <tr class="my-row-with-calculator">
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->product_name }}</td> 
                     <td class="my-td-ellipsis" style=""><div>{{ $product->description }}</div></td>
-                    <td>{{ $product->purchase_price }}</td>
-                    <td>{{ $product->retail_price }}</td>
-                    <td>20 %</td>
-                    <td>25.99</td>
-                    <td>105.99</td>
+                    <td><input type="number" id="pur" name="purchase" value="{{ $product->purchase_price }}" readonly></td>
+                    <td><input type="number" id="ret" name="retail" value="{{ $product->retail_price }}" readonly></td>
+                    <td><input type="number" id="dis" name="discount" placeholder="0"></td>
+                    <td><input type="number" id="pro" name="profit" readonly></td>
+                    <td><input type="number" id="total" name="total" readonly></td>
+            
                     <td class="col-xs-1">
                         @if(!empty($cart))
                             @if(Cart::search(array('id' => $product->id)) == TRUE)

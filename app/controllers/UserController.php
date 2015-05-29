@@ -135,7 +135,7 @@ class UserController extends BaseController {
                         $message->to($user->email, $user->username)->subject('Your new password');
                     });
 
-                    return Redirect::route('home')
+                    return Redirect::route('sign-in')
                                     ->with('global', 'We have sent you a new password by email')
                                     ->with('alert-class', 'alert-info');
                 }

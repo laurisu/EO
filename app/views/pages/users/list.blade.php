@@ -82,47 +82,91 @@
                                 <div class="my-tab-content-container">
                                     <div class="col-xs-12 col-sm-4">
 
-                                        <div class="">
+                                        <div class="thumbnail">
                                             @if(!empty($user->img))
-                                            <img src="{{ asset($user->img) }}" alt="" class="img-responsive">
+                                            <img src="{{ asset($user->img) }}" alt="Profile image" class="img-responsive">
                                             @else
-                                            <img src="http://placehold.it/300x400" alt="" class="img-responsive">
+                                            <img src="http://placehold.it/300x400" alt="Profile image" class="img-responsive">
                                             @endif
                                         </div>
 
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
-
-                                        <h4>Contacts</h4>
-                                        <p><strong>name: </strong>{{ $user->name }}</p>
-                                        <p><strong>surname: </strong>{{ $user->surname }}</p>
-                                        <p><strong>username: </strong>{{ $user->username }}</p>
-                                        <p><strong>title: </strong>{{ $user->job_title }}</p>
-                                        <p><strong>mobile: </strong>{{ $user->phone }}</p>
-                                        <p><strong>email: </strong>{{ $user->email }}</p>
-                                        <p><strong>last seen: </strong>
-                                            {{ Carbon::now()
-                                                ->createFromTimeStamp(strtotime($user->last_signin))
-                                                ->diffForHumans() }}
-                                        </p>
+                                        
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-heading">Contacts</li>
+                                            <li class="list-group-item text-right">
+                                                {{ $user->name }}
+                                                <span class="pull-left">
+                                                    <strong>name:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                {{ $user->surname }}
+                                                <span class="pull-left">
+                                                    <strong>surname:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                {{ $user->username }}
+                                                <span class="pull-left">
+                                                    <strong>username:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                {{ $user->job_title }}
+                                                <span class="pull-left">
+                                                    <strong>title:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                <a href="tel:{{ $user->phone }}">{{ $user->phone }}</a>
+                                                <span class="pull-left">
+                                                    <strong>mobile:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
+                                                <span class="pull-left">
+                                                    <strong>email:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                {{ Carbon::now()
+                                                    ->createFromTimeStamp(strtotime($user->last_signin))
+                                                    ->diffForHumans() }}
+                                                <span class="pull-left">
+                                                    <strong>last seen:</strong>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
-
-                                        <h4>Settings</h4>
-                                        <p><strong>Permisions: </strong>
-                                            @if($user->role==0)
-                                                Simple user
-                                            @elseif($user->role==2)
-                                                User with Admin rights
-                                            @endif
-                                        </p>
-                                        <p><strong>Profile status: </strong>
-                                            @if($user->active==1)
-                                                Active
-                                            @elseif($user->role==0)
-                                                Disabled
-                                            @endif
-                                        </p>
+                                        
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-heading">Settings</li>
+                                            <li class="list-group-item text-right">
+                                                @if($user->role==0)
+                                                    Simple user
+                                                @elseif($user->role==2)
+                                                    User with Admin rights
+                                                @endif
+                                                <span class="pull-left">
+                                                    <strong>Permisions:</strong>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item text-right">
+                                                @if($user->active==1)
+                                                    Active
+                                                @elseif($user->role==0)
+                                                    Disabled
+                                                @endif
+                                                <span class="pull-left">
+                                                    <strong>Status:</strong>
+                                                </span>
+                                            </li>
+                                        </ul>
 
                                     </div> 
                                 </div>
@@ -131,19 +175,34 @@
                             <div role="tabpanel" class="tab-pane" id="myUserCustomer{{ $user->id }}">
                                 <div class="my-tab-content-container">
                                     <div class="col-xs-12 col-sm-4">
-                                        <h4>Customer list</h4>
-                                        @foreach($user->customers as $customer)
-                                        <p>{{ $customer->customer }}</p>
-                                        @endforeach
+                                        
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-heading">Customer list</li>
+                                            @foreach($user->customers as $customer)
+                                            <li class="list-group-item">{{ $customer->customer }}</li>
+                                            @endforeach
+                                        </ul>
+                                        
                                     </div>       
                                     <div class="col-xs-12 col-sm-4">
-                                        <h4>Customer gained</h4>
-                                        <br>
-
+                                        
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-heading">Customer list</li>
+                                            @foreach($user->customers as $customer)
+                                            <li class="list-group-item">{{ $customer->customer }}</li>
+                                            @endforeach
+                                        </ul>
 
                                     </div>       
                                     <div class="col-xs-12 col-sm-4">
-
+                                        
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-heading">Customer list</li>
+                                            @foreach($user->customers as $customer)
+                                            <li class="list-group-item">{{ $customer->customer }}</li>
+                                            @endforeach
+                                        </ul>
+                                        
                                     </div>       
                                 </div>
                             </div>
