@@ -113,6 +113,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
+                
                 <button class="btn btn-md my-btn-save" type="submit">
                     <i class="fa fa-floppy-o"></i> Save
                 </button>
@@ -121,20 +122,18 @@
                 </a>
                 {{ Form::token() }}
                 
-                    <a href="{{ Url::route('customer-delete', array('id' => $customer->id)) }}" class="btn btn-md my-btn-delete" type="submit">
-                        <i class="fa fa-trash-o"></i> Delete
-                    </a>
+                <button
+                    type="button"
+                    class="btn btn-md my-btn-delete" 
+                    data-toggle="modal" data-target="#confirmDelete" 
+                    data-title="Delete Customer" 
+                    data-test="test" 
+                    data-message='Are you sure you want to delete cuatomer - {{ $customer->customer }}?'
+                    data-href="{{ route('customer-delete', array('id' => $customer->id)) }}" 
+                    >
+                    <i class="fa fa-trash-o"></i> Delete
+                </button>           
 
-                <div id="confirmDelete" class="modal hide fade">
-                    <div class="modal-body">
-                        Are you sure you want to delete product - {{ $customer->customer }}?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
-                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
-                    </div>
-                </div>
-                
             </div>
         </div>
 

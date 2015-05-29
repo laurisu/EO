@@ -3,7 +3,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
     <h4 class="modal-title" id="myModalLabel">
-        <b>{{ $customer->customer }}</b>s
+        <b>{{ $customer->customer }}</b>
     </h4>
 </div>
 <div class="modal-body">

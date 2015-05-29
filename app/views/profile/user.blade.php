@@ -1,5 +1,10 @@
 @extends('layouts.default')
 
+@section('title')
+@parent
+:: My profile
+@stop
+
 @section('content')
 
 <div class="my-user-profile">
