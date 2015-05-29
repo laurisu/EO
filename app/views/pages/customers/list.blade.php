@@ -48,14 +48,65 @@
 <div class="table-responsive" data-pattern="priority-columns">
     <table class="table table-small-font table-hover my-table">
 
-        <caption>Customers list</caption>
         <thead>
             <tr>
-                <th data-priority="1">Company</th>
-                <th data-priority="1">Contact</th>
+                <th data-priority="1">
+                    <?php
+                        $queryParameters['sort'] = 'company';
+                        if ($sortName == 'company' &&  $sortDirrection == 'ASC') {
+                            $queryParameters['order'] = 'DESC';
+                        } else {
+                            $queryParameters['order'] = 'ASC';
+                        }
+                    ?>
+                    <a href="{{{ route('customer-list', $queryParameters) }}}" class="btn btn-sm my-view-header-btn">
+                        Company
+                        @if( $queryParameters['order'] == 'DESC')
+                            <i class="fa fa-arrow-down"></i>
+                        @else
+                            <i class="fa fa-arrow-up"></i>
+                        @endif
+                    </a>
+                </th>
+                <th data-priority="1">
+                    <?php
+                        $queryParameters['sort'] = 'contact';
+                        if ($sortName == 'contact' &&  $sortDirrection == 'ASC') {
+                            $queryParameters['order'] = 'DESC';
+                        } else {
+                            $queryParameters['order'] = 'ASC';
+                        }
+                    ?>
+                    <a href="{{{ route('customer-list', $queryParameters) }}}" class="btn btn-sm my-view-header-btn">
+                        Contact
+                        @if( $queryParameters['order'] == 'DESC')
+                            <i class="fa fa-arrow-down"></i>
+                        @else
+                            <i class="fa fa-arrow-up"></i>
+                        @endif
+                    </a>
+                </th>
                 <th data-priority="2">Mobile</th>
                 <th data-priority="4">Office</th>
                 <th data-priority="3">Email</th>
+                <th data-priority="3">
+                    <?php
+                        $queryParameters['sort'] = 'manager';
+                        if ($sortName == 'manager' &&  $sortDirrection == 'ASC') {
+                            $queryParameters['order'] = 'DESC';
+                        } else {
+                            $queryParameters['order'] = 'ASC';
+                        }
+                    ?>
+                    <a href="{{{ route('customer-list', $queryParameters) }}}" class="btn btn-sm my-view-header-btn">
+                        Manager
+                        @if( $queryParameters['order'] == 'DESC')
+                            <i class="fa fa-arrow-down"></i>
+                        @else
+                            <i class="fa fa-arrow-up"></i>
+                        @endif
+                    </a>
+                </th>
                 <th data-priority="1">Options</th>
             </tr>
         </thead>
@@ -68,6 +119,7 @@
                 <td>{{ $customer->mobile }}</td>
                 <td>{{ $customer->phone }}</td>
                 <td><a href="mailto:{{ $customer->email }}">{{ $customer->email }}</a></td>
+                <td><i>{{ $customer->user->name . ' ' . $customer->user->surname }}</i></td>
                 <td class="col-xs-1">
                     <span
                         data-toggle="tooltip"

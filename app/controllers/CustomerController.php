@@ -7,7 +7,7 @@ class CustomerController extends BaseController {
         $sortName       = Request::get('sort');
         $sortDirrection = Request::get('order');
         $search         = Request::get('search');
-        $customers      = DB::table('customers');
+        $customers      = Customer::with('user');
 
         // sortName - input by user
         // sortDbName - column name in database
@@ -17,6 +17,9 @@ class CustomerController extends BaseController {
                 break;
             case 'contact':
                 $sortDbName = 'contact_person';
+                break;
+            case 'manager':
+                $sortDbName = 'user_id';
                 break;
             default:
                 $sortName   = 'company';
