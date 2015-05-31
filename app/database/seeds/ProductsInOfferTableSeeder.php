@@ -572,6 +572,126 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:41:14',
 				'updated_at' => '2015-05-05 21:41:14',
 			),
+			70 => 
+			array (
+				'id' => 76,
+				'offer_id' => 63,
+				'product_id' => 190,
+				'created_at' => '2015-05-30 16:40:37',
+				'updated_at' => '2015-05-30 16:40:37',
+			),
+			71 => 
+			array (
+				'id' => 77,
+				'offer_id' => 63,
+				'product_id' => 163,
+				'created_at' => '2015-05-30 16:40:37',
+				'updated_at' => '2015-05-30 16:40:37',
+			),
+			72 => 
+			array (
+				'id' => 78,
+				'offer_id' => 64,
+				'product_id' => 9,
+				'created_at' => '2015-05-30 16:41:23',
+				'updated_at' => '2015-05-30 16:41:23',
+			),
+			73 => 
+			array (
+				'id' => 79,
+				'offer_id' => 64,
+				'product_id' => 138,
+				'created_at' => '2015-05-30 16:41:23',
+				'updated_at' => '2015-05-30 16:41:23',
+			),
+			74 => 
+			array (
+				'id' => 80,
+				'offer_id' => 64,
+				'product_id' => 131,
+				'created_at' => '2015-05-30 16:41:23',
+				'updated_at' => '2015-05-30 16:41:23',
+			),
+			75 => 
+			array (
+				'id' => 81,
+				'offer_id' => 65,
+				'product_id' => 257,
+				'created_at' => '2015-05-30 16:42:34',
+				'updated_at' => '2015-05-30 16:42:34',
+			),
+			76 => 
+			array (
+				'id' => 82,
+				'offer_id' => 65,
+				'product_id' => 39,
+				'created_at' => '2015-05-30 16:42:34',
+				'updated_at' => '2015-05-30 16:42:34',
+			),
+			77 => 
+			array (
+				'id' => 83,
+				'offer_id' => 65,
+				'product_id' => 167,
+				'created_at' => '2015-05-30 16:42:34',
+				'updated_at' => '2015-05-30 16:42:34',
+			),
+			78 => 
+			array (
+				'id' => 84,
+				'offer_id' => 66,
+				'product_id' => 74,
+				'created_at' => '2015-05-30 16:43:09',
+				'updated_at' => '2015-05-30 16:43:09',
+			),
+			79 => 
+			array (
+				'id' => 85,
+				'offer_id' => 67,
+				'product_id' => 133,
+				'created_at' => '2015-05-30 16:43:57',
+				'updated_at' => '2015-05-30 16:43:57',
+			),
+			80 => 
+			array (
+				'id' => 86,
+				'offer_id' => 67,
+				'product_id' => 285,
+				'created_at' => '2015-05-30 16:43:57',
+				'updated_at' => '2015-05-30 16:43:57',
+			),
+			81 => 
+			array (
+				'id' => 87,
+				'offer_id' => 68,
+				'product_id' => 248,
+				'created_at' => '2015-05-30 16:45:32',
+				'updated_at' => '2015-05-30 16:45:32',
+			),
+			82 => 
+			array (
+				'id' => 88,
+				'offer_id' => 69,
+				'product_id' => 199,
+				'created_at' => '2015-05-30 16:48:53',
+				'updated_at' => '2015-05-30 16:48:53',
+			),
+			83 => 
+			array (
+				'id' => 89,
+				'offer_id' => 69,
+				'product_id' => 135,
+				'created_at' => '2015-05-30 16:48:53',
+				'updated_at' => '2015-05-30 16:48:53',
+			),
+			84 => 
+			array (
+				'id' => 90,
+				'offer_id' => 70,
+				'product_id' => 38,
+				'created_at' => '2015-05-30 16:49:40',
+				'updated_at' => '2015-05-30 16:49:40',
+			),
 		));
 	}
 

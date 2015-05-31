@@ -12,9 +12,9 @@ class UserTableSeeder extends Seeder {
 		DB::table('users')->delete();
                 
                 User::create(array(
-                   'username' => 'Admin', 
-                   'name' => 'Džon', 
-                   'surname' => 'Malkovič', 
+                   'username' => 'Admin1', 
+                   'name' => 'Admin', 
+                   'surname' => 'First', 
                    'job_title' => 'Sales Manager',
                    'phone' => '+37167000001', 
                    'img' => 'img/uploads/user1.jpg', 
@@ -27,8 +27,8 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'Admin2', 
-                   'name' => 'Second', 
-                   'surname' => 'Admin', 
+                   'name' => 'Admin', 
+                   'surname' => 'Second', 
                    'job_title' => 'Staff manager',
                    'phone' => '+37167000001', 
                    'img' => 'img/uploads/user2.jpg',
@@ -41,8 +41,8 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'User1', 
-                   'name' => 'Bruce', 
-                   'surname' => 'Almighty',
+                   'name' => 'User', 
+                   'surname' => 'First',
                    'job_title' => 'Sales Representative and technical support', 
                    'phone' => '+37167000002',
                    'img' => 'img/uploads/user3.jpg',
@@ -55,8 +55,8 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'User2', 
-                   'name' => 'Edric', 
-                   'surname' => 'Alpha',
+                   'name' => 'User', 
+                   'surname' => 'Second',
                    'job_title' => 'Sales Representative', 
                    'phone' => '+37167000002',
                    'img' => 'img/uploads/user4.jpg',
@@ -69,8 +69,8 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'User3', 
-                   'name' => 'Vincent', 
-                   'surname' => 'Odin',
+                   'name' => 'User', 
+                   'surname' => 'Third',
                    'job_title' => 'Sales Representative', 
                    'phone' => '+37167000002',
                    'img' => 'img/uploads/user5.jpg',
@@ -83,8 +83,8 @@ class UserTableSeeder extends Seeder {
                 
                 User::create(array(
                    'username' => 'User4', 
-                   'name' => 'Natalia', 
-                   'surname' => 'Jaycob',
+                   'name' => 'User', 
+                   'surname' => 'Fourth',
                    'job_title' => 'Sales Representative', 
                    'phone' => '+37167000002',
                    'img' => 'img/uploads/user6.jpg',
@@ -96,9 +96,9 @@ class UserTableSeeder extends Seeder {
                 ));
                 
                 User::create(array(
-                   'username' => 'User7', 
-                   'name' => 'Matt', 
-                   'surname' => 'Conor',
+                   'username' => 'User5', 
+                   'name' => 'User', 
+                   'surname' => 'Fifth',
                    'job_title' => 'Sales Representative', 
                    'phone' => '+37167000002',
                    'img' => 'img/uploads/user7.jpg',

@@ -1230,6 +1230,48 @@ class CustomersTableSeeder extends Seeder {
 				'created_at' => '2015-03-03 19:46:20',
 				'updated_at' => '2015-03-03 19:46:20',
 			),
+			87 => 
+			array (
+				'id' => 103,
+				'customer' => 'Best Customer',
+				'contact_person' => 'Jim Best',
+				'email' => 'gggbbb@bestcccc.com',
+				'phone' => '2585555555',
+				'mobile' => '5555554484',
+				'web_page' => 'https://www.google.lv',
+				'address' => 'The World',
+				'user_id' => 7,
+				'created_at' => '2015-05-30 16:59:50',
+				'updated_at' => '2015-05-30 16:59:50',
+			),
+			88 => 
+			array (
+				'id' => 104,
+				'customer' => 'Crazy Developers',
+				'contact_person' => 'One Cray Man',
+				'email' => 'omzzzz@crazieees.com',
+				'phone' => '87878787',
+				'mobile' => '2566777799',
+				'web_page' => 'https://www.google.lv',
+				'address' => 'Onother world street 182, Bangladesh',
+				'user_id' => 7,
+				'created_at' => '2015-05-30 17:01:09',
+				'updated_at' => '2015-05-30 17:01:09',
+			),
+			89 => 
+			array (
+				'id' => 105,
+				'customer' => 'M2',
+				'contact_person' => 'Squre Meter',
+				'email' => 'kubxman@m2m2m2.com',
+				'phone' => '262669987',
+				'mobile' => '25485666',
+				'web_page' => 'https://www.google.lv',
+				'address' => 'M2 Offices, Riga',
+				'user_id' => 7,
+				'created_at' => '2015-05-30 17:02:25',
+				'updated_at' => '2015-05-30 17:02:25',
+			),
 		));
 	}
 

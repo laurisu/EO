@@ -82,6 +82,11 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/offers/offer-rejected/{id}', array('as' => 'reject-offer', 'uses' => 'OfferController@updateStatusToRejected'));
     
     /*
+     * Users / profile page (GET)
+     */
+    
+    
+    /*
      * ADMIN ONLY ROUTES
      */
     Route::group(array('before' => 'admin'), function() {
@@ -97,14 +102,27 @@ Route::group(array('before' => 'auth'), function() {
              * Create account (POST)
              */
             Route::post('/account/create', array('as' => 'account-create-post', 'uses' => 'AdminController@postCreateAccount'));
+            
+            /*
+             * Update account (POST)
+             */
+            Route::post('/account/update-account/{id}', array('as' => 'account-update', 'uses' => 'AdminController@putAccountChanges'));
         });
-
+        
+        /*
+         * Users list (GET)
+         */
+        Route::get('/users', array('as' => 'users-list', 'uses' => 'AdminController@getUsersList'));
+        
         /*
          * Create account (GET)
          */
         Route::get('/account/create', array('as' => 'account-create', 'uses' => 'AdminController@getCreateAccount'));
-
-        Route::get('/users', array('as' => 'users-list', 'uses' => 'AdminController@getUsersList'));
+        
+        /*
+         * Update account (GET)
+         */
+        Route::get('/account/edit-account/{id}', array('as' => 'account-edit', 'uses' => 'AdminController@editAccount'));
     });
 });
 

@@ -55,7 +55,7 @@ $(function () {
     });
 
     /**
-     *  Responsive tables plugin
+     *  Responsive tables plugin RWD-Table-Patterns
      */
     applyResponsiveTable('.table-responsive', {
     });

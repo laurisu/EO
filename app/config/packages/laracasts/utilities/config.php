@@ -11,7 +11,7 @@ return [
     | you want to prepend the JavaScript variables to.
     |
     */
-    'bind_js_vars_to_this_view' => 'home',
+    'bind_js_vars_to_this_view' => 'includes.myChartDataScript',
 
     /*
     |--------------------------------------------------------------------------

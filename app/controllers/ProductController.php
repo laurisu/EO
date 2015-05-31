@@ -112,10 +112,10 @@ class ProductController extends BaseController {
     public function postNewProduct() {
 
         $validator = Validator::make(Input::all(), array(
-                    'product_name'      => 'required|max:60|unique:products',
+                    'product_name'      => 'required|max:255|unique:products',
                     'description'       => 'required',
-                    'purchase_price'    => 'required',
-                    'retail_price'      => 'required'
+                    'purchase_price'    => 'required|numeric',
+                    'retail_price'      => 'required|numeric'
         ));
 
         if ($validator->fails()) {

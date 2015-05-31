@@ -28,7 +28,7 @@ class OffersTableSeeder extends Seeder {
 				'customer_id' => 25,
 				'status' => 1,
 				'created_at' => '2015-04-26 16:13:27',
-				'updated_at' => '2015-04-30 15:11:29',
+				'updated_at' => '2015-06-03 15:11:29',
 			),
 			2 => 
 			array (
@@ -44,9 +44,9 @@ class OffersTableSeeder extends Seeder {
 				'id' => 32,
 				'user_id' => 1,
 				'customer_id' => 4,
-				'status' => 1,
-				'created_at' => '2015-04-30 14:47:12',
-				'updated_at' => '2015-04-30 14:47:18',
+				'status' => 2,
+				'created_at' => '2015-01-20 14:47:12',
+				'updated_at' => '2015-01-30 16:51:37',
 			),
 			4 => 
 			array (
@@ -134,9 +134,9 @@ class OffersTableSeeder extends Seeder {
 				'id' => 42,
 				'user_id' => 2,
 				'customer_id' => 39,
-				'status' => 2,
-				'created_at' => '2015-04-01 00:00:00',
-				'updated_at' => '2015-05-05 00:00:00',
+				'status' => 3,
+				'created_at' => '2015-02-01 00:00:00',
+				'updated_at' => '2015-02-30 16:51:56',
 			),
 			14 => 
 			array (
@@ -180,8 +180,8 @@ class OffersTableSeeder extends Seeder {
 				'user_id' => 3,
 				'customer_id' => 4,
 				'status' => 1,
-				'created_at' => '2015-05-06 00:00:00',
-				'updated_at' => '2015-05-05 21:21:34',
+				'created_at' => '2015-02-06 00:00:00',
+				'updated_at' => '2015-02-05 21:21:34',
 			),
 			19 => 
 			array (
@@ -197,9 +197,9 @@ class OffersTableSeeder extends Seeder {
 				'id' => 49,
 				'user_id' => 3,
 				'customer_id' => 25,
-				'status' => 2,
-				'created_at' => '2015-05-05 21:16:33',
-				'updated_at' => '2015-05-05 21:17:09',
+				'status' => 3,
+				'created_at' => '2015-01-05 21:16:33',
+				'updated_at' => '2015-05-30 16:52:03',
 			),
 			21 => 
 			array (
@@ -208,16 +208,16 @@ class OffersTableSeeder extends Seeder {
 				'customer_id' => 27,
 				'status' => 2,
 				'created_at' => '2015-05-05 21:17:42',
-				'updated_at' => '2015-05-05 21:18:24',
+				'updated_at' => '2015-06-05 21:18:24',
 			),
 			22 => 
 			array (
 				'id' => 51,
 				'user_id' => 3,
 				'customer_id' => 32,
-				'status' => 1,
-				'created_at' => '2015-05-05 21:19:53',
-				'updated_at' => '2015-05-05 21:20:05',
+				'status' => 2,
+				'created_at' => '2015-03-05 21:19:53',
+				'updated_at' => '2015-03-30 16:51:27',
 			),
 			23 => 
 			array (
@@ -225,17 +225,17 @@ class OffersTableSeeder extends Seeder {
 				'user_id' => 3,
 				'customer_id' => 33,
 				'status' => 3,
-				'created_at' => '2015-05-05 21:22:17',
-				'updated_at' => '2015-05-05 21:23:27',
+				'created_at' => '2015-03-05 21:22:17',
+				'updated_at' => '2015-03-05 21:23:27',
 			),
 			24 => 
 			array (
 				'id' => 53,
 				'user_id' => 3,
 				'customer_id' => 38,
-				'status' => 1,
+				'status' => 3,
 				'created_at' => '2015-05-05 21:24:05',
-				'updated_at' => '2015-05-05 21:24:13',
+				'updated_at' => '2015-05-30 16:51:52',
 			),
 			25 => 
 			array (
@@ -250,10 +250,10 @@ class OffersTableSeeder extends Seeder {
 			array (
 				'id' => 55,
 				'user_id' => 3,
-				'customer_id' => NULL,
-				'status' => 0,
-				'created_at' => '2015-05-05 21:29:21',
-				'updated_at' => '2015-05-05 21:29:21',
+				'customer_id' => 92,
+				'status' => 2,
+				'created_at' => '2015-03-01 21:29:21',
+				'updated_at' => '2015-03-30 16:50:47',
 			),
 			27 => 
 			array (
@@ -270,8 +270,8 @@ class OffersTableSeeder extends Seeder {
 				'user_id' => 4,
 				'customer_id' => 15,
 				'status' => 1,
-				'created_at' => '2015-05-05 21:33:17',
-				'updated_at' => '2015-05-05 21:33:27',
+				'created_at' => '2015-04-05 21:33:17',
+				'updated_at' => '2015-04-05 21:33:27',
 			),
 			29 => 
 			array (
@@ -279,8 +279,8 @@ class OffersTableSeeder extends Seeder {
 				'user_id' => 4,
 				'customer_id' => NULL,
 				'status' => 0,
-				'created_at' => '2015-05-05 21:33:44',
-				'updated_at' => '2015-05-05 21:33:44',
+				'created_at' => '2015-01-05 21:33:44',
+				'updated_at' => '2015-01-05 21:33:44',
 			),
 			30 => 
 			array (
@@ -288,8 +288,8 @@ class OffersTableSeeder extends Seeder {
 				'user_id' => 4,
 				'customer_id' => 22,
 				'status' => 1,
-				'created_at' => '2015-05-05 21:36:16',
-				'updated_at' => '2015-05-05 21:36:24',
+				'created_at' => '2015-04-05 21:36:16',
+				'updated_at' => '2015-04-05 21:36:24',
 			),
 			31 => 
 			array (
@@ -297,8 +297,8 @@ class OffersTableSeeder extends Seeder {
 				'user_id' => 4,
 				'customer_id' => 24,
 				'status' => 4,
-				'created_at' => '2015-05-05 21:37:25',
-				'updated_at' => '2015-05-05 21:38:13',
+				'created_at' => '2015-01-05 21:37:25',
+				'updated_at' => '2015-01-05 21:38:13',
 			),
 			32 => 
 			array (
@@ -314,9 +314,81 @@ class OffersTableSeeder extends Seeder {
 				'id' => 62,
 				'user_id' => 4,
 				'customer_id' => 37,
+				'status' => 4,
+				'created_at' => '2015-02-05 21:41:13',
+				'updated_at' => '2015-02-25 16:52:16',
+			),
+			34 => 
+			array (
+				'id' => 63,
+				'user_id' => 6,
+				'customer_id' => 18,
+				'status' => 1,
+				'created_at' => '2015-01-30 16:40:37',
+				'updated_at' => '2015-01-30 16:40:43',
+			),
+			35 => 
+			array (
+				'id' => 64,
+				'user_id' => 6,
+				'customer_id' => 35,
 				'status' => 2,
-				'created_at' => '2015-05-05 21:41:13',
-				'updated_at' => '2015-05-05 21:42:20',
+				'created_at' => '2015-02-10 16:41:23',
+				'updated_at' => '2015-02-10 16:41:38',
+			),
+			36 => 
+			array (
+				'id' => 65,
+				'user_id' => 6,
+				'customer_id' => 49,
+				'status' => 3,
+				'created_at' => '2015-03-10 16:42:34',
+				'updated_at' => '2015-03-10 16:43:32',
+			),
+			37 => 
+			array (
+				'id' => 66,
+				'user_id' => 6,
+				'customer_id' => 2,
+				'status' => 4,
+				'created_at' => '2015-04-19 16:43:09',
+				'updated_at' => '2015-04-19 16:43:36',
+			),
+			38 => 
+			array (
+				'id' => 67,
+				'user_id' => 6,
+				'customer_id' => 50,
+				'status' => 2,
+				'created_at' => '2015-05-30 16:43:57',
+				'updated_at' => '2015-05-30 16:45:53',
+			),
+			39 => 
+			array (
+				'id' => 68,
+				'user_id' => 6,
+				'customer_id' => 86,
+				'status' => 2,
+				'created_at' => '2015-04-18 16:45:32',
+				'updated_at' => '2015-04-19 16:45:44',
+			),
+			40 => 
+			array (
+				'id' => 69,
+				'user_id' => 2,
+				'customer_id' => 20,
+				'status' => 2,
+				'created_at' => '2015-04-30 16:48:53',
+				'updated_at' => '2015-04-30 16:49:12',
+			),
+			41 => 
+			array (
+				'id' => 70,
+				'user_id' => 2,
+				'customer_id' => 8,
+				'status' => 2,
+				'created_at' => '2015-05-30 16:49:40',
+				'updated_at' => '2015-06-02 16:49:54',
 			),
 		));
 	}

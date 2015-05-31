@@ -5,7 +5,6 @@ class AdminController extends BaseController {
     public function getUsersList() {
         
         $users = User::all();
-//        dd($users->customers());
         return View::make('pages.users.list')
                  ->with('users', $users);
     }
@@ -72,6 +71,55 @@ class AdminController extends BaseController {
             if ($user) {
                 return Redirect::route('users-list')
                     ->with('global', 'The <b>' . $user->name . ' ' . $user->surname . '</b> account has been created.')
+                    ->with('alert-class', 'alert-success');
+            }
+            return Redirect::route('users-list')
+                    ->with('global', 'Something went wrong!')
+                    ->with('alert-class', 'alert-warning');
+            
+        }
+        
+    }
+    
+    public function editAccount($id) {
+        return View::make('pages.users.edit')
+                ->with('user', User::find($id));
+    }
+    
+    public function putAccountChanges($id) {
+        
+        $validator = Validator::make(Input::all(), array(
+                    'name'              => 'required|max:50|',
+                    'surname'           => 'required|max:50|',
+                    'username'          => 'required|max:20|min:3|unique:users,username,'.$id,
+                    'job_title'         => 'required|max:50|',
+                    'email'             => 'required|max:50|email|unique:users,email,'.$id,
+                    'phone'             => 'required|min:6',
+                    'role'              => 'required|numeric|between:0,2',
+                    'active'            => 'required|numeric|between:0,1'
+                        )
+        );
+
+        if ($validator->fails()) {
+//            print_r($validator->messages());exit();
+            return Redirect::route('account-edit', $id)
+                            ->withErrors($validator)
+                            ->withInput();
+        } else {
+            $user = User::find($id);
+            $user->name       = Input::get('name');
+            $user->surname    = Input::get('surname');
+            $user->username   = Input::get('username');
+            $user->job_title  = Input::get('job_title');
+            $user->email      = Input::get('email');
+            $user->phone      = Input::get('phone');
+            $user->role       = Input::get('role');
+            $user->active     = Input::get('active');
+            $user->update();
+
+            if ($user) {
+                return Redirect::route('users-list')
+                    ->with('global', 'The <b>' . $user->name . ' ' . $user->surname . '</b> account has been edited.')
                     ->with('alert-class', 'alert-success');
             }
             return Redirect::route('users-list')

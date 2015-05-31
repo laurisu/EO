@@ -87,4 +87,7 @@
     </div>
     
 </div>
+
+@include('includes.myChartDataScript')
+
 @stop

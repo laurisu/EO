@@ -8413,10 +8413,30 @@ body {
 }
 .my-navbar-styles {
   background: #222222;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 .my-navbar-styles .my-collapse {
   background: #222222;
+}
+.my-navbar-styles .dropdown-toggle:active,
+.my-navbar-styles .open .dropdown-toggle {
+  background: #f4b350 !important;
+  color: #fff !important;
+}
+.my-navbar-styles .my-open-dropdown-menu {
+  border-top: 1px solid #f4b350;
+  background: #222222;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+.my-navbar-styles .my-open-dropdown-menu > li > a {
+  color: #f4b350;
+}
+.my-navbar-styles .my-open-dropdown-menu > li > a:hover {
+  color: #fff;
+  background: #f4b350;
+}
+.my-navbar-styles .my-open-dropdown-menu .divider {
+  background: #f4b350;
 }
 .my-navbar-brand {
   padding-bottom: 10px;
@@ -8463,7 +8483,7 @@ body {
   /* View header button styles - this class is applied to all btn-group buttons with jQuery*/
 }
 .btn.my-btn-back {
-  /*background-color: lighten(@my-orange, 25%);*/
+  color: #fff;
   background-color: #f4b350;
   border: 1px solid #d1830d;
 }
@@ -8473,6 +8493,7 @@ body {
   outline: none;
 }
 .btn.my-btn-save {
+  color: #fff;
   background-color: #4897cc;
   border: 1px solid #266188;
 }
@@ -8480,6 +8501,7 @@ body {
   background-color: #266188;
 }
 .btn.my-btn-delete {
+  color: #fff;
   background-color: #fb948b;
   border: 1px solid #f83928;
 }

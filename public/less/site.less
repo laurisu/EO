@@ -65,9 +65,28 @@ body {
 
 .my-navbar-styles {
     background: @my-dark-bg-color;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     .my-collapse {
         background: @my-dark-bg-color;
+    }
+    .dropdown-toggle:active, .open .dropdown-toggle {
+        background: @my-orange !important; 
+        color: #fff !important;
+    }
+    .my-open-dropdown-menu {
+        border-top: 1px solid @my-orange;
+        background: @my-black;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+        > li > a {
+            color: @my-orange;
+            &:hover {
+                color: #fff;
+                background: @my-orange;
+            }
+        }
+        .divider {
+            background: @my-orange;
+        }
     }
 }
 
@@ -118,7 +137,7 @@ body {
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 
     &.my-btn-back {
-        /*background-color: lighten(@my-orange, 25%);*/
+        color: #fff;
         background-color: @my-orange;
         border: 1px solid darken(@my-orange, 20%);
         &:hover,&:focus {
@@ -127,6 +146,7 @@ body {
         }      
     }
     &.my-btn-save {
+        color: #fff;
         background-color: @my-blue;
         border: 1px solid darken(@my-blue, 20%);
         &:hover {
@@ -134,6 +154,7 @@ body {
         }
     }
     &.my-btn-delete {
+        color: #fff;
         background-color: @my-red;
         border: 1px solid darken(@my-red, 20%);
         &:hover {

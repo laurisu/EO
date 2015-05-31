@@ -41,7 +41,7 @@
                         <li><a href="{{ URL::route('user-profile', Auth::user()->username) }}">My profile</a></li>
                         <li><a href="{{ URL::route('change-password') }}">Change password</a></li>
                         <li><a href="{{ URL::route('sign-out') }}">Sign out</a></li>
-                        <li class="divider">xxx{{ Auth::user()->name }}</li>
+                        <li class="divider"></li>
                         <li class="dropdown-header">You're signed in</li>
                         <li class="dropdown-header">as {{ Auth::user()->name . ' ' . Auth::user()->surname }}</li>
                     </ul>
