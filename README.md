@@ -12,7 +12,7 @@
 
 ## Instalation
 
-### Run these commands
+### Run these commands:
 
 ```composer install``` - to install required files
 
