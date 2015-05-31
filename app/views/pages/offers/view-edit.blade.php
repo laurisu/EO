@@ -58,7 +58,7 @@
         </div>
     
         <div class="form-group">
-            <label id="" class="col-sm-2 control-label">Offered products</label>
+            <label class="col-sm-2 control-label">Offered products</label>
             <div class="col-sm-10 col-xs-12">
                 <table class="table table-small-font table-hover my-table">
                     <thead>

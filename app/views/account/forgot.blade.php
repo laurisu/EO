@@ -1,5 +1,10 @@
 @extends('layouts.default')
 
+@section('title')
+@parent
+:: Forgot password
+@stop
+
 @section('content')
 <div class="my-pass-form">
     <div class="container">

@@ -48,13 +48,7 @@
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Accepted</strong></span> 13</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Rejected</strong></span> 37</li>
             </ul>
-            <div class="panel panel-default">
-                <div class="panel-heading">Social Media</div>
-                <div class="panel-body">	<i class="fa fa-facebook fa-2x"></i>  <i class="fa fa-github fa-2x"></i> 
-                    <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i>  <i class="fa fa-google-plus fa-2x"></i>
-
-                </div>
-            </div>
+            
         </div>
         <!--/col-3-->
         <div class="col-sm-9" contenteditable="false" style="">
@@ -63,17 +57,21 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="list-group">
+                            <ul class="list-group">
                                 <li class="list-group-item"><strong>Name: </strong><span class="pull-right">{{ e($user->name) }}</span></li>
                                 <li class="list-group-item"><strong>Surname: </strong><span class="pull-right">{{ e($user->surname) }}</span></li>
                                 <li class="list-group-item"><strong>Job title: </strong><span class="pull-right">{{ e($user->job_title) }}</span></li>
                                 <li class="list-group-item"><strong>Phone: </strong><span class="pull-right">{{ e($user->phone) }}</span></li>
                                 <li class="list-group-item"><strong>Email: </strong><span class="pull-right">{{ $user->email }}</span></li>
-                            </div>
+                            </ul>
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img title="profile image" class="img-responsive" src="{{ asset($user->img) }}">
+                                @if(!empty($user->img))
+                                <img title="profile image" src="{{ asset($user->img) }}" alt="Profile image" class="img-responsive">
+                                @else
+                                <img title="profile image" src="http://placehold.it/300x400" alt="Profile image" class="img-responsive">
+                                @endif
                             </div>
                         </div>
                     </div>

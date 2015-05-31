@@ -14,7 +14,7 @@
                 <h4>Products</h4>
             </div>
             <div class="col-xs-8 text-right">
-                <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('product-create', 'Add product') }}</button>
+                <a class="btn btn-sm my-view-header-btn" href="{{ URL::route('product-create') }}">Add product</a>
                 <button class="btn btn-sm my-view-header-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
                     Search
                 </button>
@@ -99,11 +99,11 @@
                         </a>
                     </th>
                     <th data-priority="6">description</th>
-                    <th data-priority="5">purchase<br> price <i class="fa fa-eur"></th>
-                    <th data-priority="3">retail<br> price <i class="fa fa-eur"></th>
+                    <th data-priority="5">purchase<br> price <i class="fa fa-eur"></i></th>
+                    <th data-priority="3">retail<br> price <i class="fa fa-eur"></i></th>
                     <th data-priority="1">discount<br> &percnt;</th>
-                    <th data-priority="1">profit<br> <i class="fa fa-eur"></th>
-                    <th data-priority="1">offer<br> price <i class="fa fa-eur"></th>
+                    <th data-priority="1">profit<br> <i class="fa fa-eur"></i></th>
+                    <th data-priority="1">offer<br> price <i class="fa fa-eur"></i></th>
                     <th data-priority="1">options</th>
                 </tr>
             </thead>
@@ -114,11 +114,11 @@
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->product_name }}</td> 
                     <td class="my-td-ellipsis" style=""><div>{{ $product->description }}</div></td>
-                    <td><input type="number" id="pur" name="purchase" value="{{ $product->purchase_price }}" readonly></td>
-                    <td><input type="number" id="ret" name="retail" value="{{ $product->retail_price }}" readonly></td>
-                    <td><input type="number" id="dis" name="discount" placeholder="0"></td>
-                    <td><input type="number" id="pro" name="profit" readonly></td>
-                    <td><input type="number" id="total" name="total" readonly></td>
+                    <td><input type="number" class="pur" name="purchase" value="{{ $product->purchase_price }}" readonly></td>
+                    <td><input type="number" class="ret" name="retail" value="{{ $product->retail_price }}" readonly></td>
+                    <td><input type="number" class="dis" name="discount" placeholder="0"></td>
+                    <td><input type="number" class="pro" name="profit" readonly></td>
+                    <td><input type="number" class="total" name="total" readonly></td>
             
                     <td class="col-xs-1">
                         @if(!empty($cart))
@@ -185,7 +185,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"></h4>
+                <h4 class="modal-title" id="myModalLabel">...</h4>
             </div>
             <div class="modal-body">
 

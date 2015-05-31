@@ -14,7 +14,7 @@
                 <h4>Customers</h4>
             </div>
             <div class="col-sm-8 text-right">
-                <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('customer-create', 'Add customer') }}</button>
+                <a class="btn btn-sm my-view-header-btn" href="{{ URL::route('customer-create') }}">Add customer</a>
                 <button class="btn btn-sm my-view-header-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
                     Search
                 </button>
@@ -124,24 +124,24 @@
                     <span
                         data-toggle="tooltip"
                         data-placement="left"
-                        title="View customer profile">
-                        <button 
-                            type="button" 
+                        title="View customer profile" 
+                        data-target="#myModal">
+                        <a
                             href="{{ route('customer-view', array($customer->id)) }}" 
-                            class="btn btn-xs my-tbl-btn-view open-customer-view"  
-                            data-target="#myModal">
+                            class="btn btn-xs my-tbl-btn-view open-customer-view">
                             <i class="fa fa-eye"></i>
-                        </button>
+                        </a>
                     </span>
-                    <a
-                        type="button" 
-                        href="{{ route('customer-edit', array($customer->id)) }}"
-                        class="btn btn-xs my-tbl-btn-edit"
+                    <span
                         data-toggle="tooltip"
                         data-placement="left"
                         title="Edit customer profile">
-                        <i class="fa fa-pencil"></i>
-                    </a>
+                        <a
+                            href="{{ route('customer-edit', array($customer->id)) }}"
+                            class="btn btn-xs my-tbl-btn-edit">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                    </span>
                 </td>
             </tr>
             @endforeach

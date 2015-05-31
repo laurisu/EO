@@ -142,7 +142,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-10">
+            <div class="col-sm-offset-3 col-sm-9">
                 <button class="btn btn-md my-btn-save" type="submit">
                     <i class="fa fa-floppy-o"></i> Save
                 </button>

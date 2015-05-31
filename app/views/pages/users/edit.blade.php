@@ -129,7 +129,7 @@
         <div class="form-group">
             <label for="inputActive" class="col-sm-2 control-label">Account status</label>
             <div class="col-sm-4">
-                <select name="active" class="form-control" id="inputRole">
+                <select name="active" class="form-control" id="inputActive">
                     @if($user->active == 1)
                         <option value="0">Disabled</option>
                         <option value="1" selected="selected">Activated</option>

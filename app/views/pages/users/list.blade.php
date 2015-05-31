@@ -14,7 +14,7 @@
                 <h4>Users</h4>
             </div>
             <div class="col-sm-8 text-right">
-                <button class="btn btn-sm my-view-header-btn">{{ HTML::linkRoute('account-create', 'Create account') }}</button>
+                <a class="btn btn-sm my-view-header-btn" href="{{ URL::route('account-create') }}">Create account</a>
             </div>  
         </div>
     </div>
@@ -166,18 +166,16 @@
                                                     <strong>Status:</strong>
                                                 </span>
                                             </li>
-                                            </li>
                                         </ul>
                                         
                                         <ul class="list-group">
                                             <li class="list-group-item list-group-item-heading">Options</li>
                                             <li class="list-group-item text-right">
-                                                <button
-                                                    type="button" 
+                                                <a
                                                     href="{{ route('account-edit', array($user->id)) }}"
                                                     class="btn btn-xs my-btn-save">
                                                     Edit <i class="fa fa-pencil"></i>
-                                                </button>
+                                                </a>
                                                 <span class="pull-left">
                                                     <strong>Edit account information:</strong>
                                                 </span>

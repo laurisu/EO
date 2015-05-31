@@ -6,7 +6,7 @@ $(function () {
     calcOfferPrice();
     var tbl = $('.js-table-calc');
     tbl.find('tr').each(function () {
-        $(this).find('#dis').bind("keyup", function () {
+        $(this).find('.dis').bind("keyup", function () {
             calcOfferPrice();
         });
     });
@@ -15,9 +15,9 @@ $(function () {
         var tbl = $('.js-table-calc');
         tbl.find('tr').each(function () {
             var offerPrice = 0;
-            var a = $(this).find('#pur').val();
-            var b = $(this).find('#ret').val();
-            var c = $(this).find('#dis').val();
+            var a = $(this).find('.pur').val();
+            var b = $(this).find('.ret').val();
+            var c = $(this).find('.dis').val();
             
             if(!isNaN(c) && c.length != 0 && c < 100 && c >= 0) {
                 var result = parseFloat(b) * parseFloat((100 - c)/100);
@@ -32,8 +32,8 @@ $(function () {
             
             var profit = offerPrice - parseFloat(a);
 
-            $(this).find('#total').val(offerPrice.toFixed(2));
-            $(this).find('#pro').val(profit.toFixed(2));
+            $(this).find('.total').val(offerPrice.toFixed(2));
+            $(this).find('.pro').val(profit.toFixed(2));
         });
     }
     

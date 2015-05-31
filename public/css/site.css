@@ -8366,11 +8366,17 @@ button.close {
 */
 html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 body {
   position: relative;
   /* Padding top by navbar-fixed-top height + intended gap */
   padding-top: 71px;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0;
   background-color: #f1f1f1;
   min-height: 100%;
   box-sizing: border-box;

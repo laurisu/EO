@@ -83,11 +83,13 @@
                 </caption>
 
                 <thead>
-                    <th>ID</th>
-                    <th>Created</th>
-                    <th>User</th>
-                    <th>Customer</th>
-                    <th>Options</th>
+                    <tr>
+                        <th>ID</th>
+                        <th>Created</th>
+                        <th>User</th>
+                        <th>Customer</th>
+                        <th>Options</th>
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -159,11 +161,13 @@
                 </caption>
 
                 <thead>
-                    <th>ID</th>
-                    <th>Sent at</th>
-                    <th>User</th>
-                    <th>Customer</th>
-                    <th>Options</th>
+                    <tr>
+                        <th>ID</th>
+                        <th>Sent at</th>
+                        <th>User</th>
+                        <th>Customer</th>
+                        <th>Options</th>
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -188,7 +192,7 @@
                                         data-toggle="tooltip"
                                         data-placement="left"
                                         title="Offer accepted by customer">
-                                        <i class="fa fa-check"></i></i>
+                                        <i class="fa fa-check"></i>
                                     </a>
                                     <a 
                                         href="{{ route('reject-offer', array('id' => $offer->id)) }}" 
@@ -196,7 +200,7 @@
                                         data-toggle="tooltip"
                                         data-placement="left"
                                         title="Offer rejected by customer">
-                                        <i class="fa fa-times"></i></i>
+                                        <i class="fa fa-times"></i>
                                     </a>
                                 @elseif($offer->status == 3)
                                     Accepted

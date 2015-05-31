@@ -5,6 +5,8 @@
 
 html {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -12,7 +14,12 @@ body {
 
     /* Padding top by navbar-fixed-top height + intended gap */
     padding-top: @my-navbar-height + @my-navbar-margin-bottom;
-
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    
+    margin: 0;
+    
     background-color: @my-bg-color;
     min-height: 100%;
 
@@ -98,7 +105,7 @@ body {
 }
 
 .footer {
-    position: absolute;
+    position: absolute; 
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
@@ -112,6 +119,7 @@ body {
 -------------------------------------------------- */
 
 .my-main-container {
+    
     background-color: @my-content-bg-color;
     border: solid 1px #c9c9c9;
     margin-bottom: @my-footer-height;
