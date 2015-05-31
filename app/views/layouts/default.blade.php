@@ -50,8 +50,9 @@
             </div>
             @endif
 
-
+            @if(!Auth::check())
             @include('includes.footer')
+            @endif
             
             <!-- Scripts are placed here -->
             <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>

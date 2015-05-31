@@ -13,8 +13,8 @@
             <div class="col-sm-4">
                 <h4>Offers</h4>
             </div>
-            <div class="col-sm-8 text-right">
-
+            <div class="col-sm-8 my-view-header-nav text-right">
+                <!--Additiona options could be put here-->
             </div>  
         </div>
     </div>

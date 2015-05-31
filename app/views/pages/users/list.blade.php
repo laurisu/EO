@@ -13,7 +13,7 @@
             <div class="col-sm-4">
                 <h4>Users</h4>
             </div>
-            <div class="col-sm-8 text-right">
+            <div class="col-sm-8 my-view-header-nav text-right">
                 <a class="btn btn-sm my-view-header-btn" href="{{ URL::route('account-create') }}">Create account</a>
             </div>  
         </div>

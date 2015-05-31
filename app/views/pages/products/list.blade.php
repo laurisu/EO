@@ -10,10 +10,10 @@
 <div class="my-view-header-wrapper" data-spy="affix" data-offset-top="20">
     <div class="container-fluid my-max-width">
         <div class="row my-view-header">
-            <div class="col-xs-4">
+            <div class="col-sm-4">
                 <h4>Products</h4>
             </div>
-            <div class="col-xs-8 text-right">
+            <div class="col-sm-8 my-view-header-nav text-right">
                 <a class="btn btn-sm my-view-header-btn" href="{{ URL::route('product-create') }}">Add product</a>
                 <button class="btn btn-sm my-view-header-btn" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
                     Search
