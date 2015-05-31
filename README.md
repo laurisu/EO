@@ -12,25 +12,21 @@
 
 ## Instalation
 
-Run these commands
+### Run these commands
 
 ```composer install``` - to install required files
 
-```npm install``` - to install 
-
-```npm install -g bower``` - to install Bower
+```npm install bower``` - to install Bower
 
 ```bower install``` - to install dependencies 
 
-```npm install -g grunt-cli``` - to install Grunt (optional) 
+```npm install grunt-cli``` - to install Grunt (optional) 
 
 Create MySQL database named "easy_offer_auth" with collation "utf8_unicode_ci".
 
-After table is created run these commmands:
+### After table is created run these commmands:
 
-```php artisan migrate:install``` - creates migrations table
-
-```php artisan migrate``` - creates database tables
+```php artisan migrate``` - creates database tables and migrations table
 
 ```php artisan db:seed``` - fills database tables with data
 
