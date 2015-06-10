@@ -430,21 +430,13 @@ class ProductsInOfferTableSeeder extends Seeder {
 			),
 			52 => 
 			array (
-				'id' => 58,
-				'offer_id' => 55,
-				'product_id' => 74,
-				'created_at' => '2015-05-05 21:29:21',
-				'updated_at' => '2015-05-05 21:29:21',
-			),
-			53 => 
-			array (
 				'id' => 59,
 				'offer_id' => 56,
 				'product_id' => 177,
 				'created_at' => '2015-05-05 21:30:49',
 				'updated_at' => '2015-05-05 21:30:49',
 			),
-			54 => 
+			53 => 
 			array (
 				'id' => 60,
 				'offer_id' => 56,
@@ -452,7 +444,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:30:49',
 				'updated_at' => '2015-05-05 21:30:49',
 			),
-			55 => 
+			54 => 
 			array (
 				'id' => 61,
 				'offer_id' => 56,
@@ -460,7 +452,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:30:49',
 				'updated_at' => '2015-05-05 21:30:49',
 			),
-			56 => 
+			55 => 
 			array (
 				'id' => 62,
 				'offer_id' => 57,
@@ -468,7 +460,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:33:17',
 				'updated_at' => '2015-05-05 21:33:17',
 			),
-			57 => 
+			56 => 
 			array (
 				'id' => 63,
 				'offer_id' => 57,
@@ -476,7 +468,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:33:17',
 				'updated_at' => '2015-05-05 21:33:17',
 			),
-			58 => 
+			57 => 
 			array (
 				'id' => 64,
 				'offer_id' => 58,
@@ -484,7 +476,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:33:44',
 				'updated_at' => '2015-05-05 21:33:44',
 			),
-			59 => 
+			58 => 
 			array (
 				'id' => 65,
 				'offer_id' => 59,
@@ -492,7 +484,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:36:16',
 				'updated_at' => '2015-05-05 21:36:16',
 			),
-			60 => 
+			59 => 
 			array (
 				'id' => 66,
 				'offer_id' => 59,
@@ -500,7 +492,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:36:16',
 				'updated_at' => '2015-05-05 21:36:16',
 			),
-			61 => 
+			60 => 
 			array (
 				'id' => 67,
 				'offer_id' => 60,
@@ -508,7 +500,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:37:25',
 				'updated_at' => '2015-05-05 21:37:25',
 			),
-			62 => 
+			61 => 
 			array (
 				'id' => 68,
 				'offer_id' => 60,
@@ -516,7 +508,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:37:25',
 				'updated_at' => '2015-05-05 21:37:25',
 			),
-			63 => 
+			62 => 
 			array (
 				'id' => 69,
 				'offer_id' => 60,
@@ -524,7 +516,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:37:25',
 				'updated_at' => '2015-05-05 21:37:25',
 			),
-			64 => 
+			63 => 
 			array (
 				'id' => 70,
 				'offer_id' => 60,
@@ -532,7 +524,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:37:25',
 				'updated_at' => '2015-05-05 21:37:25',
 			),
-			65 => 
+			64 => 
 			array (
 				'id' => 71,
 				'offer_id' => 61,
@@ -540,7 +532,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:38:40',
 				'updated_at' => '2015-05-05 21:38:40',
 			),
-			66 => 
+			65 => 
 			array (
 				'id' => 72,
 				'offer_id' => 61,
@@ -548,7 +540,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:38:40',
 				'updated_at' => '2015-05-05 21:38:40',
 			),
-			67 => 
+			66 => 
 			array (
 				'id' => 73,
 				'offer_id' => 61,
@@ -556,7 +548,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:38:40',
 				'updated_at' => '2015-05-05 21:38:40',
 			),
-			68 => 
+			67 => 
 			array (
 				'id' => 74,
 				'offer_id' => 62,
@@ -564,7 +556,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:41:13',
 				'updated_at' => '2015-05-05 21:41:13',
 			),
-			69 => 
+			68 => 
 			array (
 				'id' => 75,
 				'offer_id' => 62,
@@ -572,7 +564,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-05 21:41:14',
 				'updated_at' => '2015-05-05 21:41:14',
 			),
-			70 => 
+			69 => 
 			array (
 				'id' => 76,
 				'offer_id' => 63,
@@ -580,7 +572,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:40:37',
 				'updated_at' => '2015-05-30 16:40:37',
 			),
-			71 => 
+			70 => 
 			array (
 				'id' => 77,
 				'offer_id' => 63,
@@ -588,7 +580,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:40:37',
 				'updated_at' => '2015-05-30 16:40:37',
 			),
-			72 => 
+			71 => 
 			array (
 				'id' => 78,
 				'offer_id' => 64,
@@ -596,7 +588,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:41:23',
 				'updated_at' => '2015-05-30 16:41:23',
 			),
-			73 => 
+			72 => 
 			array (
 				'id' => 79,
 				'offer_id' => 64,
@@ -604,7 +596,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:41:23',
 				'updated_at' => '2015-05-30 16:41:23',
 			),
-			74 => 
+			73 => 
 			array (
 				'id' => 80,
 				'offer_id' => 64,
@@ -612,7 +604,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:41:23',
 				'updated_at' => '2015-05-30 16:41:23',
 			),
-			75 => 
+			74 => 
 			array (
 				'id' => 81,
 				'offer_id' => 65,
@@ -620,7 +612,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:42:34',
 				'updated_at' => '2015-05-30 16:42:34',
 			),
-			76 => 
+			75 => 
 			array (
 				'id' => 82,
 				'offer_id' => 65,
@@ -628,7 +620,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:42:34',
 				'updated_at' => '2015-05-30 16:42:34',
 			),
-			77 => 
+			76 => 
 			array (
 				'id' => 83,
 				'offer_id' => 65,
@@ -636,15 +628,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:42:34',
 				'updated_at' => '2015-05-30 16:42:34',
 			),
-			78 => 
-			array (
-				'id' => 84,
-				'offer_id' => 66,
-				'product_id' => 74,
-				'created_at' => '2015-05-30 16:43:09',
-				'updated_at' => '2015-05-30 16:43:09',
-			),
-			79 => 
+			77 => 
 			array (
 				'id' => 85,
 				'offer_id' => 67,
@@ -652,7 +636,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:43:57',
 				'updated_at' => '2015-05-30 16:43:57',
 			),
-			80 => 
+			78 => 
 			array (
 				'id' => 86,
 				'offer_id' => 67,
@@ -660,7 +644,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:43:57',
 				'updated_at' => '2015-05-30 16:43:57',
 			),
-			81 => 
+			79 => 
 			array (
 				'id' => 87,
 				'offer_id' => 68,
@@ -668,7 +652,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:45:32',
 				'updated_at' => '2015-05-30 16:45:32',
 			),
-			82 => 
+			80 => 
 			array (
 				'id' => 88,
 				'offer_id' => 69,
@@ -676,7 +660,7 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:48:53',
 				'updated_at' => '2015-05-30 16:48:53',
 			),
-			83 => 
+			81 => 
 			array (
 				'id' => 89,
 				'offer_id' => 69,
@@ -684,13 +668,85 @@ class ProductsInOfferTableSeeder extends Seeder {
 				'created_at' => '2015-05-30 16:48:53',
 				'updated_at' => '2015-05-30 16:48:53',
 			),
-			84 => 
+			82 => 
 			array (
 				'id' => 90,
 				'offer_id' => 70,
 				'product_id' => 38,
 				'created_at' => '2015-05-30 16:49:40',
 				'updated_at' => '2015-05-30 16:49:40',
+			),
+			83 => 
+			array (
+				'id' => 91,
+				'offer_id' => 71,
+				'product_id' => 285,
+				'created_at' => '2015-05-30 19:40:03',
+				'updated_at' => '2015-05-30 19:40:03',
+			),
+			84 => 
+			array (
+				'id' => 92,
+				'offer_id' => 71,
+				'product_id' => 206,
+				'created_at' => '2015-05-30 19:40:03',
+				'updated_at' => '2015-05-30 19:40:03',
+			),
+			85 => 
+			array (
+				'id' => 93,
+				'offer_id' => 72,
+				'product_id' => 16,
+				'created_at' => '2015-05-31 13:21:56',
+				'updated_at' => '2015-05-31 13:21:56',
+			),
+			86 => 
+			array (
+				'id' => 94,
+				'offer_id' => 73,
+				'product_id' => 146,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
+			),
+			87 => 
+			array (
+				'id' => 95,
+				'offer_id' => 73,
+				'product_id' => 163,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
+			),
+			88 => 
+			array (
+				'id' => 96,
+				'offer_id' => 73,
+				'product_id' => 191,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
+			),
+			89 => 
+			array (
+				'id' => 97,
+				'offer_id' => 73,
+				'product_id' => 272,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
+			),
+			90 => 
+			array (
+				'id' => 98,
+				'offer_id' => 73,
+				'product_id' => 54,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
+			),
+			91 => 
+			array (
+				'id' => 99,
+				'offer_id' => 73,
+				'product_id' => 22,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
 			),
 		));
 	}

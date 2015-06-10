@@ -12,8 +12,12 @@
     <div class="row">
         <div class="col-sm-12">
             <h1>{{ e($user->username) }}</h1>
-            <button type="button" class="btn btn-success">Change password</button>
-            <button type="button" class="btn btn-info">Edit profile</button>
+            <a href="{{ URL::route('change-password') }}" class="btn btn-success">
+                Change password
+            </a>
+            <a href="{{ URL::route('edit-profile', array($user->id)) }}" class="btn btn-info">
+                Edit profile
+            </a>
             <button type="button" class="btn btn-info">Change image</button>
             <br>
         </div>

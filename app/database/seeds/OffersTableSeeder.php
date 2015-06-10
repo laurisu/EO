@@ -136,7 +136,7 @@ class OffersTableSeeder extends Seeder {
 				'customer_id' => 39,
 				'status' => 3,
 				'created_at' => '2015-02-01 00:00:00',
-				'updated_at' => '2015-02-30 16:51:56',
+				'updated_at' => '0000-00-00 00:00:00',
 			),
 			14 => 
 			array (
@@ -389,6 +389,33 @@ class OffersTableSeeder extends Seeder {
 				'status' => 2,
 				'created_at' => '2015-05-30 16:49:40',
 				'updated_at' => '2015-06-02 16:49:54',
+			),
+			42 => 
+			array (
+				'id' => 71,
+				'user_id' => 1,
+				'customer_id' => 84,
+				'status' => 1,
+				'created_at' => '2015-05-30 19:40:03',
+				'updated_at' => '2015-05-30 19:41:22',
+			),
+			43 => 
+			array (
+				'id' => 72,
+				'user_id' => 1,
+				'customer_id' => 35,
+				'status' => 1,
+				'created_at' => '2015-05-31 13:21:56',
+				'updated_at' => '2015-05-31 13:22:22',
+			),
+			44 => 
+			array (
+				'id' => 73,
+				'user_id' => 1,
+				'customer_id' => NULL,
+				'status' => 0,
+				'created_at' => '2015-06-10 20:30:59',
+				'updated_at' => '2015-06-10 20:30:59',
 			),
 		));
 	}

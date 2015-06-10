@@ -16,7 +16,12 @@ Route::group(array('before' => 'auth'), function() {
          * Change password (POST)
          */
         Route::post('/account/change-password', array('as' => 'change-password-post', 'uses' => 'UserController@postChangePassword'));
-
+        
+        /*
+        * Users / edit profile (POST)
+        */
+        Route::post('/account/update-profile/{id}', array('as' => 'update-profile', 'uses' => 'ProfileController@putProfileChanges'));
+         
         /*
          * Products page (POST)
          */
@@ -47,7 +52,11 @@ Route::group(array('before' => 'auth'), function() {
      */
     Route::get('/account/sign-out', array('as' => 'sign-out', 'uses' => 'UserController@getSignOut'));
 
+    /*
+     * Users / profile page (GET)
+     */
     Route::get('/user/{username}', array('as' => 'user-profile', 'uses' => 'ProfileController@getUserProfile'));
+    Route::get('/user/edit-profile/{id}', array('as' => 'edit-profile', 'uses' => 'ProfileController@editProfile'));
 
     /*
      * Products page (GET)
@@ -80,10 +89,6 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/offers/view-offer/{id}', array('as' => 'view-offer', 'uses' => 'OfferController@getOffer'));
     Route::get('/offers/offer-accepted/{id}', array('as' => 'accept-offer', 'uses' => 'OfferController@updateStatusToAccepted'));
     Route::get('/offers/offer-rejected/{id}', array('as' => 'reject-offer', 'uses' => 'OfferController@updateStatusToRejected'));
-    
-    /*
-     * Users / profile page (GET)
-     */
     
     
     /*
